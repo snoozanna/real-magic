@@ -1,0 +1,416 @@
+:: StoryTitle
+Agile Rabbit
+
+
+:: StoryData
+{
+	"ifid": "3727506D-288C-46BD-A866-3D0FCB0106F7",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 1
+}
+
+
+
+:: Story Stylesheet [stylesheet]
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url("styles/generics.css");
+@import url("styles/styles.css");
+
+
+
+:: UserScript [script]
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+
+
+/* Google Tag */
+setup.JSLoaded = false;
+ var lockID = LoadScreen.lock();  // Lock loading screen
+ importScripts("https://www.googletagmanager.com/gtag/js?id=G-C6NP1M5W57")
+     .then(function() {
+
+         setup.JSLoaded = true;
+         window.dataLayer = window.dataLayer || [];
+         window.gtag = function (){ dataLayer.push(arguments); };
+         gtag('js', new Date());
+         gtag('config', 'G-C6NP1M5W57');
+          //  console.log("Sending to GA");
+         LoadScreen.unlock(lockID);  // Unlock loading screen
+     }).catch(function(error) {
+         console.log("Error: Could not load 'gtag.js'.");
+      LoadScreen.unlock(lockID);  // Unlock loading screen
+     }
+ );
+
+/* Track Passage Views using SugarCube's passage display events */
+$(document).on(':passagedisplay', function(ev) {
+    var passageName = ev.passage.title;
+    // console.log("sending", passageName, "to GA")
+    // Send passage view event to Google Analytics
+    if (setup.JSLoaded) {
+        gtag('event', 'Passage View', {
+            event_label: passageName,
+            event_category: 'Passage',
+        });
+    }
+});
+
+
+ $(document).on('click', 'a', function (ev) {
+ // Get the destination of the clicked link var passage 
+ var passage = $(this).attr('data-passage');
+ // Send the click event to Google Analytics
+    if (setup.JSLoaded && passage) {
+      // console.log("sending", passage, "click to GA")
+        gtag('event', 'Navigation', {
+            event_label: passage,
+            event_category: 'GuestClick'
+        });
+    }
+ });
+
+setup.chooseStoryAudio = () => {
+  const storyAudioNeeded = State.variables.storyAudioNeeded;
+  const storyMonsterNeeded = State.variables.storyMonsterNeeded;
+  const audio = document.getElementById("audioPlayer");
+    console.log("audio", audio)
+  if (!audio) {
+    console.error("Audio element with ID 'audioPlayer' not found.");
+    return;
+  }
+
+  // Remove any previously attached 'ended' event to avoid duplicates
+  audio.replaceWith(audio.cloneNode(true));
+  const freshAudio = document.getElementById("audioPlayer");
+
+  // Build audio file paths based on storyAudioNeeded numbers
+  const audioFiles = storyAudioNeeded.map(num => 
+    `assets/voiceover/strongertogethervo_7_${storyMonsterNeeded}_2_S${num}.mp3`
+  );
+
+  let currentTrack = 0;
+
+  function playNext() {
+    if (currentTrack < audioFiles.length) {
+      freshAudio.src = audioFiles[currentTrack];
+      freshAudio.play().catch(err => {
+        console.error("Audio play failed:", err);
+      });
+      currentTrack++;
+    }
+  }
+
+  freshAudio.addEventListener("ended", playNext);
+
+  // Start playback
+  playNext();
+};
+
+// Take picture 
+setup.takePicture = () => {
+    console.log("taking image")
+    document.getElementById("inputImg").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function () {
+        const link = document.createElement("a");
+        link.href = reader.result;
+        link.download = "dream_view.jpg"; // Suggested filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        document.getElementById("loadingLogo").classList.remove("hide");
+    };
+    reader.readAsDataURL(file);
+});
+}
+
+:: StoryInit
+<<cacheaudio "opening" "assets/audio/StrongerTogetherSFX_v2_1opening-recovery.mp3">>
+<<cacheaudio "neighbour" "assets/audio/StrongerTogetherSFX_2 neighbours-recovery.mp3">>
+
+
+
+:: header[nobr]
+<header>
+</header>
+
+
+
+
+:: footer[nobr]
+<<set $showWallet to false>>
+<footer>
+    <<link [img[assets/img/back-black.png]]>>
+        <<goto $prevpass>>
+    <</link>>
+
+   
+</footer>
+
+
+
+:: footeroptionappears[nobr]
+<<set $showWallet to false>>
+<footer class="grid-item footer">
+  <<link [img[assets/img/back-black.png]]>>
+        <<goto $prevpass>>
+    <</link>>
+  /* <<link "W">>
+        <<set $showWallet to true>>
+        <<goto "wallet">>
+        <</link>> */
+           /* <<link [img[assets/img/for-black.png]]>>
+        <<goto $nextpass>>
+    <</link>> */
+    <div id="nextButtonContainer">
+     </div>
+</footer>
+
+
+
+
+
+
+:: landing [nobr] 
+<<set $prevpass to "landing">>
+<<set $pass to "landing">>
+<<set $nextpass to "languageChoice">>
+<<set $userchoices to {
+    language: null
+}>>
+
+<main class="">
+<<button "Enter">>
+    <<goto $nextpass>>
+<</button>>
+   
+</main>
+
+/* <<include "wallet">> */
+
+:: _templateIntro[nobr]
+
+<main>
+    <div id="msgMount"></div>
+        <<if $pass>>
+            <<if $userchoices.language is "cymraeg">>
+             <<set $uniqueContent to $pass+"-text-cym">>
+         <<elseif $userchoices.language is "english" >>
+             <<set $uniqueContent to $pass+"-text-eng">>
+            <</if>>
+            <<include $uniqueContent>>
+        <<else>>
+            No content provided.
+        <</if>>
+  
+</main>
+<<include "footeroptionappears">>
+
+:: headerIntro [nobr]
+<header >
+  <h2>Header</h2>
+
+</header>
+
+
+:: languageChoice [nobr]
+<<set $prevpass to "landing">>
+<<set $pass to "languageChoice">>
+<<set $nextpass to "intro1">>
+<main>
+<p>This trail is available in two languages, Cymraeg and English. 
+Which would you like to experience? </p>
+<<button "Cymraeg">>
+    <<set $userchoices.language to "cymraeg">>
+    <<goto $nextpass>>
+<</button>>
+<<button "English">>
+    <<set $userchoices.language to "english">>
+    <<goto $nextpass>>
+<</button>>
+</main>
+
+:: intro1 [nobr]
+<<set $prevpass to "landing">>
+<<set $pass to "intro1">>
+<<set $nextpass to "heritagelogo">>
+
+
+<<include "_templateIntro">>
+
+
+:: intro1-text-eng [nobr]
+<p>Over the trail there will be audio to listen to, and visuals and text to look at. </p>
+
+<p>We recommend using headphones, but you can play out loud if you’re in a group. Don’t worry, there are headphones available at the Box Office, if you didn’t bring some with you. </p>
+
+<p>We’d recommend getting the sound and brightness on your phone right before we move on - it makes everything smoother. When you are ready, find somewhere comfy in the foyer, and click the button below, then I’ll get us started.  </p>
+
+<p>There is WiFi available throughout the building - it’s called X - you can connect to that if you’d prefer.</p> 
+
+
+<<timed 3s>>
+    <<replace "#nextButtonContainer">>
+    <<button "Move on">>
+            <<goto $nextpass>>
+        <</button>>
+    <</replace>>
+<</timed>>
+
+:: intro1-text-cym [nobr]
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
+
+<p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
+
+<p> Morbi tincidunt tempor risus, a tristique nisi ornare in. Nunc dignissim nunc porttitor justo placerat, sit amet facilisis massa luctus. </p>
+
+<p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
+
+
+<<timed 3s>>
+    <<replace "#nextButtonContainer">>
+    <<button "Move on">>
+            <<goto $nextpass>>
+        <</button>>
+    <</replace>>
+<</timed>>
+
+:: heritagelogo [nobr]
+<<set $prevpass to "intro1">>
+<<set $pass to "heritagelogo">>
+<<set $nextpass to "welcome1">>
+<main class="flex-center">
+   <div class="logo-wrapper">
+   <img src="../assets/img/cat.png"/>
+   </div>
+  
+</main>
+<<timed 3s>>
+    <<goto $nextpass>>
+    <</timed>>
+
+:: _templateWelcome[nobr]
+
+<main>
+    <div id="msgMount"></div>
+        <<if $pass>>
+            <<if $userchoices.language is "cymraeg">>
+             <<set $uniqueContent to $pass+"-text-cym">>
+         <<elseif $userchoices.language is "english" >>
+             <<set $uniqueContent to $pass+"-text-eng">>
+            <</if>>
+            <<include $uniqueContent>>
+        <<else>>
+            No content provided.
+        <</if>>
+  
+</main>
+<<include "footeroptionappears">>
+
+:: welcome1 [nobr]
+<<set $prevpass to "intro1">>
+<<set $pass to "welcome1">>
+<<set $nextpass to "cameraembed">>
+<<audio ":all" "stop">>
+<audio src="assets/voiceover/strongertogethervo_0_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "_templateWelcome">>
+
+:: welcome1-text-eng [nobr]
+<p>Well, hello. Shw’mae! Welcome</p>
+
+<p>I’m Phyl, an actor who’s been coming to this wonderful theatre for years. </p>
+
+<p>I’ve been in plays like Under Milk Wood. </p>
+
+<p>The Government Inspector. </p>
+
+<p>You might have even seen my Bottom – in Shakespeare, I mean! </p>
+
+<p>But I’m best known for our rock and roll pantos – playing the Dame.</p>
+
+<p>One minute – let me summon her up... “Looking lush, loves!”  There she is!</p>
+
+<<timed 5s>>
+   <<goto $nextpass>>
+<</timed>>
+
+:: welcome1-text-cym [nobr]
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
+
+<p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
+
+<p> Morbi tincidunt tempor risus, a tristique nisi ornare in. Nunc dignissim nunc porttitor justo placerat, sit amet facilisis massa luctus. </p>
+
+<p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
+
+
+<<timed 5s>>
+   <<goto $nextpass>>
+<</timed>>
+
+
+
+:: communityquote [nobr]
+<p>“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of…how he achieved Theatr Clwyd, against all the odds.”</p>
+
+:: cameraembed [nobr]
+<<set $prevpass to "welcome1">>
+<<set $pass to "cameraembed">>
+<<set $nextpass to "cameraembed">>
+<main class="main-section upload">
+
+<div id="uploadInstructions">
+<h3>Ok - it seems we’ve got to a moment where I can’t move forward without a little activation...</h3>
+
+<p>To move forward - I need you to take a picture. </p>
+<p>A picture of the view from the hill. </p>
+<p>A view to dream from. </p> 
+
+</div>
+
+<div class="logo-wrapper loading" id="loadingLogo">
+<img src="assets/img/cat.png" alt="logo" class="fastRotate"/>
+<br/>
+<h2 class="octo-title">Uploading...</h2>
+</div>
+<br>
+<input type="file" accept="image/*" capture="camera" id="inputImg" class="hide">
+<br>
+<div id="success">
+<<button "Upload Image">>
+  <<set $e to setup.takePicture()>><</button>>
+</div>
+  <br>
+  <br>
+  <div id="error"></div>
+
+</main> 
+<<include "footerupload">>
+
+:: footerupload [nobr]
+<footer id="footerField"><<button "Back">><<goto $prevpass>><</button>>
+</footer>
+<<timed 12s>>
+    <<append "#footerField">>
+  <<button "Move on">> <<goto $nextpass>><</button>>
+    <</append>><</timed>>
+
+:: floorplan [nobr]
+Dot over the stage (dulled)
+Dot on the front row  
+Dot in the middle of audience (dulled) 
+Dot at the side (dulled) 
+
+:: speakpipe [nobr]
+speakpipe embed
