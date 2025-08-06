@@ -203,9 +203,11 @@ setup.takePicture = () => {
     console.log("taking image")
     document.getElementById("inputImg").addEventListener("change", function (event) {
     const file = event.target.files[0];
+     console.log("file", file)
     if (!file) return;
 
     const reader = new FileReader();
+    console.log("reader", reader)
     reader.onload = function () {
         const link = document.createElement("a");
         link.href = reader.result;
@@ -398,7 +400,7 @@ Which would you like to experience? &lt;/p&gt;
 &lt;h2 class=&quot;octo-title&quot;&gt;Uploading...&lt;/h2&gt;
 &lt;/div&gt;
 &lt;br&gt;
-&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; capture=&quot;camera&quot; id=&quot;inputImg&quot; class=&quot;hide&quot;&gt;
+&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; capture=&quot;camera&quot; id=&quot;inputImg&quot; &gt;
 &lt;br&gt;
 &lt;div id=&quot;success&quot;&gt;
 &lt;&lt;button &quot;Upload Image&quot;&gt;&gt;

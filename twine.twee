@@ -118,9 +118,11 @@ setup.takePicture = () => {
     console.log("taking image")
     document.getElementById("inputImg").addEventListener("change", function (event) {
     const file = event.target.files[0];
+     console.log("file", file)
     if (!file) return;
 
     const reader = new FileReader();
+    console.log("reader", reader)
     reader.onload = function () {
         const link = document.createElement("a");
         link.href = reader.result;
@@ -385,7 +387,7 @@ Which would you like to experience? </p>
 <h2 class="octo-title">Uploading...</h2>
 </div>
 <br>
-<input type="file" accept="image/*" capture="camera" id="inputImg" class="hide">
+<input type="file" accept="image/*" capture="camera" id="inputImg" >
 <br>
 <div id="success">
 <<button "Upload Image">>
