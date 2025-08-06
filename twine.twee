@@ -116,26 +116,44 @@ setup.chooseStoryAudio = () => {
 // Take picture 
 setup.takePicture = () => {
     console.log("taking image")
-    document.getElementById("inputImg").addEventListener("change", function (event) {
-    const file = event.target.files[0];
-     console.log("file", file)
+    const fileInput = document.getElementById("inputImg");
+  const takePhotoBtn = document.getElementById("takePhotoBtn");
+  const savePhotoBtn = document.getElementById("savePhotoBtn");
+  const previewImg = document.getElementById("previewImg");
+  const previewContainer = document.getElementById("preview");
+
+  let imageDataUrl = null;
+
+  takePhotoBtn.addEventListener("click", () => {
+    fileInput.click();
+  });
+
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
     if (!file) return;
 
     const reader = new FileReader();
-    console.log("reader", reader)
     reader.onload = function () {
-        const link = document.createElement("a");
-        link.href = reader.result;
-        link.download = "dream_view.jpg"; // Suggested filename
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        document.getElementById("loadingLogo").classList.remove("hide");
+      imageDataUrl = reader.result;
+      previewImg.src = imageDataUrl;
+      previewContainer.classList.remove("hide");
+      savePhotoBtn.classList.remove("hide");
     };
     reader.readAsDataURL(file);
-});
-}
+  });
+
+  savePhotoBtn.addEventListener("click", () => {
+    if (!imageDataUrl) return;
+
+    const link = document.createElement("a");
+    link.href = imageDataUrl;
+    link.download = "dream_view.jpg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+};
+
 
 :: StoryInit
 <<cacheaudio "opening" "assets/audio/StrongerTogetherSFX_v2_1opening-recovery.mp3">>
@@ -370,32 +388,35 @@ Which would you like to experience? </p>
 <<set $prevpass to "welcome1">>
 <<set $pass to "cameraembed">>
 <<set $nextpass to "cameraembed">>
+
 <main class="main-section upload">
 
 <div id="uploadInstructions">
-<h3>Ok - it seems we’ve got to a moment where I can’t move forward without a little activation...</h3>
-
-<p>To move forward - I need you to take a picture. </p>
-<p>A picture of the view from the hill. </p>
-<p>A view to dream from. </p> 
-
+  <h3>Ok - it seems we’ve got to a moment where I can’t move forward without a little activation...</h3>
+  <p>To move forward - I need you to take a picture.</p>
+  <p>A picture of the view from the hill.</p>
+  <p>A view to dream from.</p>
 </div>
 
-<div class="logo-wrapper loading" id="loadingLogo">
-<img src="assets/img/cat.png" alt="logo" class="fastRotate"/>
-<br/>
-<h2 class="octo-title">Uploading...</h2>
+<div class="flex-col-left">
+  <!-- Hidden file input -->
+  <input type="file" accept="image/*" capture="environment" id="inputImg" class="hide">
+  
+  <!-- Take Photo button -->
+  <button id="takePhotoBtn" class="tw-button">📸 Take Photo</button>
+
+  <!-- Save Photo button (initially hidden) -->
+  <button id="savePhotoBtn" class="tw-button hide">💾 Save Photo</button>
 </div>
+
 <br>
-<input type="file" accept="image/*" capture="camera" id="inputImg" class="hide">
-<br>
-<div id="success">
-<<button "Upload Image">>
-  <<set $e to setup.takePicture()>><</button>>
+<div id="preview" class="hide">
+  <p>Preview:</p>
+  <img id="previewImg" src="" alt="Preview" style="max-width: 100%; border-radius: 8px;">
 </div>
-  <br>
-  <br>
-  <div id="error"></div>
+
+<br>
+<div id="error"></div>
 
 </main> 
 <<include "footerupload">>

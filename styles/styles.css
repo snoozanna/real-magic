@@ -105,7 +105,24 @@ input[type=text] {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap:2rem
 }
+
+.flex-row-left{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap:2rem
+}
+
+.flex-col-left{
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  gap:2rem;
+flex-direction: column;
+}
+
 
 /* BUTTONS & LINKS  */
 
