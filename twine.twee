@@ -125,6 +125,7 @@ setup.takePicture = () => {
   let imageDataUrl = null;
 
   takePhotoBtn.addEventListener("click", () => {
+    console.log("fileInput", fileInput)
     fileInput.click();
   });
 
@@ -404,6 +405,7 @@ Which would you like to experience? </p>
   
   <!-- Take Photo button -->
   <button id="takePhotoBtn" class="tw-button">📸 Take Photo</button>
+  
 
   <!-- Save Photo button (initially hidden) -->
   <button id="savePhotoBtn" class="tw-button hide">💾 Save Photo</button>
@@ -421,6 +423,8 @@ Which would you like to experience? </p>
 </main> 
 <<include "footerupload">>
 
+<<done>>
+  <<set $e to setup.takePicture()>><</done>>
 :: footerupload [nobr]
 <footer id="footerField"><<button "Back">><<goto $prevpass>><</button>>
 </footer>

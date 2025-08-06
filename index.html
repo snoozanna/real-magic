@@ -210,6 +210,7 @@ setup.takePicture = () => {
   let imageDataUrl = null;
 
   takePhotoBtn.addEventListener("click", () => {
+    console.log("fileInput", fileInput)
     fileInput.click();
   });
 
@@ -416,6 +417,7 @@ Which would you like to experience? &lt;/p&gt;
   
   &lt;!-- Take Photo button --&gt;
   &lt;button id=&quot;takePhotoBtn&quot; class=&quot;tw-button&quot;&gt;📸 Take Photo&lt;/button&gt;
+  
 
   &lt;!-- Save Photo button (initially hidden) --&gt;
   &lt;button id=&quot;savePhotoBtn&quot; class=&quot;tw-button hide&quot;&gt;💾 Save Photo&lt;/button&gt;
@@ -431,7 +433,10 @@ Which would you like to experience? &lt;/p&gt;
 &lt;div id=&quot;error&quot;&gt;&lt;/div&gt;
 
 &lt;/main&gt; 
-&lt;&lt;include &quot;footerupload&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="footerupload" tags="nobr" position="1100,225" size="100,100">&lt;footer id=&quot;footerField&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;include &quot;footerupload&quot;&gt;&gt;
+
+&lt;&lt;done&gt;&gt;
+  &lt;&lt;set $e to setup.takePicture()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="footerupload" tags="nobr" position="1100,225" size="100,100">&lt;footer id=&quot;footerField&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/footer&gt;
 &lt;&lt;timed 12s&gt;&gt;
     &lt;&lt;append &quot;#footerField&quot;&gt;&gt;
