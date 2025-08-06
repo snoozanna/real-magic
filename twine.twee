@@ -387,7 +387,7 @@ Which would you like to experience? </p>
 <h2 class="octo-title">Uploading...</h2>
 </div>
 <br>
-<input type="file" accept="image/*" capture="camera" id="inputImg" >
+<input type="file" accept="image/*" capture="camera" id="inputImg" class="hide">
 <br>
 <div id="success">
 <<button "Upload Image">>
