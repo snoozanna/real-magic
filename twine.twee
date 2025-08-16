@@ -1,5 +1,5 @@
 :: StoryTitle
-Agile Rabbit
+Heritage Trail
 
 
 :: StoryData
@@ -16,7 +16,7 @@ Agile Rabbit
 :: Story Stylesheet [stylesheet]
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @import url("styles/generics.css");
 @import url("styles/styles.css");
@@ -121,6 +121,7 @@ setup.takePicture = () => {
   const savePhotoBtn = document.getElementById("savePhotoBtn");
   const previewImg = document.getElementById("previewImg");
   const previewContainer = document.getElementById("preview");
+  const nextBtn = document.getElementById("nextBtn");
 
   let imageDataUrl = null;
 
@@ -139,6 +140,7 @@ setup.takePicture = () => {
       previewImg.src = imageDataUrl;
       previewContainer.classList.remove("hide");
       savePhotoBtn.classList.remove("hide");
+      nextBtn.classList.remove("hide")
     };
     reader.readAsDataURL(file);
   });
@@ -148,7 +150,7 @@ setup.takePicture = () => {
 
     const link = document.createElement("a");
     link.href = imageDataUrl;
-    link.download = "dream_view.jpg";
+    link.download = "view_from_the_hill.jpg";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -163,14 +165,21 @@ setup.takePicture = () => {
 
 
 :: header[nobr]
-<header>
+<header class="standard">
+ <div class="logo-wrapper">
+   <img src="../assets/img/cat.png"/>
+   </div>
+   <div class="title-wrapper">
+   <h1>Heritage Trail</h1>
+   <h2>Real Magic</h2>
+   </div>
 </header>
 
 
 
 
 :: footer[nobr]
-<<set $showWallet to false>>
+
 <footer>
     <<link [img[assets/img/back-black.png]]>>
         <<goto $prevpass>>
@@ -178,6 +187,31 @@ setup.takePicture = () => {
 
    
 </footer>
+
+:: navbuttons[nobr]
+
+<div class="nav-btn-container btn-container">
+ <<button "Back">>
+    <<goto $nextpass>>
+<</button>>
+ <<button "Replay">>
+    <<goto $pass>>
+<</button>>
+   
+</div>
+
+:: navbuttons-cym[nobr]
+
+<div class="nav-btn-container btn-container">
+ <<button "Back Lorem">>
+    <<goto $nextpass>>
+<</button>>
+ <<button "Replay Lorem">>
+    <<goto $pass>>
+<</button>>
+   
+</div>
+
 
 
 
@@ -200,7 +234,12 @@ setup.takePicture = () => {
 
 
 
-
+:: headerlanding[nobr]
+<header class="standard">
+ <div class="logo-wrapper">
+   <img src="../assets/img/cat.png"/>
+   </div>
+</header>
 
 
 :: landing [nobr] 
@@ -210,8 +249,20 @@ setup.takePicture = () => {
 <<set $userchoices to {
     language: null
 }>>
+<<set $btnAppearTime to "1s">>
+<<addclass "body" "maroon">>
 
-<main class="">
+<<include "headerlanding">>
+<main class="landing flex-col-cen">
+<h1> Heritage Trail</h1>
+ <div class="inline-accented-img">
+
+
+   <div class="inline-img-wrapper">
+     <img src="../assets/img/cat.png"/>
+     </div>
+ </div>
+   <h2>Real Magic</h2>
 <<button "Enter">>
     <<goto $nextpass>>
 <</button>>
@@ -221,7 +272,8 @@ setup.takePicture = () => {
 /* <<include "wallet">> */
 
 :: _templateIntro[nobr]
-
+<<addclass "body" "maroon">>
+<<include "header">>
 <main>
     <div id="msgMount"></div>
         <<if $pass>>
@@ -231,6 +283,8 @@ setup.takePicture = () => {
              <<set $uniqueContent to $pass+"-text-eng">>
             <</if>>
             <<include $uniqueContent>>
+            <div class="btn-container" id="btnContainer">
+            </div>
         <<else>>
             No content provided.
         <</if>>
@@ -249,18 +303,24 @@ setup.takePicture = () => {
 <<set $prevpass to "landing">>
 <<set $pass to "languageChoice">>
 <<set $nextpass to "intro1">>
+<<include "header">>
 <main>
-<p>This trail is available in two languages, Cymraeg and English. 
-Which would you like to experience? </p>
-<<button "Cymraeg">>
-    <<set $userchoices.language to "cymraeg">>
-    <<goto $nextpass>>
-<</button>>
-<<button "English">>
-    <<set $userchoices.language to "english">>
-    <<goto $nextpass>>
-<</button>>
+<div class="instructional-text">
+  <p>This trail is available in two languages, Cymraeg and English. 
+  Which would you like to experience? </p>
+</div>
+<div class="btn-container" id="btnContainer">
+  <<button "Cymraeg">>
+      <<set $userchoices.language to "cymraeg">>
+      <<goto $nextpass>>
+  <</button>>
+  <<button "English">>
+      <<set $userchoices.language to "english">>
+      <<goto $nextpass>>
+  <</button>>
+</div>
 </main>
+
 
 :: intro1 [nobr]
 <<set $prevpass to "landing">>
@@ -281,12 +341,13 @@ Which would you like to experience? </p>
 <p>There is WiFi available throughout the building - it’s called X - you can connect to that if you’d prefer.</p> 
 
 
-<<timed 3s>>
-    <<replace "#nextButtonContainer">>
-    <<button "Move on">>
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "I'm ready">>
             <<goto $nextpass>>
         <</button>>
-    <</replace>>
+        <<include "navbuttons">>
+    <</append>>
 <</timed>>
 
 :: intro1-text-cym [nobr]
@@ -299,19 +360,20 @@ Which would you like to experience? </p>
 <p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
 
 
-<<timed 3s>>
-    <<replace "#nextButtonContainer">>
-    <<button "Move on">>
+<<timed $btnAppearTime>>
+    <<replace "#btnContainer">>
+    <<append "Lorem">>
             <<goto $nextpass>>
-        <</button>>
+        <</append>>
+         <<include "navbuttons">>
     <</replace>>
 <</timed>>
 
 :: heritagelogo [nobr]
 <<set $prevpass to "intro1">>
 <<set $pass to "heritagelogo">>
-<<set $nextpass to "welcome1">>
-<main class="flex-center">
+<<set $nextpass to "2_welcome">>
+<main class="flex-col-cen">
    <div class="logo-wrapper">
    <img src="../assets/img/cat.png"/>
    </div>
@@ -321,9 +383,12 @@ Which would you like to experience? </p>
     <<goto $nextpass>>
     <</timed>>
 
-:: _templateWelcome[nobr]
-
+:: _templateStory[nobr]
+<<include "header">>
 <main>
+/* <div id="avatar" class="avatar">
+ <img src="../assets/img/cat.png"/>
+ </div> */
     <div id="msgMount"></div>
         <<if $pass>>
             <<if $userchoices.language is "cymraeg">>
@@ -331,24 +396,30 @@ Which would you like to experience? </p>
          <<elseif $userchoices.language is "english" >>
              <<set $uniqueContent to $pass+"-text-eng">>
             <</if>>
-            <<include $uniqueContent>>
+            <<timed 0.1s>>
+            <<append "#msgMount">>
+              <<include $uniqueContent>>
+              <</append>>
+              <</timed>>
+            
+               <div class="btn-container" id="btnContainer">
+            </div>
         <<else>>
             No content provided.
         <</if>>
   
 </main>
-<<include "footeroptionappears">>
 
-:: welcome1 [nobr]
+:: 2_welcome [nobr]
 <<set $prevpass to "intro1">>
-<<set $pass to "welcome1">>
-<<set $nextpass to "cameraembed">>
+<<set $pass to "2_welcome">>
+<<set $nextpass to "3_welcome">>
 <<audio ":all" "stop">>
 <audio src="assets/voiceover/strongertogethervo_0_3.mp3" autoplay>Audio is not supported on your device</audio>
-<<include "_templateWelcome">>
+<<include "_templateStory">>
 
-:: welcome1-text-eng [nobr]
-<p>Well, hello. Shw’mae! Welcome</p>
+:: 2_welcome-text-eng [nobr]
+<p class="bold">Well, hello. Shw’mae! Welcome</p>
 
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for years. </p>
 
@@ -360,14 +431,30 @@ Which would you like to experience? </p>
 
 <p>But I’m best known for our rock and roll pantos – playing the Dame.</p>
 
-<p>One minute – let me summon her up... “Looking lush, loves!”  There she is!</p>
+<p>One minute – let me summon her up... “Looking lush, loves!” There she is!</p>
 
-<<timed 5s>>
-   <<goto $nextpass>>
+<p>I’m here today as I have been asked to be the voice of this new heritage tour called ‘Real Magic’...</p>
+
+<p>I don’t know entirely what Real Magic means, but we will find out together, I imagine.</p>
+
+<p>I’ll also be translating for non-Welsh speakers as we go along. Adderchog! That’s ‘Excellent’’ in Welsh.</p>
+
+<p>But first, let’s make sure everyone - myself included - understands how this tour will work. </p>
+
+<p>There are buttons on your screen to move us to the next page ... let’s give that a go. </p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+        <<include "navbuttons">>
+    <</append>>
 <</timed>>
 
-:: welcome1-text-cym [nobr]
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
+:: 2_welcome-text-cym [nobr]
+<p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
 
 <p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
 
@@ -376,27 +463,427 @@ Which would you like to experience? </p>
 <p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
 
 
-<<timed 5s>>
-   <<goto $nextpass>>
+<<timed $btnAppearTime>>
+ <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+   <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 3_welcome [nobr]
+<<set $prevpass to "2_welcome">>
+<<set $pass to "3_welcome">>
+<<set $nextpass to "4_welcome">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 3_welcome-text-eng [nobr]
+<p class="bold">There we go - that seems simple enough. </p>
+
+<p>You can use these buttons to move on when you’re ready</p>
+
+<<timed 1s>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+   <<include "navbuttons">>
+    <</append>>
+    
 <</timed>>
 
 
 
-:: communityquote [nobr]
+:: 3_welcome-text-cym [nobr]
+<p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
+
+<p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
+
+<p> Morbi tincidunt tempor risus, a tristique nisi ornare in. Nunc dignissim nunc porttitor justo placerat, sit amet facilisis massa luctus. </p>
+
+<p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+     <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 4_welcome [nobr]
+<<set $prevpass to "3_welcome">>
+<<set $pass to "4_welcome">>
+<<set $nextpass to "5_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 4_welcome-text-eng [nobr]
+<div class="quote"><p>“He simply said, the people of Clwyd should have access to the best of everything...”</p></div>
+<p class="bold">
+  Ah! And it appears we’ll hear voices from others connected to Theatr Clwyd on the way. </p>
+<p>  That voice was Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! I’ll give context on whoever pops up - I’ve been coming here for over 20 years so I know a few people.</p>
+<p>Ok - I think we know enough to get started. So, let’s begin at the beginning...</p>
+
+
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "The Beginning">>
+            <<goto $nextpass>>
+        <</button>>
+         <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 4_welcome-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+      <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 5_story [nobr]
+<<set $prevpass to "4_welcome">>
+<<set $pass to "5_story">>
+<<set $nextpass to "6_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 5_story-text-eng [nobr]
+
+<div class="quote">
 <p>“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of…how he achieved Theatr Clwyd, against all the odds.”</p>
+<p>“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of hill, this civic site. A symbol of confidence, of intent...”</p>
+<p>“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill …there was nothing to constrain the size or the architectural design of the theatre.” </p></div>
+<p class="bold">
+Haydn Rees is a Theatr Clwyd legend. </p>
+<p>A county council boss who visited arts centres across Europe with his team in the late 1960s. He returned determined to build an even more brilliant one for the people of Mold.</p> 
 
-:: cameraembed [nobr]
-<<set $prevpass to "welcome1">>
-<<set $pass to "cameraembed">>
-<<set $nextpass to "cameraembed">>
+<p>Without Haydn Rees there would be no story of Theatr Clwyd to tell - so it really is the best place to start. </p>
 
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+         <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 5_story-text-cym [nobr]
+<div class="quote">
+<p>Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Nam augue erat, rutrum at dui id, accumsan varius tortor.”</p>
+<p>Nam augue erat, rutrum at dui id, accumsan varius tortor.</p></div>
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 6_story [nobr]
+<<set $prevpass to "5_story">>
+<<set $pass to "6_story">>
+<<set $nextpass to "7_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 6_story-text-eng [nobr]
+<p class="bold">Now it’s time to venture off into the rest of the building.</p>
+<p>I’ll be with you to give directions - I know this place like the back of my hand! </p>
+
+<p>Ooh...now we’re talking. </p>
+
+<p>It seems I can get you access to some backstage areas - you just need to pick up a keycard from one of our lovely front-of-house people. </p>
+<p>Go to the Welcome Desk, and tell them ‘Phyl sent me’. They’ll know what to do. </p>
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "We’ve got the keycard">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 6_story-text-cym [nobr]
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 7_story [nobr]
+<<set $prevpass to "6_story">>
+<<set $pass to "7_story">>
+<<set $nextpass to "8_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 7_story-text-eng [nobr]
+<p class="bold">Got your card? Tidy</p>
+
+<p>Next we’ll head upstairs in the lift. </p>
+
+<p>There are accessible and gender neutral toilets on this floor, if you need them before we go up a level. There are some gendered toilets upstairs too. And as part of our commitment to environmental sustainability, they’re all flushed with rainwater! </p>
+
+<p>When you’re ready, call the lift.  </p>
+
+<p>They might be asleep at first, as  this is a carbon neutral theatre – carbon negative on a good day.</p>
+
+<p>Inside, click Level 1 and let me know when you have arrived.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "We’re on Level 1">>
+            <<goto $nextpass>>
+        <</button>>
+           <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 7_story-text-cym [nobr]
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 8_story [nobr]
+<<set $prevpass to "7_story">>
+<<set $pass to "8_story">>
+<<set $nextpass to "9_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 8_story-text-eng [nobr]
+<p class="bold">Pause just outside the lift’s doors. </p>
+<p>I like this spot - from here you might be able to see the 70s cream tiles, which mark the outer wall of the original theatre. Where the old meets the new. </p>
+
+<p>You might be a long time visitor here or this might be your first time - Theatr Clwyd has always been known for being welcoming to all. Well, that’s what my wife Mags always thought.  </p>
+
+<p>The new extension has more glass and lovely light. Move now towards the view - you can look out through the windows , or go out to the balcony if you’d like.</p>
+
+<p>Let me know when you’re facing the hills.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "I’m looking out at the view">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 8_story-text-cym [nobr]
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 9_story [nobr]
+<<set $prevpass to "8_story">>
+<<set $pass to "9_story">>
+<<set $nextpass to "10_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 9_story-text-eng [nobr]
+<div class="quote"><p>“You walk out of the town and then you see this, sort of, like, literally, this building on a hill…you're in the countryside, and that seems to me to be something that's very suitable to then entering this different world of a play...”</p>
+<span class="person">Katherine Parkinson</span></div>
+
+<div class="quote"><p>“Part of the building you could see from parts in Mold. I've got memories of being able to see, like, tall, sort of part of the building that had, like, little windows going up. And I remember thinking like, Oh, there's the theatre there. That's where the shows are, and that's where, you know, where the magic happens...”</p>
+<span class="person">Christopher L Jones</span></div>
+
+<div class="quote"><p>“I still get that same feeling when I come up Raikes Lane and I see the building. I get that feeling of exhilaration, excitement and love and maybe now slightly more of a sense of belonging than I did when I first drove up that drive...”</p>
+<span class="person">Christian Patterson</span></div>
+
+<p>We just heard from Katherine Parkinson, a BAFTA award winning actress, Christopher L Jones, tiler and community actor, and Christian Patterson who has written Theatr Clwyd’s RocknRoll Panto since 2018. They obviously all seem to be fans of the theatre on the hill. 
+</p>
+
+<div class="quote"><p>“I remember it openingbeing opened in 1976 with the Queen..."</p></div>
+
+<p>Oh and this is Phillip Jones, who’s lived his whole life in Mold. He was a teenager when Theatr Clwyd opened. He worked in the Buckley Foundry.</p>
+
+<div class="quote"><p>“And I remember loads of people saying, [Why?] the hell you opening that? What a white elephant this is, what a waste of council money."</p></div>
+
+<p>Oh - that is not the same response!</p>
+<p>Ah I hit pause, there’s a bit more.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 9_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 10_story [nobr]
+<<set $prevpass to "9_story">>
+<<set $pass to "10_story">>
+<<set $nextpass to "11_cameraembed">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 10_story-text-eng [nobr]
+<div class="quote"><p>“But no, go there. Get liberated. Open your mind to the arts and to culture, to reading, writing, poetry, acting, theatre.”</p>
+</div>
+
+
+<p class="bold">They were looking up to the theatre and we are facing out to an incredible view. </p>
+<p>Ahead there are the beautiful Clwydian hills, including their highest point, the Moel Famau mountain, to the right. The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. </p>
+
+<p>This is where the dream of Theatr Clwyd began. </p>
+<p>Haydn Rees stood on this hill, and looked at this view with his colleagues in the late 1960s.</p>  
+
+<p>They dreamt about how civic duty – society working together – could improve everyone’s wellbeing. They believed that the arts could really change local lives. That the arts could give people more. They imagined a building that would make that dream possible. </p>
+
+<p>
+ <i>
+    Once upon a time a group of people stood on a hill<br/>
+    and decided to make the world a happier place.
+ </i>
+</p>
+<p>That moment forms part of Theatr Clwyd’s mission statement, which guides the theatre now. </p>
+
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 10_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 11_cameraembed [nobr]
+<<set $prevpass to "10_story">>
+<<set $pass to "11_cameraembed">>
+<<set $nextpass to "12_story">>
+<<include "header">>
 <main class="main-section upload">
 
 <div id="uploadInstructions">
-  <h3>Ok - it seems we’ve got to a moment where I can’t move forward without a little activation...</h3>
+  <p class="bold">Ok - it seems we’ve got to a moment where I can’t move forward without a little activation...</p>
   <p>To move forward - I need you to take a picture.</p>
   <p>A picture of the view from the hill.</p>
   <p>A view to dream from.</p>
+<br/>
+<p>If you would refer to record audio rather than take a picture, then capture a sound of the scene by clicking <div class="inline-link"><<link "here">><<goto "recordview">><</link>></div>.</p>
+
 </div>
 
 <div class="flex-col-left">
@@ -404,27 +891,472 @@ Which would you like to experience? </p>
   <input type="file" accept="image/*" capture="environment" id="inputImg" class="hide">
   
   <!-- Take Photo button -->
-  <button id="takePhotoBtn" class="tw-button">📸 Take Photo</button>
+  <button id="takePhotoBtn" class="tw-button">Take Photo</button>
   
 
   <!-- Save Photo button (initially hidden) -->
-  <button id="savePhotoBtn" class="tw-button hide">💾 Save Photo</button>
+  <button id="savePhotoBtn" class="tw-button hide">Save Photo</button>
 </div>
 
-<br>
 <div id="preview" class="hide">
   <p>Preview:</p>
   <img id="previewImg" src="" alt="Preview" style="max-width: 100%; border-radius: 8px;">
 </div>
 
-<br>
 <div id="error"></div>
+  <div class="btn-container" id="btnContainer">
+  <div class="hide" id="nextBtn"><<button "Next">><<goto "recordttrans">><</button>>
+  </div>
+  <<include "navbuttons">>
+            </div>
 
 </main> 
-<<include "footerupload">>
+
 
 <<done>>
   <<set $e to setup.takePicture()>><</done>>
+
+:: recordview [nobr]
+<<set $prevpass to "11_cameraembed">>
+<<set $pass to "recordview">>
+<<set $nextpass to "recordttrans">>
+<<audio ":all" 'stop'>>
+<<include "header">>
+<main>
+ 
+<p class="bold">Capture a sound of the scene.</p>
+
+
+<div id="mount">
+<<button "Start recording">>
+    <<replace "#mount">>
+     <<include "recordingtimer">>
+    <</replace>>
+    <</button>>
+    </div>
+   <div class="btn-container" id="btnContainer">
+            </div>
+
+<<timed 6s>>
+    <<replace "#btnContainer">>
+    <<button "I've finished recording">>
+            <<goto "recordttrans">>
+        <</button>>
+        <<include "navbuttons">>
+    <</replace>>
+<</timed>>
+</main>
+
+
+
+:: recordingtimer [nobr]
+<p><span id="countup">Recording... 0:00</span></p>
+<div id="finishButtonContainer" style="margin-top: 1em;"></div>
+
+<<set $seconds = 0>>
+
+<<silently>>
+	<<repeat 1s>>
+		<<set $seconds += 1>>
+		<<set _min to Math.floor($seconds / 60)>>
+		<<set _sec to $seconds % 60>>
+		<<replace "#countup">>
+			<p>
+			   Recording... 
+                <span class="secs">_min:<<if _sec lt 10>>0<</if>>_sec</span>
+			</p>
+		<</replace>>
+	<</repeat>>
+<</silently>>
+
+:: recordttrans [nobr]
+<<set $prevpass to "11_cameraembed">>
+<<set $pass to "recordttrans">>
+<<set $nextpass to "12_story">>
+
+<<if $withVoiceover is true>>    
+     <<audio "success3" "play">>
+<<else>>
+    <<audio "success3" "play">>
+<</if>>
+
+<main class="cards-selection">
+ <div class="info-container grid-item cards fadeIn3 success">
+  <div class="inline-img-container">
+    <div class="inline-img-wrapper ">
+     <img src="assets/img/cat.png" alt=""/>
+    </div>
+    </div>
+    </div>
+</main>
+
+
+ <<timed 5s>>
+ <<goto $nextpass>>
+<</timed>>
+
+:: 12_story [nobr]
+<<set $prevpass to "11_cameraembed">>
+<<set $pass to "12_story">>
+<<set $nextpass to "13_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 12_story-text-eng [nobr]
+<p class="bold">Diolch</p>
+<p>I can imagine you looking towards the view now - perhaps for the first time, perhaps not.</p>
+<p> But maybe this time, you’ve spotted something new  - something in this view you’ve never noticed before. </p>
+<br/>
+<p>It’s full of life. From the people in the town to the birds darting across the sky to the countless lives unseen beneath the ground. The community of Theatr Clwyd. </p>
+<div class="quote">
+  <p>‘Views absolutely amazing, aren't they? Yeah. Oh, gosh, we're very fortunate for that.’</p>
+  
+</div>
+<p>It is indeed Loz - Loz is the housekeeping lead here - has been for over 30 years. </p>
+
+<p>Ey up, something’s happening...</p>
+
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 12_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 13_story [nobr]
+<<set $prevpass to "12_story">>
+<<set $pass to "13_story">>
+<<set $nextpass to "14_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 13_story-text-eng [nobr]
+<p class="bold">Time to head to our next location. </p>
+
+<div class="quote"><p>“Come out of the theatre, go in the bar, and all the actors would then come back out into the bar, and you just hang around with them. And it's as if you've known most of them for all your life.”</p></div>
+
+<p>And we’re off to the bar ourselves - maybe you’ll spot someone like Phillip. </p>
+
+<p>
+  Head back towards the lift, and then just beyond it turn left. 
+  Make your way down the corridor and the bar should be on your left side. 
+</p>
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "We're at the bar">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 13_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 14_story [nobr]
+<<set $prevpass to "13_story">>
+<<set $pass to "14_story">>
+<<set $nextpass to "15_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 14_story-text-eng [nobr]
+<p class="bold">Aren’t the bar tiles beautiful? </p>
+<p>They were designed by Francesca Priest – one of the fabulous people commissioned to create new artworks when the theatre reopened in 2025.  Here she is...</p>
+
+<div class="quote"><p>“I was very struck by that view when I went to visit and just how inspiring it was and expansive it was, looking out over the valley and over to the hills. And so I just had this sort of idea that the glaze color would pull some of the sky into the space...” </p></div>
+
+
+<p>So she’s been inspired by the  beautiful view too – as well as the original bar tiles from the 1970s, and by the tiles in the  main Moondance theatre. </p>
+
+<p>That’s the thing about that view - yes it invites us to imagine. But we don’t leave what we imagined there, in the skies, we take it with us. The dream follows us back into the theatre - it shapes what we do. </p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 14_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 15_story [nobr]
+<<set $prevpass to "14_story">>
+<<set $pass to "15_story">>
+<<set $nextpass to "16_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 15_story-text-eng [nobr]
+<p class="bold">Theatr Clwyd’s bar is for everyone – staff, locals, people who’ve travelled far...
+ </p>
+
+<div class="quote"><p>“On my birthday, I went to see An Inspector Calls, and Tom Baker was the star in it.  </p></div>
+
+
+<p>Philip Jones from Mold! It’s you again. You met who here? Doctor Who! </p>
+
+<div class="quote"><p>“I went up to the bar, and I got my programme out, and I said, how much I thoroughly enjoyed it. And I say, it's me birthday today. And then this massive booming voice all over Happy Birthday, Philip. Would you like me to sign your program? Do you spell it with one L or two?”</p></div>
+
+<p>Feel free to have a pitstop and pick up a drink if you fancy one.When you are ready to move on click below and we’ll head off backstage! </p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Let’s get moving Phyl">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 15_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 16_story [nobr]
+<<set $prevpass to "15_story">>
+<<set $pass to "16_story">>
+<<set $nextpass to "17_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 16_story-text-eng [nobr]
+<p class="bold">Right, we are off to the old TV Studio. 
+ </p>
+<p>It’s transformed a few times since. if I remember correctly - let’s get going and find out. </p>
+
+<p>Opposite the bar is a door - it should say Stiwdio Anne Dwyrain/Stiwdio Anne East on it - scan your keycard on the door and open sesame! </p>
+
+
+
+<<timed $btnAppearTime>>
+    <<append  "#btnContainer" >>
+    <<button "We are through the door">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 16_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 17_story [nobr]
+<<set $prevpass to "15_story">>
+<<set $pass to "17_story">>
+<<set $nextpass to "18a_story">>
+<<audio ":all" "stop">>
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 17_story-text-eng [nobr]
+<p>What’s that noise? What’s going on here? </p>
+
+<p>Ah, it seems we need to activate the space to tune in. </p>
+
+<p>On the wall - what does the word in white say? Type it in. </p>
+<p>If you’d prefer, click here for me to read out an audible <div class="inline-link"><<link "clue">> <<removeclass "#clueMount" "hide">>
+  <<timed 0.1s>>
+    <<replace "#clueMount">><<type 60ms>>Playing clue...
+<</type>><</replace>><</timed>>
+<</link>></div>.</p>
+ <span class="clue hide" id="clueMount"></span>
+/*<i>A word beginning with Q meaning Shhhhhhh.</i></span> */
+<br/>
+<<include "pw17">>
+
+
+:: 17_story-text-cym [nobr]
+<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: pw17 [nobr]
+<div class="codeinput">
+    <<textbox "$codeword" "Type here">>
+    <br/><br/>
+    <<button "Enter">>
+      <<set $codeword to $codeword.toUpperCase().trim()>>
+      
+      /% CODEWORD CORRECT FOR CHATHAM STORIES%/
+      <<if $codeword isnot "" and $codeword is "QUIET">>
+        <<replace "#coderesult">><span>Correct!</span><</replace>>
+        /* <<audio "correct" play>> */
+
+        <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+
+
+      /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword isnot "QUIET" >>
+           /* <<audio "error" play>> */
+           <<replace "#coderesult">><span>Try again.</span><</replace>>
+         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+         <</if>>
+       
+    <</button>>
+  <br/> <br/>
+
+
+</div>
+    <br/>
+    <div id="coderesult"></div>
+
+:: 18a_story [nobr]
+<<set $prevpass to "17_story">>
+<<set $pass to "18a_story">>
+<<set $nextpass to "8_story">>
+<<audio ":all" "stop">>
+
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 18a_story-text-eng [nobr]
+<p class="bold">Wonderful - we’re in. </p>
+
+<p>Ok - something is processing on my end - I’m not sure when it will come through.</p>
+
+<p>We can’t get in but I can load up an image. Let me tell you all about it...</p>
+
+/* 360 Images loads and then  */
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+           <<include "navbuttons">>
+    <</append>>
+<</timed>>
+
+:: 18a_story-text-cym [nobr]
+
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
 :: footerupload [nobr]
 <footer id="footerField"><<button "Back">><<goto $prevpass>><</button>>
 </footer>
