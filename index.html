@@ -892,9 +892,9 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;12_story&quot;&gt;&gt;
 
 &lt;&lt;if $withVoiceover is true&gt;&gt;    
-     &lt;&lt;audio &quot;success3&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;audio &quot;success3&quot; &quot;play&quot;&gt;&gt;
+    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;main class=&quot;cards-selection&quot;&gt;
@@ -1172,7 +1172,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
     &lt;br/&gt;
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="18a_story" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;17_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;18a_story&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;19_story&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;20_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1206,7 +1206,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="18b_story" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $prevpass to &quot;17_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;18b_story&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;19_story&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;20_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1360,10 +1360,12 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
     &lt;p&gt;Ffabalam video AND/OR digital photos from the Archives. &lt;/p&gt; 
+     &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
         &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
         &lt;&lt;/button&gt;&gt;
-       &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
+       &lt;&lt;include &quot;navbuttons&quot;&gt;&gt;
+        &lt;/div&gt;
 &lt;/main&gt;
 /* &lt;&lt;timed $btnAppearTime&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt; */

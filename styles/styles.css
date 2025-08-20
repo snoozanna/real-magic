@@ -611,3 +611,38 @@ color: black;
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
 }
+
+
+/* JUST PHONE  */
+/* By default: hide story and show overlay */
+main, header {
+  display: none 
+}
+
+main::before{
+  content: "Please open this story on a phone.";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9); /* dark background */
+  color: #fff;                    /* white text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  z-index: 9999;
+}
+
+/* On phones: show story, remove overlay */
+@media screen and (max-width: 767px) {
+  main, header {
+    display: block;
+  }
+  main::before {
+    content: none;
+  }
+}

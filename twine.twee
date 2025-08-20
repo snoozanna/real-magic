@@ -975,9 +975,9 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<set $nextpass to "12_story">>
 
 <<if $withVoiceover is true>>    
-     <<audio "success3" "play">>
+     <<audio "success" "play">>
 <<else>>
-    <<audio "success3" "play">>
+    <<audio "success" "play">>
 <</if>>
 
 <main class="cards-selection">
@@ -1316,7 +1316,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 :: 18a_story [nobr]
 <<set $prevpass to "17_story">>
 <<set $pass to "18a_story">>
-<<set $nextpass to "19_story">>
+<<set $nextpass to "20_story">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
@@ -1360,7 +1360,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 :: 18b_story [nobr]
 <<set $prevpass to "17_story">>
 <<set $pass to "18b_story">>
-<<set $nextpass to "19_story">>
+<<set $nextpass to "20_story">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
@@ -1555,10 +1555,12 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<include "header">>
 <main>
     <p>Ffabalam video AND/OR digital photos from the Archives. </p> 
+     <div class="btn-container" id="btnContainer">
         <<button "Next">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+       <<include "navbuttons">>
+        </div>
 </main>
 /* <<timed $btnAppearTime>>
     <<append "#btnContainer">> */
