@@ -155,7 +155,8 @@ button:hover, button:focus, button:active {
   gap:1rem
 }
 
-.nav-btn-container > button{
+.nav-btn-container > button, 
+.button-wrapper.secondary > button{
   background: var(--white);
   color: var(--black);
 }
@@ -227,7 +228,8 @@ header.standard{
   display: flex;
   justify-content: space-between;
   color: var(--black);
-  text-align: right
+  text-align: right;
+  z-index: 999;
 }
 
 header.standard> .title-wrapper > h1{
@@ -421,6 +423,8 @@ font-size: 35px;
   opacity: 0;
 }
 
+/* ANIMATION  */
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -440,6 +444,20 @@ font-size: 35px;
 .fadeIn3{
   animation: fadeIn 6s;
  }
+/* ANIMATION  */
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px var(--yellow);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
 
 
  /* Landing  */
@@ -482,7 +500,9 @@ background-color: var(--black);
  .quote p{
   font-weight: 600;
  }
-
+ .quote p:last-child{
+  margin-block-end: 0
+ }
 /* AVATAR */
 
 .avatar{
@@ -494,4 +514,100 @@ background-color: var(--black);
 #takePhotoBtn:hover, html[data-outlines] #takePhotoBtn:hover:focus{
 background-color: var(--purple);
 color: black;
+}
+
+/* MAP  */
+
+.map-container {
+  position: relative;
+  width: fit-content;
+  margin-block-end: 2rem;
+}
+
+
+
+.story-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  z-index: 10;
+}
+
+.story-dot.red-dot {
+  background-color: #e53e3e;
+  animation: subtle-pulse 2s infinite;
+}
+
+.story-dot.green-dot {
+  background-color: #38a169;
+}
+
+.story-dot.pulse-dot {
+  animation: strong-pulse 0.5s infinite;
+}
+
+/* Button positioning over dots */
+.story-dot + button {
+  position: absolute !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  z-index: 20;
+  margin: -2px;
+}
+
+/* Dot positions */
+.story-dot.one {
+  left: 46%;
+  top: 5%;
+}
+
+.story-dot.two {
+  left: 46%;
+  top: 13%;
+}
+
+.story-dot.three {
+  left: 50%;
+  top: 50%;
+}
+
+.story-dot.four {
+  left: 47%;
+  bottom: 5%;
+}
+
+.story-text {
+  margin-block-start: 1rem;
+}
+
+.story-display {
+  background-color: rgba(66, 54, 49, 0.9);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: solid white 2px;
+  color: white;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.story-display p {
+  margin: 0;
+}
+
+/* Animations */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+@keyframes strong-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
