@@ -247,7 +247,7 @@ setup.addPlaceholder = () => {
 
 
 :: headerlanding[nobr]
-<header class="standard">
+<header class="standard scrollable">
  <div class="logo-wrapper">
    <img src="../assets/img/Theatr_Clwyd_Logo_Maroon.png"/>
    </div>
@@ -922,7 +922,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 <div id="error"></div>
   <div class="btn-container mar-2" id="btnContainer">
- <<button "Next">><<goto "recordttrans">><</button>>
+ <<button "Next">><<goto "completed">><</button>>
 </div>
   <div class="btn-container">
   <<include "navbuttons">>
@@ -937,7 +937,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 :: recordview [nobr]
 <<set $prevpass to "11_cameraembed">>
 <<set $pass to "recordview">>
-<<set $nextpass to "recordttrans">>
+<<set $nextpass to "12_story">>
 <<audio ":all" 'stop'>>
 <<include "header">>
 <main>
@@ -958,7 +958,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<timed 6s>>
     <<replace "#btnContainer">>
     <<button "I've finished recording">>
-            <<goto "recordttrans">>
+            <<goto "completed">>
         <</button>>
         <<include "navbuttons">>
     <</replace>>
@@ -987,38 +987,6 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 	<</repeat>>
 <</silently>>
 
-:: recordttrans [nobr]
-<<set $prevpass to "11_cameraembed">>
-<<set $pass to "recordttrans">>
-<<set $nextpass to "12_story">>
-
-<<timed 3s>>
-<<if $withVoiceover is true>>    
-     <<audio "success" "play">>
-<<else>>
-    <<audio "success" "play">>
-<</if>>
-<</timed>>
-
-
-<<include "headerlanding">>
-<main class="landing flex-col-cen">
-   <h1>Real Magic | Hud go iawn</h1>
- <div class="inline-accented-img">
-   <div class="inline-img-wrapper">
-     <img src="../assets/img/leadImage.png"/>
-     </div>
- </div>
- <div class=" fadeIn3 success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
-</div>
-
-</main>
-
- <<timed 5s>>
- <<goto $nextpass>>
-<</timed>>
 
 :: simpletrans [nobr]
  <div class=" fadeIn3 success info-container">
