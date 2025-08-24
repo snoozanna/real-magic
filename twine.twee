@@ -172,7 +172,13 @@ setup.addPlaceholder = () => {
 
 :: StoryInit
 <<cacheaudio "success" "assets/sound/uploadcomplete.mp3">>
-
+<script>
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = "assets/img/leadImage.png";
+    document.head.appendChild(link);
+</script>
 
 
 
@@ -383,19 +389,20 @@ setup.addPlaceholder = () => {
 <<set $pass to "heritagelogo">>
 <<set $nextpass to "2_welcome">>
 <<include "headerlanding">>
+<<addclass "body" "maroon">>
 <main class="landing flex-col-cen">
    <h1>Real Magic | Hud go iawn</h1>
  <div class="inline-accented-img">
 
 
    <div class="inline-img-wrapper">
-     <img src="../assets/img/leadImage.png"/>
+     <img src="../assets/img/leadImage.png" alt="Lead Image"/>
      </div>
  </div>
    <h2>Heritage Trail | Llwybr Treftadaeth</h2>
    
 </main>
-<<timed 3s>>
+<<timed 5s>>
     <<goto $nextpass>>
     <</timed>>
 

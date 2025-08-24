@@ -253,7 +253,14 @@ setup.addPlaceholder = () => {
         textbox.setAttribute("placeholder", "Type here");
     }
 
-}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;success&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header class=&quot;standard&quot;&gt;
+}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;success&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
+&lt;script&gt;
+    const link = document.createElement(&quot;link&quot;);
+    link.rel = &quot;preload&quot;;
+    link.as = &quot;image&quot;;
+    link.href = &quot;assets/img/leadImage.png&quot;;
+    document.head.appendChild(link);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header class=&quot;standard&quot;&gt;
  &lt;div class=&quot;logo-wrapper&quot;&gt;
    &lt;img src=&quot;../assets/img/Theatr_Clwyd_Logo_Maroon.png&quot;/&gt;
    &lt;/div&gt;
@@ -406,19 +413,20 @@ setup.addPlaceholder = () => {
 &lt;&lt;set $pass to &quot;heritagelogo&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
    &lt;h1&gt;Real Magic | Hud go iawn&lt;/h1&gt;
  &lt;div class=&quot;inline-accented-img&quot;&gt;
 
 
    &lt;div class=&quot;inline-img-wrapper&quot;&gt;
-     &lt;img src=&quot;../assets/img/leadImage.png&quot;/&gt;
+     &lt;img src=&quot;../assets/img/leadImage.png&quot; alt=&quot;Lead Image&quot;/&gt;
      &lt;/div&gt;
  &lt;/div&gt;
    &lt;h2&gt;Heritage Trail | Llwybr Treftadaeth&lt;/h2&gt;
    
 &lt;/main&gt;
-&lt;&lt;timed 3s&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;goto $nextpass&gt;&gt;
     &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="_templateStory" tags="nobr" position="600,225" size="100,100">&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
