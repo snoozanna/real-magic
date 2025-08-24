@@ -1354,7 +1354,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<set $codeword to "">>  /* ensure it's blank so the placeholder shows */
 
 <div class="codeinput">
-  <<textbox "$codeword" "" autofocus>>
+  <<textbox "$codeword" "">>
 
   <div class="input-btn">
   <<button "Enter">>
@@ -1989,7 +1989,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: pw31 [nobr]
 <div class="codeinput">
-    <<textbox "$codeword" "" autofocus>>
+    <<textbox "$codeword" "">>
     <br/><br/>
     <<button "Enter">>
       <<set $codeword to $codeword.toUpperCase().trim()>>
@@ -2711,7 +2711,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: pw47 [nobr]
 <div class="codeinput">
-    <<textbox "$codeword" "" autofocus>>
+    <<textbox "$codeword" "">>
     <br/><br/>
     <<button "Enter">>
       <<set $codeword to $codeword.toUpperCase().trim()>>
