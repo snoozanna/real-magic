@@ -198,6 +198,40 @@ button:focus,
   transform: translate(2px, 2px);
 }
 
+/* icon buttons in footer  */
+
+.footer-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem;
+  background: var(--greyblue);
+}
+
+.footer-icons > button {
+  background-color: transparent;
+  justify-self: center; 
+}
+
+.footer-icons > button > img {
+  width: 3rem;
+}
+
+body.maroon .footer-icons > button {
+  background: transparent;
+  color: black;
+}
+
+body.maroon .footer-icons {
+  background: transparent;
+  color: black;
+}
+
+
 a {
   color: var(--accent-color-secondary);
 }
@@ -647,12 +681,53 @@ opacity: 1;
  .inline-accented-img::before{
    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--purple); transform: rotate(-5deg) translate(-1px, -1px); z-index: -1; animation: lockin-bg 0.8s ease-out forwards; } 
  
- .inline-accented-img > .inline-img-wrapper{
-   background-color: var(--black); } 
-   
-.inline-accented-img > .inline-img-wrapper img {
-   display: block;  }
+   .inline-img-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-block-end: 5rem;
+    margin-block-start: 5rem;
+  }
 
+  .inline-img-wrapper img{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  .inline-img-wrapper img:first-child {
+    position: relative;
+    animation:none;
+    width: 100%;
+    height: auto;
+  }
+
+  .inline-img-wrapper img:last-child{
+    animation: fade2 4s forwards;
+  }
+
+  .inline-img-wrapper.final img:last-child{
+    animation: none;
+  }
+
+  .inline-img-wrapper.final img.six{
+    animation: fade2 2s forwards;
+  }
+
+  .inline-img-wrapper.final img.seven{
+    animation: fade2 4s forwards;
+  }
+
+ 
+  
+
+
+
+  
+  @keyframes fade2 {
+    0%, 40% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+  }
 
 /* VIDEO VERSION - Updated for iframe compatibility */
 .inline-accented-vid { 
@@ -674,11 +749,6 @@ opacity: 1;
   z-index: -1;  
 } 
 
-/* Updated to target the vimeo-container div instead of inline-vid-wrapper */
-.inline-accented-vid > .vimeo-container {
-  background-color: var(--black); 
-  position: relative; /* Maintain positioning context */
-} 
 
 /* Target iframe instead of img */
 .inline-accented-vid > .vimeo-container iframe {
@@ -686,10 +756,6 @@ opacity: 1;
   border: none; /* Remove any default iframe border */
 }
 
-/* Alternative approach - if you want to target any container div */
-.inline-accented-vid > div {
-  background-color: var(--black); 
-}
 
 /* Alternative approach - if you want to target iframe directly */
 .inline-accented-vid iframe {
@@ -731,8 +797,9 @@ color: black;
 
 .map-container {
   position: relative;
-  width: fit-content;
+  width: 50%;
   margin-block-end: 2rem;
+  margin: auto;
 }
 
 
@@ -775,7 +842,7 @@ color: black;
 
 /* Dot positions */
 .story-dot.one {
-  left: 48%;
+  left: 43%;
   top: 0%;
 }
 
