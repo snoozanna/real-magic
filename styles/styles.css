@@ -161,7 +161,7 @@ flex-direction: column;
 button,
 .inline-btn-wrapper > a {
   font-family: var(--font-headings);
-  padding: 5px;
+  padding: 0.8rem;
   font-size: 1.8rem;
   background: var(--maroon);
   color: white;
@@ -182,8 +182,16 @@ button:hover, button:focus, button:active {
   gap:1rem
 }
 
+.btn-container > .white{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-btn-container > button, 
-.button-wrapper.secondary > button{
+.button-wrapper.secondary > button, 
+.btn-container > .white > button{
   background: var(--white);
   color: var(--black);
 }
@@ -334,7 +342,7 @@ header.standard.scrollable{
   position: initial
 }
 
-@media screen and (orientation: landscape) and (max-height: 500px) {
+@media screen and (orientation: landscape) and (max-height: 800px) {
   header.standard{
   position: fixed; /* Change to fixed positioning */
   top: -100%; /* Move up */
@@ -413,9 +421,9 @@ h3{
 font-size: 2.2rem;
 }
 p{
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin-block-end: 1.5rem;
-  line-height: 2.2rem;
+  line-height: 2.4rem;
   font-weight: 400;
   letter-spacing: -0.03rem;
 }
@@ -531,26 +539,6 @@ font-size: 35px;
   max-width: 30rem;
 }
 
-
-
-
-/* TABLET / DESKTOP */
-
-@media screen and (min-width: 700px) {
-  .passage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  main{
-    max-width: 1000px;
-    margin-block-start: 4rem;
-  }
-
- 
-}
 
 /* PROCESSSING / SUCCESS  */
 
@@ -947,3 +935,79 @@ footer.map > div > button{
     content: none;
   }
 } */
+
+
+/* TABLET / DESKTOP */
+
+@media screen and (min-width: 700px) {
+  .passage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header{
+    padding:3rem
+  }
+
+  main{
+    max-width: 1000px;
+    margin-block-start: 4rem;
+    padding: 1rem 6rem;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+
+  button,
+  .inline-btn-wrapper > a {
+    width: 50%;
+    font-size: 2rem;
+  }
+
+  .btn-container, .button-wrapper {
+    align-items: center;
+}
+
+  main.landing.flex-col-cen{
+    gap:3rem
+  }
+
+  header.standard> .logo-wrapper {
+    max-width: 20%;
+}
+header.standard> .title-wrapper > h1 {
+  font-size: clamp(1rem, 3.5vw, 6rem);
+}
+header.standard> .title-wrapper > h2 {
+  font-size: clamp(1rem, 2.5vw, 6rem);
+ font-weight: 400;
+ 
+}
+.footer-icons {
+padding: 3rem
+}
+.footer-icons > a > img {
+  width: 3rem;
+}
+
+.codeinput{
+  justify-content: flex-start;
+  gap:2rem
+}
+
+.codeinput > .input-btn > button{
+  width: 100%;
+}
+input[type="text"]{
+font-size: 2rem;
+}
+
+input[type="text"]::placeholder{
+
+  /* font-size: 3rem; */
+}
+}

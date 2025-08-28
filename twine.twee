@@ -473,7 +473,7 @@ setup.addPlaceholder = () => {
 
 :: 2_welcome-text-eng [nobr]
 <p class="bold">Well, hello. Shw’mae! Welcome</p>
-
+<<goto "completed2">>
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for years. </p>
 
 <p>I’ve been in plays like Under Milk Wood. </p>
@@ -1152,7 +1152,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 </main>
 
  <<timed 5s>>
- <<goto $nextpass>>
+ /* <<goto $nextpass>> */
 <</timed>>
 
 :: completed3 [nobr]
@@ -1862,7 +1862,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
         <<button "Next">>
             <<goto "completed2">>
         <</button>>
-        <<include "navbuttons">>
+        <<include "navbuttonsb">>
     </div>
 </main>
 
@@ -2712,7 +2712,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
            
         
         <div class="story-text" id="storyText"></div>
-         <div class="button-wrapper" id="btnContainer">
+         <div class="button-wrapper btn-container" id="btnContainer">
             <<include "button1">>
             </div>
     </main>
@@ -3169,13 +3169,12 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
     <<button "I've recorded">>
             <<goto $nextpass>>
         <</button>>
-    <div class="nav-btn-container btn-container">
-
- <<button "Skip">>
-     <<goto $nextpass>>
-<</button>>
-   
-</div>
+        <div class="white">
+             <<button "Skip">>
+         <<goto $nextpass>>
+    <</button>>
+        </div>
+ 
     <</append>>
 <</timed>>
 <<include "navbuttonsb">>
