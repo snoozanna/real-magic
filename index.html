@@ -278,18 +278,18 @@ setup.addPlaceholder = () => {
 
    
 &lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="navbuttons" tags="nobr" position="475,100" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
-&lt;&lt;button [img[assets/img/back-sharp.png][$prevpass]]&gt;&gt;
-    &lt;&lt;/button&gt;&gt;
-    &lt;&lt;button [img[assets/img/replay-sharp.png][$pass]]&gt;&gt;
-    &lt;&lt;/button&gt;&gt;
+&lt;&lt;link [img[assets/img/back-sharp.png][$prevpass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+    &lt;&lt;link [img[assets/img/replay-sharp.png][$pass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
     
 &lt;div&gt;&lt;div/&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="navbuttonsb" tags="nobr" position="600,100" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
-&lt;&lt;button [img[assets/img/back-sharp-b.png][$prevpass]]&gt;&gt;
-    &lt;&lt;/button&gt;&gt;
-    &lt;&lt;button [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
-    &lt;&lt;/button&gt;&gt;
+&lt;&lt;link [img[assets/img/back-sharp-b.png][$prevpass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+    &lt;&lt;link [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
     
 &lt;div&gt;&lt;div/&gt;
 
@@ -343,12 +343,12 @@ setup.addPlaceholder = () => {
  /* &lt;div class=&quot;inline-accented-img&quot;&gt; */
 
 
-   &lt;div class=&quot;inline-img-wrapper&quot;&gt;
+   /* &lt;div class=&quot;inline-img-wrapper&quot;&gt;
      &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
-     &lt;/div&gt;
+     &lt;/div&gt; */
  /* &lt;/div&gt; */
    &lt;h2&gt;Heritage Trail | Llwybr Treftadaeth&lt;/h2&gt;
-&lt;&lt;button &quot;Enter&quot;&gt;&gt;
+&lt;&lt;button &quot;Start&quot;&gt;&gt;
     &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt;
    
@@ -357,7 +357,7 @@ setup.addPlaceholder = () => {
 /* &lt;&lt;include &quot;wallet&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="11" name="_templateIntro" tags="nobr" position="100,225" size="100,100">&lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
-    &lt;div id=&quot;msgMount&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;msgMount&quot;&gt;
         &lt;&lt;if $pass&gt;&gt;
             &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
              &lt;&lt;set $uniqueContent to $pass+&quot;-text-cym&quot;&gt;&gt;
@@ -370,6 +370,7 @@ setup.addPlaceholder = () => {
         &lt;&lt;else&gt;&gt;
             No content provided.
         &lt;&lt;/if&gt;&gt;
+        &lt;/div&gt;
   
 &lt;/main&gt; 
 &lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="languageChoice" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
@@ -446,34 +447,35 @@ setup.addPlaceholder = () => {
    &lt;h2&gt;Heritage Trail | Llwybr Treftadaeth&lt;/h2&gt;
    
 &lt;/main&gt;
-&lt;&lt;timed 5s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
     &lt;&lt;goto $nextpass&gt;&gt;
     &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="_templateStory" tags="nobr" position="850,225" size="100,100">&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
 /* &lt;div id=&quot;avatar&quot; class=&quot;avatar&quot;&gt;
  &lt;img src=&quot;../assets/img/Theatr_Clwyd_Logo_Maroon.png&quot;/&gt;
  &lt;/div&gt; */
-    &lt;div id=&quot;msgMount&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
         &lt;&lt;if $pass&gt;&gt;
             &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
              &lt;&lt;set $uniqueContent to $pass+&quot;-text-cym&quot;&gt;&gt;
          &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
              &lt;&lt;set $uniqueContent to $pass+&quot;-text-eng&quot;&gt;&gt;
             &lt;&lt;/if&gt;&gt;
+            &lt;&lt;silently&gt;&gt;
             &lt;&lt;timed 0.1s&gt;&gt;
             &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
               &lt;&lt;include $uniqueContent&gt;&gt;
               &lt;&lt;/append&gt;&gt;
               &lt;&lt;/timed&gt;&gt;
-            
+            &lt;&lt;/silently&gt;&gt;
                &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
             &lt;/div&gt;
         &lt;&lt;else&gt;&gt;
             No content provided.
         &lt;&lt;/if&gt;&gt;
-  
+
 &lt;/main&gt;
-&lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="2_welcome" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="2_welcome" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3_welcome&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -982,7 +984,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="completed1" tags="nobr" position="100,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
     &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-
+/* &lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt; */
 &lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 

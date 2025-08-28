@@ -212,10 +212,10 @@ setup.addPlaceholder = () => {
 :: navbuttons[nobr]
 
 <div class="footer-icons">
-<<button [img[assets/img/back-sharp.png][$prevpass]]>>
-    <</button>>
-    <<button [img[assets/img/replay-sharp.png][$pass]]>>
-    <</button>>
+<<link [img[assets/img/back-sharp.png][$prevpass]]>>
+    <</link>>
+    <<link [img[assets/img/replay-sharp.png][$pass]]>>
+    <</link>>
     
 <div><div/>
 
@@ -224,10 +224,10 @@ setup.addPlaceholder = () => {
 :: navbuttonsb[nobr]
 
 <div class="footer-icons">
-<<button [img[assets/img/back-sharp-b.png][$prevpass]]>>
-    <</button>>
-    <<button [img[assets/img/replay-sharp-b.png][$pass]]>>
-    <</button>>
+<<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
+    <</link>>
+    <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
+    <</link>>
     
 <div><div/>
 
@@ -304,12 +304,12 @@ setup.addPlaceholder = () => {
  /* <div class="inline-accented-img"> */
 
 
-   <div class="inline-img-wrapper">
+   /* <div class="inline-img-wrapper">
      <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
-     </div>
+     </div> */
  /* </div> */
    <h2>Heritage Trail | Llwybr Treftadaeth</h2>
-<<button "Enter">>
+<<button "Start">>
     <<goto $nextpass>>
 <</button>>
    
@@ -321,7 +321,7 @@ setup.addPlaceholder = () => {
 <<addclass "body" "maroon">>
 <<include "header">>
 <main>
-    <div id="msgMount"></div>
+    <div id="msgMount">
         <<if $pass>>
             <<if $userchoices.language is "cymraeg">>
              <<set $uniqueContent to $pass+"-text-cym">>
@@ -334,6 +334,7 @@ setup.addPlaceholder = () => {
         <<else>>
             No content provided.
         <</if>>
+        </div>
   
 </main> 
 <<include "navbuttons">>
@@ -430,37 +431,38 @@ setup.addPlaceholder = () => {
    <h2>Heritage Trail | Llwybr Treftadaeth</h2>
    
 </main>
-<<timed 5s>>
+<<timed 7s>>
     <<goto $nextpass>>
     <</timed>>
 
-:: _templateStory[nobr]
+:: _templateStory [nobr]
 <<include "header">>
 <main>
 /* <div id="avatar" class="avatar">
  <img src="../assets/img/Theatr_Clwyd_Logo_Maroon.png"/>
  </div> */
-    <div id="msgMount"></div>
+    <div id="msgMount"> </div>
         <<if $pass>>
             <<if $userchoices.language is "cymraeg">>
              <<set $uniqueContent to $pass+"-text-cym">>
          <<elseif $userchoices.language is "english" >>
              <<set $uniqueContent to $pass+"-text-eng">>
             <</if>>
+            <<silently>>
             <<timed 0.1s>>
             <<append "#msgMount">>
               <<include $uniqueContent>>
               <</append>>
               <</timed>>
-            
+            <</silently>>
                <div class="btn-container" id="btnContainer">
             </div>
         <<else>>
             No content provided.
         <</if>>
-  
+
 </main>
-<<include "navbuttons">>
+<<include "navbuttonsb">>
 :: 2_welcome [nobr]
 <<set $prevpass to "intro1">>
 <<set $pass to "2_welcome">>
@@ -1081,7 +1083,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<timed 3s>>
     <<audio "success" "play">>
 <</timed>>
-
+/* <<addclass "body" "maroon">> */
 <<include "headerlanding">>
 <main class="landing flex-col-cen">
 
