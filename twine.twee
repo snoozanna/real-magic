@@ -229,7 +229,7 @@ setup.addPlaceholder = () => {
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
     
-<div><div/>
+<div id="processingMount"></div>
 
 </div>
 
@@ -417,21 +417,21 @@ setup.addPlaceholder = () => {
 <<set $prevpass to "intro1">>
 <<set $pass to "heritagelogo">>
 <<set $nextpass to "2_welcome">>
-<<include "headerlanding">>
-<<addclass "body" "maroon">>
+<<include "header">>
 <main class="landing flex-col-cen">
-   <h1>Real Magic | Hud go iawn</h1>
- /* <div class="inline-accented-img"> */
 
-
-   <div class="inline-img-wrapper">
-      <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
+   <div class="inline-img-wrapper-start lead">
+       <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
+           
      </div>
- /* </div> */
-   <h2>Heritage Trail | Llwybr Treftadaeth</h2>
-   
+
+ /* <div class="success info-container">
+<img src="assets/img/processing.png" alt="processing" class="processing"/>
+<img src="assets/img/complete.png" alt="complete" class="complete"/>
+</div> */
+
 </main>
-<<timed 7s>>
+<<timed 5s>>
     <<goto $nextpass>>
     <</timed>>
 
@@ -628,24 +628,47 @@ setup.addPlaceholder = () => {
 <<include "_templateStory">>
 
 :: 5_story-text-eng [nobr]
-<<timed 1s>>
+<<timed 0.1s>>
     <<if $userchoices.audioOn is true>>
         <div id="audioMount">
         <audio src="assets/audio/5_Patric_Gilchrist_levelled.mp3" autoplay>Audio not supported in your browser</audio>
     </div><</if>>
     <</timed>>
+<div  id="mount">
+<<timed 0.1s>>
+    <<replace "#mount">>
 <div class="quote">
-<p>“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of…how he achieved Theatr Clwyd, against all the odds.”</p>
-<p>“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of hill, this civic site. A symbol of confidence, of intent...”</p>
-<p>“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill …there was nothing to constrain the size or the architectural design of the theatre.” </p></div>
+<p>“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of... how he achieved Theatr Clwyd, against all the odds.”</p></div>
+<</replace>>
+<</timed>>
+<<timed 12s>>
+ <<replace "#mount">>
+    <div class="quote">
+<p>“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of the hill, of this civic site. A symbol of confidence, of intent...”</p>
+</div>
+<</replace>>
+<</timed>>
+<<timed 37s>>
+     <<replace "#mount">>
+<div class="quote">
+<p>“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” </p>
+</div>
+<</replace>>
+<</timed>>
+</div>
+<div id="mount"></div>
+
+<<timed 59s>>
+    <<replace "#mount">>
 <p class="bold">
 Haydn Rees is a Theatr Clwyd legend. </p>
 <p>A county council boss who visited arts centres across Europe with his team in the late 1960s. He returned determined to build an even more brilliant one for the people of Mold.</p> 
 
 <p>Without Haydn Rees there would be no story of Theatr Clwyd to tell - so it really is the best place to start. </p>
+<</replace>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 63s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1059,7 +1082,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 
-<<include "headerlanding">>
+<<include "header">>
 <main class="landing flex-col-cen">
    <h1>Real Magic | Hud go iawn</h1>
  <div class="inline-accented-img">
@@ -1084,7 +1107,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
     <<audio "success" "play">>
 <</timed>>
 /* <<addclass "body" "maroon">> */
-<<include "headerlanding">>
+<<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper lead">
@@ -1111,7 +1134,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 
-<<include "headerlanding">>
+<<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper lead">
@@ -1139,7 +1162,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 
-<<include "headerlanding">>
+<<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper lead">
@@ -1167,7 +1190,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 
-<<include "headerlanding">>
+<<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper lead">
@@ -1196,7 +1219,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 
-<<include "headerlanding">>
+<<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper final lead">
@@ -1546,7 +1569,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<include "_templateStory">>
 
 :: 18a_story-text-eng [nobr]
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 <p class="bold">Wonderful - we’re in. </p>
 
 
@@ -1592,7 +1619,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<include "_templateStory">>
 
 :: 18b_story-text-eng [nobr]
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 <p class="bold">Wonderful - we’re in. </p>
 
 
@@ -1639,7 +1670,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: 20_story-text-eng [nobr]
 
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 <div class="quote"><p>"I do think people wondered why there's this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come."</p></div>
 <p class="bold">That’s Christine Langton – wife of the late Maurice Langton, who got the job to design and manage where you are now in 1975, and this is Theatr Clwyd’s old TV studio. </p>
 <p>It’s a huge, soundproofed room, with very high ceilings. Hanging from the ceiling is the lighting grid, which still has many of the old numbers and details. The bars are boxy and dark grey and I can imagine heavy lights hanging from them, filling the room with a strange buzz.  </p>
@@ -1662,7 +1697,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 :: 20_story-text-cym [nobr]
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 <div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
 <p class="bold">
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1690,7 +1729,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<include "_templateStory">>
 
 :: 21_story-text-eng [nobr]
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 
 <p>Then it became Studio 2 – a home in North Wales for two TV channels that mean a lot to Welsh people – HTV and S4C. </p>
 
@@ -1710,7 +1753,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 :: 21_story-text-cym [nobr]
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 <div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
 <p class="bold">
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1738,13 +1785,17 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<include "_templateStory">>
 
 :: 22_story-text-eng [nobr]
-<div id="processingMount">  <<include "processing">></div>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
 
 <div class="quote"><p>"I've got good memories of creative engagement and the absolutely amazing work that they do with the children for the community... </p>
 <p>And it was beautiful, beautiful to see... what this theatre does for these children, it's amazing. Money can't buy that. To see the enjoyment on them faces that each and every one of them had and loved it."</p></div>
 
 <p>Thanks Loz. When HTV left in the 2990s, this space didn’t die. It transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme by schools called TYP - Theatre for Young People. That’s what I know this room as mostly - many hours practicing lines, dance numbers, quick costume changes...</p>
-<br/>
+
 <<timed 7s>>
     <<audio "notification" "play">>
     <<replace "#processingMount">>
@@ -1889,7 +1940,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 <p>Head to the lift and when inside click Level 2. </p>
 <p>You can take the stairs if you’d prefer. </p>
-<p>Just let me know when you are there</p>
+<p>Just let me know when you are there.</p>
 
 
 <<timed $btnAppearTime>>
@@ -2155,8 +2206,8 @@ Haydn Rees is a Theatr Clwyd legend. </p>
     <<button "Enter">>
       <<set $codeword to $codeword.toUpperCase().trim()>>
       
-      /% CODEWORD CORRECT FOR CHATHAM STORIES%/
-      <<if $codeword isnot "" and $codeword is "4">>
+      /% CODEWORD CORRECT%/
+      <<if $codeword is "4" or $codeword is "FOUR">>
         <<replace "#coderesult">><span>Correct!</span><</replace>>
         /* <<audio "correct" play>> */
 
@@ -2165,7 +2216,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 
       /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword isnot "4" >>
+       <<if $codeword isnot "" and $codeword isnot "4" and $codeword isnot "FOUR">>
            /* <<audio "error" play>> */
            <<replace "#coderesult">><span>Try again.</span><</replace>>
          <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
@@ -2661,6 +2712,9 @@ Haydn Rees is a Theatr Clwyd legend. </p>
            
         
         <div class="story-text" id="storyText"></div>
+         <div class="button-wrapper" id="btnContainer">
+            <<include "button1">>
+            </div>
     </main>
     
     <<include "footer_floorplan">>
@@ -2668,7 +2722,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: button1 [nobr]
 <<button "Listen">>
-    <<addclass "#btnContainer" "purple">>
+   
      <<addclass ".dot1" "story-dot green-dot pulse-dot">>
     <<replace "#btnContainer">><</replace>>
     <<replace "#storyText">><</replace>>
@@ -2692,7 +2746,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: button1a [nobr]
 <<button "Next">>
-    <<addclass "#btnContainer" "purple">>
+   
       <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
       <<replace "#storyText">><</replace>>
        <<replace "#btnContainer">><</replace>>
@@ -2716,7 +2770,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: button2[nobr]
 <<button "Next">>
-    <<addclass "#btnContainer" "purple">>
+   
        <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
     <<replace "#btnContainer">><</replace>>
     <<replace "#storyText">><</replace>>
@@ -2739,7 +2793,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
  <</button>>
 :: button3 [nobr]
 <<button "Next">>
-    <<addclass "#btnContainer" "purple">>
+   
       <<replace "#btnContainer">><</replace>>
       <<removeclass ".dot2" "green-dot pulse-dot story-dot">>
     <<replace "#storyText">><</replace>>
@@ -2762,7 +2816,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: button4 [nobr]
 <<button "Next">>
-    <<addclass "#btnContainer" "purple">>
+   
       <<removeclass ".dot3" "green-dot pulse-dot story-dot">>
     <<replace "#storyText">><</replace>>
     <<replace "#btnContainer">><</replace>>
@@ -2778,7 +2832,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
     <<timed 5s>>
         <<set $currentDot to 4>>
          <<replace "#btnContainer">>
-            <<addclass "#btnContainer" "purple">>
+ 
             <<button "Finish">>
                 <<goto $nextpass>>
                 <</button>>
@@ -2788,17 +2842,16 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 
 :: footer_floorplan [nobr]
-<footer class="map">
-    <div id="back" class="button-wrapper secondary">
-        <<button "Back">> 
-            <<goto $prevpass>>
-        <</button>>
-    </div>
-    <div class="button-wrapper" id="btnContainer">
-            <<include "button1">>
-            </div>
 
-</footer>
+   <div class="footer-icons">
+<<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
+    <</link>>
+   
+    <div><div/>
+<div><div/>
+
+</div>
+
 
 :: 42_floorplan_story [nobr]
 <p class="bold">Onstage, there are lights above and the audience below, with the world of the play alive all around you.  </p>
@@ -3094,6 +3147,7 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
 <<audio ":all" "stop">>
 <<include "header">>
 <main>
+    <div id="msgMount"> 
    <p class="bold">We’ve heard lots of members of the Theatr Clwyd community. </p>
 <p>There are many more you can find in the over sixty-five interviews with locals, staff, participants, actors, community members, directors and designers in the online North East Wales Archives</p>
 <p>But would you like to add something? </p>
@@ -3103,6 +3157,7 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
 
 <p>Just press record and you can add a 90 second recording to the Archive. </p>
 <p>What would you like to add to the Archive?</p>
+</div>
 <iframe src="https://www.speakpipe.com/widget/inline/kp6xzmubni8enwhrhvqo1sx5cbst92iy" allow="microphone" width="100%" height="200" frameborder="0"></iframe>
 <br/>
  <div class="btn-container" id="btnContainer">
@@ -3115,12 +3170,7 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
             <<goto $nextpass>>
         <</button>>
     <div class="nav-btn-container btn-container">
- <<button "Back">>
-    <<goto $nextpass>>
-<</button>>
- <<button "Replay">>
-     <<goto $pass>>
-<</button>>
+
  <<button "Skip">>
      <<goto $nextpass>>
 <</button>>
@@ -3128,7 +3178,7 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
 </div>
     <</append>>
 <</timed>>
-
+<<include "navbuttonsb">>
 
 :: 52_story [nobr]
 <<set $prevpass to "51_story">>

@@ -291,7 +291,7 @@ setup.addPlaceholder = () => {
     &lt;&lt;link [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
     
-&lt;div&gt;&lt;div/&gt;
+&lt;div id=&quot;processingMount&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="navbuttonstext" tags="nobr" position="725,100" size="100,100">&lt;div class=&quot;nav-btn-container btn-container&quot;&gt;
  &lt;&lt;button &quot;Back&quot;&gt;&gt;
@@ -433,21 +433,21 @@ setup.addPlaceholder = () => {
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="heritagelogo" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;heritagelogo&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
-&lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
-   &lt;h1&gt;Real Magic | Hud go iawn&lt;/h1&gt;
- /* &lt;div class=&quot;inline-accented-img&quot;&gt; */
 
-
-   &lt;div class=&quot;inline-img-wrapper&quot;&gt;
-      &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
+   &lt;div class=&quot;inline-img-wrapper-start lead&quot;&gt;
+       &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
+           
      &lt;/div&gt;
- /* &lt;/div&gt; */
-   &lt;h2&gt;Heritage Trail | Llwybr Treftadaeth&lt;/h2&gt;
-   
+
+ /* &lt;div class=&quot;success info-container&quot;&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
+&lt;/div&gt; */
+
 &lt;/main&gt;
-&lt;&lt;timed 7s&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;goto $nextpass&gt;&gt;
     &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="_templateStory" tags="nobr" position="850,225" size="100,100">&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
@@ -607,24 +607,47 @@ setup.addPlaceholder = () => {
 &lt;&lt;set $nextpass to &quot;6_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="5_story-text-eng" tags="nobr" position="975,350" size="100,100">&lt;&lt;timed 1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="5_story-text-eng" tags="nobr" position="975,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;if $userchoices.audioOn is true&gt;&gt;
         &lt;div id=&quot;audioMount&quot;&gt;
         &lt;audio src=&quot;assets/audio/5_Patric_Gilchrist_levelled.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
     &lt;/div&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
+&lt;div  id=&quot;mount&quot;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
-&lt;p&gt;“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of…how he achieved Theatr Clwyd, against all the odds.”&lt;/p&gt;
-&lt;p&gt;“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of hill, this civic site. A symbol of confidence, of intent...”&lt;/p&gt;
-&lt;p&gt;“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill …there was nothing to constrain the size or the architectural design of the theatre.” &lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of... how he achieved Theatr Clwyd, against all the odds.”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;
+ &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;div class=&quot;quote&quot;&gt;
+&lt;p&gt;“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of the hill, of this civic site. A symbol of confidence, of intent...”&lt;/p&gt;
+&lt;/div&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 37s&gt;&gt;
+     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;
+&lt;p&gt;“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” &lt;/p&gt;
+&lt;/div&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 59s&gt;&gt;
+    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;
 Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;p&gt;A county council boss who visited arts centres across Europe with his team in the late 1960s. He returned determined to build an even more brilliant one for the people of Mold.&lt;/p&gt; 
 
 &lt;p&gt;Without Haydn Rees there would be no story of Theatr Clwyd to tell - so it really is the best place to start. &lt;/p&gt;
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 63s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -964,7 +987,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
    &lt;h1&gt;Real Magic | Hud go iawn&lt;/h1&gt;
  &lt;div class=&quot;inline-accented-img&quot;&gt;
@@ -985,7 +1008,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
     &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 /* &lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt; */
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
@@ -1008,7 +1031,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
@@ -1032,7 +1055,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
@@ -1056,7 +1079,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
@@ -1081,7 +1104,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper final lead&quot;&gt;
@@ -1368,7 +1391,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="18a_story-text-eng" tags="nobr" position="725,975" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="18a_story-text-eng" tags="nobr" position="725,975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Wonderful - we’re in. &lt;/p&gt;
 
 
@@ -1405,7 +1432,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="18b_story-text-eng" tags="nobr" position="1100,975" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="18b_story-text-eng" tags="nobr" position="1100,975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Wonderful - we’re in. &lt;/p&gt;
 
 
@@ -1441,7 +1472,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="20_story-text-eng" tags="nobr" position="225,1100" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="20_story-text-eng" tags="nobr" position="225,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I do think people wondered why there&#39;s this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;That’s Christine Langton – wife of the late Maurice Langton, who got the job to design and manage where you are now in 1975, and this is Theatr Clwyd’s old TV studio. &lt;/p&gt;
 &lt;p&gt;It’s a huge, soundproofed room, with very high ceilings. Hanging from the ceiling is the lighting grid, which still has many of the old numbers and details. The bars are boxy and dark grey and I can imagine heavy lights hanging from them, filling the room with a strange buzz.  &lt;/p&gt;
@@ -1461,7 +1496,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="20_story-text-cym" tags="nobr" position="350,1100" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="20_story-text-cym" tags="nobr" position="350,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1483,7 +1522,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="21_story-text-eng" tags="nobr" position="600,1100" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="21_story-text-eng" tags="nobr" position="600,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 
 &lt;p&gt;Then it became Studio 2 – a home in North Wales for two TV channels that mean a lot to Welsh people – HTV and S4C. &lt;/p&gt;
 
@@ -1500,7 +1543,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="21_story-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="21_story-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1522,13 +1569,17 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="22_story-text-eng" tags="nobr" position="975,1100" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="22_story-text-eng" tags="nobr" position="975,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I&#39;ve got good memories of creative engagement and the absolutely amazing work that they do with the children for the community... &lt;/p&gt;
 &lt;p&gt;And it was beautiful, beautiful to see... what this theatre does for these children, it&#39;s amazing. Money can&#39;t buy that. To see the enjoyment on them faces that each and every one of them had and loved it.&quot;&lt;/p&gt;&lt;/div&gt;
 
 &lt;p&gt;Thanks Loz. When HTV left in the 2990s, this space didn’t die. It transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme by schools called TYP - Theatre for Young People. That’s what I know this room as mostly - many hours practicing lines, dance numbers, quick costume changes...&lt;/p&gt;
-&lt;br/&gt;
+
 &lt;&lt;timed 7s&gt;&gt;
     &lt;&lt;audio &quot;notification&quot; &quot;play&quot;&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
@@ -1650,7 +1701,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;p&gt;Head to the lift and when inside click Level 2. &lt;/p&gt;
 &lt;p&gt;You can take the stairs if you’d prefer. &lt;/p&gt;
-&lt;p&gt;Just let me know when you are there&lt;/p&gt;
+&lt;p&gt;Just let me know when you are there.&lt;/p&gt;
 
 
 &lt;&lt;timed $btnAppearTime&gt;&gt;
@@ -1859,8 +1910,8 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
     &lt;&lt;button &quot;Enter&quot;&gt;&gt;
       &lt;&lt;set $codeword to $codeword.toUpperCase().trim()&gt;&gt;
       
-      /% CODEWORD CORRECT FOR CHATHAM STORIES%/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;4&quot;&gt;&gt;
+      /% CODEWORD CORRECT%/
+      &lt;&lt;if $codeword is &quot;4&quot; or $codeword is &quot;FOUR&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Correct!&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
         /* &lt;&lt;audio &quot;correct&quot; play&gt;&gt; */
 
@@ -1869,7 +1920,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 
       /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;4&quot; &gt;&gt;
+       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;4&quot; and $codeword isnot &quot;FOUR&quot;&gt;&gt;
            /* &lt;&lt;audio &quot;error&quot; play&gt;&gt; */
            &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Try again.&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
          &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2266,11 +2317,14 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
            
         
         &lt;div class=&quot;story-text&quot; id=&quot;storyText&quot;&gt;&lt;/div&gt;
+         &lt;div class=&quot;button-wrapper&quot; id=&quot;btnContainer&quot;&gt;
+            &lt;&lt;include &quot;button1&quot;&gt;&gt;
+            &lt;/div&gt;
     &lt;/main&gt;
     
     &lt;&lt;include &quot;footer_floorplan&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="button1" tags="nobr" position="475,1850" size="100,100">&lt;&lt;button &quot;Listen&quot;&gt;&gt;
-    &lt;&lt;addclass &quot;#btnContainer&quot; &quot;purple&quot;&gt;&gt;
+   
      &lt;&lt;addclass &quot;.dot1&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2289,7 +2343,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
     &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="145" name="button1a" tags="nobr" position="600,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
-    &lt;&lt;addclass &quot;#btnContainer&quot; &quot;purple&quot;&gt;&gt;
+   
       &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
       &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2310,7 +2364,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="146" name="button2" tags="nobr" position="725,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
-    &lt;&lt;addclass &quot;#btnContainer&quot; &quot;purple&quot;&gt;&gt;
+   
        &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2331,7 +2385,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="button3" tags="nobr" position="850,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
-    &lt;&lt;addclass &quot;#btnContainer&quot; &quot;purple&quot;&gt;&gt;
+   
       &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;removeclass &quot;.dot2&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2351,7 +2405,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="button4" tags="nobr" position="975,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
-    &lt;&lt;addclass &quot;#btnContainer&quot; &quot;purple&quot;&gt;&gt;
+   
       &lt;&lt;removeclass &quot;.dot3&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2367,23 +2421,20 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
     &lt;&lt;timed 5s&gt;&gt;
         &lt;&lt;set $currentDot to 4&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-            &lt;&lt;addclass &quot;#btnContainer&quot; &quot;purple&quot;&gt;&gt;
+ 
             &lt;&lt;button &quot;Finish&quot;&gt;&gt;
                 &lt;&lt;goto $nextpass&gt;&gt;
                 &lt;&lt;/button&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="149" name="footer_floorplan" tags="nobr" position="1100,1850" size="100,100">&lt;footer class=&quot;map&quot;&gt;
-    &lt;div id=&quot;back&quot; class=&quot;button-wrapper secondary&quot;&gt;
-        &lt;&lt;button &quot;Back&quot;&gt;&gt; 
-            &lt;&lt;goto $prevpass&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;button-wrapper&quot; id=&quot;btnContainer&quot;&gt;
-            &lt;&lt;include &quot;button1&quot;&gt;&gt;
-            &lt;/div&gt;
+ &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="149" name="footer_floorplan" tags="nobr" position="1100,1850" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
+&lt;&lt;link [img[assets/img/back-sharp-b.png][$prevpass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+   
+    &lt;div&gt;&lt;div/&gt;
+&lt;div&gt;&lt;div/&gt;
 
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="150" name="42_floorplan_story" tags="nobr" position="1225,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Onstage, there are lights above and the audience below, with the world of the play alive all around you.  &lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="42_floorplan_story" tags="nobr" position="1225,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Onstage, there are lights above and the audience below, with the world of the play alive all around you.  &lt;/p&gt;
 
 &lt;p&gt;Ah! Here is someone who lived near Mold. &lt;/p&gt;
 &lt;p&gt;He was recruited from school to be in a play when he was 10 – he’d  never even seen a play before! – &lt;/p&gt;
@@ -2617,6 +2668,7 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
+    &lt;div id=&quot;msgMount&quot;&gt; 
    &lt;p class=&quot;bold&quot;&gt;We’ve heard lots of members of the Theatr Clwyd community. &lt;/p&gt;
 &lt;p&gt;There are many more you can find in the over sixty-five interviews with locals, staff, participants, actors, community members, directors and designers in the online North East Wales Archives&lt;/p&gt;
 &lt;p&gt;But would you like to add something? &lt;/p&gt;
@@ -2626,6 +2678,7 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
 
 &lt;p&gt;Just press record and you can add a 90 second recording to the Archive. &lt;/p&gt;
 &lt;p&gt;What would you like to add to the Archive?&lt;/p&gt;
+&lt;/div&gt;
 &lt;iframe src=&quot;https://www.speakpipe.com/widget/inline/kp6xzmubni8enwhrhvqo1sx5cbst92iy&quot; allow=&quot;microphone&quot; width=&quot;100%&quot; height=&quot;200&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 &lt;br/&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
@@ -2638,19 +2691,15 @@ Where our community shapes us, challenges us, and drives us on - from the bees o
             &lt;&lt;goto $nextpass&gt;&gt;
         &lt;&lt;/button&gt;&gt;
     &lt;div class=&quot;nav-btn-container btn-container&quot;&gt;
- &lt;&lt;button &quot;Back&quot;&gt;&gt;
-    &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/button&gt;&gt;
- &lt;&lt;button &quot;Replay&quot;&gt;&gt;
-     &lt;&lt;goto $pass&gt;&gt;
-&lt;&lt;/button&gt;&gt;
+
  &lt;&lt;button &quot;Skip&quot;&gt;&gt;
      &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt;
    
 &lt;/div&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="52_story" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;51_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="52_story" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;51_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;credits&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
