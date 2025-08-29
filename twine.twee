@@ -299,6 +299,7 @@ setup.addPlaceholder = () => {
 <<addclass "body" "maroon">>
 
 <<include "headerlanding">>
+/* <div class="hide warning"><h1>Please view this on a phone</h1></div> */
 <main class="landing flex-col-cen">
    <h1>Real Magic | Hud go iawn</h1>
  /* <div class="inline-accented-img"> */
@@ -2980,7 +2981,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 :: 48_story-text-eng [nobr]
  <<if $userchoices.audioOn is true>>
         <div id="audioMount">
-        <audio src="" autoplay>Audio not supported in your browser</audio>
+        <audio src="assets/audio/41a_Phyl.mp3" autoplay>Audio not supported in your browser</audio>
     </div><</if>>
 <div class="quote">
     <p>"Theatr Clwyd has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. Everyone goes out of their way to look after you. </p>
@@ -2991,7 +2992,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 </div>
 <br/>
 <p class="bold">That's magic.</p>
-<<timed $btnAppearTime>>
+<<timed 50s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto "completed4">>

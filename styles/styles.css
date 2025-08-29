@@ -901,6 +901,9 @@ footer.map > div > button{
   50% { transform: scale(1.2); }
 }
 
+@media screen and (min-width: 1080px) {
+
+}
 
 /* JUST PHONE  */
 /* By default: hide story and show overlay */
