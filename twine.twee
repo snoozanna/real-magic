@@ -369,7 +369,7 @@ setup.addPlaceholder = () => {
 :: intro1 [nobr]
 <<set $prevpass to "landing">>
 <<set $pass to "intro1">>
-<<set $nextpass to "heritagelogo">>
+<<set $nextpass to "2_welcome">>
 
 <<include "_templateIntro">>
 
@@ -1029,7 +1029,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<timed 6s>>
     <<replace "#btnContainer">>
     <<button "I've finished recording">>
-            <<goto "completed">>
+            <<goto "completed1">>
         <</button>>
         <<include "navbuttons">>
     <</replace>>
