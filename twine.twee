@@ -473,7 +473,7 @@ setup.addPlaceholder = () => {
 
 :: 2_welcome-text-eng [nobr]
 <p class="bold">Well, hello. Shw’mae! Welcome</p>
-<<goto "completed2">>
+
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for years. </p>
 
 <p>I’ve been in plays like Under Milk Wood. </p>
@@ -1152,7 +1152,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 </main>
 
  <<timed 5s>>
- /* <<goto $nextpass>> */
+ <<goto $nextpass>>
 <</timed>>
 
 :: completed3 [nobr]
