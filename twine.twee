@@ -379,7 +379,7 @@ setup.addPlaceholder = () => {
 
 <p>We recommend using headphones, but you can play out loud if you’re in a group. Don’t worry, there are headphones available at the Box Office, if you didn’t bring some with you. </p>
 
-<p>There is WiFi available throughout the building - it’s called X - you can connect to that if you’d prefer.</p> 
+<p>There's WiFi available throughout the building which you can connect to if you'd prefer. If you're unsure how to connect to this, please ask one of the Welcome Desk team.</p> 
 
 <p>We’d recommend getting the sound and brightness on your phone right before we move on - it makes everything smoother. When you are ready, find somewhere comfy in the foyer, and click the button below, then I’ll get us started.  </p>
 
@@ -708,15 +708,24 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<include "_templateStory">>
 
 :: 6_story-text-eng [nobr]
-<p class="bold">Now it’s time to venture off into the rest of the building.</p>
-<p>I’ll be with you to give directions - I know this place like the back of my hand! </p>
+<<replace "#processingMount">>
+        <<include "unlocked">>
+        <</replace>>
+<p class="bold">Now it’s time to venture off into the rest of the building. I’ll be with you to give directions - I know this place like the back of my hand! </p>
 
-<p>Ooh...now we’re talking. </p>
+<<timed 3s>>
+    
+  <<audio "notification" "play">>
+  <</timed>>
+
+<<timed 5s>>
+    <<append "#msgMount">>
+<p>Ooh... now we’re talking. </p>
 
 <p>It seems I can get you access to some backstage areas - you just need to pick up a keycard from one of our lovely front-of-house people. </p>
 <p>Go to the Welcome Desk, and tell them <b>‘Phyl sent me’</b>. They’ll know what to do. </p>
 
-<<timed $btnAppearTime>>
+<<timed 4s>>
     <<append "#btnContainer">>
     <<button "We’ve got the keycard">>
             <<goto $nextpass>>
@@ -725,6 +734,8 @@ Haydn Rees is a Theatr Clwyd legend. </p>
     <</append>>
 <</timed>>
 
+<</append>>
+<</timed>>
 :: 6_story-text-cym [nobr]
 
 <p class="bold">
@@ -1061,6 +1072,12 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: simpletrans [nobr]
  <div class=" fadeIn3 success info-container">
+<img src="assets/img/processing.png" alt="processing" class="processing"/>
+<img src="assets/img/complete.png" alt="complete" class="complete"/>
+</div>
+
+:: unlocked [nobr]
+ <div class=" success info-container">
 <img src="assets/img/processing.png" alt="processing" class="processing"/>
 <img src="assets/img/complete.png" alt="complete" class="complete"/>
 </div>
@@ -1986,11 +2003,9 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <p>Manon wanted to connect people to the wider landscape around Theatr Clwyd by using the pattern of the bark but in the building’s colour scheme. Your reflection reveals a mash-up of colourful forest combining  the architecture, natural environment and, of course, you.</p>
 <p>We’ll be heading to the door near the Office, which faces out to the Clwydian hills. There’s a wildflower garden on the rooftop - perfect for pollinators. </p>
 <div class="quote"><p>“The backstage, nobody thinks of what is taken to put the thing on. They don't realise the hours… the audience doesn't think about what goes on to put that performance for two hours or whatever it is.”</p></div>
-<p>
-    That’s Geoff Williams, who has ushered here since 1992! 
-    Backstage - Diolch, Geoff!
-</p>
-<p>You’ll need your keycard to head through the door marked X</p>
+<p>That’s Geoff Williams, who has ushered here since 1992! </p>
+<p>Diolch, Geoff!</p>
+<p>You’ll need your keycard to head through the door marked You are looking for the door next to a sign that says ‘Balconi Weston’</p>
 
 
 <<timed $btnAppearTime>>
@@ -2035,8 +2050,13 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <p class="bold">We’re off to see where our stage sets are painted, on our enormous paint frame, one of very few left in the UK. </p>
 <div class="quote"><p>“When you look, when you're thinking we've got artists actually painting the scenery. It's beautiful, it's gorgeous.” </p></div>
 
-<p>Shw’mae, Angharad! Angharad Madog is the  Welsh language manager at Theatr Clwyd – she’s one of many who likes to wander backstage and see what’s being made.</p>
-<p><i>Add instructions through the corridors to the paintframe </i></p>
+<p>Shw’mae, Angharad!</p>
+<p> Angharad Madog is the  Welsh language manager at Theatr Clwyd – she’s one of many who likes to wander backstage and see what’s being made.</p>
+<p>In front of you should be another door - you’ll need your keycard to get through this. </p>
+<p>When through that door walk to the end of the corridor and take a left through the double doors. </p>
+<p>Carry on straight down another corridor to another set of double doors. </p>
+<p>Just before you reach the double doors, take a right and walk through the single door to the balcony above the paintshop. </p>
+
 
 <<timed $btnAppearTime>>
     <<append "#btnContainer">>
@@ -2873,18 +2893,12 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 :: 43_floorplan_story [nobr]
 <p class="bold">And we have another one coming through </p>
 
-<p>Ah! Here is someone who lived near Mold. </p>
-<p>He was recruited from school to be in a play when he was 10 – he’d  never even seen a play before! – </p>
-<p>And now he’s in Hollywood – Rhys Ifans.</p>
 
 <div class="quote">
- <p>"The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.</p>
-<p>
-    
-    With Cwmni 25, run by Gwennan Mair Jones, I was really lucky that she was running the sessions bilingually, naturally bilingually, so that was my first introduction to the Welsh arts scene."
-</p>
+<p>The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.</p>
 
-    
+<p>With Cwmni 25, run by Gwennan Mair Jones, I was really lucky that she was running the sessions bilingually, naturally bilingually, so that was my first introduction to the Welsh arts scene.</p>
+
 </div>
 
 <p>That’s Isabella Colby Browne  - another actor from Mold - she first performed in a production of Oliver on the stage when she was 15 - and thanks to a group called Cwmni 25, run by Gewennan Mair Jones, she now performs in Welsh and English! Da iawn Isabella</p>
@@ -2984,11 +2998,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
         <audio src="assets/audio/41a_Phyl.mp3" autoplay>Audio not supported in your browser</audio>
     </div><</if>>
 <div class="quote">
-    <p>"Theatr Clwyd has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. Everyone goes out of their way to look after you. </p>
-    
-    <p>My lovely wife, Mags, was with me up here for my pantos in the last five years. She wasn’t well, and in a wheelchair, but she was looked after by the team when I was performing,  treated with such love by everyone – looked after like she was one of the cast.</p>
-    
-    <p>I have a photo of one of my favourite memories, during a break in Robin Hood. I was dressed as Wonder Woman. I have a picture of me taken by the team, pushing Mags, in her wheelchair, into the toilets. We were both laughing, you know.. And that's what you get here. Whatever problems you've got, the Theatr Clwyd family will go the extra mile to look after you and make you feel happy.”</p>
+  <p> “Theatr Clwyd, you know, has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. </p>
+
+<p>And when Mags was with me up here, they treated Mags like one of the cast. Everybody knew Mags and she used to support all the cast as well, and everybody just loved seeing Mags there. So I want to thank everybody that’s gone out of their way to make me comfortable, knowing that Mags was in a safe environment and then able to do my job...</p>
+
+<p>One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Ipushing Mags into the toilet, me dressed as Wonder Woman and her in her wheelchair, you know. And we were both laughing, you know.. And that's what you get. Whatever problems you've got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will.</p>
 </div>
 <br/>
 <p class="bold">That's magic.</p>
