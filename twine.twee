@@ -175,6 +175,8 @@ setup.addPlaceholder = () => {
 <<cacheaudio "distort" "assets/sound/Ffalabalam-distorted.mp3">>
 <<cacheaudio "notification" "assets/sound/Notification.wav">>
 <<cacheaudio "ping" "assets/sound/ping1.mp3">>
+<<cacheaudio "ticker" "assets/sound/ticker.mp3">>
+
 <script>
     const link = document.createElement("link");
     link.rel = "preload";
@@ -1091,11 +1093,11 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: completed [nobr]
 
-<<timed 3s>>
+<<timed 1s>>
 <<if $withVoiceover is true>>    
-     <<audio "success" "play">>
+     <<audio "ticker" "play">>
 <<else>>
-    <<audio "success" "play">>
+    <<audio "ticker" "play">>
 <</if>>
 <</timed>>
 
@@ -1121,8 +1123,8 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: completed1 [nobr]
 
-<<timed 3s>>
-    <<audio "success" "play">>
+<<timed 0.1s>>
+    <<audio "ticker" "play">>
 <</timed>>
 /* <<addclass "body" "maroon">> */
 <<include "header">>
@@ -1141,14 +1143,14 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 </main>
 
- <<timed 5s>>
+ <<timed 7s>>
  <<goto $nextpass>>
 <</timed>>
 
 :: completed2 [nobr]
 
-<<timed 3s>>
-    <<audio "success" "play">>
+<<timed 0.1s>>
+    <<audio "ticker" "play">>
 <</timed>>
 
 
@@ -1169,14 +1171,14 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 </main>
 
- <<timed 5s>>
+ <<timed 7s>>
  <<goto $nextpass>>
 <</timed>>
 
 :: completed3 [nobr]
 
-<<timed 3s>>
-    <<audio "success" "play">>
+<<timed 0.1s>>
+    <<audio "ticker" "play">>
 <</timed>>
 
 
@@ -1197,16 +1199,15 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 </main>
 
- <<timed 5s>>
+ <<timed 7s>>
  <<goto $nextpass>>
 <</timed>>
 
 :: completed4 [nobr]
 
-<<timed 3s>>
-    <<audio "success" "play">>
+<<timed 0.1s>>
+    <<audio "ticker" "play">>
 <</timed>>
-
 
 <<include "header">>
 <main class="landing flex-col-cen">
@@ -1226,14 +1227,14 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 </main>
 
- <<timed 5s>>
+ <<timed 7s>>
  <<goto $nextpass>>
 <</timed>>
 
 :: completed5 [nobr]
 
-<<timed 3s>>
-    <<audio "success" "play">>
+<<timed 0.1s>>
+    <<audio "ticker" "play">>
 <</timed>>
 
 
@@ -1257,7 +1258,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 </main>
 
- <<timed 5s>>
+ <<timed 7s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -3014,6 +3015,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
            /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
+
 
 :: 48_story-text-cym [nobr]
 <div class="quote"><p>I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p></div>

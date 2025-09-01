@@ -257,6 +257,8 @@ setup.addPlaceholder = () => {
 &lt;&lt;cacheaudio &quot;distort&quot; &quot;assets/sound/Ffalabalam-distorted.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;notification&quot; &quot;assets/sound/Notification.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ping&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;ticker&quot; &quot;assets/sound/ticker.mp3&quot;&gt;&gt;
+
 &lt;script&gt;
     const link = document.createElement(&quot;link&quot;);
     link.rel = &quot;preload&quot;;
@@ -994,11 +996,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="processing" tags="nobr" position="1225,600" size="100,100">&lt;div class=&quot;info-container&quot;&gt;
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-long&quot;/&gt;
 /* &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="completed" tags="nobr" position="100,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="completed" tags="nobr" position="100,725" size="100,100">&lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;if $withVoiceover is true&gt;&gt;    
-     &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+     &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
@@ -1020,8 +1022,8 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
  &lt;&lt;timed 5s&gt;&gt;
  /* &lt;&lt;goto $prevpass&gt;&gt; */
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="completed1" tags="nobr" position="225,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="completed1" tags="nobr" position="225,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 /* &lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt; */
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1040,10 +1042,10 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;/main&gt;
 
- &lt;&lt;timed 5s&gt;&gt;
+ &lt;&lt;timed 7s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="completed2" tags="nobr" position="350,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="completed2" tags="nobr" position="350,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
@@ -1064,10 +1066,10 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;/main&gt;
 
- &lt;&lt;timed 5s&gt;&gt;
+ &lt;&lt;timed 7s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed3" tags="nobr" position="475,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed3" tags="nobr" position="475,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
@@ -1088,12 +1090,11 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;/main&gt;
 
- &lt;&lt;timed 5s&gt;&gt;
+ &lt;&lt;timed 7s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="completed4" tags="nobr" position="600,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="completed4" tags="nobr" position="600,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
@@ -1113,10 +1114,10 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;/main&gt;
 
- &lt;&lt;timed 5s&gt;&gt;
+ &lt;&lt;timed 7s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="completed5" tags="nobr" position="725,725" size="100,100">&lt;&lt;timed 3s&gt;&gt;
-    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="completed5" tags="nobr" position="725,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
@@ -1140,7 +1141,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;/main&gt;
 
- &lt;&lt;timed 5s&gt;&gt;
+ &lt;&lt;timed 7s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="12_story" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;12_story&quot;&gt;&gt;
