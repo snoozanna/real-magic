@@ -348,7 +348,7 @@ setup.addPlaceholder = () => {
 :: languageChoice [nobr]
 <<set $prevpass to "landing">>
 <<set $pass to "languageChoice">>
-<<set $nextpass to "intro1">>
+<<set $nextpass to "chapters">>
 <<include "header">>
 <main>
 <div class="instructional-text">
@@ -367,54 +367,29 @@ setup.addPlaceholder = () => {
 </div>
 </main>
 
-
-:: intro1 [nobr]
-<<set $prevpass to "landing">>
-<<set $pass to "intro1">>
+:: chapters [nobr]
+<<set $prevpass to "languageChoice">>
+<<set $pass to "chapters">>
 <<set $nextpass to "2_welcome">>
+<<include "headerlanding">>
+<main class="landing flex-col-cen">
 
-<<include "_templateIntro">>
-
-
-:: intro1-text-eng [nobr]
-<p>Over the trail there will be audio to listen to, and visuals and text to look at. </p>
-
-<p>We recommend using headphones, but you can play out loud if you’re in a group. Don’t worry, there are headphones available at the Box Office, if you didn’t bring some with you. </p>
-
-<p>There's WiFi available throughout the building which you can connect to if you'd prefer. If you're unsure how to connect to this, please ask one of the Welcome Desk team.</p> 
-
-<p>We’d recommend getting the sound and brightness on your phone right before we move on - it makes everything smoother. When you are ready, find somewhere comfy in the foyer, and click the button below, then I’ll get us started.  </p>
-
-
-
-
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "I'm ready">>
-            <<goto $nextpass>>
-        <</button>>
-        /* <<include "navbuttons">> */
-    <</append>>
-<</timed>>
-
-:: intro1-text-cym [nobr]
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
-
-<p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
-
-<p> Morbi tincidunt tempor risus, a tristique nisi ornare in. Nunc dignissim nunc porttitor justo placerat, sit amet facilisis massa luctus. </p>
-
-<p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
+     <<if $userchoices.language is "cymraeg">>
+    Welsh chapter list
+     <<elseif $userchoices.language is "english" >>
+        <h1>Chapters</h1>
+    <<button "Start">><<goto $nextpass>><</button>>
+    <<button "Balcony">><<goto $nextpass>><</button>>
+    <<button "TV Studio">><<goto $nextpass>><</button>>
+    <<button "Paint Frame">><<goto $nextpass>><</button>>
+    <<button "Theatr Moondance">><<goto $nextpass>><</button>>
+    <<button "Finale">><<goto $nextpass>><</button>>
+     <<else>>
+    No content provided.
+    <</if>>
+</main>
 
 
-<<timed $btnAppearTime>>
-    <<replace "#btnContainer">>
-    <<append "Lorem">>
-            <<goto $nextpass>>
-        <</append>>
-         <<include "navbuttons">>
-    <</replace>>
-<</timed>>
 
 :: heritagelogo [nobr]
 <<set $prevpass to "intro1">>
@@ -427,11 +402,6 @@ setup.addPlaceholder = () => {
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
            
      </div>
-
- /* <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
-</div> */
 
 </main>
 <<timed 5s>>
@@ -466,8 +436,9 @@ setup.addPlaceholder = () => {
 
 </main>
 <<include "navbuttonsb">>
+
 :: 2_welcome [nobr]
-<<set $prevpass to "intro1">>
+<<set $prevpass to "chapters">>
 <<set $pass to "2_welcome">>
 <<set $nextpass to "3_welcome">>
 <<audio ":all" "stop">>
@@ -477,25 +448,23 @@ setup.addPlaceholder = () => {
 :: 2_welcome-text-eng [nobr]
 <p class="bold">Well, hello. Shw’mae! Welcome</p>
 
-<p>I’m Phyl, an actor who’s been coming to this wonderful theatre for years. </p>
+<p>I’m Phyl, an actor who’s been coming to this wonderful theatre for <i>years</i>. </p>
 
-<p>I’ve been in plays like Under Milk Wood. </p>
-
-<p>The Government Inspector. </p>
+<p>I’ve been in plays like <i>Little Shop of Horrors</i> and <i>The Government Inspector</i>.</p>
 
 <p>You might have even seen my Bottom – in Shakespeare, I mean! </p>
 
-<p>But I’m best known for our rock and roll pantos – playing the Dame.</p>
+<p>But I’m best known for Theatr Clwyd’s rock and roll pantos – playing the Dame.</p>
 
-<p>One minute – let me summon her up... “Looking lush, loves!” There she is!</p>
+<p>One minute – let me summon her up... “Hiya - Looking lush, loves!” There she is!</p>
 
-<p>I’m here today as I have been asked to be the voice of this new heritage tour called ‘Real Magic’...</p>
+<p>Now I’m here today as I have been asked to be the voice of this heritage tour – called ‘Real Magic’...</p>
 
-<p>I don’t know entirely what Real Magic means, but we will find out together, I imagine.</p>
+<p>I don’t know entirely what ‘Real Magic’ means, but we will find out together, I imagine.</p>
 
 <p>I’ll also be translating for non-Welsh speakers as we go along. Adderchog! That’s ‘Excellent’’ in Welsh.</p>
 
-<p>But first, let’s make sure everyone - myself included - understands how this tour will work. </p>
+<p>But first, let’s make sure everyone – myself included – understands how this tour will work. </p>
 
 <p>There are buttons on your screen to move us to the next page ... let’s give that a go. </p>
 
@@ -539,7 +508,8 @@ setup.addPlaceholder = () => {
 :: 3_welcome-text-eng [nobr]
 <p class="bold">There we go - that seems simple enough. </p>
 <p>There’s a back button and a replay button too if you need to use them.</p>
-<p>You can use these buttons to move on when you’re ready</p>
+<p>Can you hear me ok? If not you might want to put your volume up. </p>
+
 
 <<timed 1s>>
     <<append "#btnContainer">>
@@ -590,8 +560,12 @@ setup.addPlaceholder = () => {
 <div class="quote"><p>“He simply said, the people of Clwyd should have access to the best of everything...”</p></div>
 <p class="bold">
   Ah! And it appears we’ll hear voices from others connected to Theatr Clwyd on the way. </p>
-<p>  That voice was Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! I’ll give context on whoever pops up - I’ve been coming here for over 20 years so I know a few people.</p>
-<p>Ok - I think we know enough to get started. So, let’s begin at the beginning...</p>
+<p>  That voice was Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! </p>
+<p>I’ll give context on whoever pops up – I’ve been coming here for over 30 years, so I do know a few people. </p>
+
+<p>Ok – so I think we know enough to get started. </p>
+<p>To begin at the beginning...</p>
+
 
 
 
@@ -665,9 +639,11 @@ setup.addPlaceholder = () => {
     <<replace "#mount">>
 <p class="bold">
 Haydn Rees is a Theatr Clwyd legend. </p>
-<p>A county council boss who visited arts centres across Europe with his team in the late 1960s. He returned determined to build an even more brilliant one for the people of Mold.</p> 
+<p>A county council boss who, in the late 1960s, took his team to visit arts centres all across Europe. </p>
+<p>They returned determined to build an even more brilliant one for the people of Mold. </p>
 
-<p>Without Haydn Rees there would be no story of Theatr Clwyd to tell - so it really is the best place to start. </p>
+<p>Without Haydn Rees there would be no story of Theatr Clwyd to tell – so it really is the best place to start. </p>
+
 <</replace>>
 <</timed>>
 
@@ -713,7 +689,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <<replace "#processingMount">>
         <<include "unlocked">>
         <</replace>>
-<p class="bold">Now it’s time to venture off into the rest of the building. I’ll be with you to give directions - I know this place like the back of my hand! </p>
+<p class="bold">Now it’s time to venture off into the rest of the building. I’ll give directions – I know this place like the back of my hand!  </p>
 
 <<timed 3s>>
     
@@ -724,8 +700,9 @@ Haydn Rees is a Theatr Clwyd legend. </p>
     <<append "#msgMount">>
 <p>Ooh... now we’re talking. </p>
 
-<p>It seems I can get you access to some backstage areas - you just need to pick up a keycard from one of our lovely front-of-house people. </p>
-<p>Go to the Welcome Desk, and tell them <b>‘Phyl sent me’</b>. They’ll know what to do. </p>
+<p>It seems I can get you backstage access – you just need to pick up a keycard from one of the lovely front-of-house team. </p>
+<p>Go to the Welcome Desk, and tell them <b>‘Phyl sent me’</b>.</p>
+<p>They’ll know what to do. </p>
 
 <<timed 4s>>
     <<append "#btnContainer">>
@@ -769,13 +746,16 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 <p>Next we’ll head upstairs in the lift. </p>
 
-<p>There are accessible and gender neutral toilets on this floor, if you need them before we go up a level. There are some gendered toilets upstairs too. And as part of our commitment to environmental sustainability, they’re all flushed with rainwater! </p>
 
-<p>When you’re ready, call the lift.  </p>
+<p>There are accessible and gender neutral toilets on this floor if you need them before we go up a level. There are some gendered toilets upstairs too. And as part of Theatr Clwyd’s commitment to environmental sustainability, they’re all flushed with rainwater! </p>
 
-<p>They might be asleep at first, as  this is a carbon neutral theatre – carbon negative on a good day.</p>
+<p>When you’re ready, call the lift, or head up the stairs.</p>
 
-<p>Inside, click Level 1 and let me know when you have arrived.</p>
+<p>The lifts might be asleep at first, as this is a carbon neutral theatre – carbon negative on a good day.</p>
+
+<p>In the lift, click Level 1. </p>
+<p>Let me know when you have arrived. </p>
+
 
 
 <<timed $btnAppearTime>>
@@ -815,13 +795,15 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: 8_story-text-eng [nobr]
 <p class="bold">Pause just outside the lift’s doors. </p>
-<p>I like this spot - from here you might be able to see the 70s cream tiles, which mark the outer wall of the original theatre. Where the old meets the new. </p>
 
-<p>You might be a long time visitor here or this might be your first time - Theatr Clwyd has always been known for being welcoming to all. Well, that’s what my wife Mags always thought.  </p>
+<p>I like this spot. From here, if you look up, you might be able to see the 70s cream tiles, which mark the outer wall of the original theatre. Where the old meets the new. </p>
 
-<p>The new extension has more glass and lovely light. Move now towards the view - you can look out through the windows or go out to the balcony if you’d like.</p>
+<p>You might be a long time visitor here or this might be your first time – Theatr Clwyd has always been known for being welcoming to all. Well, that’s what my wife Mags always thought.  </p>
 
-<p>Let me know when you’re facing the hills.</p>
+<p>The extension has more glass and lovely light. Move now towards the view – you can look out through the windows or go out to the balcony if you’d like.</p>
+
+<p>Let me know when you’re facing the hills. </p>
+
 
 
 <<timed $btnAppearTime>>
@@ -866,10 +848,10 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <div class="quote"><p>“Part of the building you could see from parts in Mold. I've got memories of being able to see, like, tall, sort of part of the building that had, like, little windows going up. And I remember thinking like, Oh, there's the theatre there. That's where the shows are, and that's where, you know, where the magic happens...”</p>
 <span class="person">Christopher L Jones</span></div>
 
-<div class="quote"><p>“I still get that same feeling when I come up Raikes Lane and I see the building. I get that feeling of exhilaration, excitement and love and maybe now slightly more of a sense of belonging than I did when I first drove up that drive...”</p>
+<div class="quote"><p>“When I come up Raikes Lane and I see the building. I get that feeling of exhilaration, excitement and love and maybe now slightly more of a sense of belonging than I did when I first drove up that drive...”</p>
 <span class="person">Christian Patterson</span></div>
 
-<p>We just heard from Katherine Parkinson, a BAFTA award winning actress, Christopher L Jones, tiler and community actor, and Christian Patterson who has written Theatr Clwyd’s RocknRoll Panto since 2018. They obviously all seem to be fans of the theatre on the hill. 
+<p>We just heard from Katherine Parkinson, a BAFTA award winning actress, Christopher L Jones, tiler and community actor, and Christian Patterson, who has written many of Theatr Clwyd’s RocknRoll Pantos. They obviously all seem to be fans of the theatre on the hill. 
 </p>
 
 <div class="quote"><p>“I remember it opening in 1976 with the Queen..."</p></div>
@@ -878,8 +860,9 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 <div class="quote"><p>“And I remember loads of people saying, [Why?] the hell you opening that? What a white elephant this is, what a waste of council money."</p></div>
 
-<p>Oh - that is not the same response!</p>
-<p>Ah I hit pause, there’s a bit more.</p>
+<p>Oh – that’s not what I was expecting...</p>
+<p>Ah! Sorry, I hit pause, there’s a bit more.</p>
+
 
 
 <<timed $btnAppearTime>>
@@ -923,13 +906,13 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 </div>
 
 
-<p class="bold">They were looking up to the theatre and we are facing out to an incredible view. </p>
-<p>Ahead there are the beautiful Clwydian hills, including their highest point, the Moel Famau mountain, to the right. The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. </p>
+<p class="bold">They were looking up to the theatre and we are facing out to an incredible view.</p>
+<p>Ahead there are the beautiful Clwydian hills, including their highest point, Moel Famau, to the right. The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. </p>
 
-<p>This is where the dream of Theatr Clwyd began. </p>
-<p>Haydn Rees stood on this hill, and looked at this view with his colleagues in the late 1960s.</p>  
+<p>This is where the dream of Theatr Clwyd began. <br/>
+In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked at this view.   </p>
 
-<p>They dreamt about how civic duty – society working together – could improve everyone’s wellbeing. They believed that the arts could really change local lives. That the arts could give people more. They imagined a building that would make that dream possible. </p>
+<p>They dreamt about how civic duty – society working together – could improve everyone’s wellbeing. They believed that the arts could really change local lives, could give people more. They imagined a building that would make that dream possible. </p>
 
 <p>
  <b>
@@ -979,8 +962,10 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <main class="main-section upload">
 
 <div id="uploadInstructions">
-  <p class="bold">Ok - it seems we’ve got to a moment where I can’t move forward without a little activation...</p>
-  <p>To move forward - I need you to take a picture.</p>
+  <p class="bold">Ok – we’ve got to a moment where I can’t move forward without a little activation...</p>
+
+<p>To move on – I need you to take a picture. </p>
+
   <p>A picture of the view from the hill.</p>
   <p>A view to dream from.</p>
 <p>If you would refer to record audio rather than take a picture, then capture a sound of the scene by clicking <div class="inline-link"><<link "here">><<goto "recordview">><</link>></div>.</p>
@@ -1272,10 +1257,12 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: 12_story-text-eng [nobr]
 <p class="bold">Diolch</p>
-<p>I can imagine you looking towards the view now - perhaps for the first time, perhaps not.</p>
-<p> But maybe this time, you’ve spotted something new  - something in this view you’ve never noticed before. </p>
+<p>I can imagine you looking towards the view now – perhaps for the first time, perhaps not.</p>
+<p>But maybe this time, you’ve spotted something new  – something in this view you’ve never noticed before. </p>
+<p>You’ve shared your view with me, but you might choose to share it with the world too...</p>
+<p>On your socials later I mean #aviewfromthehill #dreamalittledreamfromtheatrclwyd</p>
+<p>From the people in the town to the birds darting across the sky. This view is teeming with life. </p>
 
-<p>It’s full of life. From the people in the town to the birds darting across the sky to the countless lives unseen beneath the ground. The community of Theatr Clwyd. </p>
 <div class="quote">
   <p>"Views absolutely amazing, aren't they? Yeah. Oh, gosh, we're very fortunate for that."</p>
   
@@ -1327,12 +1314,16 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 <div class="quote"><p>“Come out of the theatre, go in the bar, and all the actors would then come back out into the bar, and you just hang around with them. And it's as if you've known most of them for all your life.”</p></div>
 
-<p>And we’re off to the bar ourselves - maybe you’ll spot someone like Phillip. </p>
+<p>And we’re off to the bar ourselves – maybe you’ll spot someone, just like Phillip Jones. </p>
 
 <p>
   Head back towards the lift, and then just beyond it turn left. 
-  Make your way down the corridor and the bar should be on your left side. 
 </p>
+
+<p>Make your way down the corridor with the bar on your left side. </p>
+
+<p>Stop at the end of the bar. </p>
+
 
 <<timed $btnAppearTime>>
     <<append "#btnContainer">>
@@ -1372,14 +1363,12 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: 14_story-text-eng [nobr]
 <p class="bold">Aren’t the bar tiles beautiful? </p>
-<p>They were designed by Francesca Priest – one of the fabulous people commissioned to create new artworks when the theatre reopened in 2025.  Here she is...</p>
+<p>They were designed by Francesca Priest – one of the fabulous artists commissioned to create new artworks when the theatre reopened in 2025.  Here she is...</p>
 
 <div class="quote"><p>“I was very struck by that view when I went to visit and just how inspiring it was and expansive it was, looking out over the valley and over to the hills. And so I just had this sort of idea that the glaze color would pull some of the sky into the space...” </p></div>
 
 
-<p>So she’s been inspired by the  beautiful view too – as well as the original bar tiles from the 1970s, and by the tiles in the  main Moondance theatre. </p>
-
-<p>That’s the thing about that view - yes it invites us to imagine. But we don’t leave what we imagined there, in the skies, we take it with us. The dream follows us back into the theatre - it shapes what we do. </p>
+<p>So she was inspired by the beautiful view too – as well as the original bar tiles from the 1970s, and the tiles in Theatr Moondance. </p>
 
 
 <<timed $btnAppearTime>>
