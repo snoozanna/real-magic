@@ -597,14 +597,28 @@ opacity: 1;
 }
 
 /* Processing image: spin infitintelys */
+.info-container img.processing-long2 {
+  opacity: 1;
+  animation: spin 3s infinite;
+}
+
+/* Processing image 2: spin for 8s then fade out */
+.info-container img.processing2 {
+  opacity: 1;
+  animation: spin 7s linear, fadeOut 0.5s ease 7s forwards;
+}
+
+/* Complete image: show after 3s */
+.info-container img.complete2 {
+  animation: fadeIn 0.5s ease 7s forwards;
+}
+
+/* Processing image: spin infitintelys */
 .info-container img.processing-long {
   opacity: 1;
   animation: spin 3s infinite;
 }
 
-.info-container img.complete {
-
-}
 
 .info-container img.complete-ready{
   animation: fadeIn 0.5s forwards;
@@ -680,8 +694,20 @@ opacity: 1;
   white-space: nowrap;
  }
 
- main.landing > .inline-accented-img {
-  margin-block-end: 2.8rem;
+
+
+ main.landing > .inline-img-wrapper {
+  margin-block-end: initial;
+  margin-block-start: initial;
+ }
+
+ main.landing > h2{
+  margin-block-end: 0;
+ }
+
+ main.landing > span.phrase{
+  font-size: clamp(1rem, 3.5vw, 6rem);
+  font-weight: 900;
  }
 
  /* BRAND  */
