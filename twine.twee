@@ -1171,36 +1171,6 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 </div>
 
 
-:: completed [nobr]
-
-<<timed 1s>>
-<<if $withVoiceover is true>>    
-     <<audio "ticker" "play">>
-<<else>>
-    <<audio "ticker" "play">>
-<</if>>
-<</timed>>
-
-
-<<include "header">>
-<main class="landing flex-col-cen">
-   <h1>Real Magic | Hud go iawn</h1>
- <div class="inline-accented-img">
-   <div class="inline-img-wrapper">
-     <img src="../assets/img/leadImage.png"/>
-     </div>
- </div>
- <div class=" fadeIn3 success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
-</div>
-
-</main>
-
- <<timed 5s>>
- /* <<goto $prevpass>> */
-<</timed>>
-
 :: completed1 [nobr]
 
 <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_12.mp3" autoplay>Audio is not supported on your device</audio></div>
@@ -1227,10 +1197,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <</timed>>
 
 :: completed2 [nobr]
-
-<<timed 0.1s>>
-    <<audio "ticker" "play">>
-<</timed>>
+<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_24.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 
 <<include "header">>
@@ -1238,8 +1205,9 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
+        <img src="../assets/img/Hero_Image_Sequence_1.png"/>
          <img src="../assets/img/Hero_Image_Sequence_2.png"/>
-          <img src="../assets/img/Hero_Image_Sequence_3.png"/>
+          
            
      </div>
 
@@ -1250,7 +1218,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 </main>
 
- <<timed 7s>>
+ <<timed 12s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1266,9 +1234,10 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
+       <img src="../assets/img/Hero_Image_Sequence_1.png"/>
          <img src="../assets/img/Hero_Image_Sequence_2.png"/>
           <img src="../assets/img/Hero_Image_Sequence_3.png"/>
-          <img src="../assets/img/Hero_Image_Sequence_4.png"/> 
+    
      </div>
 
  <div class="success info-container">
@@ -1278,7 +1247,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 </main>
 
- <<timed 7s>>
+ <<timed 12s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1617,13 +1586,13 @@ When you are ready to move on, let me know.
 :: 18_story [nobr]
 <<set $prevpass to "17_story">>
 <<set $pass to "18_story">>
-<<set $nextpass to "19b_story">>
+<<set $nextpass to "192_story">>
 <<audio ":all" "stop">>
 <audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 18_story-text-eng [nobr]
-<<audio "distort" "play" volume 0.40>>
+/* <<audio "distort" "play" volume 0.40>> */
 <p class="bold">What’s that sound? What’s going on here? </p>
 
 <p>Ah, it seems we need to activate the space to tune in. </p>
@@ -1631,11 +1600,14 @@ When you are ready to move on, let me know.
 <p>On the wall – what does the word in white say? Type it in. </p>
 <p>Or if you’d prefer, click <div class="inline-link"><<link "here">> <<removeclass "#clueMount" "hide">>
   <<timed 0.1s>>
-    <<replace "#clueMount">><<type 60ms>>Playing clue...
+    <<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_18AudibleClue.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+    <<replace "#clueMount">><<type 60ms>><i>A word beginning with Q meaning "Shhhhhhh".</i>
 <</type>><</replace>><</timed>>
 <</link>></div> for an audible clue.</p>
  <span class="clue hide" id="clueMount"></span>
-/*<i>A word beginning with Q meaning Shhhhhhh.</i></span> */
+
 <br/>
 <<include "pw17">>
 
@@ -1687,16 +1659,16 @@ When you are ready to move on, let me know.
 <div id="coderesult"></div>
 
 <<done>><<set $e to setup.addPlaceholder()>><</done>>
-:: 19a_story [nobr]
+:: 191_story [nobr]
 <<set $prevpass to "18_story">>
-<<set $pass to "19a_story">>
+<<set $pass to "191_story">>
 <<set $nextpass to "20_story">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
-:: 19a_story-text-eng [nobr]
+:: 191_story-text-eng [nobr]
 <<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
@@ -1720,7 +1692,7 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 19a_story-text-cym [nobr]
+:: 191_story-text-cym [nobr]
 <div id="processingMount">  <<include "processing">></div>
 <p class="bold">
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1738,16 +1710,16 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 19b_story [nobr]
+:: 192_story [nobr]
 <<set $prevpass to "18_story">>
-<<set $pass to "19b_story">>
+<<set $pass to "192_story">>
 <<set $nextpass to "20_story">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
-:: 19b_story-text-eng [nobr]
+:: 192_story-text-eng [nobr]
 <<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
@@ -1772,7 +1744,7 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 19b_story-text-cym [nobr]
+:: 192_story-text-cym [nobr]
 
 <p class="bold">
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1791,7 +1763,7 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 20_story [nobr]
-<<set $prevpass to "19b_story">>
+<<set $prevpass to "192_story">>
 <<set $pass to "20_story">>
 <<set $nextpass to "21_story">>
 <<audio ":all" "stop">>
@@ -1806,21 +1778,36 @@ When you are ready to move on, let me know.
         <<include "processing">>
         <</replace>>
         <</timed>>
+ <<timed 0.1s>>
+    <<append "#msgMount">>
 <div class="quote"><p>"I do think people wondered why there's this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come."</p></div>
 <p class="bold">That’s Christine Langton – wife of the late Maurice Langton – who in 1975 got the job to design and manage where you are now: Theatr Clwyd’s old TV studio.  </p>
+    <</append>>
+<</timed>>
+
+ <<timed 27s>>
+    <<append "#msgMount">>
 <p>It’s a huge, soundproofed room, with very high ceilings. Hanging from the ceiling is the lighting grid, which still has many of the old numbers and details. The bars are boxy and dark grey and I can imagine heavy lights hanging from them, filling the room with a strange buzz.  </p>
+    <</append>>
+<</timed>>
+ <<timed 44s>>
+    <<append "#msgMount">>
 <p>This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. </p> 
 <p>It’s changed now - but the bars are what would have made everything possible. </p>
-
+  <</append>>
+<</timed>>
+ <<timed 56s>>
+    <<append "#msgMount">>
 <div class="quote"><p>"The studio complex became an object of pride, really, for that area...TV was actually made from Mold. In the village that I lived in. People were dumbfounded by the idea that there was a television station studio down the road, and they were delighted, actually. So, oh, this, this actually means something to us." </p></div>
 
 <p>That’s John Hunter – a TV director and producer, who worked here as an HTV cameraman. </p>
   
 <p>This room has had quite a history. It began life as part of an education technology centre for schools, where local young people could make films. </p>
+  <</append>>
+<</timed>>
 
 
-
-<<timed $btnAppearTime>>
+<<timed 98s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1862,22 +1849,31 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 21_story-text-eng [nobr]
+
 <<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
         <</replace>>
         <</timed>>
-
+<<timed 0.1s>>
+    <<append "#msgMount">>
 <p class="bold">Then it became Studio 2 – a home in North Wales for two TV channels that mean a lot to Welsh people – HTV and S4C. </p>
-
 <p>They created music programmes, chat shows and quizzes, with audiences bussed in by the coachload. The beloved Welsh-language children’s programme Ffalabalam – and its beautiful sets, full of little houses and toys – was made here, too.</p> 
+  <</append>>
+<</timed>>
 
 
+<<timed 22s>>
+    <<append "#msgMount">>
 <div class="quote"><p class="bold">"Ffalabalam was a completely charming children's programme. It was, it was a beauty of a programme and I don't know why it ended to be honest. A small village as one imagines, such as the miniature villages one gets in the Cotswolds etc. The set was amazing with dolls and teddies and to tell the truth, they were the characters, except that we as presenters kind of understood them talking even though they didn't say anything and we conveyed the programme through that."</p></div>
-
+  <</append>>
+<</timed>>
+<<timed 53s>>
+    <<append "#msgMount">>
 <p>That’s Welsh TV royalty Caryl Parry Jones – a singer, actor and she was a presenter at HTV and S4C – and clearly a fan of <i>Ffalabalam</i>. </p>
-
-<<timed $btnAppearTime>>
+  <</append>>
+<</timed>>
+<<timed 65s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1924,25 +1920,31 @@ When you are ready to move on, let me know.
         <<include "processing">>
         <</replace>>
         <</timed>>
-
+<<timed 0.1s>>
+    <<append "#msgMount">>
 <div class="quote"><p>"I've got good memories of creative engagement and the absolutely amazing work that they do with the children for the community... </p>
 <p>And it was beautiful, beautiful to see... what this theatre does for these children, it's amazing. Money can't buy that. To see the enjoyment on them faces that each and every one of them had and loved it."</p></div>
-
+<</append>>
+<</timed>>
+<<timed 27s>>
+    <<append "#msgMount">>
 <p>Thanks Loz. When HTV left in the 1990s, it transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme by schools called TYP – Theatre for Young People. That’s what I know this room as mostly – many hours practicing lines, dance numbers, quick costume changes...</p>
-
-<<timed 7s>>
-    <<audio "notification" "play">>
+<</append>>
+<</timed>>
+<<timed 47s>>
     <<replace "#processingMount">>
          <div class="info-container">
         <img src="assets/img/complete.png" alt="processing" class="complete-ready"/>
         </div>
         <</replace>>
+<</timed>>
+<<timed 48s>>
     <<append "#msgMount">>
 <p>Oh it’s ready - let’s see what we’ve found.</p>
 <</append>>
 <</timed>>
 
-<<timed $btnAppearTime>>
+<<timed 52s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1978,17 +1980,17 @@ When you are ready to move on, let me know.
 <<include "header">>
 
 <main class="gallery">
-
+<div id="audioMount"><audio id="audioPlayer" src="" autoplay>Audio is not supported on your device</audio></div>
     <!-- Vimeo Embed with accent wrapper -->
     <div class="inline-accented-vid">
         <div class=" vimeo-container mar-2" 
              style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-            <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
+        <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1&muted=1" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+</iframe>
         </div>
     </div>
 
@@ -2005,6 +2007,7 @@ When you are ready to move on, let me know.
 
     /* <</append>>
 <</timed>> */
+<<done>><<set $a to setup.chooseStoryAudio()>><</done>>
 
 :: 25_story [nobr]
 <<set $prevpass to "23_galleryffabalam">>
@@ -2016,18 +2019,23 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 25_story-text-eng [nobr]
-
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">Wow – to think of all of the moments that happened right here. </p>
 <p>This one room has been so many different places – it keeps adapting. The community of Theatr Clwyd shapes what comes next, and it’s all led to you being here too. Marvelous. </p>
 
 <p>Magic is an act of transformation, isn’t it? I’ve played many magical panto characters, so I should know. Things can change form and shape here at Theatr Clwyd, without losing the energy and passion they had at the very beginning. That’s something very precious. </p>
-
+  <</append>>
+<</timed>>
+<<timed 32s>>
+   <<append "#msgMount">>
 <p>Next, we are off to one of the hidden gems of Theatr Clwyd. </p>
 
 <p>I’ll lead you there – first up head back to the bar. </p>
+  <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 39s>>
     <<append "#btnContainer">>
     <<button "We’re at the bar">>
             <<goto $nextpass>>
@@ -2064,20 +2072,29 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 26_story-text-eng [nobr]
-
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <div class="quote">
     <p>"Walked out and he was just sitting there on his own. </p>
     <p>He's reading a book. And I said, Congratulations on becoming James Bond. He said thank you very much. That was it!"</p>
 </div>
+ <</append>>
+<</timed>>
+<<timed 8s>>
+   <<append "#msgMount">>
 <p class="bold">Phillip Jones must have met Timothy Dalton too, who performed in two Shakespeare plays here in 1986. Bond, James Bond! </p>
-
+ <</append>>
+<</timed>>
+<<timed 18s>>
+   <<append "#msgMount">>
 <p>Head to the lift and select Level 2. </p>
 
 <p>You can take the stairs if you’d prefer. </p>
 <p>Just let me know when you are there.</p>
+ <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 25s>>
     <<append "#btnContainer">>
     <<button "We’re on Level 2">>
             <<goto $nextpass>>
@@ -2114,21 +2131,30 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 27_story-text-eng [nobr]
-
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">You'll find there is a Mirror on the wall – this was designed by Manon Awst.</p>
 <p>Manon wanted to connect people to the wider landscape around Theatr Clwyd by using the pattern of bark, but in the building’s colour scheme. Your reflection reveals a mash-up of a colourful forest, the theatre’s architecture and, of course, you.</p>
+ <</append>>
+<</timed>>
+<<timed 20s>>
+   <<append "#msgMount">>
 <p>We’re near the office, which faces out to the Clwydian hills. There’s a wildflower garden on the rooftop – perfect for pollinators. </p>
 <p>We’re not off to see the bees though, we’re heading somewhere else. </p>
 
 <div class="quote"><p>“The backstage, nobody thinks of what is taken to put the thing on. They don't realise the hours... the audience doesn't think about what goes on to put that performance for two hours or whatever it is.”</p></div>
-
+ <</append>>
+<</timed>>
+<<timed 49s>>
+   <<append "#msgMount">>
 <p>Backstage! That’s where we’re headed. Diolch, Geoff!</p>
 <p>That was Geoff Williams, who started ushering here in 1992. </p>
 <p>You are looking for a sign that reads ‘Balconi Weston’ – then head through the door to the left of it</p>
 <p>Don’t go through the Theatr Moondance door! </p>
+ <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 65s>>
     <<append "#btnContainer">>
     <<button "We’re through the door">>
             <<goto $nextpass>>
@@ -2166,20 +2192,30 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 28_story-text-eng [nobr]
-
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">We’re off to see where the stage sets are painted, on Theatr Clwyd’s enormous paint frame, one of very few left in the UK.  </p>
 <p>Now, as you’re about to step backstage, I’m going to have to kindly ask you not to take photos, so as not to spoil any surprises. </p>
+  <</append>>
+<</timed>>
+<<timed 16s>>
+   <<append "#msgMount">>
 <div class="quote"><p>“When you look, when you're thinking we've got artists actually painting the scenery. It's beautiful, it's gorgeous.” </p></div>
 
 <p>Shw’mae, Angharad! Angharad Madog became Welsh language manager at Theatr Clwyd in 2023 – she’s one of many who likes to wander backstage and see the artists painting away.</p>
+  <</append>>
+<</timed>>
+<<timed 36s>>
+   <<append "#msgMount">>
 <p>In front of you is another door – you’ll need your keycard to get through this. </p>
 <p>Travel down the corridor ahead, then take a left through the double doors at the end. </p>
 <p>Move down this corridor until you see another of those TV studio signs.  </p>
 <p>Stop before the double doors and take a right through the single door to the balcony above the paintshop. </p>
+  <</append>>
+<</timed>>
 
 
-
-<<timed $btnAppearTime>>
+<<timed 58s>>
     <<append "#btnContainer">>
     <<button "We’re here">>
             <<goto $nextpass>>
@@ -2216,18 +2252,24 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 29_story-text-eng [nobr]
-
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">Here we are.</p> 
 <p>This room is wide and very tall, extending below and above where we stand. Bits of design and construction for future shows are often dotted around. And every time you come in, it’s different. A prop, a costume, some sketches. This is the room where the designer's dreams are made real.  </p>
 
 <p>And the Paint Frame is monumental. Katy Salt can tell us more about this amazing part of Theatr Clwyd. </p>
 <p>She first painted the pantomime in 2001 – she knows how the paint frame works better than anyone.</p>
+  <</append>>
+<</timed>>
+<<timed 33s>>
+   <<append "#msgMount">>
 <div class="quote"><p>“So the paint frame really is just sort of hardwood battens that are attached to the back wall of the paint shop. And it's a bit like the way that an artist would stretch canvas onto a wooden frame, but in a really massive way.”</p></div>
 <p>These canvases – they form the backdrops to shows. </p>
 <p>They frame the stories told on Theatr Clwyd’s stages – they conjure new realities. </p>
-
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
+  <</append>>
+<</timed>>
+<<timed 58s>>
+   <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
         <</button>>
@@ -2262,16 +2304,25 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 30_story-text-eng [nobr]
-
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">This paintframe is one of a handful remaining in the UK – and very few of those are operational, let alone located in the theatre itself. </p>
 <p>Terry Hands, who was Artistic Director here from the 1990s to the mid 2010s, had a lot to do with Theatr Clwyd’s paintframe staying on site – </p>
-
+ <</append>>
+<</timed>>
+<<timed 20s>>
+   <<append "#msgMount">>
 <div class="quote"><p>“The biggest legacy that Terry left was that we had all of the making departments in-house. He fought tooth and nail. It’s one of our USPs – and that it's one of very few theatres in the in the UK, and yet we're outside a small market town in North East Wales, and we've got all of...that!”</p></div>
-
+ <</append>>
+<</timed>>
+<<timed 34s>>
+   <<append "#msgMount">>
 <p>That’s Liam Evans-Ford, who became Executive Director at Theatr Clwyd in 2016. He’s someone who, like Terry Hands, has fought tooth and nail for the theatre and particularly the building’s redevelopment.</p>
 
 <p>There’s been a history of battlers at Theatr Clwyd. But this stuff is important. An on-site workshop means the theatre can employ people locally, to build an incredible crew, who make sets right here, which is such a privilege. </p>
-<<timed $btnAppearTime>>
+ <</append>>
+<</timed>>
+<<timed 64s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
