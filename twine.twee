@@ -7,7 +7,7 @@ Heritage Trail
 	"ifid": "3727506D-288C-46BD-A866-3D0FCB0106F7",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "landing",
+	"start": "prechoice",
 	"zoom": 1
 }
 
@@ -24,11 +24,6 @@ Heritage Trail
 
 
 :: UserScript [script]
-// importScripts(
-//   "https://cdn.jsdelivr.net/npm/uevent@2/browser.js",
-//   "https://cdn.jsdelivr.net/npm/three/build/three.min.js",
-//   "https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.js"
-// );
 
 :: Story JavaScript [script]
 $('#ui-bar').remove();
@@ -187,6 +182,8 @@ setup.addPlaceholder = () => {
 
 } 
 
+
+
 :: StoryInit
 <<cacheaudio "success" "assets/sound/uploadcomplete.mp3">>
 <<cacheaudio "distort" "assets/sound/Ffalabalam-distorted.mp3">>
@@ -247,8 +244,8 @@ setup.addPlaceholder = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     <<link [[$nextpass]]>>
-    <</link>>
+     /* <<link [[$nextpass]]>>
+    <</link>> */
 <div id="processingMount"></div>
 
 </div>
@@ -306,7 +303,22 @@ setup.addPlaceholder = () => {
    </div>
 </header>
 
+:: prechoice
+<<set $prevpass to "prechoice">>
+<<set $pass to "prechoice">>
+<<set $nextpass to "landing">>
 
+<main>
+    <<button "Studio is open">>
+        <<set $studio to "open">>
+        <<goto $nextpass>>
+    <</button>>
+     <<button "Studio is closed">>
+         <<set $studio to "closed">>
+        <<goto $nextpass>>
+    <</button>>
+    
+</main>
 :: landing [nobr] 
 <<set $prevpass to "landing">>
 <<set $pass to "landing">>
@@ -1620,7 +1632,11 @@ When you are ready to move on, let me know.
 :: 18_story [nobr]
 <<set $prevpass to "17_story">>
 <<set $pass to "18_story">>
-<<set $nextpass to "192_story">>
+<<if $studio is "open">>
+    <<set $nextpass to "192_story">>
+    <<elseif $studio is "closed">>
+     <<set $nextpass to "191_story">>
+<</if>>
 <<audio ":all" "stop">>
 <audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
@@ -1696,7 +1712,7 @@ When you are ready to move on, let me know.
 :: 191_story [nobr]
 <<set $prevpass to "18_story">>
 <<set $pass to "191_story">>
-<<set $nextpass to "20_story">>
+<<set $nextpass to "20_astory">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
@@ -1716,6 +1732,7 @@ When you are ready to move on, let me know.
 <p>Let me tell you what I know.</p>
 
 
+<iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7Dswj?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
 /* 360 Images loads and then  */
 <<timed $btnAppearTime>>
     <<append "#btnContainer">>
@@ -1725,6 +1742,8 @@ When you are ready to move on, let me know.
            /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
+
+
 
 :: 191_story-text-cym [nobr]
 <div id="processingMount">  <<include "processing">></div>
@@ -1747,7 +1766,7 @@ When you are ready to move on, let me know.
 :: 192_story [nobr]
 <<set $prevpass to "18_story">>
 <<set $pass to "192_story">>
-<<set $nextpass to "20_story">>
+<<set $nextpass to "20_bstory">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
@@ -1796,16 +1815,95 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 20_story [nobr]
-<<set $prevpass to "192_story">>
-<<set $pass to "20_story">>
+:: 20_astory [nobr]
+<<set $prevpass to "191_story">>
+<<set $pass to "20_astory">>
 <<set $nextpass to "21_story">>
 <<audio ":all" "stop">>
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
-:: 20_story-text-eng [nobr]
+:: 20_astory-text-eng [nobr]
+
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
+ <<timed 0.1s>>
+    <<append "#msgMount">>
+        <iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7Dswj?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+
+<div class="quote"><p>"I do think people wondered why there's this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come."</p></div>
+<p class="bold">That’s Christine Langton – wife of the late Maurice Langton – who in 1975 got the job to design and manage where you are now: Theatr Clwyd’s old TV studio.  </p>
+    <</append>>
+<</timed>>
+
+ <<timed 27s>>
+    <<append "#msgMount">>
+<p>It’s a huge, soundproofed room, with very high ceilings. Hanging from the ceiling is the lighting grid, which still has many of the old numbers and details. The bars are boxy and dark grey and I can imagine heavy lights hanging from them, filling the room with a strange buzz.  </p>
+    <</append>>
+<</timed>>
+ <<timed 44s>>
+    <<append "#msgMount">>
+<p>This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. </p> 
+<p>It’s changed now - but the bars are what would have made everything possible. </p>
+  <</append>>
+<</timed>>
+ <<timed 56s>>
+    <<append "#msgMount">>
+<div class="quote"><p>"The studio complex became an object of pride, really, for that area...TV was actually made from Mold. In the village that I lived in. People were dumbfounded by the idea that there was a television station studio down the road, and they were delighted, actually. So, oh, this, this actually means something to us." </p></div>
+
+<p>That’s John Hunter – a TV director and producer, who worked here as an HTV cameraman. </p>
+  
+<p>This room has had quite a history. It began life as part of an education technology centre for schools, where local young people could make films. </p>
+  <</append>>
+<</timed>>
+
+
+<<timed 98s>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+            <<goto $nextpass>>
+        <</button>>
+           /* <<include "navbuttons">> */
+    <</append>>
+<</timed>>
+
+:: 20_astory-text-cym [nobr]
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
+<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
+<p class="bold">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+
+
+<<timed $btnAppearTime>>
+    <<append "#btnContainer">>
+    <<button "Lorem">>
+            <<goto $nextpass>>
+        <</button>>
+       <<include "navbuttons-cym">>
+    <</append>>
+<</timed>>
+
+:: 20_bstory [nobr]
+<<set $prevpass to "192_story">>
+<<set $pass to "20_bstory">>
+<<set $nextpass to "21_story">>
+<<audio ":all" "stop">>
+
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<<include "_templateStory">>
+
+:: 20_bstory-text-eng [nobr]
 
 <<timed 0.1s>>
     <<replace "#processingMount">>
@@ -1850,7 +1948,7 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 20_story-text-cym [nobr]
+:: 20_bstory-text-cym [nobr]
 <<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
@@ -1874,7 +1972,7 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 21_story [nobr]
-<<set $prevpass to "20_story">>
+<<set $prevpass to "19_story">>
 <<set $pass to "21_story">>
 <<set $nextpass to "22_story">>
 <<audio ":all" "stop">>
@@ -1891,6 +1989,7 @@ When you are ready to move on, let me know.
         <</timed>>
 <<timed 0.1s>>
     <<append "#msgMount">>
+   
 <p class="bold">Then it became Studio 2 – a home in North Wales for two TV channels that mean a lot to Welsh people – HTV and S4C. </p>
 <p>They created music programmes, chat shows and quizzes, with audiences bussed in by the coachload. The beloved Welsh-language children’s programme Ffalabalam – and its beautiful sets, full of little houses and toys – was made here, too.</p> 
   <</append>>
@@ -2059,7 +2158,7 @@ When you are ready to move on, let me know.
 
           <div class="vimeo-container mar-2"
                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-            <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1"
+            <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d"
               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
@@ -2076,7 +2175,7 @@ When you are ready to move on, let me know.
   <div class="inline-accented-vid video-locked">
     <div class="vimeo-container mar-2"
          style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-      <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1"
+      <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d"
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
@@ -2114,6 +2213,7 @@ When you are ready to move on, let me know.
 :: 25_story-text-eng [nobr]
 <<timed 0.1s>>
    <<append "#msgMount">>
+
 <p class="bold">Wow – to think of all of the moments that happened right here. </p>
 <p>This one room has been so many different places – it keeps adapting. The community of Theatr Clwyd shapes what comes next, and it’s all led to you being here too. Marvelous. </p>
 

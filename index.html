@@ -110,11 +110,6 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 @import url("styles/generics.css");
 @import url("styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "UserScript" */
-// importScripts(
-//   "https://cdn.jsdelivr.net/npm/uevent@2/browser.js",
-//   "https://cdn.jsdelivr.net/npm/three/build/three.min.js",
-//   "https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.js"
-// );
 /* twine-user-script #2: "Story JavaScript" */
 $('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
@@ -309,8 +304,8 @@ setup.addPlaceholder = () => {
     &lt;&lt;/link&gt;&gt;
     &lt;&lt;link [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-     &lt;&lt;link [[$nextpass]]&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
+     /* &lt;&lt;link [[$nextpass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt; */
 &lt;div id=&quot;processingMount&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="navbuttonstext" tags="nobr" position="725,100" size="100,100">&lt;div class=&quot;nav-btn-container btn-container&quot;&gt;
@@ -347,7 +342,21 @@ setup.addPlaceholder = () => {
  &lt;div class=&quot;logo-wrapper&quot;&gt;
    &lt;img src=&quot;../assets/img/Theatr_Clwyd_Logo_Maroon.png&quot;/&gt;
    &lt;/div&gt;
-&lt;/header&gt;</tw-passagedata><tw-passagedata pid="10" name="landing" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+&lt;/header&gt;</tw-passagedata><tw-passagedata pid="10" name="prechoice" tags="" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;prechoice&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;prechoice&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
+
+&lt;main&gt;
+    &lt;&lt;button &quot;Studio is open&quot;&gt;&gt;
+        &lt;&lt;set $studio to &quot;open&quot;&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+     &lt;&lt;button &quot;Studio is closed&quot;&gt;&gt;
+         &lt;&lt;set $studio to &quot;closed&quot;&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+    
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="11" name="landing" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;languageChoice&quot;&gt;&gt;
 &lt;&lt;set $userchoices to {
@@ -375,7 +384,7 @@ setup.addPlaceholder = () => {
    
 &lt;/main&gt;
 
-/* &lt;&lt;include &quot;wallet&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="11" name="_templateIntro" tags="nobr" position="100,225" size="100,100">&lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt;
+/* &lt;&lt;include &quot;wallet&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="12" name="_templateIntro" tags="nobr" position="225,225" size="100,100">&lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
     &lt;div id=&quot;msgMount&quot;&gt;
@@ -394,7 +403,7 @@ setup.addPlaceholder = () => {
         &lt;/div&gt;
   
 &lt;/main&gt; 
-&lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="languageChoice" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+&lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="languageChoice" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;languageChoice&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -434,7 +443,7 @@ setup.addPlaceholder = () => {
 &lt;/div&gt;
 &lt;br/&gt;
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="13" name="chapters" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;languageChoice&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="14" name="chapters" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;languageChoice&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;chapters&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
@@ -462,7 +471,7 @@ setup.addPlaceholder = () => {
 &lt;/div&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer_floorplan&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="heritagelogo" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
+&lt;&lt;include &quot;footer_floorplan&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="heritagelogo" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;heritagelogo&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -476,7 +485,7 @@ setup.addPlaceholder = () => {
 &lt;/main&gt;
 &lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;goto $nextpass&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="_templateStory" tags="nobr" position="600,225" size="100,100">&lt;&lt;include &quot;header&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="_templateStory" tags="nobr" position="725,225" size="100,100">&lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
     &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
@@ -502,12 +511,12 @@ setup.addPlaceholder = () => {
 &lt;/main&gt;
 &lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;
 
-&lt;&lt;done&gt;&gt;&lt;&lt;set $a to setup.chooseStoryAudio()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="2_welcome" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;languageChoice&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $a to setup.chooseStoryAudio()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="2_welcome" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;languageChoice&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3_welcome&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="2_welcome-text-eng" tags="nobr" position="850,225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Well, hello. Shw’mae! Welcome&lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="2_welcome-text-eng" tags="nobr" position="975,225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Well, hello. Shw’mae! Welcome&lt;/p&gt;
 
 &lt;p&gt;I’m Phyl, an actor who’s been coming to this wonderful theatre for &lt;i&gt;years&lt;/i&gt;. &lt;/p&gt;
 
@@ -537,7 +546,7 @@ setup.addPlaceholder = () => {
         &lt;&lt;/button&gt;&gt;
         /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="2_welcome-text-cym" tags="nobr" position="975,225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. &lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="2_welcome-text-cym" tags="nobr" position="1100,225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. &lt;/p&gt;
 
 &lt;p&gt;Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida&lt;/p&gt;
 
@@ -553,12 +562,12 @@ setup.addPlaceholder = () => {
         &lt;&lt;/button&gt;&gt;
    &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="3_welcome" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;2_welcome&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="3_welcome" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;3_welcome&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4_welcome&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="3_welcome-text-eng" tags="nobr" position="1225,225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="3_welcome-text-eng" tags="nobr" position="100,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;p class=&quot;bold&quot;&gt;There we go - that seems simple enough. &lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
@@ -583,7 +592,7 @@ setup.addPlaceholder = () => {
    /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
     
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="3_welcome-text-cym" tags="nobr" position="100,350" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. &lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="3_welcome-text-cym" tags="nobr" position="225,350" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. &lt;/p&gt;
 
 &lt;p&gt;Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida&lt;/p&gt;
 
@@ -599,12 +608,12 @@ setup.addPlaceholder = () => {
         &lt;&lt;/button&gt;&gt;
      &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="4_welcome" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;3_welcome&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="4_welcome" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;3_welcome&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;4_welcome&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="4_welcome-text-eng" tags="nobr" position="350,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="4_welcome-text-eng" tags="nobr" position="475,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“He simply said, the people of Clwyd should have access to the best of everything...”&lt;/p&gt;&lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -634,7 +643,7 @@ setup.addPlaceholder = () => {
         &lt;&lt;/button&gt;&gt;
          /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="4_welcome-text-cym" tags="nobr" position="475,350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="4_welcome-text-cym" tags="nobr" position="600,350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -649,12 +658,12 @@ setup.addPlaceholder = () => {
         &lt;&lt;/button&gt;&gt;
       &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="5_story" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;4_welcome&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="5_story" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;4_welcome&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;5_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="5_story-text-eng" tags="nobr" position="725,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="5_story-text-eng" tags="nobr" position="850,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
  
     &lt;&lt;/timed&gt;&gt;
 &lt;div  id=&quot;mount&quot;&gt;
@@ -700,7 +709,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
          /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="5_story-text-cym" tags="nobr" position="850,350" size="100,100">&lt;div class=&quot;quote&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="5_story-text-cym" tags="nobr" position="975,350" size="100,100">&lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;&quot;Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;
 &lt;p&gt;Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;
 &lt;p&gt;Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
@@ -718,12 +727,12 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="6_story" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;5_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="6_story" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;5_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;6_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="6_story-text-eng" tags="nobr" position="1100,350" size="100,100">&lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="6_story-text-eng" tags="nobr" position="1225,350" size="100,100">&lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;unlocked2&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
       
@@ -757,7 +766,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="6_story-text-cym" tags="nobr" position="1225,350" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="6_story-text-cym" tags="nobr" position="100,475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -771,12 +780,12 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="7_story" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;6_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="7_story" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;6_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;7_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="7_story-text-eng" tags="nobr" position="225,475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="7_story-text-eng" tags="nobr" position="350,475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Got your card? Tidy&lt;/p&gt;
 
@@ -805,7 +814,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="7_story-text-cym" tags="nobr" position="350,475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="7_story-text-cym" tags="nobr" position="475,475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -819,12 +828,12 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="8_story" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;7_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="8_story" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;7_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;8_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;9_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="8_story-text-eng" tags="nobr" position="600,475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="8_story-text-eng" tags="nobr" position="725,475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Pause just outside the lift’s doors. &lt;/p&gt;
 
@@ -849,7 +858,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="8_story-text-cym" tags="nobr" position="725,475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="8_story-text-cym" tags="nobr" position="850,475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -863,12 +872,12 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="9_story" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;8_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="9_story" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;8_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;9_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;10_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="9_story-text-eng" tags="nobr" position="975,475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="9_story-text-eng" tags="nobr" position="1100,475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“You walk out of the town and then you see this, sort of, like, literally, this building on a hill…you&#39;re in the countryside, and that seems to me to be something that&#39;s very suitable to then entering this different world of a play...”&lt;/p&gt;
 &lt;span class=&quot;person&quot;&gt;Katherine Parkinson&lt;/span&gt;&lt;/div&gt;
@@ -916,7 +925,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="9_story-text-cym" tags="nobr" position="1100,475" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="9_story-text-cym" tags="nobr" position="1225,475" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -932,12 +941,12 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="10_story" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;9_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="10_story" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;9_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;10_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="10_story-text-eng" tags="nobr" position="100,600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="10_story-text-eng" tags="nobr" position="225,600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“But no, go there. Get liberated. Open your mind to the arts and to culture, to reading, writing, poetry, acting, theatre.”&lt;/p&gt;
 &lt;/div&gt;
@@ -982,7 +991,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="10_story-text-cym" tags="nobr" position="225,600" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="10_story-text-cym" tags="nobr" position="350,600" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -998,7 +1007,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="11_cameraembed" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;10_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="11_cameraembed" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;10_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1045,7 +1054,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 
 &lt;&lt;done&gt;&gt;
-  &lt;&lt;set $e to setup.takePicture()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="recordview" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
+  &lt;&lt;set $e to setup.takePicture()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="recordview" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;recordview&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &#39;stop&#39;&gt;&gt;
@@ -1087,7 +1096,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
   &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 
-&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="recordingtimer" tags="nobr" position="600,600" size="100,100">&lt;p class=&quot;recording-status&quot;&gt;● Recording...&lt;/p&gt;
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="recordingtimer" tags="nobr" position="725,600" size="100,100">&lt;p class=&quot;recording-status&quot;&gt;● Recording...&lt;/p&gt;
           &lt;p class=&quot;recording-timer&quot; id=&quot;countup&quot;&gt;0:00&lt;/p&gt;
 
 &lt;div id=&quot;finishButtonContainer&quot; style=&quot;margin-top: 1em;&quot;&gt;&lt;/div&gt;
@@ -1106,19 +1115,19 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 			&lt;/p&gt;
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="simpletrans" tags="nobr" position="725,600" size="100,100">&lt;div class=&quot; fadeIn3 success info-container&quot;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="simpletrans" tags="nobr" position="850,600" size="100,100">&lt;div class=&quot; fadeIn3 success info-container&quot;&gt;
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="unlocked" tags="nobr" position="850,600" size="100,100">&lt;div class=&quot; success info-container&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="unlocked" tags="nobr" position="975,600" size="100,100">&lt;div class=&quot; success info-container&quot;&gt;
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="unlocked2" tags="nobr" position="975,600" size="100,100">&lt;div class=&quot; success info-container&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="unlocked2" tags="nobr" position="1100,600" size="100,100">&lt;div class=&quot; success info-container&quot;&gt;
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing2&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete2&quot;/&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="processing" tags="nobr" position="1100,600" size="100,100">&lt;div class=&quot;info-container&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="processing" tags="nobr" position="1225,600" size="100,100">&lt;div class=&quot;info-container&quot;&gt;
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-long&quot;/&gt;
 /* &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="completed1" tags="nobr" position="1225,600" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_12.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="completed1" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_12.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
     &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
 /* &lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt; */
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1139,7 +1148,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 10s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="completed2" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_24.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="completed2" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_24.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1162,7 +1171,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 12s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="completed3" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_33.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="completed3" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_33.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1185,7 +1194,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 12s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="completed4" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_51.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed4" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_51.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
@@ -1207,7 +1216,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 11s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed5" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_55.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="completed5" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_55.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
@@ -1231,12 +1240,12 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 12s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="13_story" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="13_story" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;14_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="13_story-text-eng" tags="nobr" position="725,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="13_story-text-eng" tags="nobr" position="850,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Diolch&lt;/p&gt;
 &lt;p&gt;I can imagine you looking towards the view now – perhaps for the first time, perhaps not.&lt;/p&gt;
@@ -1273,7 +1282,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="13_story-text-cym" tags="nobr" position="850,725" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="13_story-text-cym" tags="nobr" position="975,725" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1289,12 +1298,12 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="14_story" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;13_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="14_story" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;14_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;15_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="14_story-text-eng" tags="nobr" position="1100,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="14_story-text-eng" tags="nobr" position="1225,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Time to head to our next location. &lt;/p&gt;
 
@@ -1322,7 +1331,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="14_story-text-cym" tags="nobr" position="1225,725" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="14_story-text-cym" tags="nobr" position="100,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1338,12 +1347,12 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="15_story" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;13_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="15_story" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;15_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;16_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="15_story-text-eng" tags="nobr" position="225,850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Aren’t the bar tiles beautiful? &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="15_story-text-eng" tags="nobr" position="350,850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Aren’t the bar tiles beautiful? &lt;/p&gt;
 &lt;p&gt;They were designed by Francesca Priest – one of the fabulous artists commissioned to create new artworks when the theatre reopened in 2025.  Here she is...&lt;/p&gt;
 
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“I was very struck by that view when I went to visit and just how inspiring it was and expansive it was, looking out over the valley and over to the hills. And so I just had this sort of idea that the glaze color would pull some of the sky into the space...” &lt;/p&gt;&lt;/div&gt;
@@ -1359,7 +1368,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="15_story-text-cym" tags="nobr" position="350,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="15_story-text-cym" tags="nobr" position="475,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1375,12 +1384,12 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="16_story" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;15_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="16_story" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;15_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;16_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;17_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="16_story-text-eng" tags="nobr" position="600,850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="16_story-text-eng" tags="nobr" position="725,850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Theatr Clwyd’s bar is for everyone – staff, locals, people who’ve travelled far...
  &lt;/p&gt;
@@ -1408,7 +1417,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="16_story-text-cym" tags="nobr" position="725,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="16_story-text-cym" tags="nobr" position="850,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1424,12 +1433,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="17_story" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;16_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="17_story" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;16_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;17_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;18_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="17_story-text-eng" tags="nobr" position="975,850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Right, we are off to the old TV Studio. 
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="17_story-text-eng" tags="nobr" position="1100,850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Right, we are off to the old TV Studio. 
  &lt;/p&gt;
 &lt;p&gt;It’s a room that has transformed a few times over the course of its life – if I remember correctly – let’s get going and find out. &lt;/p&gt;
 
@@ -1443,7 +1452,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="17_story-text-cym" tags="nobr" position="1100,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="17_story-text-cym" tags="nobr" position="1225,850" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1459,12 +1468,16 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="18_story" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $prevpass to &quot;17_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="18_story" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $prevpass to &quot;17_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;18_story&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;192_story&quot;&gt;&gt;
+&lt;&lt;if $studio is &quot;open&quot;&gt;&gt;
+    &lt;&lt;set $nextpass to &quot;192_story&quot;&gt;&gt;
+    &lt;&lt;elseif $studio is &quot;closed&quot;&gt;&gt;
+     &lt;&lt;set $nextpass to &quot;191_story&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="18_story-text-eng" tags="nobr" position="100,975" size="100,100">/* &lt;&lt;audio &quot;distort&quot; &quot;play&quot; volume 0.40&gt;&gt; */
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="18_story-text-eng" tags="nobr" position="225,975" size="100,100">/* &lt;&lt;audio &quot;distort&quot; &quot;play&quot; volume 0.40&gt;&gt; */
 &lt;p class=&quot;bold&quot;&gt;What’s that sound? What’s going on here? &lt;/p&gt;
 
 &lt;p&gt;Ah, it seems we need to activate the space to tune in. &lt;/p&gt;
@@ -1481,7 +1494,7 @@ When you are ready to move on, let me know.
  &lt;span class=&quot;clue hide&quot; id=&quot;clueMount&quot;&gt;&lt;/span&gt;
 
 &lt;br/&gt;
-&lt;&lt;include &quot;pw17&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="18_story-text-cym" tags="nobr" position="225,975" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;include &quot;pw17&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="18_story-text-cym" tags="nobr" position="350,975" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”&lt;/p&gt;&lt;/div&gt;
 
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1497,7 +1510,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="pw17" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $codeword to &quot;&quot;&gt;&gt;  /* ensure it&#39;s blank so the placeholder shows */
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="pw17" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $codeword to &quot;&quot;&gt;&gt;  /* ensure it&#39;s blank so the placeholder shows */
 
 &lt;div class=&quot;codeinput&quot;&gt;
   &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1523,13 +1536,13 @@ When you are ready to move on, let me know.
 &lt;br/&gt;
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="191_story" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $prevpass to &quot;18_story&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="191_story" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $prevpass to &quot;18_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;191_story&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;20_story&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;20_astory&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="191_story-text-eng" tags="nobr" position="600,975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="191_story-text-eng" tags="nobr" position="725,975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1542,6 +1555,7 @@ When you are ready to move on, let me know.
 &lt;p&gt;Let me tell you what I know.&lt;/p&gt;
 
 
+&lt;iframe width=&quot;100%&quot; height=&quot;640&quot; frameborder=&quot;0&quot; allow=&quot;xr-spatial-tracking; gyroscope; accelerometer&quot; allowfullscreen scrolling=&quot;no&quot; src=&quot;https://kuula.co/share/collection/7Dswj?logo=1&amp;info=1&amp;fs=1&amp;vr=0&amp;sd=1&amp;thumbs=1&quot;&gt;&lt;/iframe&gt;
 /* 360 Images loads and then  */
 &lt;&lt;timed $btnAppearTime&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
@@ -1550,7 +1564,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="191_story-text-cym" tags="nobr" position="725,975" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="191_story-text-cym" tags="nobr" position="850,975" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -1565,13 +1579,13 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="192_story" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $prevpass to &quot;18_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="192_story" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $prevpass to &quot;18_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;192_story&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;20_story&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;20_bstory&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="192_story-text-eng" tags="nobr" position="975,975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="192_story-text-eng" tags="nobr" position="1100,975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1593,7 +1607,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="192_story-text-cym" tags="nobr" position="1100,975" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="192_story-text-cym" tags="nobr" position="1225,975" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -1607,13 +1621,82 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="80" name="20_story" tags="nobr" position="1225,975" size="100,100">&lt;&lt;set $prevpass to &quot;192_story&quot;&gt;&gt;
-&lt;&lt;set $pass to &quot;20_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="20_astory" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;191_story&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;20_astory&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;21_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="20_story-text-eng" tags="nobr" position="100,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="20_astory-text-eng" tags="nobr" position="225,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+        &lt;iframe width=&quot;100%&quot; height=&quot;640&quot; frameborder=&quot;0&quot; allow=&quot;xr-spatial-tracking; gyroscope; accelerometer&quot; allowfullscreen scrolling=&quot;no&quot; src=&quot;https://kuula.co/share/collection/7Dswj?logo=1&amp;info=1&amp;fs=1&amp;vr=0&amp;sd=1&amp;thumbs=1&quot;&gt;&lt;/iframe&gt;
+
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I do think people wondered why there&#39;s this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;p class=&quot;bold&quot;&gt;That’s Christine Langton – wife of the late Maurice Langton – who in 1975 got the job to design and manage where you are now: Theatr Clwyd’s old TV studio.  &lt;/p&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 27s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p&gt;It’s a huge, soundproofed room, with very high ceilings. Hanging from the ceiling is the lighting grid, which still has many of the old numbers and details. The bars are boxy and dark grey and I can imagine heavy lights hanging from them, filling the room with a strange buzz.  &lt;/p&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 44s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p&gt;This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. &lt;/p&gt; 
+&lt;p&gt;It’s changed now - but the bars are what would have made everything possible. &lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 56s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;The studio complex became an object of pride, really, for that area...TV was actually made from Mold. In the village that I lived in. People were dumbfounded by the idea that there was a television station studio down the road, and they were delighted, actually. So, oh, this, this actually means something to us.&quot; &lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;That’s John Hunter – a TV director and producer, who worked here as an HTV cameraman. &lt;/p&gt;
+  
+&lt;p&gt;This room has had quite a history. It began life as part of an education technology centre for schools, where local young people could make films. &lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+
+&lt;&lt;timed 98s&gt;&gt;
+    &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+           /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="20_astory-text-cym" tags="nobr" position="350,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+        &lt;&lt;include &quot;processing&quot;&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;p class=&quot;bold&quot;&gt;
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  
+&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;
+
+
+&lt;&lt;timed $btnAppearTime&gt;&gt;
+    &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button &quot;Lorem&quot;&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+       &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="20_bstory" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $prevpass to &quot;192_story&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;20_bstory&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;21_story&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
+
+&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="20_bstory-text-eng" tags="nobr" position="600,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1654,7 +1737,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="20_story-text-cym" tags="nobr" position="225,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="20_bstory-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1674,19 +1757,20 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="21_story" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $prevpass to &quot;20_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="21_story" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $prevpass to &quot;19_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;21_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;22_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="21_story-text-eng" tags="nobr" position="475,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="21_story-text-eng" tags="nobr" position="975,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+   
 &lt;p class=&quot;bold&quot;&gt;Then it became Studio 2 – a home in North Wales for two TV channels that mean a lot to Welsh people – HTV and S4C. &lt;/p&gt;
 &lt;p&gt;They created music programmes, chat shows and quizzes, with audiences bussed in by the coachload. The beloved Welsh-language children’s programme Ffalabalam – and its beautiful sets, full of little houses and toys – was made here, too.&lt;/p&gt; 
   &lt;&lt;/append&gt;&gt;
@@ -1710,7 +1794,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="21_story-text-cym" tags="nobr" position="600,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="89" name="21_story-text-cym" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1730,12 +1814,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="22_story" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="22_story" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;22_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;23_galleryffabalam&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="22_story-text-eng" tags="nobr" position="850,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="91" name="22_story-text-eng" tags="nobr" position="100,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1771,7 +1855,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="22_story-text-cym" tags="nobr" position="975,1100" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="92" name="22_story-text-cym" tags="nobr" position="225,1225" size="100,100">&lt;div id=&quot;processingMount&quot;&gt;  &lt;&lt;include &quot;processing&quot;&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -1817,7 +1901,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
         &lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;
     &lt;/div&gt;
-&lt;/main&gt; */</tw-passagedata><tw-passagedata pid="89" name="23_galleryffabalam" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
+&lt;/main&gt; */</tw-passagedata><tw-passagedata pid="93" name="23_galleryffabalam" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;23_galleryffabalam&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;25_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -1840,7 +1924,7 @@ When you are ready to move on, let me know.
 
           &lt;div class=&quot;vimeo-container mar-2&quot;
                style=&quot;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;&quot;&gt;
-            &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&amp;autoplay=1&quot;
+            &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&quot;
               style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;
               frameborder=&quot;0&quot;
               allow=&quot;autoplay; fullscreen; picture-in-picture&quot;
@@ -1857,7 +1941,7 @@ When you are ready to move on, let me know.
   &lt;div class=&quot;inline-accented-vid video-locked&quot;&gt;
     &lt;div class=&quot;vimeo-container mar-2&quot;
          style=&quot;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;&quot;&gt;
-      &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&amp;autoplay=1&quot;
+      &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&quot;
         style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;
         frameborder=&quot;0&quot;
         allow=&quot;autoplay; fullscreen; picture-in-picture&quot;
@@ -1882,13 +1966,14 @@ When you are ready to move on, let me know.
 
 
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="90" name="25_story" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;23_galleryffabalam&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="94" name="25_story" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $prevpass to &quot;23_galleryffabalam&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;25_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;26_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="91" name="25_story-text-eng" tags="nobr" position="100,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="25_story-text-eng" tags="nobr" position="600,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+
 &lt;p class=&quot;bold&quot;&gt;Wow – to think of all of the moments that happened right here. &lt;/p&gt;
 &lt;p&gt;This one room has been so many different places – it keeps adapting. The community of Theatr Clwyd shapes what comes next, and it’s all led to you being here too. Marvelous. &lt;/p&gt;
 
@@ -1910,7 +1995,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="92" name="25_story-text-cym" tags="nobr" position="225,1225" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="25_story-text-cym" tags="nobr" position="725,1225" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -1925,12 +2010,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="93" name="26_story" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $prevpass to &quot;25_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="97" name="26_story" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;25_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;26_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;27_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="26_story-text-eng" tags="nobr" position="475,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="26_story-text-eng" tags="nobr" position="975,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
     &lt;p&gt;&quot;Walked out and he was just sitting there on his own. &lt;/p&gt;
@@ -1959,7 +2044,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="26_story-text-cym" tags="nobr" position="600,1225" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="99" name="26_story-text-cym" tags="nobr" position="1100,1225" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -1974,12 +2059,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="27_story" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $prevpass to &quot;26_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="27_story" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;26_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;27_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;28_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="97" name="27_story-text-eng" tags="nobr" position="850,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="101" name="27_story-text-eng" tags="nobr" position="100,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;You&#39;ll find there is a Mirror on the wall – this was designed by Manon Awst.&lt;/p&gt;
 &lt;p&gt;Manon wanted to connect people to the wider landscape around Theatr Clwyd by using the pattern of bark, but in the building’s colour scheme. Your reflection reveals a mash-up of a colourful forest, the theatre’s architecture and, of course, you.&lt;/p&gt;
@@ -2009,7 +2094,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="27_story-text-cym" tags="nobr" position="975,1225" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="27_story-text-cym" tags="nobr" position="225,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -2024,12 +2109,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="99" name="28_story" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;27_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="103" name="28_story" tags="nobr" position="350,1350" size="100,100">&lt;&lt;set $prevpass to &quot;27_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;28_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;29_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="28_story-text-eng" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="28_story-text-eng" tags="nobr" position="475,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;We’re off to see where the stage sets are painted, on Theatr Clwyd’s enormous paint frame, one of very few left in the UK.  &lt;/p&gt;
 &lt;p&gt;Now, as you’re about to step backstage, I’m going to have to kindly ask you not to take photos, so as not to spoil any surprises. &lt;/p&gt;
@@ -2059,7 +2144,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="101" name="28_story-text-cym" tags="nobr" position="100,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="105" name="28_story-text-cym" tags="nobr" position="600,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -2074,12 +2159,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="102" name="29_story" tags="nobr" position="225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;28_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="29_story" tags="nobr" position="725,1350" size="100,100">&lt;&lt;set $prevpass to &quot;28_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;29_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;30_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="103" name="29_story-text-eng" tags="nobr" position="350,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="107" name="29_story-text-eng" tags="nobr" position="850,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Here we are.&lt;/p&gt; 
 &lt;p&gt;This room is wide and very tall, extending below and above where we stand. Bits of design and construction for future shows are often dotted around. And every time you come in, it’s different. A prop, a costume, some sketches. This is the room where the designer&#39;s dreams are made real.  &lt;/p&gt;
@@ -2102,7 +2187,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="29_story-text-cym" tags="nobr" position="475,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="29_story-text-cym" tags="nobr" position="975,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -2116,12 +2201,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="105" name="30_story" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $prevpass to &quot;29_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="30_story" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;29_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;30_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;31_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="30_story-text-eng" tags="nobr" position="725,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="30_story-text-eng" tags="nobr" position="1225,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;This paintframe is one of a handful remaining in the UK – and very few of those are operational, let alone located in the theatre itself. &lt;/p&gt;
 &lt;p&gt;Terry Hands, who was Artistic Director here from the 1990s to the mid 2010s, had a lot to do with Theatr Clwyd’s paintframe staying on site – &lt;/p&gt;
@@ -2146,7 +2231,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="107" name="30_story-text-cym" tags="nobr" position="850,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="111" name="30_story-text-cym" tags="nobr" position="100,1475" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -2160,12 +2245,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="108" name="31_story" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $prevpass to &quot;30_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="31_story" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;30_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;31_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;32_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="31_story-text-eng" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="31_story-text-eng" tags="nobr" position="350,1475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;And I love the fact that there&#39;s so many paint stains everywhere, but it looks like it&#39;s all, you know, a work of art in itself... It&#39;s a paint frame, but the whole room has got, well, it&#39;s got stories to tell.&quot; &lt;/p&gt;
 &lt;span class=&quot;person&quot;&gt;Angharad Madog&lt;/span&gt;&lt;/div&gt;
@@ -2196,7 +2281,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="31_story-text-cym" tags="nobr" position="1225,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="31_story-text-cym" tags="nobr" position="475,1475" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -2210,7 +2295,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="111" name="pw32" tags="nobr" position="100,1475" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="115" name="pw32" tags="nobr" position="600,1475" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
     &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
     &lt;br/&gt;&lt;br/&gt;
     &lt;&lt;button &quot;Enter&quot;&gt;&gt;
@@ -2239,12 +2324,12 @@ When you are ready to move on, let me know.
 &lt;/div&gt;
     &lt;br/&gt;
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="32_story" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;31_story&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="116" name="32_story" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;31_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;32_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;34_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="32_story-text-eng" tags="nobr" position="350,1475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="32_story-text-eng" tags="nobr" position="850,1475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
    &lt;p&gt; So this gauze is from our Christmas pantomime from Beauty and the Beast in 2021. The cloth you see is a transformation gauze, different to a normal scenic canvas cloth. We&#39;ve painted it in dark blues and ultramarine and Prussian colours. There&#39;s a large offset silver and gold star and radiating from it is a trail of iridescent bubbles.&lt;/p&gt;
@@ -2277,7 +2362,7 @@ When you are ready to move on, let me know.
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="32_story-text-cym" tags="nobr" position="475,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="32_story-text-cym" tags="nobr" position="975,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -2290,12 +2375,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="115" name="34_story" tags="nobr" position="600,1475" size="100,100">&lt;&lt;set $prevpass to &quot;32_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="34_story" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;32_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;34_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;35_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="116" name="34_story-text-eng" tags="nobr" position="725,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;I was in that panto – it was directed by Tamara Harvey and I played Nana Nerys from Nercwys! &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="120" name="34_story-text-eng" tags="nobr" position="1225,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;I was in that panto – it was directed by Tamara Harvey and I played Nana Nerys from Nercwys! &lt;/p&gt;
 
 &lt;p&gt;Beyond the paintframe is the workshop, where the props and sets are made. &lt;/p&gt;
 &lt;p&gt;Head to the other side of the balcony to see what’s going on.&lt;/p&gt;
@@ -2308,7 +2393,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="34_story-text-cym" tags="nobr" position="850,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="121" name="34_story-text-cym" tags="nobr" position="100,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -2321,12 +2406,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="35_story" tags="nobr" position="975,1475" size="100,100">&lt;&lt;set $prevpass to &quot;34_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="35_story" tags="nobr" position="225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;34_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;35_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;36_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="35_story-text-eng" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="123" name="35_story-text-eng" tags="nobr" position="350,1600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I love going into that workshop because of the smells, in there, you know? To see the paint and the woodwork and all the shavings on the floor, and it&#39;s just, it&#39;s just people at the root of theatre making, isn&#39;t it? They are creating our world for us, and we play in their world that they create.&quot;&lt;/p&gt;&lt;/div&gt;\
     &lt;&lt;/append&gt;&gt;
@@ -2349,7 +2434,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="120" name="35_story-text-cym" tags="nobr" position="1225,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="124" name="35_story-text-cym" tags="nobr" position="475,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -2362,12 +2447,12 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="121" name="36_story" tags="nobr" position="100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;35_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="36_story" tags="nobr" position="600,1600" size="100,100">&lt;&lt;set $prevpass to &quot;35_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;36_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;37_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="36_story-text-eng" tags="nobr" position="225,1600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="126" name="36_story-text-eng" tags="nobr" position="725,1600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;There’s something special back here – sometimes overlooked. &lt;/p&gt;
 &lt;p&gt;The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else –  Our pantos are like nothing else – &lt;/p&gt;
@@ -2428,7 +2513,7 @@ Let’s head to our next location – our stage! &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="123" name="36_story-text-cym" tags="nobr" position="350,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="127" name="36_story-text-cym" tags="nobr" position="850,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -2441,12 +2526,12 @@ Let’s head to our next location – our stage! &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="124" name="37_story" tags="nobr" position="475,1600" size="100,100">&lt;&lt;set $prevpass to &quot;36_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="37_story" tags="nobr" position="975,1600" size="100,100">&lt;&lt;set $prevpass to &quot;36_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;37_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;38_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="37_story-text-eng" tags="nobr" position="600,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re headed back to the public foyer. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="37_story-text-eng" tags="nobr" position="1100,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re headed back to the public foyer. &lt;/p&gt;
 
 &lt;p&gt;Go back through the single door and turn left down the corridor, past the TV Studio sign. &lt;br&gt;
 Go back through the double doors at the end, and turn right.&lt;br&gt; 
@@ -2461,7 +2546,7 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="126" name="37_story-text-cym" tags="nobr" position="725,1600" size="100,100">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="37_story-text-cym" tags="nobr" position="1225,1600" size="100,100">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
 
 &lt;&lt;timed $btnAppearTime&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
@@ -2470,12 +2555,12 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="127" name="38_story" tags="nobr" position="850,1600" size="100,100">&lt;&lt;set $prevpass to &quot;37_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="38_story" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;37_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;38_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;39_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="38_story-text-eng" tags="nobr" position="975,1600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="38_story-text-eng" tags="nobr" position="225,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Our main stage awaits!&lt;/p&gt;
 &lt;p&gt;But one minute... It’s Phillip Jones again – who’s he met this time?!&lt;/p&gt;
@@ -2502,7 +2587,7 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="38_story-text-cym" tags="nobr" position="1100,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="133" name="38_story-text-cym" tags="nobr" position="350,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -2515,12 +2600,12 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="39_story" tags="nobr" position="1225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;38_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="134" name="39_story" tags="nobr" position="475,1725" size="100,100">&lt;&lt;set $prevpass to &quot;38_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;39_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;40_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="39_story-text-eng" tags="nobr" position="100,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="135" name="39_story-text-eng" tags="nobr" position="600,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;It’s the spark – that’s the thing here – a possibility, right? &lt;/p&gt;
 &lt;p&gt;Hours upon hours are spent painting backdrops to create Hours upon hours are spent painting backdrops and constructing sets to create doors to new realities. &lt;br&gt;
@@ -2549,7 +2634,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="39_story-text-cym" tags="nobr" position="225,1725" size="100,100">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="136" name="39_story-text-cym" tags="nobr" position="725,1725" size="100,100">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
 
 &lt;&lt;timed $btnAppearTime&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
@@ -2558,12 +2643,12 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="133" name="40_story" tags="nobr" position="350,1725" size="100,100">&lt;&lt;set $prevpass to &quot;39_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="137" name="40_story" tags="nobr" position="850,1725" size="100,100">&lt;&lt;set $prevpass to &quot;39_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;40_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;41_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="134" name="40_story-text-eng" tags="nobr" position="475,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;Inside, head through the first door on your left. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="138" name="40_story-text-eng" tags="nobr" position="975,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;Inside, head through the first door on your left. &lt;/p&gt;
 
 &lt;p&gt;There’s a few steps on the right, and a lift on the left. &lt;/p&gt;
  &lt;p&gt; When you’re at the top of the stairs, head into the Dee &amp; Alyn Box.
@@ -2577,7 +2662,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="135" name="40_story-text-cym" tags="nobr" position="600,1725" size="100,100">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="40_story-text-cym" tags="nobr" position="1100,1725" size="100,100">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
 
 &lt;&lt;timed $btnAppearTime&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
@@ -2586,12 +2671,12 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="136" name="41_story" tags="nobr" position="725,1725" size="100,100">&lt;&lt;set $prevpass to &quot;40_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="41_story" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;40_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;41_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;42_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="137" name="41_story-text-eng" tags="nobr" position="850,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="141" name="41_story-text-eng" tags="nobr" position="100,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Isn&#39;t it lush?&lt;/p&gt;
 &lt;p&gt;This is a relaxed space, for people who need it. I’ve noticed through the years how Theatr Clwyd embraces everyone – whatever your age, ability or circumstance. We’re all part of the family.&lt;/p&gt;
@@ -2618,7 +2703,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="138" name="41_story-text-cym" tags="nobr" position="975,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum!&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="142" name="41_story-text-cym" tags="nobr" position="225,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum!&lt;/p&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;
 
 &lt;&lt;timed $btnAppearTime&gt;&gt;
@@ -2628,12 +2713,12 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="139" name="42_story" tags="nobr" position="1100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;41_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="143" name="42_story" tags="nobr" position="350,1850" size="100,100">&lt;&lt;set $prevpass to &quot;41_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;42_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;floorplan&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="42_story-text-eng" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="42_story-text-eng" tags="nobr" position="475,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;These are Transform tiles from the 1970s – based on a design by German sculptor, Fritz Steller. He made incredible art for civic buildings across the UK.&lt;/p&gt;
 &lt;p&gt;Every tile looks slightly different. When they were fired in their kilns, each responded differently to the flames, revealing distinct patterns and colours. Theatre experts also helped with their fitting – they knew the effect the tiles would have on the theatre’s sound.&lt;/p&gt;
@@ -2686,7 +2771,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="141" name="42_story-text-cym" tags="nobr" position="100,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet!&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="145" name="42_story-text-cym" tags="nobr" position="600,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet!&lt;/p&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;
 
 &lt;div class=&quot;quote&quot;&gt;
@@ -2700,7 +2785,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="142" name="floorplan" tags="nobr" position="225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;42_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="146" name="floorplan" tags="nobr" position="725,1850" size="100,100">&lt;&lt;set $prevpass to &quot;42_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;floorplan&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;49_story&quot;&gt;&gt;
 &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
@@ -2737,7 +2822,7 @@ Past the writers library on your right, Drws C is on your left.
     &lt;/main&gt;
     
     &lt;&lt;include &quot;footer_floorplan&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="button1" tags="nobr" position="350,1850" size="100,100">&lt;&lt;button &quot;Listen&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="button1" tags="nobr" position="850,1850" size="100,100">&lt;&lt;button &quot;Listen&quot;&gt;&gt;
    
      &lt;&lt;addclass &quot;.dot1&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2756,7 +2841,7 @@ Past the writers library on your right, Drws C is on your left.
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="button1a" tags="nobr" position="475,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
+ &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="button1a" tags="nobr" position="975,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
    
       &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
       &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2777,7 +2862,7 @@ Past the writers library on your right, Drws C is on your left.
             &lt;&lt;include &quot;button2&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="145" name="button2" tags="nobr" position="600,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
+ &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="149" name="button2" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
    
        &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2798,7 +2883,7 @@ Past the writers library on your right, Drws C is on your left.
             &lt;&lt;include &quot;button3&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="146" name="button3" tags="nobr" position="725,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
+ &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="button3" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
    
       &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;removeclass &quot;.dot2&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
@@ -2818,7 +2903,7 @@ Past the writers library on your right, Drws C is on your left.
             &lt;&lt;include &quot;button4&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="button4" tags="nobr" position="850,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
+ &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="151" name="button4" tags="nobr" position="100,1975" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
    
       &lt;&lt;removeclass &quot;.dot3&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2841,14 +2926,14 @@ Past the writers library on your right, Drws C is on your left.
                 &lt;&lt;/button&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="148" name="footer_floorplan" tags="nobr" position="975,1850" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
+ &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="footer_floorplan" tags="nobr" position="225,1975" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
 &lt;&lt;link [img[assets/img/back-sharp-b.png][$prevpass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
    
     &lt;div&gt;&lt;div/&gt;
 &lt;div&gt;&lt;div/&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="44_floorplan_story" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="44_floorplan_story" tags="nobr" position="350,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
      &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_44.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -2877,7 +2962,7 @@ Past the writers library on your right, Drws C is on your left.
     &lt;p&gt;I never knew his first performance was as a rat and a weasel!&lt;/p&gt; 
     &lt;p&gt;He definitely has felt that special relationship with the audience.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="45_floorplan_story" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="154" name="45_floorplan_story" tags="nobr" position="475,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_45.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -2898,7 +2983,7 @@ Past the writers library on your right, Drws C is on your left.
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. &lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="151" name="46_floorplan_story" tags="nobr" position="100,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="46_floorplan_story" tags="nobr" position="600,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_46.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;From the front row, the stage is right in front of you, only  inches up.  &lt;/p&gt;
@@ -2906,23 +2991,23 @@ Past the writers library on your right, Drws C is on your left.
 &lt;p&gt;That’s Judie von der Fecht! Her and Paul are front row regulars.&lt;/p&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Our first date was going to see The Hitchhiker&#39;s Guide to the Galaxy on stage at Theatr Clwyd...”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;There’s Paul! They’ve been coming here since the late 1970s. They’ve been to – how many productions?&lt;/p&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we&#39;re going to have a theatre room. And we&#39;re going to wallpaper it with our tickets.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="47_floorplan_story" tags="nobr" position="225,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we&#39;re going to have a theatre room. And we&#39;re going to wallpaper it with our tickets.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="47_floorplan_story" tags="nobr" position="725,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_47.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The main theatre is so wonderfully intimate. No matter where you sit. It doesn&#39;t feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there&#39;s no bad seat there... you feel so intimate. I guess it&#39;s a place of escape, almost, it&#39;s one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” &lt;/p&gt;&lt;/div&gt;
-&lt;p&gt;That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="153" name="48_floorplan_story" tags="nobr" position="350,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;p&gt;That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="157" name="48_floorplan_story" tags="nobr" position="850,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_48.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;The ushers often sneak in to sit here – and see how a show evolves over time. &lt;/p&gt;
 
 &lt;p&gt;Ah, it’s usher Geoff Wiliams again!&lt;/p&gt;
 
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“You could look at the whole stage and the performance in a different way. You could see things that were going on that you never noticed because you were too busy watching the overall picture. And to watch a thing two or three times, it isn&#39;t boring, it&#39;s terrific.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="49_story" tags="nobr" position="475,1975" size="100,100">&lt;&lt;set $prevpass to &quot;floorplan&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“You could look at the whole stage and the performance in a different way. You could see things that were going on that you never noticed because you were too busy watching the overall picture. And to watch a thing two or three times, it isn&#39;t boring, it&#39;s terrific.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="49_story" tags="nobr" position="975,1975" size="100,100">&lt;&lt;set $prevpass to &quot;floorplan&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;49_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;50_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="49_story-text-eng" tags="nobr" position="600,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;Each seat holds someone through their time with us. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="49_story-text-eng" tags="nobr" position="1100,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;Each seat holds someone through their time with us. &lt;/p&gt;
 &lt;p&gt;Be that one visit or a lifetime of stories.  &lt;/p&gt;
 &lt;p&gt;Some seats bear the names of friends and loved ones.&lt;/p&gt; 
 &lt;p&gt;And to finish our time in the theatre, I need the name written on the plaque. &lt;/p&gt;
@@ -2930,13 +3015,13 @@ Past the writers library on your right, Drws C is on your left.
 
 
 
-&lt;&lt;include &quot;pw49&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="156" name="49_story-text-cym" tags="nobr" position="725,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;include &quot;pw49&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="160" name="49_story-text-cym" tags="nobr" position="1225,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;
 
-&lt;&lt;include &quot;pw49&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="157" name="pw49" tags="nobr" position="850,1975" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
+&lt;&lt;include &quot;pw49&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="pw49" tags="nobr" position="100,2100" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
     &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
     &lt;br/&gt;&lt;br/&gt;
     &lt;&lt;button &quot;Enter&quot;&gt;&gt;
@@ -2965,12 +3050,12 @@ Past the writers library on your right, Drws C is on your left.
 &lt;/div&gt;
     &lt;br/&gt;
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-    &lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="158" name="50_story" tags="nobr" position="975,1975" size="100,100">&lt;&lt;set $prevpass to &quot;49_story&quot;&gt;&gt;
+    &lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="162" name="50_story" tags="nobr" position="225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;49_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;50_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="50_story-text-eng" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="50_story-text-eng" tags="nobr" position="350,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
   &lt;p&gt; “Theatr Clwyd, you know, has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. &lt;/p&gt;
@@ -2994,7 +3079,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="160" name="50_story-text-cym" tags="nobr" position="1225,1975" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="50_story-text-cym" tags="nobr" position="475,2100" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
@@ -3009,12 +3094,12 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="52_story" tags="nobr" position="100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;50_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="52_story" tags="nobr" position="600,2100" size="100,100">&lt;&lt;set $prevpass to &quot;50_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="162" name="52_story-text-eng" tags="nobr" position="225,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re coming to the end it seems, just one more location to visit – or rather a view to return to.  &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="166" name="52_story-text-eng" tags="nobr" position="725,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re coming to the end it seems, just one more location to visit – or rather a view to return to.  &lt;/p&gt;
 &lt;p&gt;I think it’s about time we say goodbye - but just for now!&lt;/p&gt;
 
 &lt;p&gt;Come out of Drws C and walk along the corridor so you can see out to the view. &lt;/p&gt;
@@ -3027,7 +3112,7 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="52_story-text-cym" tags="nobr" position="350,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="167" name="52_story-text-cym" tags="nobr" position="850,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -3041,12 +3126,12 @@ Past the writers library on your right, Drws C is on your left.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="53_story" tags="nobr" position="475,2100" size="100,100">&lt;&lt;set $prevpass to &quot;52_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="168" name="53_story" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="53_story-text-eng" tags="nobr" position="600,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="53_story-text-eng" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Theatr Clwyd’s mission statement begins like this:&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
@@ -3123,7 +3208,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="166" name="53_story-text-cym" tags="nobr" position="725,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="53_story-text-cym" tags="nobr" position="1225,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -3137,7 +3222,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="167" name="54_speakpipe" tags="nobr" position="850,2100" size="100,100">&lt;&lt;set $prevpass to &quot;53_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="171" name="54_speakpipe" tags="nobr" position="100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -3185,12 +3270,12 @@ Where our community shapes us, challenges us, and drives us on – from the bees
  
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="168" name="56_story" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;54_speakpipe&quot;&gt;&gt;
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="172" name="56_story" tags="nobr" position="225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;credits&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="56_story-text-eng" tags="nobr" position="1100,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’ve reached our end. It’s time to return your keycard to the front desk.&lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="173" name="56_story-text-eng" tags="nobr" position="350,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’ve reached our end. It’s time to return your keycard to the front desk.&lt;/p&gt;
 
 &lt;p&gt;By the way - You can come back and do the trail again any time – and I’ll be delighted to join you.&lt;/p&gt;
 
@@ -3205,7 +3290,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
   &lt;a href=&quot;https://www.theatrclwyd.com/&quot; target=&quot;_blank&quot;&gt;Finish&lt;/a&gt;&lt;/div&gt;
 
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="56_story-text-cym" tags="nobr" position="1225,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="174" name="56_story-text-cym" tags="nobr" position="475,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
   
 &lt;/p&gt;
@@ -3219,7 +3304,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="171" name="credits" tags="nobr" position="100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;56_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="175" name="credits" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $prevpass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;credits&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;credits&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
