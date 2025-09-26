@@ -244,8 +244,8 @@ setup.addPlaceholder = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     <<link [[$nextpass]]>>
-    <</link>>
+     /* <<link [[$nextpass]]>>
+    <</link>> */
 <div id="processingMount"></div>
 
 </div>
