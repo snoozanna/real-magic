@@ -304,8 +304,8 @@ setup.addPlaceholder = () => {
     &lt;&lt;/link&gt;&gt;
     &lt;&lt;link [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-     /* &lt;&lt;link [[$nextpass]]&gt;&gt;
-    &lt;&lt;/link&gt;&gt; */
+     &lt;&lt;link [[$nextpass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
 &lt;div id=&quot;processingMount&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="navbuttonstext" tags="nobr" position="725,100" size="100,100">&lt;div class=&quot;nav-btn-container btn-container&quot;&gt;
@@ -664,34 +664,30 @@ setup.addPlaceholder = () => {
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="5_story-text-eng" tags="nobr" position="850,350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
- 
-    &lt;&lt;/timed&gt;&gt;
-&lt;div  id=&quot;mount&quot;&gt;
-&lt;&lt;timed 0.1s&gt;&gt;
-    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of... how he achieved Theatr Clwyd, against all the odds.”&lt;/p&gt;&lt;/div&gt;
-&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 12s&gt;&gt;
- &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of the hill, of this civic site. A symbol of confidence, of intent...”&lt;/p&gt;
 &lt;/div&gt;
-&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 37s&gt;&gt;
-     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” &lt;/p&gt;
 &lt;/div&gt;
-&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+
 
 &lt;&lt;timed 59s&gt;&gt;
-    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;
 Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 &lt;p&gt;A county council boss who, in the late 1960s, took his team to visit arts centres all across Europe. &lt;/p&gt;
@@ -699,7 +695,7 @@ Haydn Rees is a Theatr Clwyd legend. &lt;/p&gt;
 
 &lt;p&gt;Without Haydn Rees there would be no story of Theatr Clwyd to tell – so it really is the best place to start. &lt;/p&gt;
 
-&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 63s&gt;&gt;

@@ -244,8 +244,8 @@ setup.addPlaceholder = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     /* <<link [[$nextpass]]>>
-    <</link>> */
+     <<link [[$nextpass]]>>
+    <</link>>
 <div id="processingMount"></div>
 
 </div>
@@ -682,35 +682,33 @@ setup.addPlaceholder = () => {
 <<include "_templateStory">>
 
 :: 5_story-text-eng [nobr]
+
+
 <<timed 0.1s>>
- 
-    <</timed>>
-<div  id="mount">
-<<timed 0.1s>>
-    <<replace "#mount">>
+    <<append "#msgMount">>
 <div class="quote">
 <p>“Haydn Rees had retired by the time I was there, but I was summoned to meet with him. He gave me the story of... how he achieved Theatr Clwyd, against all the odds.”</p></div>
-<</replace>>
+<</append>>
 <</timed>>
 <<timed 12s>>
- <<replace "#mount">>
+  <<append "#msgMount">>
     <div class="quote">
 <p>“He simply said, the people of Clwyd should have access to the best of everything, and I will ensure that they do. And so the County Arts Centre, as he called it, initially, was the crowning glory at the top of the hill, of this civic site. A symbol of confidence, of intent...”</p>
 </div>
-<</replace>>
+<</append>>
 <</timed>>
 <<timed 37s>>
-     <<replace "#mount">>
+  <<append "#msgMount">>
 <div class="quote">
 <p>“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” </p>
 </div>
-<</replace>>
+<</append>>
 <</timed>>
-</div>
-<div id="mount"></div>
+
+
 
 <<timed 59s>>
-    <<replace "#mount">>
+   <<append "#msgMount">>
 <p class="bold">
 Haydn Rees is a Theatr Clwyd legend. </p>
 <p>A county council boss who, in the late 1960s, took his team to visit arts centres all across Europe. </p>
@@ -718,7 +716,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 <p>Without Haydn Rees there would be no story of Theatr Clwyd to tell – so it really is the best place to start. </p>
 
-<</replace>>
+<</append>>
 <</timed>>
 
 <<timed 63s>>
