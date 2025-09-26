@@ -110,6 +110,11 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 @import url("styles/generics.css");
 @import url("styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "UserScript" */
+// importScripts(
+//   "https://cdn.jsdelivr.net/npm/uevent@2/browser.js",
+//   "https://cdn.jsdelivr.net/npm/three/build/three.min.js",
+//   "https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.js"
+// );
 /* twine-user-script #2: "Story JavaScript" */
 $('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
@@ -399,7 +404,24 @@ setup.addPlaceholder = () => {
 &lt;div class=&quot;instructional-text&quot;&gt;
   &lt;p class=&quot;bold&quot;&gt;This trail is available in two languages, Cymraeg and English. &lt;/p&gt;
  &lt;p&gt; Which would you like to experience? &lt;/p&gt;
+ &lt;p&gt;Already started? Click &lt;div class=&quot;inline-link&quot;&gt;&lt;&lt;link &quot;here&quot;&gt;&gt;
+    &lt;&lt;set $userchoices.language to &quot;english&quot;&gt;&gt;
+    &lt;&lt;goto &quot;chapters&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;.&lt;/div&gt;
+    &lt;/p&gt;
+ &lt;br/&gt;
+ &lt;br/&gt;
+ &lt;p class=&quot;bold&quot;&gt; Mae’r llwybr ar gael mewn dwy iaith, Cymraeg a Saesneg.  &lt;/p&gt;
+ &lt;p&gt; Pa un fyddech chi’n hoffi ei brofi? &lt;/p&gt;
+    &lt;p&gt;Wedi dechrau eisoes - cliciwch &lt;div class=&quot;inline-link&quot;&gt;
+          &lt;&lt;set $userchoices.language to &quot;cymraeg&quot;&gt;&gt;
+          &lt;&lt;link &quot;yma&quot;&gt;&gt;
+    &lt;&lt;goto &quot;chapters&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;.&lt;/div&gt;
+    &lt;/p&gt;
 &lt;/div&gt;
+
+
 &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
   &lt;&lt;button &quot;Cymraeg&quot;&gt;&gt;
       &lt;&lt;set $userchoices.language to &quot;cymraeg&quot;&gt;&gt;
@@ -411,31 +433,36 @@ setup.addPlaceholder = () => {
   &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 &lt;br/&gt;
-&lt;p&gt;Already started? Click &lt;div class=&quot;inline-link&quot;&gt;&lt;&lt;link &quot;here&quot;&gt;&gt;
-    &lt;&lt;goto &quot;chapters&quot;&gt;&gt;
-    &lt;&lt;/link&gt;&gt;.&lt;/div&gt;
-    &lt;/p&gt;
+
 &lt;/main&gt;</tw-passagedata><tw-passagedata pid="13" name="chapters" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;languageChoice&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;chapters&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;include &quot;headerlanding&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
+&lt;div id=&quot;mount&quot; class=&quot;flex-col-cen&quot;&gt;
+&lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+         Welsh chapter list
+        &lt;&lt;/replace&gt;&gt;
+ &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
+       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+        &lt;&lt;button &quot;Start&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Balcony&quot;&gt;&gt;&lt;&lt;goto &quot;9_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;TV Studio&quot;&gt;&gt;&lt;&lt;goto &quot;18_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Paint Frame&quot;&gt;&gt;&lt;&lt;goto &quot;29_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Theatr Moondance&quot;&gt;&gt;&lt;&lt;goto &quot;41_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Finale&quot;&gt;&gt;&lt;&lt;goto &quot;53_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+ &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-     &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
-    Welsh chapter list
-     &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
-        &lt;h1&gt;Chapters&lt;/h1&gt;
-    &lt;&lt;button &quot;Start&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;&lt;button &quot;Balcony&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;&lt;button &quot;TV Studio&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;&lt;button &quot;Paint Frame&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;&lt;button &quot;Theatr Moondance&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;&lt;button &quot;Finale&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-     &lt;&lt;else&gt;&gt;
-    No content provided.
-    &lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="14" name="heritagelogo" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footer_floorplan&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="heritagelogo" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;intro1&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;heritagelogo&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2_welcome&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1011,7 +1038,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
  &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto &quot;completed1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
   &lt;div class=&quot;btn-container&quot;&gt;
-  &lt;&lt;include &quot;navbuttons&quot;&gt;&gt;
+  &lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;
             &lt;/div&gt;
 
 &lt;/main&gt; 
@@ -1023,30 +1050,46 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 &lt;&lt;set $nextpass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &#39;stop&#39;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
+
 &lt;main&gt;
- 
-&lt;p class=&quot;bold&quot;&gt;Capture a sound of the scene.&lt;/p&gt;
+  &lt;p class=&quot;bold&quot;&gt;Capture a sound of the scene.&lt;/p&gt;
 
-
-&lt;div id=&quot;mount&quot;&gt;
-&lt;&lt;button &quot;Start recording&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-     &lt;&lt;include &quot;recordingtimer&quot;&gt;&gt;
-    &lt;&lt;/replace&gt;&gt;
+  &lt;div id=&quot;mount&quot;&gt;
+    &lt;&lt;button &quot;Start recording&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+       &lt;div class=&quot;record-container&quot;&gt;
+           &lt;div&gt;
+                &lt;div class=&quot;recording-screen&quot;&gt;
+                  &lt;&lt;include &quot;recordingtimer&quot;&gt;&gt;
+           &lt;/div&gt;
+           &lt;/div&gt;
+              &lt;div class=&quot;mic-visual&quot;&gt;
+                &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+              &lt;/div&gt;
+           
+       &lt;/div&gt;
+      &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/button&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
-            &lt;/div&gt;
+  &lt;/div&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;&lt;/div&gt;
+
+  &lt;&lt;timed 6s&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button &quot;I&#39;ve finished recording&quot;&gt;&gt;
-            &lt;&lt;goto &quot;completed1&quot;&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-        &lt;&lt;include &quot;navbuttons&quot;&gt;&gt;
+      &lt;&lt;button &quot;I&#39;ve finished recording&quot;&gt;&gt;
+        &lt;&lt;goto &quot;completed1&quot;&gt;&gt;
+      &lt;&lt;/button&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="45" name="recordingtimer" tags="nobr" position="600,600" size="100,100">&lt;p&gt;&lt;span id=&quot;countup&quot;&gt;Recording... 0:00&lt;/span&gt;&lt;/p&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;/main&gt;
+
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="recordingtimer" tags="nobr" position="600,600" size="100,100">&lt;p class=&quot;recording-status&quot;&gt;● Recording...&lt;/p&gt;
+          &lt;p class=&quot;recording-timer&quot; id=&quot;countup&quot;&gt;0:00&lt;/p&gt;
+
 &lt;div id=&quot;finishButtonContainer&quot; style=&quot;margin-top: 1em;&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;set $seconds = 0&gt;&gt;
@@ -1058,8 +1101,8 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 		&lt;&lt;set _sec to $seconds % 60&gt;&gt;
 		&lt;&lt;replace &quot;#countup&quot;&gt;&gt;
 			&lt;p&gt;
-			   Recording... 
-                &lt;span class=&quot;secs&quot;&gt;_min:&lt;&lt;if _sec lt 10&gt;&gt;0&lt;&lt;/if&gt;&gt;_sec&lt;/span&gt;
+			
+                &lt;p class=&quot;recording-timer&quot; id=&quot;countup&quot;&gt;_min:&lt;&lt;if _sec lt 10&gt;&gt;0&lt;&lt;/if&gt;&gt;_sec&lt;/p&gt;
 			&lt;/p&gt;
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
@@ -1094,7 +1137,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 &lt;/main&gt;
 
- &lt;&lt;timed 12s&gt;&gt;
+ &lt;&lt;timed 10s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="completed2" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_24.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
@@ -1533,7 +1576,7 @@ When you are ready to move on, let me know.
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Wonderful - we’re in. &lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;Wonderful. &lt;/p&gt;
 
 &lt;p&gt;Ok – something is processing on my end – I’m not sure when it will come through.&lt;/p&gt;
 
@@ -1744,7 +1787,10 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
        &lt;&lt;include &quot;navbuttons-cym&quot;&gt;&gt;
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="89" name="23_galleryffabalam" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+/* :: 23_galleryffabalam [nobr]
+&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;23_galleryffabalam&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;25_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -1756,7 +1802,7 @@ When you are ready to move on, let me know.
     &lt;div class=&quot;inline-accented-vid&quot;&gt;
         &lt;div class=&quot; vimeo-container mar-2&quot; 
              style=&quot;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;&quot;&gt;
-        &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&amp;autoplay=1&amp;muted=1&quot; 
+        &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&amp;autoplay=1&quot; 
         style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot; 
         frameborder=&quot;0&quot; 
         allow=&quot;autoplay; fullscreen; picture-in-picture&quot; 
@@ -1771,14 +1817,72 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
         &lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;
     &lt;/div&gt;
-&lt;/main&gt;
+&lt;/main&gt; */</tw-passagedata><tw-passagedata pid="89" name="23_galleryffabalam" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;21_story&quot;&gt;&gt;
+&lt;&lt;set $pass to &quot;23_galleryffabalam&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;25_story&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
 
-/* &lt;&lt;timed $btnAppearTime&gt;&gt;
-    &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt; */
+&lt;main class=&quot;gallery&quot;&gt;
+  &lt;div id=&quot;audioMount&quot;&gt;
+    &lt;audio id=&quot;audioPlayer&quot; src=&quot;&quot; autoplay&gt;
+      Audio is not supported on your device
+    &lt;/audio&gt;
+  &lt;/div&gt;
 
-    /* &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt; */
-&lt;&lt;done&gt;&gt;&lt;&lt;set $a to setup.chooseStoryAudio()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="25_story" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;23_galleryffabalam&quot;&gt;&gt;
+  &lt;!-- Orientation gate --&gt;
+  &lt;div class=&quot;orientation-warning&quot; id=&quot;orientationWarning&quot;&gt;
+    &lt;p&gt;Please rotate your device to &lt;strong&gt;landscape&lt;/strong&gt; to watch the video.&lt;/p&gt;
+    
+    &lt;&lt;link &quot;Ignore and show anyway&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#orientationWarning&quot;&gt;&gt;
+        &lt;div class=&quot;inline-accented-vid&quot;&gt;
+
+          &lt;div class=&quot;vimeo-container mar-2&quot;
+               style=&quot;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;&quot;&gt;
+            &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&amp;autoplay=1&quot;
+              style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;
+              frameborder=&quot;0&quot;
+              allow=&quot;autoplay; fullscreen; picture-in-picture&quot;
+              allowfullscreen&gt;
+            &lt;/iframe&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+
+  &lt;/div&gt;
+
+  &lt;!-- Vimeo Embed (default hidden unless landscape) --&gt;
+  &lt;div class=&quot;inline-accented-vid video-locked&quot;&gt;
+    &lt;div class=&quot;vimeo-container mar-2&quot;
+         style=&quot;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;&quot;&gt;
+      &lt;iframe src=&quot;https://player.vimeo.com/video/1111652347?h=8710c7a79d&amp;autoplay=1&quot;
+        style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;
+        frameborder=&quot;0&quot;
+        allow=&quot;autoplay; fullscreen; picture-in-picture&quot;
+        allowfullscreen&gt;
+      &lt;/iframe&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
+    &lt;/div&gt;
+
+    &lt;&lt;timed 10s&gt;&gt;
+    &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;
+     &lt;&lt;goto &quot;completed2&quot;&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+       /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
+    &lt;&lt;/append&gt;&gt;
+
+&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;
+
+
+
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="90" name="25_story" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;23_galleryffabalam&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;25_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;26_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -2916,7 +3020,7 @@ Past the writers library on your right, Drws C is on your left.
 &lt;p&gt;Come out of Drws C and walk along the corridor so you can see out to the view. &lt;/p&gt;
 &lt;p&gt;You can go back to the balcony on the first floor if you like, but it might be easier to stay here on the top level.&lt;/p&gt;
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 17s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3095,13 +3199,11 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 &lt;p&gt;Hwyl fawr am y tro&lt;/p&gt;
 
 
-
-&lt;&lt;timed 15s&gt;&gt;
+&lt;&lt;timed 1s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button &quot;Finish&quot;&gt;&gt;
-            &lt;&lt;goto &quot;completed5&quot;&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-           /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
+  &lt;div class=&quot;ext-link&quot;&gt;
+  &lt;a href=&quot;https://www.theatrclwyd.com/&quot; target=&quot;_blank&quot;&gt;Finish&lt;/a&gt;&lt;/div&gt;
+
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="56_story-text-cym" tags="nobr" position="1225,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.

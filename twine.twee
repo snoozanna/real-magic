@@ -24,6 +24,11 @@ Heritage Trail
 
 
 :: UserScript [script]
+// importScripts(
+//   "https://cdn.jsdelivr.net/npm/uevent@2/browser.js",
+//   "https://cdn.jsdelivr.net/npm/three/build/three.min.js",
+//   "https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.js"
+// );
 
 :: Story JavaScript [script]
 $('#ui-bar').remove();
@@ -369,7 +374,24 @@ setup.addPlaceholder = () => {
 <div class="instructional-text">
   <p class="bold">This trail is available in two languages, Cymraeg and English. </p>
  <p> Which would you like to experience? </p>
+ <p>Already started? Click <div class="inline-link"><<link "here">>
+    <<set $userchoices.language to "english">>
+    <<goto "chapters">>
+    <</link>>.</div>
+    </p>
+ <br/>
+ <br/>
+ <p class="bold"> Mae’r llwybr ar gael mewn dwy iaith, Cymraeg a Saesneg.  </p>
+ <p> Pa un fyddech chi’n hoffi ei brofi? </p>
+    <p>Wedi dechrau eisoes - cliciwch <div class="inline-link">
+          <<set $userchoices.language to "cymraeg">>
+          <<link "yma">>
+    <<goto "chapters">>
+    <</link>>.</div>
+    </p>
 </div>
+
+
 <div class="btn-container" id="btnContainer">
   <<button "Cymraeg">>
       <<set $userchoices.language to "cymraeg">>
@@ -381,10 +403,7 @@ setup.addPlaceholder = () => {
   <</button>>
 </div>
 <br/>
-<p>Already started? Click <div class="inline-link"><<link "here">>
-    <<goto "chapters">>
-    <</link>>.</div>
-    </p>
+
 </main>
 
 :: chapters [nobr]
@@ -393,23 +412,30 @@ setup.addPlaceholder = () => {
 <<set $nextpass to "2_welcome">>
 <<include "headerlanding">>
 <main class="landing flex-col-cen">
+<div id="mount" class="flex-col-cen">
+<div class="btn-container" id="btnContainer">
+<<timed 0.1s>>
+  <<if $userchoices.language is "cymraeg">>
+      <<replace "#mount">>
+         Welsh chapter list
+        <</replace>>
+ <<elseif $userchoices.language is "english" >>
+       <<replace "#mount">>
+        <<button "Start">><<goto $nextpass>><</button>>
+        <<button "Balcony">><<goto "9_story">><</button>>
+        <<button "TV Studio">><<goto "18_story">><</button>>
+        <<button "Paint Frame">><<goto "29_story">><</button>>
+        <<button "Theatr Moondance">><<goto "41_story">><</button>>
+        <<button "Finale">><<goto "53_story">><</button>>
+      <</replace>>
+ <</if>>
+<</timed>>
 
-     <<if $userchoices.language is "cymraeg">>
-    Welsh chapter list
-     <<elseif $userchoices.language is "english" >>
-        <h1>Chapters</h1>
-    <<button "Start">><<goto $nextpass>><</button>>
-    <<button "Balcony">><<goto $nextpass>><</button>>
-    <<button "TV Studio">><<goto $nextpass>><</button>>
-    <<button "Paint Frame">><<goto $nextpass>><</button>>
-    <<button "Theatr Moondance">><<goto $nextpass>><</button>>
-    <<button "Finale">><<goto $nextpass>><</button>>
-     <<else>>
-    No content provided.
-    <</if>>
+</div>
+</div>
 
 </main>
-
+<<include "footer_floorplan">>
 
 
 :: heritagelogo [nobr]
@@ -1083,7 +1109,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
  <<button "Next">><<goto "completed1">><</button>>
 </div>
   <div class="btn-container">
-  <<include "navbuttons">>
+  <<include "navbuttonsb">>
             </div>
 
 </main> 
@@ -1098,35 +1124,50 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <<set $nextpass to "13_story">>
 <<audio ":all" 'stop'>>
 <<include "header">>
+
 <main>
- 
-<p class="bold">Capture a sound of the scene.</p>
+  <p class="bold">Capture a sound of the scene.</p>
 
-
-<div id="mount">
-<<button "Start recording">>
-    <<replace "#mount">>
-     <<include "recordingtimer">>
-    <</replace>>
+  <div id="mount">
+    <<button "Start recording">>
+      <<replace "#mount">>
+       <div class="record-container">
+           <div>
+                <div class="recording-screen">
+                  <<include "recordingtimer">>
+           </div>
+           </div>
+              <div class="mic-visual">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+           
+       </div>
+      <</replace>>
     <</button>>
-    </div>
-   <div class="btn-container" id="btnContainer">
-            </div>
+  </div>
 
-<<timed 6s>>
+  <div class="btn-container" id="btnContainer"></div>
+
+  <<timed 6s>>
     <<replace "#btnContainer">>
-    <<button "I've finished recording">>
-            <<goto "completed1">>
-        <</button>>
-        <<include "navbuttons">>
+      <<button "I've finished recording">>
+        <<goto "completed1">>
+      <</button>>
     <</replace>>
-<</timed>>
+  <</timed>>
 </main>
 
+<<include "navbuttonsb">>
 
 
 :: recordingtimer [nobr]
-<p><span id="countup">Recording... 0:00</span></p>
+  <p class="recording-status">● Recording...</p>
+          <p class="recording-timer" id="countup">0:00</p>
+
 <div id="finishButtonContainer" style="margin-top: 1em;"></div>
 
 <<set $seconds = 0>>
@@ -1138,8 +1179,8 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 		<<set _sec to $seconds % 60>>
 		<<replace "#countup">>
 			<p>
-			   Recording... 
-                <span class="secs">_min:<<if _sec lt 10>>0<</if>>_sec</span>
+			
+                <p class="recording-timer" id="countup">_min:<<if _sec lt 10>>0<</if>>_sec</p>
 			</p>
 		<</replace>>
 	<</repeat>>
@@ -1192,7 +1233,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 </main>
 
- <<timed 12s>>
+ <<timed 10s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1718,7 +1759,7 @@ When you are ready to move on, let me know.
         <<include "processing">>
         <</replace>>
         <</timed>>
-<p class="bold">Wonderful - we’re in. </p>
+<p class="bold">Wonderful. </p>
 
 <p>Ok – something is processing on my end – I’m not sure when it will come through.</p>
 
@@ -1964,7 +2005,7 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 23_galleryffabalam [nobr]
+/* :: 23_galleryffabalam [nobr]
 <<set $prevpass to "21_story">>
 <<set $pass to "23_galleryffabalam">>
 <<set $nextpass to "25_story">>
@@ -1977,7 +2018,7 @@ When you are ready to move on, let me know.
     <div class="inline-accented-vid">
         <div class=" vimeo-container mar-2" 
              style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1&muted=1" 
+        <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1" 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
         frameborder="0" 
         allow="autoplay; fullscreen; picture-in-picture" 
@@ -1992,14 +2033,75 @@ When you are ready to move on, let me know.
         <</button>>
         <<include "navbuttonsb">>
     </div>
+</main> */
+
+:: 23_galleryffabalam [nobr]
+<<set $prevpass to "21_story">>
+<<set $pass to "23_galleryffabalam">>
+<<set $nextpass to "25_story">>
+<<audio ":all" "stop">>
+<<include "header">>
+
+<main class="gallery">
+  <div id="audioMount">
+    <audio id="audioPlayer" src="" autoplay>
+      Audio is not supported on your device
+    </audio>
+  </div>
+
+  <!-- Orientation gate -->
+  <div class="orientation-warning" id="orientationWarning">
+    <p>Please rotate your device to <strong>landscape</strong> to watch the video.</p>
+    
+    <<link "Ignore and show anyway">>
+      <<replace "#orientationWarning">>
+        <div class="inline-accented-vid">
+
+          <div class="vimeo-container mar-2"
+               style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      <</replace>>
+    <</link>>
+
+  </div>
+
+  <!-- Vimeo Embed (default hidden unless landscape) -->
+  <div class="inline-accented-vid video-locked">
+    <div class="vimeo-container mar-2"
+         style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+      <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="btn-container" id="btnContainer">
+    </div>
+
+    <<timed 10s>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+     <<goto "completed2">>
+        <</button>>
+       /* <<include "navbuttons">> */
+    <</append>>
+
+<</timed>>
+    <<include "navbuttonsb">>
+
+
+
 </main>
-
-/* <<timed $btnAppearTime>>
-    <<append "#btnContainer">> */
-
-    /* <</append>>
-<</timed>> */
-<<done>><<set $a to setup.chooseStoryAudio()>><</done>>
 
 :: 25_story [nobr]
 <<set $prevpass to "23_galleryffabalam">>
@@ -3023,6 +3125,7 @@ Past the writers library on your right, Drws C is on your left.
 </div>
 
 :: button1 [nobr]
+
 <<button "Listen">>
    
      <<addclass ".dot1" "story-dot green-dot pulse-dot">>
@@ -3369,7 +3472,7 @@ Past the writers library on your right, Drws C is on your left.
 <p>Come out of Drws C and walk along the corridor so you can see out to the view. </p>
 <p>You can go back to the balcony on the first floor if you like, but it might be easier to stay here on the top level.</p>
 
-<<timed $btnAppearTime>>
+<<timed 17s>>
     <<append "#btnContainer">>
     <<button "We're here">>
             <<goto $nextpass>>
@@ -3571,13 +3674,11 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 <p>Hwyl fawr am y tro</p>
 
 
-
-<<timed 15s>>
+<<timed 1s>>
     <<append "#btnContainer">>
-    <<button "Finish">>
-            <<goto "completed5">>
-        <</button>>
-           /* <<include "navbuttons">> */
+  <div class="ext-link">
+  <a href="https://www.theatrclwyd.com/" target="_blank">Finish</a></div>
+
     <</append>>
 <</timed>>
 
