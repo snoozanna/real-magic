@@ -261,7 +261,7 @@ setup.addPlaceholder = () => {
 
     const textbox = document.getElementById("textbox-codeword");
     if (textbox) {
-        console.log("Found textbox:", textbox);
+        // console.log("Found textbox:", textbox);
         textbox.setAttribute("placeholder", "Type here");
     }
 
@@ -1119,9 +1119,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 12s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="completed3" tags="nobr" position="225,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
-    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="completed3" tags="nobr" position="225,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_33.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1144,19 +1142,17 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
  &lt;&lt;timed 12s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="completed4" tags="nobr" position="350,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
-    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="completed4" tags="nobr" position="350,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_51.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
+         &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1.png&quot;/&gt;
          &lt;img src=&quot;../assets/img/Hero_Image_Sequence_2.png&quot;/&gt;
           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_3.png&quot;/&gt;
           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_4.png&quot;/&gt; 
-          &lt;img src=&quot;../assets/img/Hero_Image_Sequence_5.png&quot;/&gt;
      &lt;/div&gt;
 
  &lt;div class=&quot;success info-container&quot;&gt;
@@ -1166,34 +1162,31 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 &lt;/main&gt;
 
- &lt;&lt;timed 7s&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed5" tags="nobr" position="475,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
-    &lt;&lt;audio &quot;ticker&quot; &quot;play&quot;&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed5" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_55.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;landing flex-col-cen&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper final lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
+       &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1.png&quot;/&gt;
          &lt;img src=&quot;../assets/img/Hero_Image_Sequence_2.png&quot;/&gt;
           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_3.png&quot;/&gt;
           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_4.png&quot;/&gt; 
           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_5.png&quot;/&gt;
-           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_6.png&quot; class=&quot;six&quot;/&gt;
-            &lt;img src=&quot;../assets/img/Hero_Image_Sequence_7.png&quot; class=&quot;seven&quot;/&gt;
+       
      &lt;/div&gt;
 
  &lt;div class=&quot;success info-container&quot;&gt;
-&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
-&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing-short&quot; class=&quot;processing&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-short&quot;/&gt;
 &lt;/div&gt;
 
 &lt;/main&gt;
 
- &lt;&lt;timed 7s&gt;&gt;
+ &lt;&lt;timed 12s&gt;&gt;
  &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="13_story" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;13_story&quot;&gt;&gt;
@@ -1699,7 +1692,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;23_galleryffabalam&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="22_story-text-eng" tags="nobr" position="850,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
@@ -1791,7 +1783,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;26_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="91" name="25_story-text-eng" tags="nobr" position="100,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Wow – to think of all of the moments that happened right here. &lt;/p&gt;
@@ -1835,7 +1826,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;27_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="26_story-text-eng" tags="nobr" position="475,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
@@ -1885,7 +1875,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;28_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="97" name="27_story-text-eng" tags="nobr" position="850,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;You&#39;ll find there is a Mirror on the wall – this was designed by Manon Awst.&lt;/p&gt;
@@ -1936,7 +1925,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;29_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="28_story-text-eng" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;We’re off to see where the stage sets are painted, on Theatr Clwyd’s enormous paint frame, one of very few left in the UK.  &lt;/p&gt;
@@ -1987,7 +1975,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;30_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="103" name="29_story-text-eng" tags="nobr" position="350,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Here we are.&lt;/p&gt; 
@@ -2030,7 +2017,6 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;31_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="30_story-text-eng" tags="nobr" position="725,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;This paintframe is one of a handful remaining in the UK – and very few of those are operational, let alone located in the theatre itself. &lt;/p&gt;
@@ -2075,17 +2061,31 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;32_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="31_story-text-eng" tags="nobr" position="1100,1350" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;And I love the fact that there&#39;s so many paint stains everywhere, but it looks like it&#39;s all, you know, a work of art in itself…. It&#39;s a paint frame, but the whole room has got, well, it&#39;s got stories to tell.&quot; &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="31_story-text-eng" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;And I love the fact that there&#39;s so many paint stains everywhere, but it looks like it&#39;s all, you know, a work of art in itself... It&#39;s a paint frame, but the whole room has got, well, it&#39;s got stories to tell.&quot; &lt;/p&gt;
 &lt;span class=&quot;person&quot;&gt;Angharad Madog&lt;/span&gt;&lt;/div&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;There are indeed paint stains everywhere, Angharad – and if you think, each dash of paint in here will have been made as part of a production or event to connect with someone. My favourite part is the sink – it is absolutely covered in paint – Layer upon layer. It’s a work of art. &lt;/p&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 33s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Talking about works of art, let’s see some that have been made here. &lt;/p&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 37s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;You might notice a long piece of fabric on the balcony – this was made on the paint frame and designed by Adrian Gee. &lt;/p&gt;
 
 &lt;p&gt;Head over to it. &lt;/p&gt;
 &lt;p&gt;When you’re there, I’ve got a clip of Katy explaining what you have in front of you&lt;/p&gt;
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 51s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re next to the fabric&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2140,11 +2140,8 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;34_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="32_story-text-eng" tags="nobr" position="350,1475" size="100,100">&lt;&lt;if $userchoices.audioOn is true&gt;&gt;
-        &lt;div id=&quot;audioMount&quot;&gt;
-        &lt;audio src=&quot;assets/audio/31_Katie_audio.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
-    &lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="32_story-text-eng" tags="nobr" position="350,1475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
    &lt;p&gt; So this gauze is from our Christmas pantomime from Beauty and the Beast in 2021. The cloth you see is a transformation gauze, different to a normal scenic canvas cloth. We&#39;ve painted it in dark blues and ultramarine and Prussian colours. There&#39;s a large offset silver and gold star and radiating from it is a trail of iridescent bubbles.&lt;/p&gt;
 
@@ -2153,18 +2150,28 @@ When you are ready to move on, let me know.
 &lt;p&gt;If this light is taken away and redirected to something behind the gauze, such as the actors or a different scene, the image on the gauze, in this instance the bubbles and the star, will completely disappear and reveal the scene behind, just like magic.&lt;/p&gt;
 
 &lt;p&gt;So this cloth was painted in four days and then taken down and put on the workshop floor for the final day. This allowed us to glitter it flat. It&#39;s very difficult to glitter it upright so doing it on the flat is the best way of doing it.&lt;/p&gt;
-
-    
 &lt;/div&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 80s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Diolch Katy.&lt;/p&gt; 
 &lt;p&gt;Did you catch how many days it took to make? Type it below. &lt;/p&gt;
 
-&lt;p&gt;If not we can ask Katy to repeat it by clicking &lt;div class=&quot;inline-link&quot;&gt;&lt;&lt;link &quot;here&quot;&gt;&gt; &lt;&lt;goto $pass&gt;&gt;
+&lt;p&gt;If not we can ask Katy to repeat it by clicking &lt;div class=&quot;inline-link&quot;&gt;&lt;&lt;link &quot;here&quot;&gt;&gt; 
+    &lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+        &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_32_repeat.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+        &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/link&gt;&gt;&lt;/div&gt;.&lt;/p&gt;
  &lt;span class=&quot;clue hide&quot; id=&quot;clueMount&quot;&gt;&lt;/span&gt;
 /*&lt;i&gt;A word beginning with Q meaning Shhhhhhh.&lt;/i&gt;&lt;/span&gt; */
 &lt;br/&gt;
 &lt;&lt;include &quot;pw32&quot;&gt;&gt;
+
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;include &quot;navbuttons&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="114" name="32_story-text-cym" tags="nobr" position="475,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
@@ -2184,14 +2191,13 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;35_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="116" name="34_story-text-eng" tags="nobr" position="725,1475" size="100,100">&lt;p class=&quot;bold&quot;&gt;I was in that panto – it was directed by Tamara Harvey and I played Nana Nerys from Nercwys! &lt;/p&gt;
 
 &lt;p&gt;Beyond the paintframe is the workshop, where the props and sets are made. &lt;/p&gt;
-&lt;p&gt;Head to the other side of the balcony to see what’s going on&lt;/p&gt;
+&lt;p&gt;Head to the other side of the balcony to see what’s going on.&lt;/p&gt;
 
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2216,15 +2222,23 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;36_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="35_story-text-eng" tags="nobr" position="1100,1475" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I love going into that workshop because of the smells, in there, you know? To see the paint and the woodwork and all the shavings on the floor, and it&#39;s just, it&#39;s just people at the root of theatre making, isn&#39;t it? They are creating our world for us, and we play in their world that they create.&quot;&lt;/p&gt;&lt;/div&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="35_story-text-eng" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I love going into that workshop because of the smells, in there, you know? To see the paint and the woodwork and all the shavings on the floor, and it&#39;s just, it&#39;s just people at the root of theatre making, isn&#39;t it? They are creating our world for us, and we play in their world that they create.&quot;&lt;/p&gt;&lt;/div&gt;\
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+
+&lt;&lt;timed 21s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;One minute - that&#39;s me! &lt;/p&gt;
 &lt;p&gt;One minute – that’s me! That’s my memory – perhaps I’m part of Theatr Clwyd’s history too? &lt;/p&gt;
 &lt;p&gt;I suppose I am! &lt;/p&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2249,34 +2263,61 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;37_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="36_story-text-eng" tags="nobr" position="225,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;There’s something special back here – sometimes overlooked. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="36_story-text-eng" tags="nobr" position="225,1600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;There’s something special back here – sometimes overlooked. &lt;/p&gt;
 &lt;p&gt;The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else –  Our pantos are like nothing else – &lt;/p&gt;
-
-
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 36s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I saw a complete cycle of pantos!&quot;&lt;/p&gt;
 &lt;/div&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 39s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;Obviously, we see the pantomime every year.&quot;&lt;/p&gt;
 &lt;/div&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 41s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;My youngest is still talking about this year&#39;s...&quot;&lt;/p&gt;
 &lt;/div&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 44s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;We come every year to the panto - ten of us now with grandchildren and we love it.&quot;&lt;/p&gt;
 &lt;/div&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 49s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
     &lt;p&gt;&quot;I don&#39;t care if you&#39;re 86 or 6, you can still enjoy a panto!&quot;&lt;/p&gt;
     &lt;/div&gt;
+        &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 52s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I do like the panto time - Things with a bit of glitter are always great.&quot;&lt;/p&gt;
 &lt;/div&gt;
-
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 56s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Thank you Geoff, Jane, Becky, Sue, Emyr &amp; Alison.&lt;br&gt;
 For many of our audiences the panto is the first theatre show they ever see.&lt;br&gt;
 Can you remember your first time in an audience? Your first view of the stage? &lt;/p&gt;
 
 &lt;p&gt;I’m getting an itch to perform –&lt;br&gt;
 Let’s head to our next location – our stage! &lt;/p&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 78s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2301,8 +2342,7 @@ Let’s head to our next location – our stage! &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;38_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="37_story-text-eng" tags="nobr" position="600,1600" size="100,100">&lt;p&gt;We’re headed back to the public foyer. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="37_story-text-eng" tags="nobr" position="600,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re headed back to the public foyer. &lt;/p&gt;
 
 &lt;p&gt;Go back through the single door and turn left down the corridor, past the TV Studio sign. &lt;br&gt;
 Go back through the double doors at the end, and turn right.&lt;br&gt; 
@@ -2310,7 +2350,7 @@ Head along this corridor and out into the foyer. &lt;br&gt;
 When you are near the stairs let me know. &lt;/p&gt;
 
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re near the stairs&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2331,17 +2371,27 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;39_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="38_story-text-eng" tags="nobr" position="975,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;Our main stage awaits!&lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="38_story-text-eng" tags="nobr" position="975,1600" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;Our main stage awaits!&lt;/p&gt;
 &lt;p&gt;But one minute... It’s Phillip Jones again – who’s he met this time?!&lt;/p&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 7s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I thought when I was growing up, oh, theatre is not for me….a what are you doing at the theatre sort of thing? Going to Theatr Clwyd just broadened my horizons, opened me up. It stopped me from being a bigot. It stopped me from being a racist. It stopped me from being a really bad person. It liberated me. It was just fantastic. Have your mind just opened. My God, this is what people can do, and you love everybody, and everybody loves each other. And it was just amazing. I&#39;ve got Theatr Clwyd to thank for that.&quot;&lt;/p&gt;&lt;/div&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 42s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Wow. That’s... just wow. &lt;/p&gt;
 &lt;p&gt;Thanks Phillip Jones. &lt;/p&gt;
+   &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 49s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2366,13 +2416,18 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;40_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="39_story-text-eng" tags="nobr" position="100,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;It’s the spark – that’s the thing here – a possibility, right? &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="39_story-text-eng" tags="nobr" position="100,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;It’s the spark – that’s the thing here – a possibility, right? &lt;/p&gt;
 &lt;p&gt;Hours upon hours are spent painting backdrops to create Hours upon hours are spent painting backdrops and constructing sets to create doors to new realities. &lt;br&gt;
-But It’s not just new worlds on stage, it’s new possibilities everywhere. &lt;/p&gt;
+But it’s not just new worlds on stage, it’s new possibilities everywhere. &lt;/p&gt;
 
 &lt;p&gt;Come on, let’s go. It’s time to enter Theatr Moondance&lt;/p&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 17s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt; With the stairs on your left, head to the end of the corridor.&lt;br&gt;
 Past the writers library on your right, Drws C is on your left.
 &lt;/p&gt;
@@ -2380,9 +2435,10 @@ Past the writers library on your right, Drws C is on your left.
 &lt;p&gt;There are two sets of doors – we need the ones on the left under the Drws C sign. &lt;br&gt;
     You’ll need your keycard to go through the door.
 &lt;/p&gt;
+    &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 40s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re through&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2403,7 +2459,6 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;41_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="134" name="40_story-text-eng" tags="nobr" position="475,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;Inside, head through the first door on your left. &lt;/p&gt;
 
 &lt;p&gt;There’s a few steps on the right, and a lift on the left. &lt;/p&gt;
@@ -2411,7 +2466,7 @@ Past the writers library on your right, Drws C is on your left.
 &lt;/p&gt;
 
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re in&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2432,18 +2487,27 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;42_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="137" name="41_story-text-eng" tags="nobr" position="850,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;Isn&#39;t it lush?&lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="137" name="41_story-text-eng" tags="nobr" position="850,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;Isn&#39;t it lush?&lt;/p&gt;
 &lt;p&gt;This is a relaxed space, for people who need it. I’ve noticed through the years how Theatr Clwyd embraces everyone – whatever your age, ability or circumstance. We’re all part of the family.&lt;/p&gt;
 &lt;p&gt;This box is at the back of the theatre, at the far right. It has a big rectangular window, looking out at the stage and the gorgeous theatre seats. Hey, audience, we&#39;re behind you!&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 26s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Sorry, I couldn&#39;t resist.&lt;/p&gt;
 &lt;p&gt;Every seat in the theatre – not just this one – has a brilliant view. That care was built into its design. &lt;/p&gt;
 
 &lt;p&gt;You might notice the amazing red tiles which line the walls. They have beautiful curved edges, and look almost like bricks. I love looking out at them when I’m on stage. They’ve been here since day one, and they’re one of the things that give this space its special acoustic, bouncing sound around the room.&lt;/p&gt;
-
-&lt;p&gt;Ooh, look! There&#39;s one of them here for you to touch&lt;/p&gt;
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 56s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p&gt;Ooh, look! There&#39;s one of them here for you to touch.&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 59s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;I&#39;ve touched the tile&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2465,30 +2529,53 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;floorplan&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="42_story-text-eng" tags="nobr" position="1225,1725" size="100,100">&lt;p class=&quot;bold&quot;&gt;These are Transform tiles from the 1970s – based on a design by German sculptor, Fritz Steller. He made incredible art for civic buildings across the UK.&lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="140" name="42_story-text-eng" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;These are Transform tiles from the 1970s – based on a design by German sculptor, Fritz Steller. He made incredible art for civic buildings across the UK.&lt;/p&gt;
 &lt;p&gt;Every tile looks slightly different. When they were fired in their kilns, each responded differently to the flames, revealing distinct patterns and colours. Theatre experts also helped with their fitting – they knew the effect the tiles would have on the theatre’s sound.&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 29s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;&quot;It&#39;s a fascinating space…it enables you to do what you want with it, sonically, from a sound point of view.&quot;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Hey, that’s Tayo Akinbode! Panto musical director. A genius. And who’s this?&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 43s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;&quot;It always felt very intimate. Always felt like...if you wanted to, and if you, you know, were confident enough of what you were doing, you had the audience that right there...and acoustically, too. Vocally was always kind of easy to play, really, compared with so many places I played.&quot;&lt;/p&gt;
 &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 58s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;That’s Steffan Rhodri, you might recognise him from Gavin &amp; Stacey. He&#39;s performed on this stage countless times and I agree, the stage and sound connects you to the audiences - it’s special. &lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 71s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;&quot;I think as a child, I saw them as, like, like, a big bar of chocolate. I love that theatre because there are no bad seats. It&#39;s like a big hug. Everybody&#39;s in there together.&quot;&lt;/p&gt;
 &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 84s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Catrin Aaron has gazed up at people in 35 productions here.  Her mum, a nurse, used to bring her here when she was little, from nearby Rhyl. She went on to work at the Royal Shakespeare Company.&lt;/p&gt;
 &lt;p&gt;Being part of Theatr Clwyd is like being part of a family. Let’s jump around the theatre to find people who can tell you more...&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 104s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2518,11 +2605,11 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $currentDot to 1&gt;&gt;
 &lt;&lt;set $totalDots to 4&gt;&gt;
 
-&lt;&lt;if $audioOn is true&gt;&gt;
-    &lt;div id=&quot;audio&quot;&gt;
+
+    &lt;div id=&quot;audioMount&quot;&gt;
         &lt;audio src=&quot;&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
     &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
+
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 
@@ -2539,7 +2626,7 @@ Past the writers library on your right, Drws C is on your left.
          
            
         
-        &lt;div class=&quot;story-text&quot; id=&quot;storyText&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;story-text&quot; id=&quot;msgMount&quot;&gt;&lt;/div&gt;
          &lt;div class=&quot;button-wrapper btn-container&quot; id=&quot;btnContainer&quot;&gt;
             &lt;&lt;include &quot;button1&quot;&gt;&gt;
             &lt;/div&gt;
@@ -2550,16 +2637,16 @@ Past the writers library on your right, Drws C is on your left.
    
      &lt;&lt;addclass &quot;.dot1&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
     &lt;&lt;timed 1s&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
         &lt;&lt;include &#39;44_floorplan_story&#39;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
    
 
-    &lt;&lt;timed 10s&gt;&gt;
-        &lt;&lt;set $currentDot to 2&gt;&gt;
+    &lt;&lt;timed 96s&gt;&gt;
+        &lt;&lt;set $currentDot to 1&gt;&gt;
         &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
             &lt;&lt;include &quot;button1a&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
@@ -2568,20 +2655,20 @@ Past the writers library on your right, Drws C is on your left.
  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="144" name="button1a" tags="nobr" position="475,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
    
       &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
      &lt;&lt;timed 1s&gt;&gt;
        &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
     &lt;&lt;addclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot fadeIn3&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
     &lt;&lt;include &#39;45_floorplan_story&#39;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
          &lt;&lt;/timed&gt;&gt;
 
 
-    &lt;&lt;timed 5s&gt;&gt;
-        &lt;&lt;set $currentDot to 1&gt;&gt;
+    &lt;&lt;timed 67s&gt;&gt;
+        &lt;&lt;set $currentDot to 2&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
             &lt;&lt;include &quot;button2&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
@@ -2590,19 +2677,19 @@ Past the writers library on your right, Drws C is on your left.
    
        &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
      &lt;&lt;timed 1s&gt;&gt;
             &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
      &lt;&lt;addclass &quot;.dot2&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
     &lt;&lt;include &#39;46_floorplan_story&#39;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
          &lt;&lt;/timed&gt;&gt;
 
-    &lt;&lt;timed 5s&gt;&gt;
-        &lt;&lt;set $currentDot to 2&gt;&gt;
+    &lt;&lt;timed 35s&gt;&gt;
+        &lt;&lt;set $currentDot to 3&gt;&gt;
         &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
             &lt;&lt;include &quot;button3&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
@@ -2611,18 +2698,18 @@ Past the writers library on your right, Drws C is on your left.
    
       &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;removeclass &quot;.dot2&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
      &lt;&lt;timed 1s&gt;&gt;
       &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
      &lt;&lt;addclass &quot;.dot3&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
     &lt;&lt;include &#39;47_floorplan_story&#39;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
          &lt;&lt;/timed&gt;&gt;
 
-    &lt;&lt;timed 5s&gt;&gt;
-        &lt;&lt;set $currentDot to 3&gt;&gt;
+    &lt;&lt;timed 43s&gt;&gt;
+        &lt;&lt;set $currentDot to 4&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
             &lt;&lt;include &quot;button4&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
@@ -2630,18 +2717,18 @@ Past the writers library on your right, Drws C is on your left.
  &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="button4" tags="nobr" position="850,1850" size="100,100">&lt;&lt;button &quot;Next&quot;&gt;&gt;
    
       &lt;&lt;removeclass &quot;.dot3&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
      &lt;&lt;timed 1s&gt;&gt;
         &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
        &lt;&lt;addclass &quot;.dot4&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#storyText&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
     &lt;&lt;include &#39;48_floorplan_story&#39;&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
          &lt;&lt;/timed&gt;&gt;
 
-    &lt;&lt;timed 5s&gt;&gt;
+    &lt;&lt;timed 24s&gt;&gt;
         &lt;&lt;set $currentDot to 4&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
  
@@ -2657,36 +2744,72 @@ Past the writers library on your right, Drws C is on your left.
     &lt;div&gt;&lt;div/&gt;
 &lt;div&gt;&lt;div/&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="44_floorplan_story" tags="nobr" position="1100,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;Onstage, there are lights above and the audience below, with the world of the play alive all around you.  &lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="44_floorplan_story" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+     &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+        &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_44.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+        &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;Onstage, there are lights above and the audience below, with the world of the play alive all around you.  &lt;/p&gt;
 
 &lt;p&gt;Ah! Here is someone who lived near Mold. &lt;br&gt;
     He was recruited from school to be in a play when he was 10 – he’d  never even seen a play before!  &lt;br&gt;
     And he went on to work in Hollywood – Rhys Ifans.
 &lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-
+ &lt;&lt;timed 20s&gt;&gt;
+     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
     &lt;p&gt;&quot;The first time I performed on the main stage in Theatr Clwyd  was a Theatr Clwyd production of Toad, of Toad Hall, and I played a rat and I played a weasel, and it changed my life. &lt;/p&gt;
-    
-    &lt;p&gt;Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn&#39;t really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn&#39;t believe that, just the warmth it felt like walking into sunshine. And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can&#39;t step in and with doubts, or with, you know, say, Oh, I don&#39;t want to do this. I&#39;m tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it.&quot;&lt;/p&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="45_floorplan_story" tags="nobr" position="1225,1850" size="100,100">&lt;p class=&quot;bold&quot;&gt;And we have another one coming through.&lt;/p&gt;
+ &lt;p&gt;Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn&#39;t really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn&#39;t believe that, just the warmth it felt like walking into sunshine. And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can&#39;t step in and with doubts, or with, you know, say, Oh, I don&#39;t want to do this. I&#39;m tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it.&quot;&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
 
+ &lt;&lt;timed 86s&gt;&gt;
+     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+    &lt;p&gt;I never knew his first performance was as a rat and a weasel!&lt;/p&gt; 
+    &lt;p&gt;He definitely has felt that special relationship with the audience.&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="45_floorplan_story" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+        &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_45.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+        &lt;&lt;/replace&gt;&gt;
+        /* &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;And we have another one coming through.&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt; */
+
+     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.&lt;/p&gt;
 
 &lt;p&gt;With Cwmni 25, run by Gwennan Mair Jones, I was really lucky that she was running the sessions bilingually, naturally bilingually, so that was my first introduction to the Welsh arts scene.&lt;/p&gt;
 
 &lt;/div&gt;
-
-&lt;p&gt;That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="151" name="46_floorplan_story" tags="nobr" position="100,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;From the front row, the stage is right in front of you, only  inches up.  &lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 51s&gt;&gt;
+     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
+&lt;p&gt;That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. &lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="151" name="46_floorplan_story" tags="nobr" position="100,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+        &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_46.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+        &lt;&lt;/replace&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;From the front row, the stage is right in front of you, only  inches up.  &lt;/p&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“It&#39;s total immersion from the front row”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;That’s Judie von der Fecht! Her and Paul are front row regulars.&lt;/p&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Our first date was going to see The Hitchhiker&#39;s Guide to the Galaxy on stage at Theatr Clwyd...”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;There’s Paul! They’ve been coming here since the late 1970s. They’ve been to – how many productions?&lt;/p&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we&#39;re going to have a theatre room. And we&#39;re going to wallpaper it with our tickets.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="47_floorplan_story" tags="nobr" position="225,1975" size="100,100">&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The main theatre is so wonderfully intimate. No matter where you sit. It doesn&#39;t feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there&#39;s no bad seat there... you feel so intimate. I guess it&#39;s a place of escape, almost, it&#39;s one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” &lt;/p&gt;&lt;/div&gt;
-&lt;p&gt;That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="153" name="48_floorplan_story" tags="nobr" position="350,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;The ushers often sneak in to sit here – and see how a show evolves over time. &lt;/p&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we&#39;re going to have a theatre room. And we&#39;re going to wallpaper it with our tickets.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="47_floorplan_story" tags="nobr" position="225,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+        &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_47.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+        &lt;&lt;/replace&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The main theatre is so wonderfully intimate. No matter where you sit. It doesn&#39;t feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there&#39;s no bad seat there... you feel so intimate. I guess it&#39;s a place of escape, almost, it&#39;s one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” &lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="153" name="48_floorplan_story" tags="nobr" position="350,1975" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+        &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_48.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+        &lt;&lt;/replace&gt;&gt;
+&lt;p class=&quot;bold&quot;&gt;The ushers often sneak in to sit here – and see how a show evolves over time. &lt;/p&gt;
 
 &lt;p&gt;Ah, it’s usher Geoff Wiliams again!&lt;/p&gt;
 
@@ -2695,7 +2818,6 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;50_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="49_story-text-eng" tags="nobr" position="600,1975" size="100,100">&lt;p class=&quot;bold&quot;&gt;Each seat holds someone through their time with us. &lt;/p&gt;
 &lt;p&gt;Be that one visit or a lifetime of stories.  &lt;/p&gt;
 &lt;p&gt;Some seats bear the names of friends and loved ones.&lt;/p&gt; 
@@ -2744,11 +2866,8 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="50_story-text-eng" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;if $userchoices.audioOn is true&gt;&gt;
-        &lt;div id=&quot;audioMount&quot;&gt;
-        &lt;audio src=&quot;assets/audio/41a_Phyl.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
-    &lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="50_story-text-eng" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
   &lt;p&gt; “Theatr Clwyd, you know, has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. &lt;/p&gt;
 
@@ -2757,8 +2876,14 @@ Past the writers library on your right, Drws C is on your left.
 &lt;p&gt;One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Mags into the toilet, me dressed as Wonder Woman and her in her wheelchair, you know. And we were both laughing, you know.. And that&#39;s what you get. Whatever problems you&#39;ve got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will.&quot;&lt;/p&gt;
 &lt;/div&gt;
 &lt;br/&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 69s&gt;&gt;
+   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;That&#39;s magic.&lt;/p&gt;
-&lt;&lt;timed 50s&gt;&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 71s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto &quot;completed4&quot;&gt;&gt;
@@ -2785,7 +2910,6 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="162" name="52_story-text-eng" tags="nobr" position="225,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re coming to the end it seems, just one more location to visit – or rather a view to return to.  &lt;/p&gt;
 &lt;p&gt;I think it’s about time we say goodbye - but just for now!&lt;/p&gt;
 
@@ -2818,36 +2942,66 @@ Past the writers library on your right, Drws C is on your left.
 &lt;&lt;set $nextpass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="53_story-text-eng" tags="nobr" position="600,2100" size="100,100">&lt;&lt;if $userchoices.audioOn is true&gt;&gt;
-        &lt;div id=&quot;audioMount&quot;&gt;
-        &lt;audio src=&quot;assets/sound/TheatreClwyd Music_idea1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
-    &lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="165" name="53_story-text-eng" tags="nobr" position="600,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Theatr Clwyd’s mission statement begins like this:&lt;/p&gt;
-
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;&lt;b&gt;&lt;i&gt;Once upon a time a group of people stood on a hill&lt;br/&gt;
  and decided to make the world a happier place.&lt;/i&gt;
     &lt;/b&gt;
 &lt;/p&gt;
-
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Today, in this beautiful building, people continue that legacy – and keep imagining amazing new ways to keep that vision going.&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 23s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“It’s always had a spirit of adventure, I think Theatr Clwyd. It&#39;s never sat back on its laurels and gone, oh, we&#39;re going to play everything safe. It&#39;s never done that, and it’s all the better for it, I think.”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;That’s Emyr John, an amazing creative associate, running programmes welcoming young people from a huge variety of different backgrounds. His work ranges from an LGBTQ group, to history talks, to storytelling workshops for all ages...&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 52s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The theatre staff were very, very helpful. They did all the lighting for us... our own stage manager who was coached by their stage manager, which was excellent... They were absolutely fantastic..”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;That’s Gina. She was a new mum in the mid-1970s, when she set up the Dee and Alyn Gilbert and Sullivan Society. Haydn Rees invited her to stage a production in Theatr Clwyd’s opening week. &lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 80s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;Theatr Clwyd... for me, personally, it&#39;s always given me and reminded me of a quiet courage. And I think at its best. That&#39;s what it does for an audience, too. You know, in all its shapes, there&#39;s always a component in it that has to do with courage... It&#39;s empowering.&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;That’s Rhys again.&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 109s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The staff were so patient and kind to all the members with disabilities, and everyone else too..it gave us that, that lift-off really...&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;That’s Catherine Pugh, who co-founded the musical theatre group, Buzz-Ah. The group developed a variety of skills for disabled and non-disabled people and staged lots of productions in our main theatre...&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 134s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;And this is Tamara Harvey, she was Theatr Clwyd’s artistic director from 2015 to 2022. She went on to be Co-Artistic director at the Royal Shakespeare Company.  &lt;/p&gt;
 
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;“I think what&#39;s extraordinary about it is that it shouldn&#39;t exist. It&#39;s kind of beautiful madness that it does. It exists because of the passion and tenacity and dedication and vision of a group of people in the 1970s who said our community deserve a voice and then continues to exist because of the passion and vision and tenacity and dedication of continuing groups of people through its history and and so there is a kind of a defiance to it.”  
     &lt;/p&gt;
 &lt;/div&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 179s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Theatr Clwyd is not one thing. &lt;/p&gt;
 &lt;p&gt;A group of people stood on the hill, and then another group of people stood on a hill, and then another. They all imagined a better world, and with Theatr Clwyd they made it. Theatr Clwyd doesn’t exist because a group of people imagined, but because people kept on imagining, and will keep on imagining too...&lt;/p&gt;
 
@@ -2855,9 +3009,10 @@ Past the writers library on your right, Drws C is on your left.
 Where new realities are imagined, crafted and created. &lt;br&gt;
 Where we understand our past as a story of transformation that continues into our future. &lt;br&gt;
 Where our community shapes us, challenges us, and drives us on – from the bees on our roofs, to the people standing on the hill, looking out and imagining something new.&lt;/p&gt;
+ &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 232s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2883,46 +3038,54 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 &lt;&lt;set $nextpass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
+
 &lt;main&gt;
-    &lt;div id=&quot;msgMount&quot;&gt; 
+&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_54.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+    &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
    &lt;p class=&quot;bold&quot;&gt;We’ve heard lots of members of the Theatr Clwyd community. &lt;/p&gt;
 &lt;p&gt;There are many more you can find in over sixty-five interviews with locals, staff, participants, actors, community members, directors and designers in the online North East Wales Archives. &lt;/p&gt;
 &lt;p&gt;But would you like to add something? &lt;/p&gt;
-
-
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt;
+    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;I think it’s only fair to add your words – if you’d like to of course. &lt;/p&gt;
 &lt;p&gt;It could be something that the tour has sparked for you, a memory from your time here, or it could be your reflection of your first impressions of the theatre on the hill. &lt;/p&gt;
 
 &lt;p&gt;Just press record and you can add a 90 second recording to the Archive. &lt;/p&gt;
-&lt;p&gt;What would you like to add to the Archive?&lt;/p&gt;
+
 &lt;p&gt;What would you like to add?&lt;/p&gt;
-&lt;/div&gt;
-&lt;iframe src=&quot;https://www.speakpipe.com/widget/inline/kp6xzmubni8enwhrhvqo1sx5cbst92iy&quot; allow=&quot;microphone&quot; width=&quot;100%&quot; height=&quot;200&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-&lt;br/&gt;
+
+&lt;iframe src=&quot;https://www.speakpipe.com/widget/inline/i82lv2te14el16sc6d1qs15esjaa0smo&quot; allow=&quot;microphone&quot; width=&quot;100%&quot; height=&quot;200&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;br/&gt;&lt;br/&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
             &lt;/div&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 39s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;I&#39;ve recorded&quot;&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
+            &lt;&lt;goto &quot;completed5&quot;&gt;&gt;
         &lt;&lt;/button&gt;&gt;
         &lt;div class=&quot;white&quot;&gt;
              &lt;&lt;button &quot;Skip&quot;&gt;&gt;
-         &lt;&lt;goto $nextpass&gt;&gt;
+         &lt;&lt;goto &quot;completed5&quot;&gt;&gt;
     &lt;&lt;/button&gt;&gt;
         &lt;/div&gt;
  
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="168" name="56_story" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;54_story&quot;&gt;&gt;
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="168" name="56_story" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;credits&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="56_story-text-eng" tags="nobr" position="1100,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’ve reached our end. It’s time to return your keycard to the front desk.&lt;/p&gt;
 
 &lt;p&gt;By the way - You can come back and do the trail again any time – and I’ll be delighted to join you.&lt;/p&gt;
@@ -2933,7 +3096,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 
 
 
-&lt;&lt;timed $btnAppearTime&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Finish&quot;&gt;&gt;
             &lt;&lt;goto &quot;completed5&quot;&gt;&gt;

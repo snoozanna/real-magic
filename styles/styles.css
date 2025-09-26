@@ -596,6 +596,17 @@ opacity: 1;
   animation: fadeIn 0.5s ease 3s forwards;
 }
 
+/* Processing image short: spin for 1s then fade out */
+.info-container img.processing-short {
+  opacity: 1;
+  animation: spin 1s linear, fadeOut 0.5s ease 1s forwards;
+}
+
+/* Complete image short: show after 1s */
+.info-container img.complete-short {
+  animation: fadeIn 0.5s ease 1s forwards;
+}
+
 /* Processing image: spin infitintelys */
 .info-container img.processing-long2 {
   opacity: 1;
@@ -612,6 +623,7 @@ opacity: 1;
 .info-container img.complete2 {
   animation: fadeIn 0.5s ease 7s forwards;
 }
+
 
 /* Processing image: spin infitintelys */
 .info-container img.processing-long {

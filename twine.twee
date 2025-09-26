@@ -176,7 +176,7 @@ setup.addPlaceholder = () => {
 
     const textbox = document.getElementById("textbox-codeword");
     if (textbox) {
-        console.log("Found textbox:", textbox);
+        // console.log("Found textbox:", textbox);
         textbox.setAttribute("placeholder", "Type here");
     }
 
@@ -1224,9 +1224,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 :: completed3 [nobr]
 
-<<timed 0.1s>>
-    <<audio "ticker" "play">>
-<</timed>>
+<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_33.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 
 <<include "header">>
@@ -1253,19 +1251,17 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 :: completed4 [nobr]
 
-<<timed 0.1s>>
-    <<audio "ticker" "play">>
-<</timed>>
+<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_51.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
+         <img src="../assets/img/Hero_Image_Sequence_1.png"/>
          <img src="../assets/img/Hero_Image_Sequence_2.png"/>
           <img src="../assets/img/Hero_Image_Sequence_3.png"/>
           <img src="../assets/img/Hero_Image_Sequence_4.png"/> 
-          <img src="../assets/img/Hero_Image_Sequence_5.png"/>
      </div>
 
  <div class="success info-container">
@@ -1275,38 +1271,35 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 </main>
 
- <<timed 7s>>
+ <<timed 11s>>
  <<goto $nextpass>>
 <</timed>>
 
 :: completed5 [nobr]
 
-<<timed 0.1s>>
-    <<audio "ticker" "play">>
-<</timed>>
-
+<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_55.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <<include "header">>
 <main class="landing flex-col-cen">
 
    <div class="inline-img-wrapper final lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
+       <img src="../assets/img/Hero_Image_Sequence_1.png"/>
          <img src="../assets/img/Hero_Image_Sequence_2.png"/>
           <img src="../assets/img/Hero_Image_Sequence_3.png"/>
           <img src="../assets/img/Hero_Image_Sequence_4.png"/> 
           <img src="../assets/img/Hero_Image_Sequence_5.png"/>
-           <img src="../assets/img/Hero_Image_Sequence_6.png" class="six"/>
-            <img src="../assets/img/Hero_Image_Sequence_7.png" class="seven"/>
+       
      </div>
 
  <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+<img src="assets/img/processing.png" alt="processing-short" class="processing"/>
+<img src="assets/img/complete.png" alt="complete" class="complete-short"/>
 </div>
 
 </main>
 
- <<timed 7s>>
+ <<timed 12s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1911,7 +1904,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "23_galleryffabalam">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 22_story-text-eng [nobr]
@@ -2015,7 +2007,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "26_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 25_story-text-eng [nobr]
@@ -2068,7 +2059,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "27_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 26_story-text-eng [nobr]
@@ -2127,7 +2117,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "28_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 27_story-text-eng [nobr]
@@ -2188,7 +2177,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "29_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 28_story-text-eng [nobr]
@@ -2248,7 +2236,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "30_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 29_story-text-eng [nobr]
@@ -2300,7 +2287,6 @@ When you are ready to move on, let me know.
 <<set $nextpass to "31_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 30_story-text-eng [nobr]
@@ -2354,21 +2340,34 @@ When you are ready to move on, let me know.
 <<set $nextpass to "32_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 31_story-text-eng [nobr]
-
-<div class="quote"><p>"And I love the fact that there's so many paint stains everywhere, but it looks like it's all, you know, a work of art in itself…. It's a paint frame, but the whole room has got, well, it's got stories to tell." </p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote"><p>"And I love the fact that there's so many paint stains everywhere, but it looks like it's all, you know, a work of art in itself... It's a paint frame, but the whole room has got, well, it's got stories to tell." </p>
 <span class="person">Angharad Madog</span></div>
+<</append>>
+<</timed>>
+<<timed 15s>>
+   <<append "#msgMount">>
 <p>There are indeed paint stains everywhere, Angharad – and if you think, each dash of paint in here will have been made as part of a production or event to connect with someone. My favourite part is the sink – it is absolutely covered in paint – Layer upon layer. It’s a work of art. </p>
+<</append>>
+<</timed>>
+<<timed 33s>>
+   <<append "#msgMount">>
 <p>Talking about works of art, let’s see some that have been made here. </p>
+<</append>>
+<</timed>>
+<<timed 37s>>
+   <<append "#msgMount">>
 <p>You might notice a long piece of fabric on the balcony – this was made on the paint frame and designed by Adrian Gee. </p>
 
 <p>Head over to it. </p>
 <p>When you’re there, I’ve got a clip of Katy explaining what you have in front of you</p>
-
-<<timed $btnAppearTime>>
+<</append>>
+<</timed>>
+<<timed 51s>>
     <<append "#btnContainer">>
     <<button "We're next to the fabric">>
             <<goto $nextpass>>
@@ -2432,14 +2431,11 @@ When you are ready to move on, let me know.
 <<set $nextpass to "34_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 32_story-text-eng [nobr]
- <<if $userchoices.audioOn is true>>
-        <div id="audioMount">
-        <audio src="assets/audio/31_Katie_audio.mp3" autoplay>Audio not supported in your browser</audio>
-    </div><</if>>
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <div class="quote">
    <p> So this gauze is from our Christmas pantomime from Beauty and the Beast in 2021. The cloth you see is a transformation gauze, different to a normal scenic canvas cloth. We've painted it in dark blues and ultramarine and Prussian colours. There's a large offset silver and gold star and radiating from it is a trail of iridescent bubbles.</p>
 
@@ -2448,18 +2444,28 @@ When you are ready to move on, let me know.
 <p>If this light is taken away and redirected to something behind the gauze, such as the actors or a different scene, the image on the gauze, in this instance the bubbles and the star, will completely disappear and reveal the scene behind, just like magic.</p>
 
 <p>So this cloth was painted in four days and then taken down and put on the workshop floor for the final day. This allowed us to glitter it flat. It's very difficult to glitter it upright so doing it on the flat is the best way of doing it.</p>
-
-    
 </div>
+<</append>>
+<</timed>>
+<<timed 80s>>
+   <<append "#msgMount">>
 <p class="bold">Diolch Katy.</p> 
 <p>Did you catch how many days it took to make? Type it below. </p>
 
-<p>If not we can ask Katy to repeat it by clicking <div class="inline-link"><<link "here">> <<goto $pass>>
+<p>If not we can ask Katy to repeat it by clicking <div class="inline-link"><<link "here">> 
+    <<timed 0.1s>>
+    <<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_32_repeat.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+    <</timed>>
 <</link>></div>.</p>
  <span class="clue hide" id="clueMount"></span>
 /*<i>A word beginning with Q meaning Shhhhhhh.</i></span> */
 <br/>
 <<include "pw32">>
+
+<</append>>
+<</timed>>
 
 <<include "navbuttons">>
 
@@ -2486,17 +2492,16 @@ When you are ready to move on, let me know.
 <<set $nextpass to "35_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 34_story-text-eng [nobr]
 <p class="bold">I was in that panto – it was directed by Tamara Harvey and I played Nana Nerys from Nercwys! </p>
 
 <p>Beyond the paintframe is the workshop, where the props and sets are made. </p>
-<p>Head to the other side of the balcony to see what’s going on</p>
+<p>Head to the other side of the balcony to see what’s going on.</p>
 
 
-<<timed $btnAppearTime>>
+<<timed 13s>>
     <<append "#btnContainer">>
     <<button "We're here">>
             <<goto $nextpass>>
@@ -2528,18 +2533,26 @@ When you are ready to move on, let me know.
 <<set $nextpass to "36_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 35_story-text-eng [nobr]
-<div class="quote"><p>"I love going into that workshop because of the smells, in there, you know? To see the paint and the woodwork and all the shavings on the floor, and it's just, it's just people at the root of theatre making, isn't it? They are creating our world for us, and we play in their world that they create."</p></div>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote"><p>"I love going into that workshop because of the smells, in there, you know? To see the paint and the woodwork and all the shavings on the floor, and it's just, it's just people at the root of theatre making, isn't it? They are creating our world for us, and we play in their world that they create."</p></div>\
+    <</append>>
+<</timed>>
 
+
+<<timed 21s>>
+   <<append "#msgMount">>
 <p class="bold">One minute - that's me! </p>
 <p>One minute – that’s me! That’s my memory – perhaps I’m part of Theatr Clwyd’s history too? </p>
 <p>I suppose I am! </p>
+    <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 13s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -2572,37 +2585,64 @@ When you are ready to move on, let me know.
 <<set $nextpass to "37_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 36_story-text-eng [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">There’s something special back here – sometimes overlooked. </p>
 <p>The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else –  Our pantos are like nothing else – </p>
-
-
+    <</append>>
+<</timed>>
+<<timed 36s>>
+   <<append "#msgMount">>
 <div class="quote"><p>"I saw a complete cycle of pantos!"</p>
 </div>
+    <</append>>
+<</timed>>
+<<timed 39s>>
+   <<append "#msgMount">>
 <div class="quote"><p>"Obviously, we see the pantomime every year."</p>
 </div>
+    <</append>>
+<</timed>>
+<<timed 41s>>
+   <<append "#msgMount">>
 <div class="quote"><p>"My youngest is still talking about this year's..."</p>
 </div>
+    <</append>>
+<</timed>>
+<<timed 44s>>
+   <<append "#msgMount">>
 <div class="quote"><p>"We come every year to the panto - ten of us now with grandchildren and we love it."</p>
 </div>
+    <</append>>
+<</timed>>
+<<timed 49s>>
+   <<append "#msgMount">>
 <div class="quote">
     <p>"I don't care if you're 86 or 6, you can still enjoy a panto!"</p>
     </div>
+        <</append>>
+<</timed>>
+<<timed 52s>>
+   <<append "#msgMount">>
 <div class="quote"><p>"I do like the panto time - Things with a bit of glitter are always great."</p>
 </div>
-
+    <</append>>
+<</timed>>
+<<timed 56s>>
+   <<append "#msgMount">>
 <p>Thank you Geoff, Jane, Becky, Sue, Emyr & Alison.<br>
 For many of our audiences the panto is the first theatre show they ever see.<br>
 Can you remember your first time in an audience? Your first view of the stage? </p>
 
 <p>I’m getting an itch to perform –<br>
 Let’s head to our next location – our stage! </p>
+    <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 78s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -2634,11 +2674,10 @@ Let’s head to our next location – our stage! </p>
 <<set $nextpass to "38_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 37_story-text-eng [nobr]
-<p>We’re headed back to the public foyer. </p>
+<p class="bold">We’re headed back to the public foyer. </p>
 
 <p>Go back through the single door and turn left down the corridor, past the TV Studio sign. <br>
 Go back through the double doors at the end, and turn right.<br> 
@@ -2646,7 +2685,7 @@ Head along this corridor and out into the foyer. <br>
 When you are near the stairs let me know. </p>
 
 
-<<timed $btnAppearTime>>
+<<timed 19s>>
     <<append "#btnContainer">>
     <<button "We're near the stairs">>
             <<goto $nextpass>>
@@ -2673,20 +2712,30 @@ When you are near the stairs let me know. </p>
 <<set $nextpass to "39_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 38_story-text-eng [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">Our main stage awaits!</p>
 <p>But one minute... It’s Phillip Jones again – who’s he met this time?!</p>
+   <</append>>
+<</timed>>
 
+<<timed 7s>>
+   <<append "#msgMount">>
 <div class="quote"><p>"I thought when I was growing up, oh, theatre is not for me….a what are you doing at the theatre sort of thing? Going to Theatr Clwyd just broadened my horizons, opened me up. It stopped me from being a bigot. It stopped me from being a racist. It stopped me from being a really bad person. It liberated me. It was just fantastic. Have your mind just opened. My God, this is what people can do, and you love everybody, and everybody loves each other. And it was just amazing. I've got Theatr Clwyd to thank for that."</p></div>
+   <</append>>
+<</timed>>
 
+<<timed 42s>>
+   <<append "#msgMount">>
 <p>Wow. That’s... just wow. </p>
 <p>Thanks Phillip Jones. </p>
+   <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 49s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -2718,16 +2767,21 @@ When you are near the stairs let me know. </p>
 <<set $nextpass to "40_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 39_story-text-eng [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">It’s the spark – that’s the thing here – a possibility, right? </p>
 <p>Hours upon hours are spent painting backdrops to create Hours upon hours are spent painting backdrops and constructing sets to create doors to new realities. <br>
-But It’s not just new worlds on stage, it’s new possibilities everywhere. </p>
+But it’s not just new worlds on stage, it’s new possibilities everywhere. </p>
 
 <p>Come on, let’s go. It’s time to enter Theatr Moondance</p>
+    <</append>>
+<</timed>>
 
+<<timed 17s>>
+   <<append "#msgMount">>
 <p> With the stairs on your left, head to the end of the corridor.<br>
 Past the writers library on your right, Drws C is on your left.
 </p>
@@ -2735,9 +2789,10 @@ Past the writers library on your right, Drws C is on your left.
 <p>There are two sets of doors – we need the ones on the left under the Drws C sign. <br>
     You’ll need your keycard to go through the door.
 </p>
+    <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 40s>>
     <<append "#btnContainer">>
     <<button "We're through">>
             <<goto $nextpass>>
@@ -2764,7 +2819,6 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "41_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 40_story-text-eng [nobr]
@@ -2775,7 +2829,7 @@ Past the writers library on your right, Drws C is on your left.
 </p>
 
 
-<<timed $btnAppearTime>>
+<<timed 14s>>
     <<append "#btnContainer">>
     <<button "We're in">>
             <<goto $nextpass>>
@@ -2802,21 +2856,30 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "42_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 41_story-text-eng [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">Isn't it lush?</p>
 <p>This is a relaxed space, for people who need it. I’ve noticed through the years how Theatr Clwyd embraces everyone – whatever your age, ability or circumstance. We’re all part of the family.</p>
 <p>This box is at the back of the theatre, at the far right. It has a big rectangular window, looking out at the stage and the gorgeous theatre seats. Hey, audience, we're behind you!</p>
+  <</append>>
+<</timed>>
+<<timed 26s>>
+   <<append "#msgMount">>
 <p>Sorry, I couldn't resist.</p>
 <p>Every seat in the theatre – not just this one – has a brilliant view. That care was built into its design. </p>
 
 <p>You might notice the amazing red tiles which line the walls. They have beautiful curved edges, and look almost like bricks. I love looking out at them when I’m on stage. They’ve been here since day one, and they’re one of the things that give this space its special acoustic, bouncing sound around the room.</p>
-
-<p>Ooh, look! There's one of them here for you to touch</p>
-
-<<timed $btnAppearTime>>
+  <</append>>
+<</timed>>
+<<timed 56s>>
+   <<append "#msgMount">>
+<p>Ooh, look! There's one of them here for you to touch.</p>
+  <</append>>
+<</timed>>
+<<timed 59s>>
     <<append "#btnContainer">>
     <<button "I've touched the tile">>
             <<goto $nextpass>>
@@ -2844,33 +2907,56 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "floorplan">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 42_story-text-eng [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <p class="bold">These are Transform tiles from the 1970s – based on a design by German sculptor, Fritz Steller. He made incredible art for civic buildings across the UK.</p>
 <p>Every tile looks slightly different. When they were fired in their kilns, each responded differently to the flames, revealing distinct patterns and colours. Theatre experts also helped with their fitting – they knew the effect the tiles would have on the theatre’s sound.</p>
+  <</append>>
+<</timed>>
 
+<<timed 29s>>
+   <<append "#msgMount">>
 <div class="quote">
 <p>"It's a fascinating space…it enables you to do what you want with it, sonically, from a sound point of view."</p>
 </div>
 
 <p>Hey, that’s Tayo Akinbode! Panto musical director. A genius. And who’s this?</p>
+  <</append>>
+<</timed>>
 
+<<timed 43s>>
+   <<append "#msgMount">>
 <div class="quote">
 <p>"It always felt very intimate. Always felt like...if you wanted to, and if you, you know, were confident enough of what you were doing, you had the audience that right there...and acoustically, too. Vocally was always kind of easy to play, really, compared with so many places I played."</p>
 </div>
+  <</append>>
+<</timed>>
 
+<<timed 58s>>
+   <<append "#msgMount">>
 <p>That’s Steffan Rhodri, you might recognise him from Gavin & Stacey. He's performed on this stage countless times and I agree, the stage and sound connects you to the audiences - it’s special. </p>
+  <</append>>
+<</timed>>
 
+<<timed 71s>>
+   <<append "#msgMount">>
 <div class="quote">
 <p>"I think as a child, I saw them as, like, like, a big bar of chocolate. I love that theatre because there are no bad seats. It's like a big hug. Everybody's in there together."</p>
 </div>
+  <</append>>
+<</timed>>
 
+<<timed 84s>>
+   <<append "#msgMount">>
 <p>Catrin Aaron has gazed up at people in 35 productions here.  Her mum, a nurse, used to bring her here when she was little, from nearby Rhyl. She went on to work at the Royal Shakespeare Company.</p>
 <p>Being part of Theatr Clwyd is like being part of a family. Let’s jump around the theatre to find people who can tell you more...</p>
+  <</append>>
+<</timed>>
 
-<<timed $btnAppearTime>>
+<<timed 104s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -2906,11 +2992,11 @@ Past the writers library on your right, Drws C is on your left.
 <<set $currentDot to 1>>
 <<set $totalDots to 4>>
 
-<<if $audioOn is true>>
-    <div id="audio">
+
+    <div id="audioMount">
         <audio src="" autoplay>Audio not supported in your browser</audio>
     </div>
-<</if>>
+
 
 <<include "header">>
 
@@ -2927,7 +3013,7 @@ Past the writers library on your right, Drws C is on your left.
          
            
         
-        <div class="story-text" id="storyText"></div>
+        <div class="story-text" id="msgMount"></div>
          <div class="button-wrapper btn-container" id="btnContainer">
             <<include "button1">>
             </div>
@@ -2941,16 +3027,16 @@ Past the writers library on your right, Drws C is on your left.
    
      <<addclass ".dot1" "story-dot green-dot pulse-dot">>
     <<replace "#btnContainer">><</replace>>
-    <<replace "#storyText">><</replace>>
+    <<replace "#msgMount">><</replace>>
     <<audio "ping" "play">>
     <<timed 1s>>
-    <<replace "#storyText">>
+    <<replace "#msgMount">>
         <<include '44_floorplan_story'>>
     <</replace>>
    
 
-    <<timed 10s>>
-        <<set $currentDot to 2>>
+    <<timed 96s>>
+        <<set $currentDot to 1>>
         <<replace "#btnContainer">>
             <<include "button1a">>
             <</replace>>
@@ -2964,20 +3050,20 @@ Past the writers library on your right, Drws C is on your left.
 <<button "Next">>
    
       <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
-      <<replace "#storyText">><</replace>>
+      <<replace "#msgMount">><</replace>>
        <<replace "#btnContainer">><</replace>>
 
      <<timed 1s>>
        <<audio "ping" "play">>
     <<addclass ".dot1" "green-dot pulse-dot story-dot fadeIn3">>
-    <<replace "#storyText">>
+    <<replace "#msgMount">>
     <<include '45_floorplan_story'>>
     <</replace>>
          <</timed>>
 
 
-    <<timed 5s>>
-        <<set $currentDot to 1>>
+    <<timed 67s>>
+        <<set $currentDot to 2>>
          <<replace "#btnContainer">>
             <<include "button2">>
             <</replace>>
@@ -2989,19 +3075,19 @@ Past the writers library on your right, Drws C is on your left.
    
        <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
     <<replace "#btnContainer">><</replace>>
-    <<replace "#storyText">><</replace>>
+    <<replace "#msgMount">><</replace>>
 
      <<timed 1s>>
             <<audio "ping" "play">>
     <<replace "#btnContainer">><</replace>>
      <<addclass ".dot2" "story-dot green-dot pulse-dot">>
-    <<replace "#storyText">>
+    <<replace "#msgMount">>
     <<include '46_floorplan_story'>>
     <</replace>>
          <</timed>>
 
-    <<timed 5s>>
-        <<set $currentDot to 2>>
+    <<timed 35s>>
+        <<set $currentDot to 3>>
         <<replace "#btnContainer">>
             <<include "button3">>
             <</replace>>
@@ -3012,18 +3098,18 @@ Past the writers library on your right, Drws C is on your left.
    
       <<replace "#btnContainer">><</replace>>
       <<removeclass ".dot2" "green-dot pulse-dot story-dot">>
-    <<replace "#storyText">><</replace>>
+    <<replace "#msgMount">><</replace>>
 
      <<timed 1s>>
       <<audio "ping" "play">>
      <<addclass ".dot3" "story-dot green-dot pulse-dot">>
-    <<replace "#storyText">>
+    <<replace "#msgMount">>
     <<include '47_floorplan_story'>>
     <</replace>>
          <</timed>>
 
-    <<timed 5s>>
-        <<set $currentDot to 3>>
+    <<timed 43s>>
+        <<set $currentDot to 4>>
          <<replace "#btnContainer">>
             <<include "button4">>
             <</replace>>
@@ -3034,18 +3120,18 @@ Past the writers library on your right, Drws C is on your left.
 <<button "Next">>
    
       <<removeclass ".dot3" "green-dot pulse-dot story-dot">>
-    <<replace "#storyText">><</replace>>
+    <<replace "#msgMount">><</replace>>
     <<replace "#btnContainer">><</replace>>
 
      <<timed 1s>>
         <<audio "ping" "play">>
        <<addclass ".dot4" "story-dot green-dot pulse-dot">>
-    <<replace "#storyText">>
+    <<replace "#msgMount">>
     <<include '48_floorplan_story'>>
     <</replace>>
          <</timed>>
 
-    <<timed 5s>>
+    <<timed 24s>>
         <<set $currentDot to 4>>
          <<replace "#btnContainer">>
  
@@ -3070,37 +3156,66 @@ Past the writers library on your right, Drws C is on your left.
 
 
 :: 44_floorplan_story [nobr]
+
+ <<timed 0.1s>>
+     <<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_44.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+    <<append "#msgMount">>
 <p class="bold">Onstage, there are lights above and the audience below, with the world of the play alive all around you.  </p>
 
 <p>Ah! Here is someone who lived near Mold. <br>
     He was recruited from school to be in a play when he was 10 – he’d  never even seen a play before!  <br>
     And he went on to work in Hollywood – Rhys Ifans.
 </p>
+ <</append>>
+<</timed>>
 
-
-
+ <<timed 20s>>
+     <<append "#msgMount">>
 <div class="quote">
     <p>"The first time I performed on the main stage in Theatr Clwyd  was a Theatr Clwyd production of Toad, of Toad Hall, and I played a rat and I played a weasel, and it changed my life. </p>
-    
-    <p>Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn't really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn't believe that, just the warmth it felt like walking into sunshine. And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can't step in and with doubts, or with, you know, say, Oh, I don't want to do this. I'm tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it."</p>
-</div>
+ <p>Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn't really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn't believe that, just the warmth it felt like walking into sunshine. And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can't step in and with doubts, or with, you know, say, Oh, I don't want to do this. I'm tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it."</p>
+ </div>
+ <</append>>
+<</timed>>
 
 
+ <<timed 86s>>
+     <<append "#msgMount">>
+    <p>I never knew his first performance was as a rat and a weasel!</p> 
+    <p>He definitely has felt that special relationship with the audience.</p>
+ <</append>>
+<</timed>>
 
 :: 45_floorplan_story [nobr]
+<<timed 0.1s>>
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_45.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+        /* <<append "#msgMount">>
 <p class="bold">And we have another one coming through.</p>
+ <</append>> */
 
-
+     <<append "#msgMount">>
 <div class="quote">
 <p>The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.</p>
 
 <p>With Cwmni 25, run by Gwennan Mair Jones, I was really lucky that she was running the sessions bilingually, naturally bilingually, so that was my first introduction to the Welsh arts scene.</p>
 
 </div>
-
+ <</append>>
+<</timed>>
+<<timed 51s>>
+     <<append "#msgMount">>
 <p>That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. </p>
+ <</append>>
+<</timed>>
 
 :: 46_floorplan_story [nobr]
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_46.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
 <p class="bold">From the front row, the stage is right in front of you, only  inches up.  </p>
 <div class="quote"><p>“It's total immersion from the front row”</p></div>
 <p>That’s Judie von der Fecht! Her and Paul are front row regulars.</p>
@@ -3109,11 +3224,16 @@ Past the writers library on your right, Drws C is on your left.
 <div class="quote"><p>“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we're going to have a theatre room. And we're going to wallpaper it with our tickets.”</p></div>
 
 :: 47_floorplan_story [nobr]
-
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_47.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
 <div class="quote"><p>“The main theatre is so wonderfully intimate. No matter where you sit. It doesn't feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there's no bad seat there... you feel so intimate. I guess it's a place of escape, almost, it's one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” </p></div>
 <p>That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. </p>
 
 :: 48_floorplan_story [nobr]
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TC_48.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
 <p class="bold">The ushers often sneak in to sit here – and see how a show evolves over time. </p>
 
 <p>Ah, it’s usher Geoff Wiliams again!</p>
@@ -3126,7 +3246,6 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "50_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 49_story-text-eng [nobr]
@@ -3187,14 +3306,11 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "52_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 50_story-text-eng [nobr]
- <<if $userchoices.audioOn is true>>
-        <div id="audioMount">
-        <audio src="assets/audio/41a_Phyl.mp3" autoplay>Audio not supported in your browser</audio>
-    </div><</if>>
+<<timed 0.1s>>
+   <<append "#msgMount">>
 <div class="quote">
   <p> “Theatr Clwyd, you know, has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. </p>
 
@@ -3203,8 +3319,14 @@ Past the writers library on your right, Drws C is on your left.
 <p>One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Mags into the toilet, me dressed as Wonder Woman and her in her wheelchair, you know. And we were both laughing, you know.. And that's what you get. Whatever problems you've got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will."</p>
 </div>
 <br/>
+  <</append>>
+<</timed>>
+<<timed 69s>>
+   <<append "#msgMount">>
 <p class="bold">That's magic.</p>
-<<timed 50s>>
+  <</append>>
+<</timed>>
+<<timed 71s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto "completed4">>
@@ -3238,7 +3360,6 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "53_story">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 52_story-text-eng [nobr]
@@ -3281,39 +3402,69 @@ Past the writers library on your right, Drws C is on your left.
 <<set $nextpass to "54_speakpipe">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 53_story-text-eng [nobr]
- <<if $userchoices.audioOn is true>>
-        <div id="audioMount">
-        <audio src="assets/sound/TheatreClwyd Music_idea1.mp3" autoplay>Audio not supported in your browser</audio>
-    </div><</if>>
+<<timed 0.1s>>
+    <<append "#msgMount">>
 <p class="bold">Theatr Clwyd’s mission statement begins like this:</p>
-
+ <</append>>
+<</timed>>
+<<timed 7s>>
+    <<append "#msgMount">>
 <p><b><i>Once upon a time a group of people stood on a hill<br/>
  and decided to make the world a happier place.</i>
     </b>
 </p>
-
+ <</append>>
+<</timed>>
+<<timed 13s>>
+    <<append "#msgMount">>
 <p>Today, in this beautiful building, people continue that legacy – and keep imagining amazing new ways to keep that vision going.</p>
+ <</append>>
+<</timed>>
 
+<<timed 23s>>
+    <<append "#msgMount">>
 <div class="quote"><p>“It’s always had a spirit of adventure, I think Theatr Clwyd. It's never sat back on its laurels and gone, oh, we're going to play everything safe. It's never done that, and it’s all the better for it, I think.”</p></div>
 <p>That’s Emyr John, an amazing creative associate, running programmes welcoming young people from a huge variety of different backgrounds. His work ranges from an LGBTQ group, to history talks, to storytelling workshops for all ages...</p>
+ <</append>>
+<</timed>>
 
+<<timed 52s>>
+    <<append "#msgMount">>
 <div class="quote"><p>“The theatre staff were very, very helpful. They did all the lighting for us... our own stage manager who was coached by their stage manager, which was excellent... They were absolutely fantastic..”</p></div>
 <p>That’s Gina. She was a new mum in the mid-1970s, when she set up the Dee and Alyn Gilbert and Sullivan Society. Haydn Rees invited her to stage a production in Theatr Clwyd’s opening week. </p>
+ <</append>>
+<</timed>>
+
+<<timed 80s>>
+    <<append "#msgMount">>
 <div class="quote"><p>Theatr Clwyd... for me, personally, it's always given me and reminded me of a quiet courage. And I think at its best. That's what it does for an audience, too. You know, in all its shapes, there's always a component in it that has to do with courage... It's empowering.</p></div>
 <p>That’s Rhys again.</p>
+ <</append>>
+<</timed>>
+
+<<timed 109s>>
+    <<append "#msgMount">>
 <div class="quote"><p>“The staff were so patient and kind to all the members with disabilities, and everyone else too..it gave us that, that lift-off really..."</p></div>
 <p>That’s Catherine Pugh, who co-founded the musical theatre group, Buzz-Ah. The group developed a variety of skills for disabled and non-disabled people and staged lots of productions in our main theatre...</p>
+ <</append>>
+<</timed>>
 
+<<timed 134s>>
+    <<append "#msgMount">>
 <p>And this is Tamara Harvey, she was Theatr Clwyd’s artistic director from 2015 to 2022. She went on to be Co-Artistic director at the Royal Shakespeare Company.  </p>
 
 <div class="quote">
 <p>“I think what's extraordinary about it is that it shouldn't exist. It's kind of beautiful madness that it does. It exists because of the passion and tenacity and dedication and vision of a group of people in the 1970s who said our community deserve a voice and then continues to exist because of the passion and vision and tenacity and dedication of continuing groups of people through its history and and so there is a kind of a defiance to it.”  
     </p>
 </div>
+ <</append>>
+<</timed>>
+
+<<timed 179s>>
+    <<append "#msgMount">>
 <p>Theatr Clwyd is not one thing. </p>
 <p>A group of people stood on the hill, and then another group of people stood on a hill, and then another. They all imagined a better world, and with Theatr Clwyd they made it. Theatr Clwyd doesn’t exist because a group of people imagined, but because people kept on imagining, and will keep on imagining too...</p>
 
@@ -3321,9 +3472,10 @@ Past the writers library on your right, Drws C is on your left.
 Where new realities are imagined, crafted and created. <br>
 Where we understand our past as a story of transformation that continues into our future. <br>
 Where our community shapes us, challenges us, and drives us on – from the bees on our roofs, to the people standing on the hill, looking out and imagining something new.</p>
+ <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 232s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -3356,35 +3508,44 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 <<set $nextpass to "56_story">>
 <<audio ":all" "stop">>
 <<include "header">>
+
 <main>
-    <div id="msgMount"> 
+<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_54.mp3" autoplay>Audio is not supported on your device</audio></div>
+    <div id="msgMount"> </div>
+<<timed 0.1s>>
+    <<append "#msgMount">>
    <p class="bold">We’ve heard lots of members of the Theatr Clwyd community. </p>
 <p>There are many more you can find in over sixty-five interviews with locals, staff, participants, actors, community members, directors and designers in the online North East Wales Archives. </p>
 <p>But would you like to add something? </p>
-
-
+<</append>>
+<</timed>>
+<<timed 19s>>
+    <<append "#msgMount">>
 <p>I think it’s only fair to add your words – if you’d like to of course. </p>
 <p>It could be something that the tour has sparked for you, a memory from your time here, or it could be your reflection of your first impressions of the theatre on the hill. </p>
 
 <p>Just press record and you can add a 90 second recording to the Archive. </p>
-<p>What would you like to add to the Archive?</p>
+
 <p>What would you like to add?</p>
-</div>
-<iframe src="https://www.speakpipe.com/widget/inline/kp6xzmubni8enwhrhvqo1sx5cbst92iy" allow="microphone" width="100%" height="200" frameborder="0"></iframe>
-<br/>
+
+<iframe src="https://www.speakpipe.com/widget/inline/i82lv2te14el16sc6d1qs15esjaa0smo" allow="microphone" width="100%" height="200" frameborder="0"></iframe>
+
+<br/><br/>
  <div class="btn-container" id="btnContainer">
             </div>
+<</append>>
+<</timed>>
 </main>
 
 
-<<timed 6s>>
+<<timed 39s>>
     <<append "#btnContainer">>
     <<button "I've recorded">>
-            <<goto $nextpass>>
+            <<goto "completed5">>
         <</button>>
         <div class="white">
              <<button "Skip">>
-         <<goto $nextpass>>
+         <<goto "completed5">>
     <</button>>
         </div>
  
@@ -3393,12 +3554,11 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 <<include "navbuttonsb">>
 
 :: 56_story [nobr]
-<<set $prevpass to "54_story">>
+<<set $prevpass to "54_speakpipe">>
 <<set $pass to "56_story">>
 <<set $nextpass to "credits">>
 <<audio ":all" "stop">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 56_story-text-eng [nobr]
@@ -3412,7 +3572,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 
 
 
-<<timed $btnAppearTime>>
+<<timed 15s>>
     <<append "#btnContainer">>
     <<button "Finish">>
             <<goto "completed5">>
