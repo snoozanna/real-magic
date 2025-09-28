@@ -1003,10 +1003,10 @@ footer.map > div > button{
 /* By default: hide story and show overlay */
 /* main, header {
   display: none 
-} */
+}
 
-/* main::before{
-  content: "Please open this story on a phone.";
+ main::before{
+  content: "Please open this story on a phone or a tablet.";
   position: fixed;
   top: 0;
   left: 0;
@@ -1024,14 +1024,14 @@ footer.map > div > button{
 } */
 
 /* On phones: show story, remove overlay */
-/* @media screen and (max-width: 767px) {
+ /* @media screen and (max-width: 1025px) {
   main, header {
     display: block;
   }
   main::before {
     content: none;
   }
-} */
+}  */
 
 
 /* TABLET / DESKTOP */
@@ -1069,8 +1069,8 @@ footer.map > div > button{
     align-items: center;
 }
 
-  main.landing.flex-col-cen{
-    gap:3rem
+  main.landing > .inline-img-wrapper{
+max-width: 70%;
   }
 
   header.standard> .logo-wrapper {

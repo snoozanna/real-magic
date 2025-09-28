@@ -254,8 +254,8 @@ setup.addPlaceholderCym = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     <<link [[$nextpass]]>>
-    <</link>>
+     /* <<link [[$nextpass]]>>
+    <</link>> */
 <div id="processingMount"></div>
 
 </div>
@@ -394,6 +394,7 @@ setup.addPlaceholderCym = () => {
 <<set $nextpass to "2_welcome">>
 <<audio ":all" "stop">>
 <<include "header">>
+
 <main>
 <audio src="assets/audio/TC_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="instructional-text">
@@ -534,7 +535,7 @@ setup.addPlaceholderCym = () => {
 <p>You might have even seen my Bottom – in Shakespeare, I mean! </p>
  <</append>>
 <</timed>>
- <<timed 15s>>
+ <<timed 16s>>
     <<append "#msgMount">>
 <p>But I’m best known for Theatr Clwyd’s rock and roll pantos – playing the Dame.</p>
 
@@ -543,7 +544,7 @@ setup.addPlaceholderCym = () => {
 <p>Now I’m here today as I have been asked to be the voice of this heritage tour – called ‘Real Magic’...</p>
  <</append>>
 <</timed>>
- <<timed 23s>>
+ <<timed 36s>>
     <<append "#msgMount">>
 <p>I don’t know entirely what ‘Real Magic’ means, but we will find out together, I imagine.</p>
 
