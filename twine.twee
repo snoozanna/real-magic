@@ -207,7 +207,10 @@ setup.addPlaceholderCym = () => {
     link.as = "image";
     link.href = "assets/img/leadImage.png";
     document.head.appendChild(link);
+
 </script>
+
+
 
 
 
@@ -313,7 +316,7 @@ setup.addPlaceholderCym = () => {
    </div>
 </header>
 
-:: prechoice
+:: prechoice [nobr]
 <<set $prevpass to "prechoice">>
 <<set $pass to "prechoice">>
 <<set $nextpass to "landing">>
@@ -323,6 +326,7 @@ setup.addPlaceholderCym = () => {
         <<set $studio to "open">>
         <<goto $nextpass>>
     <</button>>
+    <br/><br/>
      <<button "Studio is closed">>
          <<set $studio to "closed">>
         <<goto $nextpass>>
@@ -359,7 +363,6 @@ setup.addPlaceholderCym = () => {
    
 </main>
 
-/* <<include "wallet">> */
 
 :: _templateIntro[nobr]
 <<addclass "body" "maroon">>
