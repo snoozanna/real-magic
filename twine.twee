@@ -337,6 +337,7 @@ setup.addPlaceholderCym = () => {
     language: null,
     audioOn: true
 }>>
+<<set $nxtBtnText to "Next">>
 <<set $btnAppearTime to "1s">>
 <<addclass "body" "maroon">>
 
@@ -368,8 +369,10 @@ setup.addPlaceholderCym = () => {
         <<if $pass>>
             <<if $userchoices.language is "cymraeg">>
              <<set $uniqueContent to $pass+"-text-cym">>
+              <<set $nxtBtnText to "Nesaf">>
          <<elseif $userchoices.language is "english" >>
              <<set $uniqueContent to $pass+"-text-eng">>
+                <<set $nxtBtnText to "Next">>
             <</if>>
             <<include $uniqueContent>>
             <div class="btn-container" id="btnContainer">
@@ -439,7 +442,12 @@ setup.addPlaceholderCym = () => {
 <<timed 0.1s>>
   <<if $userchoices.language is "cymraeg">>
       <<replace "#mount">>
-         Welsh chapter list
+         <<button "Dechrau">><<goto $nextpass>><</button>>
+        <<button "Balconi">><<goto "9_story">><</button>>
+        <<button "Stiwdio Deledu">><<goto "18_story">><</button>>
+        <<button "Ffrâm Baentio">><<goto "29_story">><</button>>
+        <<button "Theatr Moondance">><<goto "41_story">><</button>>
+        <<button "Diweddglo">><<goto "53_story">><</button>>
         <</replace>>
  <<elseif $userchoices.language is "english" >>
        <<replace "#mount">>
@@ -517,7 +525,7 @@ setup.addPlaceholderCym = () => {
 :: 2_welcome-text-eng [nobr]
  <<timed 0.1s>>
     <<append "#msgMount">>
-<p class="bold">Well, hello. Shw’mae! Welcome</p>
+<p class="bold">Well, hello. Shw’mae and welcome.</p>
 
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for <i>years</i>. </p>
 
@@ -1481,10 +1489,16 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <img src="assets/img/processing.png" alt="processing" class="processing"/>
 <img src="assets/img/complete.png" alt="complete" class="complete"/>
 </div>
-
+ <div class="btn-container" id="btnContainer" style="width: 100%;">
+            </div>
 </main>
- <<timed 12s>>
- <<goto $nextpass>>
+ <<timed 10s>>
+ <<append "#btnContainer">>
+    <<button $nxtBtnText>>
+            <<goto $nextpass>>
+        <</button>>
+   
+    <</append>>
 <</timed>>
 
 :: completed2 [nobr]
@@ -1506,11 +1520,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <img src="assets/img/processing.png" alt="processing" class="processing"/>
 <img src="assets/img/complete.png" alt="complete" class="complete"/>
 </div>
-
+ <div class="btn-container" id="btnContainer" style="width: 100%;">
+            </div>
 </main>
 
- <<timed 12s>>
- <<goto $nextpass>>
+ <<timed 10s>>
+ <<append "#btnContainer">>
+    <<button $nxtBtnText>>
+            <<goto $nextpass>>
+        <</button>>
+   
+    <</append>>
 <</timed>>
 
 :: completed3 [nobr]
@@ -1533,11 +1553,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <img src="assets/img/processing.png" alt="processing" class="processing"/>
 <img src="assets/img/complete.png" alt="complete" class="complete"/>
 </div>
-
+ <div class="btn-container" id="btnContainer" style="width: 100%;">
+            </div>
 </main>
 
- <<timed 12s>>
- <<goto $nextpass>>
+ <<timed 10s>>
+ <<append "#btnContainer">>
+    <<button $nxtBtnText>>
+            <<goto $nextpass>>
+        <</button>>
+   
+    <</append>>
 <</timed>>
 
 :: completed4 [nobr]
@@ -1559,12 +1585,18 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <img src="assets/img/processing.png" alt="processing" class="processing"/>
 <img src="assets/img/complete.png" alt="complete" class="complete"/>
 </div>
-
+ <div class="btn-container" id="btnContainer" style="width: 100%;">
+            </div>
 </main>
 
- <<timed 12s>>
- <<goto $nextpass>>
+  <<timed 10s>>
+ <<append "#btnContainer">>
+    <<button $nxtBtnText>>
+            <<goto $nextpass>>
+        <</button>>
+    <</append>>
 <</timed>>
+
 
 :: completed5 [nobr]
 
@@ -1587,12 +1619,19 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <img src="assets/img/processing.png" alt="processing-short" class="processing"/>
 <img src="assets/img/complete.png" alt="complete" class="complete-short"/>
 </div>
-
+ <div class="btn-container" id="btnContainer" style="width: 100%;">
+            </div>
 </main>
 
- <<timed 12s>>
- <<goto $nextpass>>
+ <<timed 10s>>
+ <<append "#btnContainer">>
+    <<button $nxtBtnText>>
+            <<goto $nextpass>>
+        <</button>>
+   
+    <</append>>
 <</timed>>
+
 
 :: 13_story [nobr]
 <<set $prevpass to "11_cameraembed">>
@@ -1879,7 +1918,7 @@ When you are ready to move on, let me know.
  </p>
 <p>It’s a room that has transformed a few times over the course of its life – if I remember correctly – let’s get going and find out. </p>
 
-<p>Opposite the bar is a door – it should say Stiwdio Anne Dwyrain/Stiwdio Anne East on it – scan your keycard on the door and open sesame! </p>
+<p>Opposite the bar is a door – it should say Stiwdio Anne Dwyrain/Stiwdio Anne East – scan your keycard on the door and open sesame! </p>
 
 
 <<timed 15s>>
@@ -2673,7 +2712,6 @@ When you are ready to move on, let me know.
    <<append "#msgMount">>
 
 <p class="bold">'Waw – rhyfedd meddwl am yr hyn a ddigwyddodd yma.' </p>
-<p>Mae'r un ystafell yma wedi bod yn gymaint o wahanol lefydd – ac mae'n dal i addasu. Mae cymuned Theatr Clwyd yn siapio’r hyn sy'n dod nesaf, ac mae'r cyfan wedi arwain at eich ymweliad chi yma hefyd. Ardderchog. </p>
 
 <p>Mae hud yn weithred o drawsnewid, dydi? Rydw i wedi chwarae llawer o gymeriadau panto hudolus, felly fe ddylwn i wybod. Gall pethau newid ffurf a siâp yma yn Theatr Clwyd, heb golli'r egni a'r angerdd oedd ganddyn nhw ar y dechrau un. Mae hynny'n rhywbeth gwerthfawr iawn.
 </p>
@@ -2782,7 +2820,7 @@ When you are ready to move on, let me know.
 :: 27_story-text-eng [nobr]
 <<timed 0.1s>>
    <<append "#msgMount">>
-<p class="bold">You'll find there is a Mirror on the wall – this was designed by Manon Awst.</p>
+<p class="bold">You'll find there is a mirror on the wall – this was designed by Manon Awst.</p>
 <p>Manon wanted to connect people to the wider landscape around Theatr Clwyd by using the pattern of bark, but in the building’s colour scheme. Your reflection reveals a mash-up of a colourful forest, the theatre’s architecture and, of course, you.</p>
  <</append>>
 <</timed>>
@@ -3404,7 +3442,7 @@ When you are ready to move on, let me know.
 <</timed>>
 <<timed 41s>>
    <<append "#msgMount">>
-<div class="quote"><p>"My youngest is still talking about this year's..."</p>
+<div class="quote"><p>"My youngest is still talking about this year's panto"</p>
 </div>
     <</append>>
 <</timed>>
@@ -3938,12 +3976,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <<set $nextpass to "49_story">>
 <<set $currentDot to 1>>
 <<set $totalDots to 4>>
-<<set $nxtBtnText to "Next">>
- <<if $userchoices.language is "cymraeg">>
-    <<set $nxtBtnText to "Nesaf">>
-<<elseif $userchoices.language is "english" >>
-    <<set $nxtBtnText to "Next">>
-            <</if>>
+
 
     <div id="audioMount">
         <audio src="" autoplay>Audio not supported in your browser</audio>

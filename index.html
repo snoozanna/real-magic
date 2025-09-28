@@ -374,6 +374,7 @@ setup.addPlaceholderCym = () => {
     language: null,
     audioOn: true
 }&gt;&gt;
+&lt;&lt;set $nxtBtnText to &quot;Next&quot;&gt;&gt;
 &lt;&lt;set $btnAppearTime to &quot;1s&quot;&gt;&gt;
 &lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt;
 
@@ -402,8 +403,10 @@ setup.addPlaceholderCym = () => {
         &lt;&lt;if $pass&gt;&gt;
             &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
              &lt;&lt;set $uniqueContent to $pass+&quot;-text-cym&quot;&gt;&gt;
+              &lt;&lt;set $nxtBtnText to &quot;Nesaf&quot;&gt;&gt;
          &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
              &lt;&lt;set $uniqueContent to $pass+&quot;-text-eng&quot;&gt;&gt;
+                &lt;&lt;set $nxtBtnText to &quot;Next&quot;&gt;&gt;
             &lt;&lt;/if&gt;&gt;
             &lt;&lt;include $uniqueContent&gt;&gt;
             &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
@@ -464,7 +467,12 @@ setup.addPlaceholderCym = () => {
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-         Welsh chapter list
+         &lt;&lt;button &quot;Dechrau&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Balconi&quot;&gt;&gt;&lt;&lt;goto &quot;9_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Stiwdio Deledu&quot;&gt;&gt;&lt;&lt;goto &quot;18_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Ffrâm Baentio&quot;&gt;&gt;&lt;&lt;goto &quot;29_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Theatr Moondance&quot;&gt;&gt;&lt;&lt;goto &quot;41_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button &quot;Diweddglo&quot;&gt;&gt;&lt;&lt;goto &quot;53_story&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
  &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
        &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -529,7 +537,7 @@ setup.addPlaceholderCym = () => {
 
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="2_welcome-text-eng" tags="nobr" position="975,225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Well, hello. Shw’mae! Welcome&lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;Well, hello. Shw’mae and welcome.&lt;/p&gt;
 
 &lt;p&gt;I’m Phyl, an actor who’s been coming to this wonderful theatre for &lt;i&gt;years&lt;/i&gt;. &lt;/p&gt;
 
@@ -1376,10 +1384,16 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
 &lt;/div&gt;
-
+ &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
+            &lt;/div&gt;
 &lt;/main&gt;
- &lt;&lt;timed 12s&gt;&gt;
- &lt;&lt;goto $nextpass&gt;&gt;
+ &lt;&lt;timed 10s&gt;&gt;
+ &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button $nxtBtnText&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+   
+    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed2" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_24.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
@@ -1398,11 +1412,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
 &lt;/div&gt;
-
+ &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
+            &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 12s&gt;&gt;
- &lt;&lt;goto $nextpass&gt;&gt;
+ &lt;&lt;timed 10s&gt;&gt;
+ &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button $nxtBtnText&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+   
+    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="completed3" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_33.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
@@ -1421,11 +1441,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
 &lt;/div&gt;
-
+ &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
+            &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 12s&gt;&gt;
- &lt;&lt;goto $nextpass&gt;&gt;
+ &lt;&lt;timed 10s&gt;&gt;
+ &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button $nxtBtnText&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+   
+    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="completed4" tags="nobr" position="725,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_51.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1443,11 +1469,16 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
 &lt;/div&gt;
-
+ &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
+            &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 12s&gt;&gt;
- &lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;timed 10s&gt;&gt;
+ &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button $nxtBtnText&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="completed5" tags="nobr" position="850,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_55.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1467,11 +1498,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing-short&quot; class=&quot;processing&quot;/&gt;
 &lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-short&quot;/&gt;
 &lt;/div&gt;
-
+ &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
+            &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 12s&gt;&gt;
- &lt;&lt;goto $nextpass&gt;&gt;
+ &lt;&lt;timed 10s&gt;&gt;
+ &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+    &lt;&lt;button $nxtBtnText&gt;&gt;
+            &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+   
+    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="13_story" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;14_story&quot;&gt;&gt;
@@ -1716,7 +1753,7 @@ When you are ready to move on, let me know.
  &lt;/p&gt;
 &lt;p&gt;It’s a room that has transformed a few times over the course of its life – if I remember correctly – let’s get going and find out. &lt;/p&gt;
 
-&lt;p&gt;Opposite the bar is a door – it should say Stiwdio Anne Dwyrain/Stiwdio Anne East on it – scan your keycard on the door and open sesame! &lt;/p&gt;
+&lt;p&gt;Opposite the bar is a door – it should say Stiwdio Anne Dwyrain/Stiwdio Anne East – scan your keycard on the door and open sesame! &lt;/p&gt;
 
 
 &lt;&lt;timed 15s&gt;&gt;
@@ -2409,7 +2446,6 @@ When you are ready to move on, let me know.
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 
 &lt;p class=&quot;bold&quot;&gt;&#39;Waw – rhyfedd meddwl am yr hyn a ddigwyddodd yma.&#39; &lt;/p&gt;
-&lt;p&gt;Mae&#39;r un ystafell yma wedi bod yn gymaint o wahanol lefydd – ac mae&#39;n dal i addasu. Mae cymuned Theatr Clwyd yn siapio’r hyn sy&#39;n dod nesaf, ac mae&#39;r cyfan wedi arwain at eich ymweliad chi yma hefyd. Ardderchog. &lt;/p&gt;
 
 &lt;p&gt;Mae hud yn weithred o drawsnewid, dydi? Rydw i wedi chwarae llawer o gymeriadau panto hudolus, felly fe ddylwn i wybod. Gall pethau newid ffurf a siâp yma yn Theatr Clwyd, heb golli&#39;r egni a&#39;r angerdd oedd ganddyn nhw ar y dechrau un. Mae hynny&#39;n rhywbeth gwerthfawr iawn.
 &lt;/p&gt;
@@ -2502,7 +2538,7 @@ When you are ready to move on, let me know.
 
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="27_story-text-eng" tags="nobr" position="725,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;You&#39;ll find there is a Mirror on the wall – this was designed by Manon Awst.&lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;You&#39;ll find there is a mirror on the wall – this was designed by Manon Awst.&lt;/p&gt;
 &lt;p&gt;Manon wanted to connect people to the wider landscape around Theatr Clwyd by using the pattern of bark, but in the building’s colour scheme. Your reflection reveals a mash-up of a colourful forest, the theatre’s architecture and, of course, you.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -3043,7 +3079,7 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 41s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;My youngest is still talking about this year&#39;s...&quot;&lt;/p&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;My youngest is still talking about this year&#39;s panto&quot;&lt;/p&gt;
 &lt;/div&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -3516,12 +3552,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;&lt;set $nextpass to &quot;49_story&quot;&gt;&gt;
 &lt;&lt;set $currentDot to 1&gt;&gt;
 &lt;&lt;set $totalDots to 4&gt;&gt;
-&lt;&lt;set $nxtBtnText to &quot;Next&quot;&gt;&gt;
- &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
-    &lt;&lt;set $nxtBtnText to &quot;Nesaf&quot;&gt;&gt;
-&lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
-    &lt;&lt;set $nxtBtnText to &quot;Next&quot;&gt;&gt;
-            &lt;&lt;/if&gt;&gt;
+
 
     &lt;div id=&quot;audioMount&quot;&gt;
         &lt;audio src=&quot;&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
