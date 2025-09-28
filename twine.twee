@@ -97,8 +97,8 @@ setup.chooseStoryAudio = () => {
   const passageMatch = passageName.match(/^(\d+)_/);
   if (passageMatch) {
     const num = passageMatch[1]; // extract number before underscore
-    const langSuffix = language === "cymraeg" ? "_cym" : "";
-    audioFiles = [`assets/audio/TC_${num}${langSuffix}.mp3`];
+    const langSuffix = language === "cymraeg" ? "W" : "";
+    audioFiles = [`assets/audio/TC${langSuffix}_${num}.mp3`];
   }
 
   let currentTrack = 0;
@@ -182,6 +182,16 @@ setup.addPlaceholder = () => {
 
 } 
 
+setup.addPlaceholderCym = () => {
+
+    const textbox = document.getElementById("textbox-codeword");
+    if (textbox) {
+        // console.log("Found textbox:", textbox);
+        textbox.setAttribute("placeholder", "Teipiwch yma");
+    }
+
+} 
+
 
 
 :: StoryInit
@@ -244,8 +254,8 @@ setup.addPlaceholder = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     /* <<link [[$nextpass]]>>
-    <</link>> */
+     <<link [[$nextpass]]>>
+    <</link>>
 <div id="processingMount"></div>
 
 </div>
@@ -264,16 +274,16 @@ setup.addPlaceholder = () => {
 
 :: navbuttons-cym[nobr]
 
-<div class="nav-btn-container btn-container">
- <<button "Back Lorem">>
-    <<goto $prevpass>>
-<</button>>
- <<button "Replay Lorem">>
-    <<goto $pass>>
-<</button>>
-   
-</div>
+<div class="footer-icons">
+<<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
+    <</link>>
+    <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
+    <</link>>
+     <<link [[$nextpass]]>>
+    <</link>>
+<div id="processingMount"></div>
 
+</div>
 
 
 
@@ -505,7 +515,8 @@ setup.addPlaceholder = () => {
 <<include "_templateStory">>
 
 :: 2_welcome-text-eng [nobr]
-
+ <<timed 0.1s>>
+    <<append "#msgMount">>
 <p class="bold">Well, hello. Shw’mae! Welcome</p>
 
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for <i>years</i>. </p>
@@ -513,13 +524,19 @@ setup.addPlaceholder = () => {
 <p>I’ve been in plays like <i>Little Shop of Horrors</i> and <i>The Government Inspector</i>.</p>
 
 <p>You might have even seen my Bottom – in Shakespeare, I mean! </p>
-
+ <</append>>
+<</timed>>
+ <<timed 15s>>
+    <<append "#msgMount">>
 <p>But I’m best known for Theatr Clwyd’s rock and roll pantos – playing the Dame.</p>
 
 <p>One minute – let me summon her up... “Hiya - Looking lush, loves!” There she is!</p>
 
 <p>Now I’m here today as I have been asked to be the voice of this heritage tour – called ‘Real Magic’...</p>
-
+ <</append>>
+<</timed>>
+ <<timed 23s>>
+    <<append "#msgMount">>
 <p>I don’t know entirely what ‘Real Magic’ means, but we will find out together, I imagine.</p>
 
 <p>I’ll also be translating for non-Welsh speakers as we go along. Adderchog! That’s ‘Excellent’’ in Welsh.</p>
@@ -527,9 +544,10 @@ setup.addPlaceholder = () => {
 <p>But first, let’s make sure everyone – myself included – understands how this tour will work. </p>
 
 <p>There are buttons on your screen to move us to the next page ... let’s give that a go. </p>
+ <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 59s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -539,21 +557,44 @@ setup.addPlaceholder = () => {
 <</timed>>
 
 :: 2_welcome-text-cym [nobr]
-<p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Wel, helo. Shw’mae! Croeso </p>
 
-<p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
+<p>Phyl ydw i, actor sydd wedi bod yn dod i’r theatr fendigedig yma ers blynyddoedd.</p>
 
-<p> Morbi tincidunt tempor risus, a tristique nisi ornare in. Nunc dignissim nunc porttitor justo placerat, sit amet facilisis massa luctus. </p>
+<p>Rydw i wedi bod mewn dramâu fel Little shop of horrors, The Government Inspector.</p>
 
-<p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
+<p>Efallai eich bod chi wedi gweld Bottom fi – yn Shakespeare, wrth gwrs!</p> <</append>>
+<</timed>>
+ <<timed 16s>>
+    <<append "#msgMount">>
+<p>Ond rydw i’n fwy adnabyddus am fod yn rhan o bantos roc a rôl Theatr Clwyd – yn chwarae’r Dêm.</p>
 
+<p>Rhowch eiliad i mi [newid ei lais]Hiya,  “Edrych yn lysh, cariads!” [mynd yn ôl i Phyl] Dyna hi!</p>
 
-<<timed $btnAppearTime>>
+<p>Rydw i yma heddiw gan fy mod i wedi cael cais i fod yn llais ar gyfer y daith dreftadaeth yma – o’r enw ‘Hud Go Iawn’...</p>
+
+ <</append>>
+<</timed>>
+ <<timed 37s>>
+    <<append "#msgMount">>
+<p>Dydw i ddim yn hollol siŵr beth mae ‘Hud Go Iawn’ yn ei olygu, ond fe fyddwn ni’n dod i wybod gyda’n gilydd rwy’n siŵr.</p>
+<p>Adderchog!  </p>
+
+<p>Ond i ddechrau, beth am i ni wneud yn siŵr bod pawb – gan gynnwys fi fy hun – yn deall sut bydd y daith yma’n gweithio.
+</p>
+<p>Mae botymau ar eich sgrin chi i’n symud ni i’r dudalen nesaf ... beth am i ni roi cynnig ar hynny.</p>
+
+ <</append>>
+<</timed>>
+
+<<timed 60s>>
  <<append "#btnContainer">>
-    <<button "Next">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-   <<include "navbuttons-cym">>
+   
     <</append>>
 <</timed>>
 
@@ -596,21 +637,28 @@ setup.addPlaceholder = () => {
 
 
 :: 3_welcome-text-cym [nobr]
-<p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor. </p>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+    <p class="bold">Dyma ni – digon syml hyd y gwela’ i. </p>
+    <</append>>
+<</timed>>
+<<timed 3s>>
+    <<append "#msgMount">>
+<p>Mae botwm ‘yn ôl’ a botwm ‘ailchwarae’ hefyd os oes angen i chi eu defnyddio nhw.</p>
+    <</append>>
+<</timed>>
+<<timed 9s>>
+    <<append "#msgMount">>
+<p>Ydych chi’n gallu fy nghlywed i yn iawn? Os nad ydych chi, efallai y byddai’n syniad da i godi lefel y sain.  </p>
+    <</append>>
+<</timed>>
 
-<p>Donec commodo consectetur nulla sit amet rhoncus. Quisque dignissim eleifend magna at sodales. Nulla turpis sem, gravida</p>
-
-<p> Morbi tincidunt tempor risus, a tristique nisi ornare in. Nunc dignissim nunc porttitor justo placerat, sit amet facilisis massa luctus. </p>
-
-<p>Sed eleifend pretium dignissim. Nam volutpat odio at fermentum laoreet. Fusce in elementum erat. Ut interdum nunc sed pellentesque faucibus.</p> 
-
-
-<<timed $btnAppearTime>>
+<<timed 16s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-     <<include "navbuttons-cym">>
+     
     <</append>>
 <</timed>>
 
@@ -656,20 +704,31 @@ setup.addPlaceholder = () => {
 <</timed>>
 
 :: 4_welcome-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+ <<timed 0.1s>>
+    <<append "#msgMount">>
+    <div class="quote"><p>“Fe ddywedodd yn syml iawn, fe ddylai pobl Clwyd gael mynediad at y gorau o bopeth...”</p></div>
+  <</append>>
+<</timed>>
+ <<timed 6s>>
+    <<append "#msgMount">>
+    <p class="bold">
+    A! Mae'n debyg y byddwn ni’n clywed lleisiau gan bobl eraill cysylltiedig â Theatr Clwyd ar y daith. </p>
+    <p>  Llais Patric Gilchrist oedd y llais yna, y prif weithredwr yn y 1990au, pan oeddwn i yma gyntaf fel actor ifanc. Dyn hyfryd! Fe fydda’ i’n rhoi cyd-destun i bawb sy'n ymddangos - rydw i wedi bod yn dod yma ers mwy nag 20 mlynedd, felly rydw i'n adnabod cryn dipyn o bobl. </p>
+  <</append>>
+<</timed>>
+ <<timed 31s>>
+    <<append "#msgMount">>
+    <p>Lawn - rydw i'n meddwl ein bod ni'n gwybod digon i fwrw ymlaen.  </p>
+    <p>Felly, beth am i ni ddechrau.</p>
+      <</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 37s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Y Dechrau">>
             <<goto $nextpass>>
         <</button>>
-      <<include "navbuttons-cym">>
+    
     <</append>>
 <</timed>>
 
@@ -719,7 +778,7 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</append>>
 <</timed>>
 
-<<timed 63s>>
+<<timed 80s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -729,23 +788,47 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 :: 5_story-text-cym [nobr]
+
+<<timed 0.1s>>
+    <<append "#msgMount">>
 <div class="quote">
-<p>"Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
-<p>Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
-<p>Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>“Roedd Haydn Rees wedi ymddeol erbyn i mi gyrraedd yno, ond fe gefais i fy ngalw i’w gyfarfod o. Fe rannodd y stori efo fi am… sut roedd Theatr Clwyd wedi cyflawni, yn groes i bob disgwyl.”</p></div>
+<</append>>
+<</timed>>
+<<timed 12s>>
+  <<append "#msgMount">>
+    <div class="quote">
+<p>“Fe ddywedodd yn syml iawn, fe ddylai pobl Clwyd gael mynediad at y gorau o bopeth, ac fe fydda’ i’n sicrhau eu bod nhw’n ei gael. Ac felly Canolfan Gelfyddydau’r Sir, fel roedd yn cael ei galw ar y dechrau, oedd y goron fawr ar ben y bryn, y safle dinesig yma. Symbol o hyder, o fwriad….” </p>
+</div>
+<</append>>
+<</timed>>
+<<timed 37s>>
+  <<append "#msgMount">>
+<div class="quote">
+<p>“Ac fel yr eglurodd y penseiri i mi... gyda’r rhan fwyaf o adeiladau mewn ardaloedd trefol, mae’r safle wedi’i gyfyngu mewn rhyw ffordd. Ond roedd y safle yma ar ben y bryn… doedd dim byd i gyfyngu ar faint na dyluniad pensaernïol y theatr.”</p>
+</div>
+<</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+
+<<timed 59s>>
+   <<append "#msgMount">>
+<p class="bold">Mae Haydn Rees yn un o gewri Theatr Clwyd.
+ </p>
+<p>Pennaeth cyngor sir aeth â’i dîm, ar ddiwedd y 1960au, i ymweld â chanolfannau celfyddydau ledled Ewrop.</p>
+<p>Fe wnaethon nhw ddychwelyd yn benderfynol o adeiladu canolfan fwy arbennig fyth i bobl yr Wyddgrug.
+Heb Haydn Rees ni fyddai stori Theatr Clwyd yn bodoli i'w hadrodd – felly dyma'r lle gorau i ddechrau. </p>
+
+<</append>>
+<</timed>>
+
+<<timed 84s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+         /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -797,19 +880,39 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 
 :: 6_story-text-cym [nobr]
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<replace "#processingMount">>
+        <<include "unlocked2">>
+        <</replace>>
+      
+<<timed 0.1s>>
+    <<append "#msgMount">>
+    <p class="bold">Nawr mae'n amser mentro i weddill yr adeilad. Fe fydda’ i’n rhoi cyfarwyddiadau – wel... rydw i'n adnabod y lle yma fel cefn fy llaw! </p>
+ <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 8s>>
+    <<append "#msgMount">>
+    <p>Www... Reit ... dyma ni.  </p>
+ <</append>>
+<</timed>>
+<<timed 11s>>
+    <<append "#msgMount">>
+    <p>Mae'n debyg fy mod i’n gallu mynd â chi i gefn y llwyfan – y cyfan sydd raid i chi ei wneud ydi casglu cerdyn allwedd gan un o'r bobl hyfryd yn y tîm.</p>
+ <</append>>
+<</timed>>
+<<timed 20s>>
+    <<append "#msgMount">>
+   <p>Ewch i'r Ddesg Groeso, a dweud <b>‘Mae Phyl wedi fy anfon i’</b>.</p>
+<p>Fe fyddan nhw'n gwybod beth i'w wneud.</p>
+
+ <</append>>
+<</timed>>
+<<timed 26s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni wedi cael y cerdyn allwedd">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
     <</append>>
 <</timed>>
 
@@ -854,20 +957,37 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 :: 7_story-text-cym [nobr]
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Wedi cael eich cerdyn? Gwych! </p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<p>Nesaf, fe fyddwn ni’n mynd i lawr uwch yn y lifft, neu fe allwch chi fynd i fyny'r grisiau os yw’n well gennych chi. </p>
+
+
+<p>Mae toiledau hygyrch a niwtral o ran rhywedd ar y llawr yma, os ydych chi eisiau eu defnyddio nhw cyn i ni fynd i fyny lefel. Mae rhai toiledau penodol i rywedd i fyny'r grisiau hefyd. Ac fel rhan o ymrwymiad Theatr Clwyd i gynaliadwyedd amgylcheddol, maen nhw i gyd yn cael eu fflysho gyda dŵr glaw!
+Pan rydych chi'n barod, pwyswch am y lifft, neu ewch i fyny'r grisiau.
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+ <</append>>
+<</timed>>
+<<timed 32s>>
+    <<append "#msgMount">>
 
 
-<<timed $btnAppearTime>>
+<p>Efallai y bydd y lifftiau'n cysgu i ddechrau, gan fod hon yn theatr niwtral o ran carbon - carbon negatif ar ddiwrnod da.</p>
+
+<p>Yn y lifft, cliciwch ar Lefel 1.</p>
+<p>Rhowch wybod i mi pan fyddwch chi wedi cyrraedd.</p>
+
+ <</append>>
+<</timed>>
+
+
+<<timed 47s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni ar Lefel 1">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+
     <</append>>
 <</timed>>
 
@@ -908,20 +1028,30 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 :: 8_story-text-cym [nobr]
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Arhoswch am eiliad tu allan i ddrysau'r lifft. </p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Rydw i'n hoffi'r llecyn yma. O fan hyn, os edrychwch chi i fyny, efallai y byddwch chi'n gallu gweld y teils hufen o’r 70au, sy'n nodi wal allanol y theatr wreiddiol, Lle mae'r hen yn cwrdd â'r newydd. </p>
+  <</append>>
+<</timed>>
+<<timed 18s>>
+    <<append "#msgMount">>
+<p>Efallai eich bod chi wedi bod yn ymweld â ni ers tro byd neu efallai mai dyma'ch tro cyntaf chi - mae Theatr Clwyd wedi bod ag enw da erioed am fod yn groesawgar i bawb. Wel, dyna beth oedd fy ngwraig i, Mags, bob amser yn ei feddwl.</p>
+
+<p>Mae gan yr estyniad fwy o wydr a golau hyfryd. Symudwch nawr tuag at yr olygfa – fe allwch chi edrych allan drwy'r ffenestri neu gamu allan ar y balconi os ydych chi eisiau.</p>
+
+<p>Rhowch wybod i mi pan rydych chi'n wynebu'r bryniau. </p>
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 47s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydw i'n edrych allan ar yr olygfa">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+
     <</append>>
 <</timed>>
 
@@ -985,21 +1115,53 @@ Haydn Rees is a Theatr Clwyd legend. </p>
 <</timed>>
 
 :: 9_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
-
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Rydych chi'n cerdded allan o'r dref ac wedyn rydych chi'n gweld yr adeilad yma, fel, wel, yn llythrennol, ar ben bryn… rydych chi mewn cefn gwlad, ac mae hynny i mi’n teimlo fel rhywbeth sy'n addas iawn i fynd i mewn i'r byd gwahanol yma o ddrama...”</p>
+<span class="person">Katherine Parkinson</span></div>
+  <</append>>
+<</timed>>
+<<timed 12s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Un rhan o'r adeilad, rydych chi’n gallu ei weld o rannau o’r Wyddgrug. Mae gen i atgofion o allu gweld, wel, rhan dal, fel rhan o'r adeilad oedd â ffenestri bach yn mynd i fyny. Ac rydw i'n cofio meddwl, O, dacw hi’r theatr. Dyna lle mae'r sioeau, a dyna lle, wel, mae'r hud yn digwydd...” </p>
+<span class="person">Christopher L Jones</span></div>
+  <</append>>
+<</timed>>
+<<timed 28s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Pan rydw i’n dod i fyny Lôn Raikes ac yn gweld yr adeilad, rydw i'n cael teimlad o lawenydd, cyffro a chariad ac efallai nawr, ychydig mwy o deimlad o berthyn na gefais i wrth yrru i fyny'r dreif am y tro cyntaf un...”</p>
+<span class="person">Christian Patterson</span></div>
+  <</append>>
+<</timed>>
+<<timed 45s>>
+    <<append "#msgMount">>
+<p>Rydyn ni newydd glywed gan Katherine Parkinson, actores sydd wedi ennill gwobr BAFTA, Christopher L Jones, teilsiwr ac actor cymunedol, a Christian Patterson, sydd wedi ysgrifennu llawer o Bantos Roc a Rôl Theatr Clwyd. Mae'n amlwg eu bod nhw i gyd yn gefnogwyr o'r theatr ar y bryn.
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+ <</append>>
+<</timed>>
+<<timed 62s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Rydw i'n ei chofio hi’n agor yn 1976 gyda'r Frenhines...”</p></div>
+
+<p>O, a dyma Phillip Jones, sydd wedi byw yn yr Wyddgrug drwy gydol ei oes. Roedd yn ei arddegau pan agorodd Theatr Clwyd. Roedd yn gweithio yn Ffowndri Bwcle.</p>
+  <</append>>
+<</timed>>
+<<timed 75s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Ac rydw i'n cofio llawer o bobl yn dweud, [Pam?] ddiawl ydych chi'n agor hwn’na? Am fuddsoddiad twp, am wastraff o arian y cyngor.”</p></div>
+
+<p>O – nid dyna'r ymateb!.</p>
+<p>A!, rydw i wedi taro’r botwm saib - mae mwy!</p>
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 84s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+       /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -1037,7 +1199,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
     <<append "#msgMount">>
 <p>They dreamt about how civic duty – society working together – could improve everyone’s wellbeing. They believed that the arts could really change local lives, could give people more. They imagined a building that would make that dream possible. </p>
 
-<p>
+<p class="motto">
  <b>
      <i>
         Once upon a time a group of people stood on a hill<br/>
@@ -1060,21 +1222,52 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <</timed>>
 
 :: 10_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Ond na, ewch yno. Teimlo’r rhyddid. Agor eich meddwl i’r celfyddydau ac i ddiwylliant, i ddarllen, ysgrifennu, barddoniaeth, actio, theatr”</p>
+</div>
+   <</append>>
+<</timed>>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<<timed 12s>>
+    <<append "#msgMount">>
+<p class="bold">Roedden nhw’n edrych i fyny at y theatr, ac rydyn ni’n wynebu golygfa anhygoel.</p>
+<p>O’ch blaen chi mae bryniau hardd Clwyd, gan gynnwys eu copa uchaf, Moel Famau, i’r dde. Mae siopau, stondinau a strydoedd canol tref yr Wyddgrug tua milltir i ffwrdd, yn swatio yn y dirwedd. </p>
+
+   <</append>>
+<</timed>>
+
+<<timed 32s>>
+    <<append "#msgMount">>
+<p>Dyma ble dechreuodd breuddwyd Theatr Clwyd <br/>
+Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan edrych ar yr olygfa.  </p>
+   <</append>>
+<</timed>>
+
+<<timed 42s>>
+    <<append "#msgMount">>
+<p>Fe wnaethon nhw freuddwydio am sut gallai dyletswydd ddinesig – cymdeithas yn gweithio gyda’i gilydd – wella lles pawb. Roedden nhw wir yn credu y gallai’r celfyddydau newid bywydau’r bobl leol, y gallen nhw roi mwy i bobl. Fe wnaethon nhw ddychmygu adeilad a fyddai’n gwneud y freuddwyd yn bosibl. </p>
+
+<p class="motto">
+ <b>
+     <i>
+        Un tro, fe safodd grŵp o bobl ar ben bryn<br/>
+        a phenderfynu gwneud y byd yn lle hapusach.
+     </i>
+ </b>
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Mae'r foment honno'n rhan o ddatganiad cenhadaeth Theatr Clwyd, sy'n arwain y theatr nawr.
+ </p>
+   <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 76s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Next">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+       /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -1083,8 +1276,23 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <<set $pass to "11_cameraembed">>
 <<set $nextpass to "13_story">>
 <<include "header">>
-<main class="main-section upload">
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_11.mp3" autoplay>Audio is not supported on your device</audio></div>
+<main class="main-section upload" id="mainMount"></main>
+<<timed 0.1s>>
+ <<if $userchoices.language is "cymraeg">>
+    <<replace "#mainMount">>
+         <<include "camera_cym">>
+        <</replace>>
+   <<elseif $userchoices.language is "english" >>
+     <<replace "#mainMount">>
+    <<include "camera_eng">>
+        <</replace>>
+   <</if>>
+<</timed>>
+
+
+
+:: camera_eng[nobr]
+ <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_11.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 <div id="uploadInstructions">
   <p class="bold">Ok – we’ve got to a moment where I can’t move forward without a little activation...</p>
@@ -1121,12 +1329,45 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
   <div class="btn-container">
   <<include "navbuttonsb">>
             </div>
+<<done>><<set $e to setup.takePicture()>><</done>>
+:: camera_cym[nobr]
+ <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TCW_11.mp3" autoplay>Audio is not supported on your device</audio></div>
+    <div id="msgMount"> </div>
+<div id="uploadInstructions">
+  <p class="bold">Iawn – rydyn ni wedi cyrraedd llecyn sy’n gofyn i chi gwblhau tasg cyn i ni symud ymlaen...</p>
+<p>I symud ymlaen – mae angen i chi dynnu llun.</p>
+<p>Llun o'r olygfa o'r bryn.</p>
+<p>Golygfa i freuddwydio amdani.</p>
 
-</main> 
+<p>Os yw'n well gennych chi recordio sain yn hytrach na thynnu llun, cofnodwch sain yr olygfa drwy glicio  <div class="inline-link"><<link "yma">><<goto "recordview">><</link>></div>.</p>
+
+</div>
+
+<div class="flex-col-left btn-container mar-2">
+  <!-- Hidden file input -->
+  <input type="file" accept="image/*" capture="environment" id="inputImg" class="hide">
+  
+  <!-- Take Photo button -->
+  <button id="takePhotoBtn" class="tw-button">Tynnu llun</button>
 
 
-<<done>>
-  <<set $e to setup.takePicture()>><</done>>
+  <!-- Save Photo button (initially hidden) -->
+  <button id="savePhotoBtn" class="tw-button hide">Arbed llun</button>
+</div>
+
+<div id="preview" class="hide mar-2">
+  <p>Rhagolwg:</p>
+  <img id="previewImg" src="" alt="Preview" style="max-width: 100%; border-radius: 8px;">
+</div>
+
+<div id="error"></div>
+  <div class="btn-container mar-2" id="btnContainer">
+ <<button "Nesaf">><<goto "completed1">><</button>>
+</div>
+  <div class="btn-container">
+  <<include "navbuttonsb">>
+            </div>
+<<done>><<set $e to setup.takePicture()>><</done>>
 
 :: recordview [nobr]
 <<set $prevpass to "11_cameraembed">>
@@ -1242,8 +1483,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 </div>
 
 </main>
-
- <<timed 10s>>
+ <<timed 12s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1322,7 +1562,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 </main>
 
- <<timed 11s>>
+ <<timed 12s>>
  <<goto $nextpass>>
 <</timed>>
 
@@ -1403,23 +1643,46 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <</timed>>
 
 :: 13_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Diolch</p>
+<p>Rydw i’n gallu eich dychmygu chi'n edrych tuag at yr olygfa nawr – am y tro cyntaf efallai, neu efallai ddim.</p>
+<p>Ond efallai eich bod chi wedi gweld rhywbeth newydd y tro yma – rhywbeth yn yr olygfa dydych chi heb sylwi arno erioed o'r blaen.</p>
+ <p>Rydych chi wedi rhannu eich golygfa gyda fi, ond efallai y byddwch chi'n dewis ei rhannu hi gyda'r byd hefyd...</p>
+<p>Ar eich cyfryngau cymdeithasol yn nes ymlaen efallai #golygfaofryn neu #breuddwydiobreuddwydotheatrclwyd</p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+  <</append>>
+<</timed>>
+<<timed 31s>>
+    <<append "#msgMount">>
+<p>O'r bobl yn y dref i'r adar yn gwibio drwy’r awyr - mae’r olygfa yma’n llawn bywyd. </p>
+  <</append>>
+<</timed>>
+<<timed 37s>>
+    <<append "#msgMount">>
+<div class="quote">
+  <p>“Golygfeydd cwbl anhygoel, dydyn? Ydyn. ’Rargol, rydyn ni'n lwcus iawn am hynny.”</p>
   
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+</div>
+<p>Ydyn wir, Loz – Loz oedd hi, yr arweinydd cadw tŷ yn Theatr Clwyd ers dros 30 mlynedd.</p>
+  <</append>>
+<</timed>>
+<<timed 52s>>
+    <<append "#msgMount">>
+<p>Hei, mae rhywbeth yn digwydd...</p>
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 55s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+       /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
+
 
 :: 14_story [nobr]
 <<set $prevpass to "13_story">>
@@ -1461,21 +1724,34 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <</timed>>
 
 :: 14_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+ <<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Amser mynd i'n lleoliad nesaf. </p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<div class="quote"><p>“Dod allan o'r theatr, mynd i mewn i'r bar, ac yna byddai'r holl actorion yn dod yn ôl allan i'r bar, ac fe fyddech chi'n treulio amser gyda nhw. Ac roedd fel pe baech chi wedi adnabod y rhan fwyaf ohonyn nhw erioed.”</p></div>
+ <</append>>
+<</timed>>
+ <<timed 12s>>
+    <<append "#msgMount">>
+<p>Ac rydyn ninnau hefyd yn mynd i'r bar - efallai y byddwch chi'n gweld rhywun, yn union fel Phillip Jones.</p>
+
+<p>
+Ewch yn ôl tuag at y lifft, ac wedyn ar ôl mynd heibio iddi, trowch i'r chwith.
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
 
+<p>Ewch yn eich blaen i lawr y coridor gyda'r bar ar y chwith i chi.
+ </p>
 
-<<timed $btnAppearTime>>
+<p>Stopiwch ym mhen draw’r bar.</p>
+ <</append>>
+<</timed>>
+
+<<timed 29s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni wrth y bar">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+       /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -1507,21 +1783,20 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <</timed>>
 
 :: 15_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+<p class="bold">Mae teils y bar yn brydferth dydyn?</p>
+<p> Fe gawson nhw eu dylunio gan Francesca Priest – un o'r artistiaid gwych gafodd eu comisiynu i greu gweithiau celf newydd pan ailagorodd y theatr yn y flwyddyn 2025. Dyma hi...</p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<div class="quote"><p>“Fe gefais i fy nghyfareddu gan yr olygfa yna pan es i yno i ymweld a pha mor ysbrydoledig oedd hi a pha mor eang, yn edrych dros y dyffryn a draw am y bryniau. Ac felly fe gefais i’r syniad y byddai’r lliw sgleiniog yn tynnu rhywfaint o'r awyr i'r gofod...” </p></div>
 
 
-<<timed $btnAppearTime>>
+<p>Felly fe gafodd hi ei hysbrydoli gan yr olygfa brydferth hefyd – yn ogystal â theils gwreiddiol y bar o'r 1970au, a'r teils yn Theatr Moondance.</p>
+
+
+<<timed 38s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
     <</append>>
 <</timed>>
 
@@ -1539,7 +1814,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <p class="bold">Theatr Clwyd’s bar is for everyone – staff, locals, people who’ve travelled far...
  </p>
 
-<div class="quote"><p>“On my birthday, I went to see An Inspector Calls, and Tom Baker was the star in it.  </p></div>
+<div class="quote"><p>“On my birthday, I went to see An Inspector Calls, and Tom Baker was the star in it."</p></div>
 
 
 <p>Philip Jones from Mold! It’s you again. You met who here? Doctor Who! </p>
@@ -1565,21 +1840,29 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 16_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Mae bar Theatr Clwyd ar gyfer pawb – staff, pobl leol, pobl sydd wedi teithio’n bell... </p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<div class="quote"><p>“Ar fy mhen-blwydd, fe es i i weld An Inspector Calls, a Tom Baker oedd y seren yn y ddrama.”</p></div>
+<p>Philip Jones o’r Wyddgrug! Chi eto. Pwy wnaethoch chi ei gyfarfod yma? Doctor Who?! </p>
+  <</append>>
+<</timed>>
+ <<timed 16s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Fe es i i fyny i’r bar ac estyn fy rhaglen a dweud cymaint oeddwn i wedi mwynhau. Ac fe wnes i ddweud, mae’n ben-blwydd arna’ i heddiw. Ac wedyn y llais enfawr yna’n bloeddio Pen-blwydd Hapus, Philip dros y lle. Hoffech chi i mi lofnodi eich rhaglen chi? Sut ydych chi’n sillafu Philip, gydag un L neu ddwy?”</p></div>
+<p> Mae croeso i chi stopio am ychydig a chael diod os ydych chi ffansi un.<br/>
+    Pan fyddwch chi’n barod i symud ymlaen, rhowch wybod i mi.
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
 
+  <</append>>
+<</timed>>
 
-<<timed $btnAppearTime>>
+<<timed 40s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Ffwrdd â ni eto Phyl">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
     <</append>>
 <</timed>>
 
@@ -1609,23 +1892,23 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 17_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
+<p class="bold">Iawn, rydyn ni'n mynd i'r hen Stiwdio Deledu.</p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Mae'n ystafell sydd wedi cael ei thrawsnewid fwy nag unwaith yn ystod ei hoes – os ydw i'n cofio'n iawn – beth am i ni fynd yno i gael gweld. </p> 
+
+<p>Gyferbyn â'r bar mae drws – fe ddylai ddweud Stiwdio Anne Dwyrain/Stiwdio Anne East arno – sganiwch eich cerdyn allwedd er mwyn agor y drws!</p>
 
 
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "Lorem">>
+
+<<timed 22s>>
+    <<append  "#btnContainer" >>
+    <<button "Rydyn ni drwy'r drws">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+       /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
+
 
 :: 18_story [nobr]
 <<set $prevpass to "17_story">>
@@ -1636,11 +1919,10 @@ When you are ready to move on, let me know.
      <<set $nextpass to "191_story">>
 <</if>>
 <<audio ":all" "stop">>
-<audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
 
 :: 18_story-text-eng [nobr]
-/* <<audio "distort" "play" volume 0.40>> */
+
 <p class="bold">What’s that sound? What’s going on here? </p>
 
 <p>Ah, it seems we need to activate the space to tune in. </p>
@@ -1661,23 +1943,23 @@ When you are ready to move on, let me know.
 
 
 :: 18_story-text-cym [nobr]
-<div class="quote"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”</p></div>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p class="bold">Beth yw'r sain? Beth sy'n digwydd yma?</p>
+<p>A, mae'n ymddangos bod angen i ni ddeffro’r gofod i diwnio mewn.</p>
+<p>Ar y wal - beth mae'r gair yn y bocs gwyn yn ei ddweud? Teipiwch y gair.</p>
+<p>Os yw’n well gennych chi, cliciwch 
+ <div class="inline-link"><<link "yma">> <<removeclass "#clueMount" "hide">>
+  <<timed 0.1s>>
+    <<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_18AudibleClue.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+    <<replace "#clueMount">><<type 60ms>><i>Gair Saesneg sy'n dechrau gyda Q sy'n golygu Shhhhhhh.</i>
+<</type>><</replace>><</timed>>
+<</link>></div> am gliw clywadwy.</p>
+ <span class="clue hide" id="clueMount"></span>
 
-
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "Lorem">>
-            <<goto $nextpass>>
-        <</button>>
-       <<include "navbuttons-cym">>
-    <</append>>
-<</timed>>
+<br/>
+<<include "pw17w">>
 
 :: pw17 [nobr]
 <<set $codeword to "">>  /* ensure it's blank so the placeholder shows */
@@ -1707,6 +1989,36 @@ When you are ready to move on, let me know.
 <div id="coderesult"></div>
 
 <<done>><<set $e to setup.addPlaceholder()>><</done>>
+
+:: pw17w [nobr]
+<<set $codeword to "">>  /* ensure it's blank so the placeholder shows */
+
+<div class="codeinput">
+  <<textbox "$codeword" "">>
+
+  <div class="input-btn">
+  <<button "Enter">>
+    <<set $codeword to $codeword.toUpperCase().trim()>>
+
+    /* Correct */
+    <<if $codeword is "QUIET">>
+      <<replace "#coderesult">><span>Gywir!</span>
+      <</replace>>
+     
+      <<timed 3s>><<goto $nextpass>><</timed>>
+    <<elseif $codeword isnot "">>
+      /* Incorrect (non-empty) */
+      <<replace "#coderesult">><span>Ceisiwch eto.</span><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+    <</if>>
+  <</button>>
+  </div>
+</div>
+<br/>
+<div id="coderesult"></div>
+
+<<done>><<set $e to setup.addPlaceholderCym()>><</done>>
+
 :: 191_story [nobr]
 <<set $prevpass to "18_story">>
 <<set $pass to "191_story">>
@@ -1730,9 +2042,8 @@ When you are ready to move on, let me know.
 <p>Let me tell you what I know.</p>
 
 
-<iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7Dswj?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
-/* 360 Images loads and then  */
-<<timed $btnAppearTime>>
+
+<<timed 5s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1744,20 +2055,25 @@ When you are ready to move on, let me know.
 
 
 :: 191_story-text-cym [nobr]
-<div id="processingMount">  <<include "processing">></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
+<p class="bold">Gwych – rydyn ni i mewn.</p>
+
+<p>Iawn – mae rhywbeth yn prosesu ar fy ochr i – dydw i ddim yn siŵr pryd y bydd yn dod drwodd.</p>
+<p> Am y tro – ’allwn ni ddim mynd i mewn, ond fe alla’ i uwchlwytho llun.</p>
+<p>Gadewch i mi ddweud wrthych chi amdano...</p>
 
 
-<<timed $btnAppearTime>>
+
+<<timed 5s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -1783,33 +2099,34 @@ When you are ready to move on, let me know.
 <p>For now – let’s walk up the corridor and go through the door on the left. </p>
 <p>I’ll tell you what I know.</p>
 
-
-
-/* 360 Images loads and then  */
 <<timed $btnAppearTime>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
         <</button>>
-           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
 :: 192_story-text-cym [nobr]
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
+<p class="bold">Gwych – rydyn ni i mewn. </p>
+
+<p>Iawn – mae rhywbeth yn prosesu ar fy ochr i – dydw i ddim yn siŵr pryd y bydd yn dod drwodd.</p>
+
+<p>Am y tro – beth am i ni gerdded i fyny'r coridor a mynd drwy'r drws ar y chwith. </p>
+<p>Fe fydda’ i’n dweud wrthych chi beth rydw i'n ei wybod  </p>
 
 
-<<timed $btnAppearTime>>
+<<timed 5s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Next">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
     <</append>>
 <</timed>>
 
@@ -1875,20 +2192,42 @@ When you are ready to move on, let me know.
         <<include "processing">>
         <</replace>>
         <</timed>>
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+ <<timed 0.1s>>
+    <<append "#msgMount">>
+        <iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7Dswj?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+
+<div class="quote"><p>“Rydw i’n credu bod pobl wedi bod yn meddwl pam fod y theatr a’r stiwdio deledu yma ar ben y bryn, ie, ydw, rydw i'n credu bod pobl wedi meddwl am hynny, ond pwy bynnag gafodd y weledigaeth, rydw i’n credu bod ganddo weledigaeth wych, wych o'r hyn oedd i ddod.”</p></div>
+<p class="bold">Christine Langton ydi hi – gwraig y diweddar Maurice Langton – a gafodd y gwaith yn 1975 o ddylunio a rheoli ble rydych chi nawr: hen stiwdio deledu Theatr Clwyd. </p>
+    <</append>>
+<</timed>>
+
+ <<timed 27s>>
+    <<append "#msgMount">>
+<p>Mae'n ystafell enfawr, gyda’r sain wedi’i gau i mewn a nenfydau uchel iawn. Yn hongian o'r nenfwd mae'r grid goleuo, sydd â llawer o'r hen rifau a manylion o hyd. Mae'r bariau'n focsiog ac yn llwyd tywyll, ac fe alla’ i ddychmygu goleuadau trwm yn hongian oddi arnyn nhw, yn llenwi'r ystafell gyda sŵn rhyfedd. </p>
+    <</append>>
+<</timed>>
+ <<timed 44s>>
+    <<append "#msgMount">>
+<p>Mae hyn yn rhan o'r system pantograff oedd yma – system a fyddai wedi sianelu trydan i'r ystafell, gan bweru'r goleuadau, a'r systemau technegol — popeth oedd yn cael ei ddefnyddio i wneud y rhaglenni teledu yma.</p>
+  <</append>>
+<</timed>>
+ <<timed 56s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Fe ddaeth safle’r stiwdio’n destun balchder, mewn gwirionedd, i’r ardal yma... Roedd teledu’n cael ei greu o’r Wyddgrug. Yn y pentref lle’r oeddwn i’n byw. Roedd pobl wedi’u syfrdanu gan y syniad bod stiwdio gorsaf deledu i lawr y ffordd, ac roedden nhw wrth eu bodd a dweud y gwir. Felly, o, mae hyn, mae hyn wir yn golygu rhywbeth i ni.” </p></div>
+
+<p>John Hunter oedd o – cyfarwyddwr a chynhyrchydd teledu, oedd yn gweithio yma fel dyn camera i HTV.</p>
   
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Mae gan yr ystafell yma gryn dipyn o hanes. Fe ddechreuodd ei bywyd fel rhan o ganolfan dechnoleg addysg ar gyfer ysgolion, lle gallai pobl ifanc leol wneud ffilmiau. </p>
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 105s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -1952,20 +2291,41 @@ When you are ready to move on, let me know.
         <<include "processing">>
         <</replace>>
         <</timed>>
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
+ <<timed 0.1s>>
+    <<append "#msgMount">>
+
+<div class="quote"><p>“Rydw i’n credu bod pobl wedi bod yn meddwl pam fod y theatr a’r stiwdio deledu yma ar ben y bryn, ie, ydw, rydw i'n credu bod pobl wedi meddwl am hynny, ond pwy bynnag gafodd y weledigaeth, rydw i’n credu bod ganddo weledigaeth wych, wych o'r hyn oedd i ddod.”</p></div>
+<p class="bold">Christine Langton ydi hi – gwraig y diweddar Maurice Langton – a gafodd y gwaith yn 1975 o ddylunio a rheoli ble rydych chi nawr: hen stiwdio deledu Theatr Clwyd. </p>
+    <</append>>
+<</timed>>
+
+ <<timed 28s>>
+    <<append "#msgMount">>
+<p>Mae'n ystafell enfawr, gyda’r sain wedi’i gau i mewn a nenfydau uchel iawn. Yn hongian o'r nenfwd mae'r grid goleuo, sydd â llawer o'r hen rifau a manylion o hyd. Mae'r bariau'n focsiog ac yn llwyd tywyll, ac fe alla’ i ddychmygu goleuadau trwm yn hongian oddi arnyn nhw, yn llenwi'r ystafell gyda sŵn rhyfedd. </p>
+    <</append>>
+<</timed>>
+ <<timed 50s>>
+    <<append "#msgMount">>
+<p>Mae hyn yn rhan o'r system pantograff oedd yma – system a fyddai wedi sianelu trydan i'r ystafell, gan bweru'r goleuadau, a'r systemau technegol — popeth oedd yn cael ei ddefnyddio i wneud y rhaglenni teledu yma.</p>
+  <</append>>
+<</timed>>
+ <<timed 65s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Fe ddaeth safle’r stiwdio’n destun balchder, mewn gwirionedd, i’r ardal yma... Roedd teledu’n cael ei greu o’r Wyddgrug. Yn y pentref lle’r oeddwn i’n byw. Roedd pobl wedi’u syfrdanu gan y syniad bod stiwdio gorsaf deledu i lawr y ffordd, ac roedden nhw wrth eu bodd a dweud y gwir. Felly, o, mae hyn, mae hyn wir yn golygu rhywbeth i ni.” </p></div>
+
+<p>John Hunter oedd o – cyfarwyddwr a chynhyrchydd teledu, oedd yn gweithio yma fel dyn camera i HTV.</p>
   
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Mae gan yr ystafell yma gryn dipyn o hanes. Fe ddechreuodd ei bywyd fel rhan o ganolfan dechnoleg addysg ar gyfer ysgolion, lle gallai pobl ifanc leol wneud ffilmiau. </p>
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 105s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2019,20 +2379,31 @@ When you are ready to move on, let me know.
         <<include "processing">>
         <</replace>>
         <</timed>>
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+   
+<p class="bold">Wedyn fe ddaeth yn Stiwdio 2 – cartref yng Ngogledd Cymru i ddwy sianel deledu sy'n golygu llawer i bobl Cymru – HTV ac S4C. </p>
+<p>Roedden nhw’n creu rhaglenni cerddoriaeth, sioeau sgwrsio a chwisiau, gyda chynulleidfaoedd yn cael eu cludo yma ar fysiau. Roedd y rhaglen blant Gymraeg hynod boblogaidd, Ffalabalam – a'i setiau hardd, yn llawn tai bach a theganau – yn cael ei gwneud yma hefyd.</p> 
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 29s>>
+    <<append "#msgMount">>
+<div class="quote"><p class="bold">“Ac roedd Ffalabalam yn rhaglen blant hollol charming. Roedd hi’n, roedd hi’n biwt o raglen a dydw i ddim yn gwybod pam ddaeth hi i ben a dweud y gwir. Pentre bach fel ’se rhywun yn dychmygu’r ‘miniature villages’ ’ma fel, ti’n gwybod, ma’ rhywun yn eu cael nhw yn y Cotswolds ac ati. Roedd y set yn anhygoel, hefo doliau a thedis a dweud y gwir, nhw oedd y cymeriadau, heblaw bod ni fel cyflwynwyr yn rhyw fath o’u deall nhw’n siarad, er bod nhw ddim yn dweud dim byd felly, ac yn cyfleu’r rhaglen drwy hynny.”</p></div>
+  <</append>>
+<</timed>>
+<<timed 58s>>
+    <<append "#msgMount">>
+<p>Dyna un o hoelion wyth y byd teledu yng Nghymru, Caryl Parry Jones – cantores, actores ac yn gyflwynydd ar HTV ac S4C – ac yn amlwg yn hoff iawn o <i>Ffalabalam</i>. </p>
+  <</append>>
+<</timed>>
+<<timed 69s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2084,53 +2455,47 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 22_story-text-cym [nobr]
-<div id="processingMount">  <<include "processing">></div>
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<<timed 0.1s>>
+    <<replace "#processingMount">>
+        <<include "processing">>
+        <</replace>>
+        <</timed>>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Mae gen i atgofion da am ymgysylltu creadigol a’r gwaith cwbl anhygoel maen nhw’n ei wneud gyda’r plant ar gyfer y gymuned... </p>
+<p>Ac roedd yn hardd, yn hardd gweld... beth mae’r theatr yma’n ei wneud i’r plant hyn, mae’n anhygoel. Dydi arian ddim yn gallu prynu hynny. Gweld y mwynhad ar eu hwynebau nhw, y mwynhad gafodd pob un ohonyn nhw ac roedden nhw wrth eu bodd.”</p></div>
+<</append>>
+<</timed>>
+<<timed 28s>>
+    <<append "#msgMount">>
+<p class="bold">Diolch Loz. </p>
+<p>Pan adawodd HTV yn y 1990au fe gafodd ei drawsnewid eto. Fe gafodd gweithdai drama eu cynnal yma, ymarfer dramâu a hyd yn oed eu llwyfannu nhw yma – gan gynnwys rhaglen wych ar gyfer ysgolion o’r enw TYP – Theatr i Bobl Ifanc. Dyna sut rydw i’n adnabod yr ystafell yma yn bennaf – oriau lawer yn ymarfer llinellau, dawnsfeydd, newid gwisg yn gyflym...
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<</append>>
+<</timed>>
+<<timed 53s>>
+    <<replace "#processingMount">>
+         <div class="info-container">
+        <img src="assets/img/complete.png" alt="processing" class="complete-ready"/>
+        </div>
+        <</replace>>
+<</timed>>
+<<timed 54s>>
+    <<append "#msgMount">>
+<p>O mae’n barod – beth am i ni weld beth rydyn ni wedi’i ddarganfod.
+</p>
+<</append>>
+<</timed>>
 
-
-<<timed $btnAppearTime>>
+<<timed 59s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+
     <</append>>
 <</timed>>
 
-/* :: 23_galleryffabalam [nobr]
-<<set $prevpass to "21_story">>
-<<set $pass to "23_galleryffabalam">>
-<<set $nextpass to "25_story">>
-<<audio ":all" "stop">>
-<<include "header">>
-
-<main class="gallery">
-<div id="audioMount"><audio id="audioPlayer" src="" autoplay>Audio is not supported on your device</audio></div>
-    <!-- Vimeo Embed with accent wrapper -->
-    <div class="inline-accented-vid">
-        <div class=" vimeo-container mar-2" 
-             style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe src="https://player.vimeo.com/video/1111652347?h=8710c7a79d&autoplay=1" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-        frameborder="0" 
-        allow="autoplay; fullscreen; picture-in-picture" 
-        allowfullscreen>
-</iframe>
-        </div>
-    </div>
-
-    <div class="btn-container" id="btnContainer">
-        <<button "Next">>
-            <<goto "completed2">>
-        <</button>>
-        <<include "navbuttonsb">>
-    </div>
-</main> */
 
 :: 23_galleryffabalam [nobr]
 <<set $prevpass to "21_story">>
@@ -2139,8 +2504,22 @@ When you are ready to move on, let me know.
 <<audio ":all" "stop">>
 <<include "header">>
 
-<main class="gallery">
-  <div id="audioMount">
+<main class="gallery" id="mainMount"></main>
+
+<<timed 0.1s>>
+ <<if $userchoices.language is "cymraeg">>
+    <<replace "#mainMount">>
+         <<include "gallery_cym">>
+        <</replace>>
+   <<elseif $userchoices.language is "english" >>
+     <<replace "#mainMount">>
+    <<include "gallery_eng">>
+        <</replace>>
+   <</if>>
+<</timed>>
+
+:: gallery_eng [nobr]
+<div id="audioMount">
     <audio id="audioPlayer" src="" autoplay>
       Audio is not supported on your device
     </audio>
@@ -2196,9 +2575,63 @@ When you are ready to move on, let me know.
 <</timed>>
     <<include "navbuttonsb">>
 
+:: gallery_cym [nobr]
+<div id="audioMount">
+    <audio id="audioPlayer" src="" autoplay>
+      Audio is not supported on your device
+    </audio>
+  </div>
 
+  <!-- Orientation gate -->
+  <div class="orientation-warning" id="orientationWarning">
+    <p>Trowch eich dyfais i <strong>dirwedd</strong> i wylio'r fideo.
+</p>
+    
+    <<link "Anwybyddu a dangos beth bynnag">>
+      <<replace "#orientationWarning">>
+        <div class="inline-accented-vid">
 
-</main>
+          <div class="vimeo-container mar-2"
+               style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe src="https://player.vimeo.com/video/1122153397?h=8710c7a79d"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      <</replace>>
+    <</link>>
+
+  </div>
+
+  <!-- Vimeo Embed (default hidden unless landscape) -->
+  <div class="inline-accented-vid video-locked">
+    <div class="vimeo-container mar-2"
+         style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+      <iframe src="https://player.vimeo.com/video/1122153397?h=8710c7a79d"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="btn-container" id="btnContainer">
+    </div>
+
+    <<timed 10s>>
+    <<append "#btnContainer">>
+    <<button "Next">>
+     <<goto "completed2">>
+        <</button>>
+       /* <<include "navbuttons">> */
+    <</append>>
+
+<</timed>>
+    <<include "navbuttonsb">>
 
 :: 25_story [nobr]
 <<set $prevpass to "23_galleryffabalam">>
@@ -2236,22 +2669,34 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 25_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<<timed 0.1s>>
+   <<append "#msgMount">>
+
+<p class="bold">'Waw – rhyfedd meddwl am yr hyn a ddigwyddodd yma.' </p>
+<p>Mae'r un ystafell yma wedi bod yn gymaint o wahanol lefydd – ac mae'n dal i addasu. Mae cymuned Theatr Clwyd yn siapio’r hyn sy'n dod nesaf, ac mae'r cyfan wedi arwain at eich ymweliad chi yma hefyd. Ardderchog. </p>
+
+<p>Mae hud yn weithred o drawsnewid, dydi? Rydw i wedi chwarae llawer o gymeriadau panto hudolus, felly fe ddylwn i wybod. Gall pethau newid ffurf a siâp yma yn Theatr Clwyd, heb golli'r egni a'r angerdd oedd ganddyn nhw ar y dechrau un. Mae hynny'n rhywbeth gwerthfawr iawn.
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+  <</append>>
+<</timed>>
+<<timed 20s>>
+   <<append "#msgMount">>
+<p>Nesaf, rydyn ni'n mynd i un o drysorau cudd Theatr Clwyd.
+ </p>
 
+<p>Fe wna i eich arwain chi yno – i ddechrau, ewch yn ôl i'r bar.</p>
+  <</append>>
+<</timed>>
 
-<<timed $btnAppearTime>>
+<<timed 29s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni wrth y bar">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
+
 
 :: 26_story [nobr]
 <<set $prevpass to "25_story">>
@@ -2294,20 +2739,35 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 26_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote">
+    <p>“Fe wnes i gerdded allan ac roedd o’n eistedd yno ar ei ben ei hun. </p>
+<p>Roedd o’n darllen llyfr. Ac fe wnes i ddweud, Llongyfarchiadau ar ddod yn James Bond. Fe ddywedodd o diolch yn fawr iawn. A dyna ni!”</p>
 
+</div>
+ <</append>>
+<</timed>>
+<<timed 8s>>
+   <<append "#msgMount">>
+<p class="bold">Mae’n rhaid bod Phillip Jones wedi cyfarfod Timothy Dalton hefyd, a berfformiodd mewn dwy ddrama Shakespeare yma ym 1986. Bond, James Bond! </p>
+ <</append>>
+<</timed>>
+<<timed 19s>>
+   <<append "#msgMount">>
+<p>Ewch i’r lifft a dewis Lefel 2.</p>
+<p>Fe allwch chi fynd i fyny’r grisiau os yw’n well gennych chi.</p>
+<p>Rhowch wybod i mi pan fyddwch chi yno</p>
 
-<<timed $btnAppearTime>>
+ <</append>>
+<</timed>>
+
+<<timed 27s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni ar Lefel 2">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2353,23 +2813,39 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 27_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Fe welwch chi fod Drych ar y wal – fe gafodd hwn ei ddylunio gan Manon Awst. </p>
+<p>Roedd Manon eisiau cysylltu pobl â'r dirwedd ehangach o amgylch Theatr Clwyd drwy ddefnyddio patrwm rhisgl coed, ond yng nghynllun lliw'r adeilad. Mae eich adlewyrchiad chi’n datgelu cymysgedd o goedwig lliwgar, pensaernïaeth ein theatr, ac wrth gwrs, chi. </p>
+ <</append>>
+<</timed>>
+<<timed 25s>>
+   <<append "#msgMount">>
+<p>Rydyn ni’n agos at y swyddfa, sy'n wynebu bryniau Clwyd. Mae gardd o flodau gwyllt ar y to – perffaith ar gyfer pryfed peillio.  </p>
+<p>Ond dydyn ni ddim yn mynd i weld y gwenyn, rydyn ni’n mynd i rywle arall. 
+ </p>
 
+<div class="quote"><p>“Cefn y llwyfan, does neb yn meddwl am beth sydd ei angen i lwyfannu’r peth. Dydyn nhw ddim yn sylweddoli'r oriau… dydi'r gynulleidfa ddim yn meddwl am yr hyn sy'n digwydd i roi perfformiad dwy awr neu beth bynnag.” </p></div>
+ <</append>>
+<</timed>>
+<<timed 54s>>
+   <<append "#msgMount">>
+<p>Cefn y llwyfan! Dyna ble rydyn ni'n mynd. Diolch, Geoff!</p>
+<p>Geoff Williams oedd o, a ddechreuodd dywys pobl yma yn 1992.</p>
+<p>Rydych chi'n chwilio am arwydd sy'n dweud 'Balconi Weston' – wedyn ewch drwy'r drws wrth ei ymyl. </p>
+<p>Peidiwch â mynd drwy ddrws Theatr Moondance! </p>
 
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "Lorem">>
-            <<goto $nextpass>>
-        <</button>>
-       <<include "navbuttons-cym">>
-    <</append>>
+ <</append>>
 <</timed>>
 
+<<timed 73s>>
+    <<append "#btnContainer">>
+    <<button "Rydyn ni drwy'r drws">>
+            <<goto $nextpass>>
+        <</button>>
+           /* <<include "navbuttons">> */
+    <</append>>
+<</timed>>
 
 :: 28_story [nobr]
 <<set $prevpass to "27_story">>
@@ -2413,20 +2889,35 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 28_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Rydyn ni'n mynd i weld ble mae'r setiau llwyfan yn cael eu paentio, ar ffrâm baentio enfawr Theatr Clwyd, un o'r ychydig rai sydd ar ôl yn y DU.  </p>
+<p>Nawr, gan eich bod chi ar fin camu i gefn y llwyfan, ga’i ofyn yn garedig i chi beidio â thynnu lluniau os gwelwch yn dda?</p>
+  <</append>>
+<</timed>>
+<<timed 18s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Pan ’da chi’n edrych, a ’da chi’n meddwl mae gynno ni artistiaid sydd yma’n paentio’r holl olygfaoedd yma. Mae o mor hyfryd, ma’n lyfli.”  </p></div>
+
+<p>Shw’mae, Angharad! Fe ddaeth Angharad Madog yn rheolwr yr iaith Gymraeg yn Theatr Clwyd yn 2023 – mae hi'n un o blith llawer sy'n hoffi crwydro y tu ôl i'r llwyfan a gweld yr artistiaid yn paentio.</p>
+  <</append>>
+<</timed>>
+<<timed 41s>>
+   <<append "#msgMount">>
+<p>O'ch blaen chi mae drws arall – bydd angen eich cerdyn allwedd i fynd drwyddo.</p>
+<p>Ewch i lawr y coridor o'ch blaen, wedyn troi i'r chwith drwy'r drysau dwbl yn y pen draw.</p>
+<p>Symudwch i lawr y coridor yma nes eich bod yn gweld un arall o'r arwyddion ar gyfer y stiwdio deledu.</p>
+<p>Stopiwch cyn y drysau dwbl a throi i'r dde drwy'r drws sengl i'r balconi uwchben y siop baentio.</p>
+  <</append>>
+<</timed>>
 
 
-<<timed $btnAppearTime>>
+<<timed 66s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni yma">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2465,19 +2956,30 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 29_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Dyma ni.</p> 
+<p>Mae'r ystafell yma’n llydan ac yn dal iawn, yn ymestyn islaw ac uwchlaw lle rydyn ni’n sefyll. Mae darnau o ddyluniadau a gwaith adeiladu ar gyfer sioeau y dyfodol wedi'u gwasgaru hyd y lle yn aml. A bob tro rydych chi’n dod i mewn, mae'n wahanol. Prop, gwisg, ychydig o frasluniau. Dyma'r ystafell lle mae breuddwydion y cynllunydd yn cael eu gwireddu.</p>
 
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "Lorem">>
+<p>Ac mae'r Ffrâm Baentio yn aruthrol. Katy Salt sy’n gallu dweud mwy wrthym ni am y rhan anhygoel yma o Theatr Clwyd.</p>
+<p>Fe wnaeth hi baentio’r pantomeim am y tro cyntaf yn 2001 – mae hi'n gwybod sut mae'r ffrâm baentio yn gweithio'n well nag unrhyw un.</p>
+
+  <</append>>
+<</timed>>
+<<timed 41s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Felly rhyw fath o estyll pren caled sydd wedi’u gosod ar wal gefn y siop baent ydi'r ffrâm baentio mewn gwirionedd. Ac mae'n debyg iawn i'r ffordd y byddai artist yn ymestyn canfas ar ffrâm bren, ond ar raddfa gwbl enfawr.”</p></div>
+<p>Y canfasau yma – maen nhw'n ffurfio cefnlenni i’r sioeau.
+</p>
+<p>Maen nhw'n fframio'r straeon sy’n cael eu hadrodd ar lwyfannau Theatr Clwyd – maen nhw'n creu realiti newydd.</p>
+  <</append>>
+<</timed>>
+<<timed 65s>>
+   <<append "#btnContainer">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2518,19 +3020,30 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 30_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor"</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Mae'r ffrâm baentio yma’n un o lai nag 20 sydd ar ôl yn y DU – ac ychydig iawn o'r rheini sy'n weithredol, heb sôn am fod wedi’u lleoli yn y theatr ei hun. </p>
+<p>Roedd gan Terry Hands, a oedd yn Gyfarwyddwr Artistig yma o'r 1990au i ganol y 2010au, lawer i'w wneud â sicrhau bod ffrâm baentio Theatr Clwyd yn aros ar y safle –</p>
+ <</append>>
+<</timed>>
+<<timed 22s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Y gwaddol mwyaf adawodd Terry oedd bod gennym ni'r holl adrannau creu yn fewnol. Fe frwydrodd yn galed iawn. Mae'n un o'n manteision cwbl unigryw ni – a’r ffaith ei bod yn un o ychydig iawn o theatrau yn y DU, ac eto rydyn ni y tu allan i dref farchnad fechan yng Ngogledd Ddwyrain Cymru, ac mae gennym ni'r cyfan... o hynny!”</p></div>
+ <</append>>
+<</timed>>
+<<timed 38s>>
+   <<append "#msgMount">>
+<p>Dyna Liam Evans-Ford, a ddaeth yn Gyfarwyddwr Gweithredol yn Theatr Clwyd yn 2016. Mae'n rhywun sydd, fel Terry Hands, wedi ymladd yn galed iawn dros y theatr ac yn enwedig dros ailddatblygu'r adeilad.</p>
 
-<<timed $btnAppearTime>>
+<p>Mae hanes o bobl parod i frwydro yn Theatr Clwyd. Ond mae hyn yn bwysig. Mae gweithdy ar y safle’n golygu bod y theatr yn gallu cyflogi pobl yn lleol, i adeiladu criw anhygoel, sy'n gwneud setiau yn y lleoliad yma, sy'n gymaint o fraint.</p>
+ <</append>>
+<</timed>>
+<<timed 67s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2577,19 +3090,38 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 31_story-text-cym [nobr]
-<div class="quote"><p>"I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor."</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“A dwi’n licio’r ffaith bod ’na gymaint o staeniau paent ym mhobman, a ma’n edrych fatha gwaith celf ei hun... Ffrâm baentio ydi hi, ond mae ganddi gymaint o hanes iddi... a straeon da i’w dweud.”  </p>
+<span class="person">Angharad Madog</span></div>
+<</append>>
+<</timed>>
+<<timed 14s>>
+   <<append "#msgMount">>
+<p>Oes wir, mae staeniau paent ym mhobman, Angharad – ac os gwnewch chi feddwl, mae pob sblash o baent yma wedi'i wneud fel rhan o gynhyrchiad neu ddigwyddiad i gysylltu â rhywun. Fy hoff ran i yw'r sinc – mae wedi'i gorchuddio'n llwyr â phaent – ​​haen ar haen. Mae'n waith celf. </p>
+<</append>>
+<</timed>>
+<<timed 32s>>
+   <<append "#msgMount">>
+<p>A gan ein bod ni’n siarad am weithiau celf, beth am i ni weld rhai sydd wedi cael eu gwneud yma. 
+ </p>
+<</append>>
+<</timed>>
+<<timed 37s>>
+   <<append "#msgMount">>
+<p>Efallai eich bod chi wedi sylwi ar ddarn hir o ffabrig ar y balconi – fe gafodd hwn ei wneud ar y ffrâm baentio a'i ddylunio gan Adrian Gee.  </p>
 
-<<timed $btnAppearTime>>
+<p>Ewch draw ato. </p>
+<p>Pan fyddwch chi yno, mae gen i glip o Katy yn esbonio beth sydd gennych chi o'ch blaen</p>
+
+<</append>>
+<</timed>>
+<<timed 51s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni’n mynd at y ffabrig nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2624,6 +3156,38 @@ When you are ready to move on, let me know.
     <br/>
     <div id="coderesult"></div>
 <<done>><<set $e to setup.addPlaceholder()>><</done>>
+
+:: pw32W [nobr]
+<div class="codeinput">
+    <<textbox "$codeword" "">>
+    <br/><br/>
+    <<button "Enter">>
+      <<set $codeword to $codeword.toUpperCase().trim()>>
+      
+      /% CODEWORD CORRECT%/
+      <<if $codeword is "4" or $codeword is "PEDWAR" or $codeword is "5" or $codeword is "PUMP">>
+        <<replace "#coderesult">><span>Gywir!</span><</replace>>
+        /* <<audio "correct" play>> */
+
+        <<timed 3s>><<goto "completed3">><</timed>>
+      <</if>>
+
+
+      /% CODEWORD INCORRECT %/
+       <<if $codeword isnot "" and $codeword isnot "4" and $codeword isnot "PEDWAR" and $codeword isnot "5" and $codeword isnot "PUMP">>
+           /* <<audio "error" play>> */
+           <<replace "#coderesult">><span>Ceisiwch eto.</span><</replace>>
+         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+         <</if>>
+       
+    <</button>>
+  <br/> <br/>
+
+
+</div>
+    <br/>
+    <div id="coderesult"></div>
+<<done>><<set $e to setup.addPlaceholderCym()>><</done>>
 
 :: 32_story [nobr]
 <<set $prevpass to "31_story">>
@@ -2670,21 +3234,41 @@ When you are ready to move on, let me know.
 <<include "navbuttons">>
 
 :: 32_story-text-cym [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote">
+  <p> “Felly mae'r rhwyllen yma o'n pantomeim Nadolig ni, Beauty and the Beast, yn 2021. Mae'r defnydd rydych chi'n ei weld yn rhwyllen drawsnewid, yn wahanol i ddefnydd canfas golygfaol arferol. Rydyn ni wedi'i baentio fo mewn glas tywyll a lliwiau dulas a Phrwsiaidd. Mae seren arian ac aur fawr wedi'i gwrthbwyso ac mae llwybr o swigod amryliw yn pelydru ohoni.</p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Mae'r swigod yn cynyddu o ran maint wrth iddyn nhw fynd ymhellach oddi wrth y seren. Mae pob swigen wedi'i phaentio'n unigol gyda golau adlewyrchol ac mae gliter amryliw arnyn nhw. Hud y rhwyllen drawsnewid yw, yn dibynnu ar y ffordd y caiff ei goleuo, y gall edrych yn solet ac ar adegau eraill, yn dryloyw. Mae hyn yn cael ei gyflawni drwy lefel uchel o olau’n cael ei gyfeirio at wyneb y rhwyllen.</p>
 
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "Lorem">>
-            <<goto $nextpass>>
-        <</button>>
-       <<include "navbuttons-cym">>
-    <</append>>
+<p>Os caiff y golau yma ei dynnu i ffwrdd a'i ailgyfeirio at rywbeth y tu ôl i'r rhwyllen, fel yr actorion neu olygfa wahanol, bydd y ddelwedd ar y rhwyllen, yn yr achos yma y swigod a'r seren, yn diflannu'n llwyr ac yn datgelu'r olygfa y tu ôl, yn union fel hud.</p>
+
+<p>Felly fe gafodd y defnydd yma ei baentio mewn pedwar diwrnod ac wedyn ei dynnu i lawr a'i roi ar lawr y gweithdy ar gyfer y diwrnod olaf. Roedd hyn yn galluogi i ni roi gliter arno yn fflat. Mae'n anodd iawn rhoi gliter arno pan mae ar i fyny felly ei osod yn fflat yw'r ffordd orau o wneud hyn.”</p>
+
+</div>
+<</append>>
 <</timed>>
+<<timed 65s>>
+   <<append "#msgMount">>
+<p class="bold">Diolch Katy.</p> 
+<p>Wnaethoch chi glywed sawl diwrnod wnaeth hwn ei gymryd i’w wneud? Teipiwch yr ateb isod.   </p>
+
+<p>Os na chlywsoch chi, fe allwn ni ofyn i Katy ailadrodd yr ateb - cliciwch<div class="inline-link"><<link "yma">> 
+    <<timed 0.1s>>
+    <<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_32_repeat.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+    <</timed>>
+<</link>></div>.</p>
+ <span class="clue hide" id="clueMount"></span>
+/*<i>A word beginning with Q meaning Shhhhhhh.</i></span> */
+<br/>
+<<include "pw32W">>
+
+<</append>>
+<</timed>>
+
+<<include "navbuttons">>
 
 :: 34_story [nobr]
 <<set $prevpass to "32_story">>
@@ -2712,18 +3296,19 @@ When you are ready to move on, let me know.
 
 :: 34_story-text-cym [nobr]
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p class="bold">Roeddwn i yn y panto hwnnw – fe gafodd ei gyfarwyddo gan Tamara Harvey ac roeddwn i'n chwarae rhan Nana Nerys o Nercwys!</p> 
 
-<<timed $btnAppearTime>>
+<p>Heibio'r ffrâm baentio mae'r gweithdy, lle mae'r props a'r setiau'n cael eu gwneud.</p>
+<p>Ewch i ochr arall y balconi i weld beth sy'n digwydd.</p>
+
+
+
+<<timed 16s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni yma">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2763,18 +3348,29 @@ When you are ready to move on, let me know.
 
 :: 35_story-text-cym [nobr]
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Rydw i wrth fy modd yn mynd i mewn i’r gweithdy yna oherwydd yr arogleuon, y paent a’r gwaith coed a’r holl naddion ar y llawr, a cwrdd y bobl sydd wrth wraidd creu theatr ynde? Wel, nhw sy’n creu y byd dychmygol ar ein cyfer ni… a ni’n chwarae yn y byd maen nhw’n ei greu.”</p></div>\
+    <</append>>
+<</timed>>
 
-<<timed $btnAppearTime>>
+
+<<timed 21s>>
+   <<append "#msgMount">>
+<p class="bold">Arhoswch eiliad - fi ydi hwn’na! 
+<p>Fy atgof i – falle fy mod i’n rhan o hanes Theatr Clwyd hefyd!? </p>
+<p>Wel ie! Mae’n debyg fy mod i wedi’r cwbl! </p>
+
+    <</append>>
+<</timed>>
+
+
+<<timed 30s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2852,19 +3448,67 @@ Let’s head to our next location – our stage! </p>
 <</timed>>
 
 :: 36_story-text-cym [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Mae rhywbeth arbennig am y lle yma – sy’n cael ei anghofio weithiau.  </p>
+<p>Mae'r grefft sy’n cael ei phlethu’n rhan o bob un o’n straeon ni wedi'u creu yn y gweithdy, ar y ffrâm baentio, yng nghefn y llwyfan. Mae'r pantomeimau roc a rôl yn arbennig iawn – maen nhw'n enfawr ac yn uchelgeisiol. Maen nhw'n gwthio ein timau creu ni i'r eithaf! Mae'r pantomeimau'n golygu cymaint i ni yn Theatr Clwyd ac i'n holl gynulleidfaoedd ni. Ddechreuais i fel Dêm yn 2003 – gyda wigiau, ffrogiau ffansi ac offerynnau cerdd – rydw i wedi chwarae'r trombôn, sacsoffon, ffliwt, D uw a ŵyr beth arall, ar y llwyfan. Mae ein pantomeimau ni’n gwbl unigryw – </p>
+    <</append>>
+<</timed>>
+<<timed 44s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Fe welais i gylch cyflawn o bantomeimau!”</p>
+</div>
+    <</append>>
+<</timed>>
+<<timed 46s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Wrth gwrs, rydyn ni’n gweld y pantomeim bob blwyddyn”"</p>
+</div>
+    <</append>>
+<</timed>>
+<<timed 48s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Mae fy ieuengaf i’n dal i siarad am yr un eleni”</p>
+</div>
+    <</append>>
+<</timed>>
+<<timed 52s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Rydyn ni’n dod i’r panto bob blwyddyn – deg ohonon ni nawr gyda’n hwyrion ac rydyn ni wrth ein bodd”</p>
+</div>
+    <</append>>
+<</timed>>
+<<timed 56s>>
+   <<append "#msgMount">>
+<div class="quote">
+    <p>“Does dim ots gen i os ydych chi’n 86 oed neu’n 6 oed, fe allwch chi fwynhau’r panto” </p>
+    </div>
+        <</append>>
+<</timed>>
+<<timed 60s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Rydw i’n hoffi’r amser panto – mae pethau gyda rhywfaint o gliter bob amser yn wych”</p>
+</div>
+    <</append>>
+<</timed>>
+<<timed 64s>>
+   <<append "#msgMount">>
+<p>Diolch Geoff, Jane, Becky, Sue, Emyr ac Alison.</p>
+<p>I lawer o’n cynulleidfaoedd ni, y panto ydi’r sioe theatr gyntaf maen nhw’n ei gweld.</p>
+<p>Allwch chi gofio eich tro cyntaf chi mewn cynulleidfa? Eich golygfa gyntaf o’r llwyfan?</p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Rydw i’n cael ysfa i berfformio –</p>
+<p>Beth am i ni fynd i’n lleoliad nesaf ni – y llwyfan!  </p>
 
-<<timed $btnAppearTime>>
+    <</append>>
+<</timed>>
+
+<<timed 89s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2895,14 +3539,22 @@ When you are near the stairs let me know. </p>
 <</timed>>
 
 :: 37_story-text-cym [nobr]
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="bold">Rydyn ni'n mynd yn ôl i'r cyntedd cyhoeddus.</p>
 
-<<timed $btnAppearTime>>
+<p>Ewch yn ôl drwy'r drws sengl a throi i'r chwith i lawr y coridor, heibio arwydd y Stiwdio Deledu.<br/>
+    Ewch yn ôl drwy'r drysau dwbl ar y diwedd, a throi i'r dde.<br/>
+    Ewch ar hyd y coridor yma ac allan i'r cyntedd.<br/>
+    Pan fyddwch chi'n agos at y grisiau, rhowch wybod i mi.<br/>
+</p>
+
+
+
+<<timed 22s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni'n agos at y grisiau">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -2945,19 +3597,32 @@ When you are near the stairs let me know. </p>
 <</timed>>
 
 :: 38_story-text-cym [nobr]
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Mae ein prif lwyfan ni’n aros! 
+<p>Ond arhoswch funud... mae Phillip Jones yn ei ôl – pwy mae o wedi’i gyfarfod y tro yma?!</p>
+   <</append>>
+<</timed>>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 9s>>
+   <<append "#msgMount">>
+<div class="quote"><p>“Roeddwn i’n meddwl pan oeddwn i’n tyfu i fyny, o, dydi’r theatr ddim i mi... beth wyt ti’n wneud yn y theatr math o beth? Mae mynd i Theatr Clwyd wedi ehangu fy ngorwelion i, agor pethau i mi. Mae wedi fy stopio i rhag bod yn rhagfarnllyd. Wedi fy stopio i rhag bod yn hiliol. Wedi fy stopio i rhag bod yn berson drwg iawn. Mae wedi rhoi rhyddid i mi. Roedd yn gwbl wych. Agor eich meddwl chi. Bobol bach, mae pobl yn gallu gwneud hyn, ac rydych chi’n caru pawb, ac mae pawb yn caru ei gilydd. Ac roedd yn anhygoel. Mae gen i Theatr Clwyd i ddiolch am hynny.”</p></div>
+   <</append>>
+<</timed>>
 
-<<timed $btnAppearTime>>
+<<timed 43s>>
+   <<append "#msgMount">>
+<p>Waw. Am... waw. </p>
+<p> Diolch Phillip Jones.</p>
+   <</append>>
+<</timed>>
+
+<<timed 49s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3002,16 +3667,38 @@ Past the writers library on your right, Drws C is on your left.
 <</timed>>
 
 :: 39_story-text-cym [nobr]
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Y sbarc sy’n bwysig – dyna’r peth yma – posibilrwydd. </p>
+<p>Mae oriau ac oriau’n cael eu treulio’n paentio cefnlenni ac yn adeiladu setiau i greu drysau i realiti newydd. <br/>
 
-<<timed $btnAppearTime>>
-    <<append "#btnContainer">>
-    <<button "Lorem">>
-            <<goto $nextpass>>
-        <</button>>
-       <<include "navbuttons-cym">>
+Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </p>
+
+<p>Dewch, i ffwrdd â ni. Mae’n amser mynd i mewn i Theatr Moondance.
+</p>
     <</append>>
 <</timed>>
+
+<<timed 24s>>
+   <<append "#msgMount">>
+<p>Gyda’r grisiau ar y dde i chi, ewch i ben draw’r coridor. </p>
+<p>Heibio llyfrgell yr awduron ar y dde i chi a Drws C ar y chwith.</p>
+
+<p>Mae dwy set o ddrysau – y rhai ar y chwith fyddwn ni’n mynd drwyddyn nhw. </p>
+<p>Bydd rhaid i chi gael eich cerdyn allwedd i fynd drwy’r drws.</p>
+
+    <</append>>
+<</timed>>
+
+<<timed 42s>>
+    <<append "#btnContainer">>
+    <<button "Rydyn ni drwodd">>
+            <<goto $nextpass>>
+        <</button>>
+           /* <<include "navbuttons">> */
+    <</append>>
+<</timed>>
+
 
 :: 40_story [nobr]
 <<set $prevpass to "39_story">>
@@ -3039,14 +3726,17 @@ Past the writers library on your right, Drws C is on your left.
 <</timed>>
 
 :: 40_story-text-cym [nobr]
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="bold">Y tu mewn, ewch drwy'r drws cyntaf ar y chwith i chi.</p>
 
-<<timed $btnAppearTime>>
+<p>Mae ychydig o stepiau ar y dde, a lifft ar y chwith.</p>
+<p>Pan fyddwch chi ar ben y grisiau, gallwch sganio eich cerdyn i fynd i mewn i Focs Dyfrdwy ac Alyn.</p>
+
+<<timed 14s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni i mewn">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3089,15 +3779,35 @@ Past the writers library on your right, Drws C is on your left.
 <</timed>>
 
 :: 41_story-text-cym [nobr]
-<p class="bold">Lorem ipsum!</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Mae hwn yn lle hamddenol, i bobl sydd ei angen.</p>
+<p>Rydw i wedi sylwi dros y blynyddoedd sut mae Theatr Clwyd yn croesawu pawb - beth bynnag yw eich oedran, eich gallu neu eich amgylchiadau. Rydyn ni i gyd yn rhan o'r teulu.
+</p>
+<p>Mae'r bocs yma yng nghefn y theatr, yn y dde eithaf. Mae ganddo ffenest hirsgwar fawr, yn edrych allan ar y llwyfan a’r seddi hyfryd. Hei, gynulleidfa, rydyn ni tu ôl i chi!</p>
+  <</append>>
+<</timed>>
+<<timed 30s>>
+   <<append "#msgMount">>
+<p>Sori - fi ffili peidio!</p>
+<p>Mae gan bob sedd yn y theatr olygfa wych. Fe gafodd hynny ei sicrhau fel rhan o’r dyluniad.</p>
 
-<<timed $btnAppearTime>>
+<p>Efallai eich bod chi wedi sylwi ar y teils coch ar y waliau. Mae ganddyn nhw ymylon crwm hardd ac maen nhw'n edrych fel brics bron. Rydw i wrth fy modd yn edrych allan arnyn nhw pan rydw i ar y llwyfan. Maen nhw wedi bod yma ers y diwrnod cyntaf, ac maen nhw'n un o'r pethau sy'n rhoi sain acwstig unigryw i'r gofod yma gyda bowns arbennig o amgylch yr ystafell.</p>
+
+  <</append>>
+<</timed>>
+<<timed 67s>>
+   <<append "#msgMount">>
+<p>Oo, edrychwch! Mae un ohonyn nhw yma i chi ei chyffwrdd
+</p>
+  <</append>>
+<</timed>>
+<<timed 70s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydw i wedi cyffwrdd â'r deilsen">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3166,19 +3876,59 @@ Past the writers library on your right, Drws C is on your left.
 <</timed>>
 
 :: 42_story-text-cym [nobr]
-<p class="bold">Lorem ipsum dolor sit amet!</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<p class="bold">Teils Transform o'r 1970au ydi’r rhain – yn seiliedig ar gynllun gan gerflunydd o’r Almaen, Fritz Steller. Fe wnaeth gelf anhygoel ar gyfer adeiladau dinesig ledled y DU. </p>
+<p>Mae pob teilsen yn edrych ychydig yn wahanol oherwydd pan gawson nhw eu tanio yn yr odyn, roedd pob un yn ymateb yn wahanol i'r fflamau, gan ddatgelu patrymau a lliwiau gwahanol. Fe helpodd arbenigwyr theatr gyda'u ffitio hefyd – roedden nhw’n gwybod am yr effaith fyddai'r teils yn ei chael ar sain y theatr.</p>
+  <</append>>
+<</timed>>
 
+<<timed 39s>>
+   <<append "#msgMount">>
 <div class="quote">
-<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+<p>“Mae'n ofod rhyfeddol… mae'n eich galluogi chi i wneud beth rydych chi eisiau ei wneud ag o, yn sonig, o ran sain.”</p>
 </div>
 
-<<timed $btnAppearTime>>
+<p>Hei, Tayo Akinbode! Cyfarwyddwr cerdd Panto. Athrylith. A phwy ydi hwn?</p>
+  <</append>>
+<</timed>>
+
+<<timed 54s>>
+   <<append "#msgMount">>
+<div class="quote">
+<p>"Roedd bob amser yn teimlo'n agos iawn. Roedd bob amser yn teimlo, os oeddech chi eisiau, ac os oeddech chi'n ddigon hyderus am yr hyn roeddech chi'n ei wneud, bod y gynulleidfa yng nghledr eich llaw chi. Yn acwstig hefyd. Yn lleisiol, roedd y theatr bob amser yn eithaf hawdd actio ynddi, o gymharu â chymaint o lefydd roeddwn i'n actio ynddyn nhw."
+</p>
+</div>
+  <</append>>
+<</timed>>
+
+<<timed 70s>>
+   <<append "#msgMount">>
+<p>A! Steffan Rhodri! Efallai eich bod chi'n ei adnabod o fel un o sêr Gavin & Stacey. Mae wedi perfformio ar y llwyfan yma sawl gwaith ac rydw i’n cytuno, mae'r llwyfan a'r sain yn eich cysylltu chi â'r gynulleidfa - mae'n arbennig. </p>
+  <</append>>
+<</timed>>
+
+<<timed 87s>>
+   <<append "#msgMount">>
+<div class="quote">
+<p>“Rydw i'n credu, fel plentyn, fy mod i’n eu gweld nhw fel, fel, bar mawr o siocled. Rydw i'n caru'r theatr yma oherwydd does dim seddi gwael. Mae fel cwtsh mawr. Mae pawb yno gyda'i gilydd.”</p>
+</div>
+  <</append>>
+<</timed>>
+
+<<timed 100s>>
+   <<append "#msgMount">>
+<p>Mae Catrin Aaron o’r Rhyl wedi ymddangos mewn 35 o gynyrchiadau yma. Roedd ei mam, nyrs, yn arfer dod â hi yma pan oedd hi'n fach. Fe aeth Catrin ymlaen i weithio gyda’r Royal Shakespeare Company.</p>
+<p>Mae bod yn rhan o Theatr Clwyd fel bod yn rhan o deulu. Beth am i ni neidio o gwmpas y theatr i ddod o hyd i bobl fedr ddweud mwy wrthych chi...</p>
+  <</append>>
+<</timed>>
+
+<<timed 122s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3186,12 +3936,14 @@ Past the writers library on your right, Drws C is on your left.
 <<set $prevpass to "42_story">>
 <<set $pass to "floorplan">>
 <<set $nextpass to "49_story">>
-<<addclass "body" "orange">>
-<<addclass "html" "orange">>
-
 <<set $currentDot to 1>>
 <<set $totalDots to 4>>
-
+<<set $nxtBtnText to "Next">>
+ <<if $userchoices.language is "cymraeg">>
+    <<set $nxtBtnText to "Nesaf">>
+<<elseif $userchoices.language is "english" >>
+    <<set $nxtBtnText to "Next">>
+            <</if>>
 
     <div id="audioMount">
         <audio src="" autoplay>Audio not supported in your browser</audio>
@@ -3214,17 +3966,18 @@ Past the writers library on your right, Drws C is on your left.
            
         
         <div class="story-text" id="msgMount"></div>
-         <div class="button-wrapper btn-container" id="btnContainer">
-            <<include "button1">>
+          <div class="btn-container" id="btnContainer">
             </div>
+        <<timed 4s>>
+            <<include "content1">>
+            <</timed>>
+           
     </main>
     
     <<include "footer_floorplan">>
 </div>
 
-:: button1 [nobr]
-
-<<button "Listen">>
+:: content1 [nobr]
    
      <<addclass ".dot1" "story-dot green-dot pulse-dot">>
     <<replace "#btnContainer">><</replace>>
@@ -3232,7 +3985,14 @@ Past the writers library on your right, Drws C is on your left.
     <<audio "ping" "play">>
     <<timed 1s>>
     <<replace "#msgMount">>
-        <<include '44_floorplan_story'>>
+        <<timed 0.1s>>
+            <<if $userchoices.language is "cymraeg">>
+                <<include '44_floorplan_story_cym'>>
+            <<elseif $userchoices.language is "english" >>
+                 <<include '44_floorplan_story'>>
+            <</if>>
+        <</timed>>
+      
     <</replace>>
    
 
@@ -3243,12 +4003,11 @@ Past the writers library on your right, Drws C is on your left.
             <</replace>>
     <</timed>>
     <</timed>>
- <</button>>
 
 
 
 :: button1a [nobr]
-<<button "Next">>
+<<button $nxtBtnText>>
    
       <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
       <<replace "#msgMount">><</replace>>
@@ -3258,7 +4017,13 @@ Past the writers library on your right, Drws C is on your left.
        <<audio "ping" "play">>
     <<addclass ".dot1" "green-dot pulse-dot story-dot fadeIn3">>
     <<replace "#msgMount">>
-    <<include '45_floorplan_story'>>
+     <<timed 0.1s>>
+            <<if $userchoices.language is "cymraeg">>
+                      <<include '45_floorplan_story_cym'>>
+            <<elseif $userchoices.language is "english" >>
+                 <<include '45_floorplan_story'>>
+            <</if>>
+        <</timed>>
     <</replace>>
          <</timed>>
 
@@ -3272,7 +4037,7 @@ Past the writers library on your right, Drws C is on your left.
  <</button>>
 
 :: button2[nobr]
-<<button "Next">>
+<<button $nxtBtnText>>
    
        <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
     <<replace "#btnContainer">><</replace>>
@@ -3283,7 +4048,13 @@ Past the writers library on your right, Drws C is on your left.
     <<replace "#btnContainer">><</replace>>
      <<addclass ".dot2" "story-dot green-dot pulse-dot">>
     <<replace "#msgMount">>
-    <<include '46_floorplan_story'>>
+     <<timed 0.1s>>
+            <<if $userchoices.language is "cymraeg">>
+                      <<include '46_floorplan_story_cym'>>
+            <<elseif $userchoices.language is "english" >>
+                 <<include '46_floorplan_story'>>
+            <</if>>
+        <</timed>>
     <</replace>>
          <</timed>>
 
@@ -3295,7 +4066,7 @@ Past the writers library on your right, Drws C is on your left.
     <</timed>>
  <</button>>
 :: button3 [nobr]
-<<button "Next">>
+<<button $nxtBtnText>>
    
       <<replace "#btnContainer">><</replace>>
       <<removeclass ".dot2" "green-dot pulse-dot story-dot">>
@@ -3305,7 +4076,13 @@ Past the writers library on your right, Drws C is on your left.
       <<audio "ping" "play">>
      <<addclass ".dot3" "story-dot green-dot pulse-dot">>
     <<replace "#msgMount">>
-    <<include '47_floorplan_story'>>
+     <<timed 0.1s>>
+            <<if $userchoices.language is "cymraeg">>
+                      <<include '47_floorplan_story_cym'>>
+            <<elseif $userchoices.language is "english" >>
+                 <<include '47_floorplan_story'>>
+            <</if>>
+        <</timed>>
     <</replace>>
          <</timed>>
 
@@ -3318,7 +4095,7 @@ Past the writers library on your right, Drws C is on your left.
  <</button>>
 
 :: button4 [nobr]
-<<button "Next">>
+<<button $nxtBtnText>>
    
       <<removeclass ".dot3" "green-dot pulse-dot story-dot">>
     <<replace "#msgMount">><</replace>>
@@ -3328,7 +4105,13 @@ Past the writers library on your right, Drws C is on your left.
         <<audio "ping" "play">>
        <<addclass ".dot4" "story-dot green-dot pulse-dot">>
     <<replace "#msgMount">>
-    <<include '48_floorplan_story'>>
+     <<timed 0.1s>>
+            <<if $userchoices.language is "cymraeg">>
+                      <<include '48_floorplan_story_cym'>>
+            <<elseif $userchoices.language is "english" >>
+                 <<include '48_floorplan_story'>>
+            <</if>>
+        <</timed>>
     <</replace>>
          <</timed>>
 
@@ -3336,7 +4119,7 @@ Past the writers library on your right, Drws C is on your left.
         <<set $currentDot to 4>>
          <<replace "#btnContainer">>
  
-            <<button "Finish">>
+            <<button $nxtBtnText>>
                 <<goto $nextpass>>
                 <</button>>
             <</replace>>
@@ -3389,16 +4172,47 @@ Past the writers library on your right, Drws C is on your left.
  <</append>>
 <</timed>>
 
+:: 44_floorplan_story_cym [nobr]
+
+ <<timed 0.1s>>
+     <<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_44.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+    <<append "#msgMount">>
+<p class="bold">Ar y llwyfan, mae’r goleuadau uwchben a'r gynulleidfa islaw, gyda byd y ddrama yn fyw o'ch cwmpas chi. </p>
+
+<p>A! Dyma rywun oedd yn byw ger yr Wyddgrug.</p>
+<p>Fe gafodd ei recriwtio o'r ysgol i fod mewn drama pan oedd yn 10 oed – doedd o erioed wedi gweld drama o'r blaen! Fe aeth ymlaen i weithio yn Hollywood – Rhys Ifans.</p>
+
+ <</append>>
+<</timed>>
+
+ <<timed 26s>>
+     <<append "#msgMount">>
+<div class="quote">
+    <p>“Y tro cyntaf i mi berfformio ar y prif lwyfan yn Theatr Clwyd oedd cynhyrchiad Theatr Clwyd o Toad, of Toad Hall, ac roeddwn i'n chwarae rhan llygoden fawr a gwenci, ac fe newidiodd fy mywyd i. </p>
+ <p>Roedd bod ar y llwyfan yn wych, oherwydd roeddwn i wrth fy modd â'r ffaith eich bod chi'n ymwybodol o aelodau'r gynulleidfa, ond ddim yn gallu eu gweld nhw mewn gwirionedd. Roeddwn i wrth fy modd â'r math o olau oedd arna’ i, nid yn yr ystyr ’mod i'n teimlo ’mod i'n cael fy ngweld. Doeddwn i ddim yn gallu credu’r peth, y cynhesrwydd, roedd yn teimlo fel cerdded i mewn i heulwen. A hefyd yr ymdeimlad pan rydych chi'n camu ar y llwyfan, eich bod chi'n rhoi rhywbeth ar waith, ac mae'n rhaid i chi adael iddo redeg ei gwrs. ​​Dwi’n gobeithio eich bod chi’n deall be sgen i, ’allwch chi ddim camu i mewn gydag amheuon, neu gyda, wel, chi’n gwybod, dweud, 'O, dydw i ddim eisiau gwneud hyn. Rydw i wedi blino.' Mae'n rhaid i chi bron… roedd yn… mynd gyda'r llif. Ac roedd raid i chi, roedd raid i chi ildio i ddifrifoldeb y gynulleidfa a'r berthynas honno rhyngoch chi a hi.”</p>
+ </div>
+ <</append>>
+<</timed>>
+
+
+ <<timed 93s>>
+     <<append "#msgMount">>
+   <p>Doeddwn i ddim yn gwybod mai fel llygoden fawr a gwenci oedd ei berfformiad cyntaf!</p>
+  <p>  Mae e’n bendant wedi teimlo'r berthynas arbennig honno gyda'r gynulleidfa.</p>
+ <</append>>
+<</timed>>
+
 :: 45_floorplan_story [nobr]
 <<timed 0.1s>>
 <<replace "#audioMount">>
         <audio id="audioPlayer" src="assets/audio/TC_45.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
-        /* <<append "#msgMount">>
-<p class="bold">And we have another one coming through.</p>
- <</append>> */
+     
 
      <<append "#msgMount">>
+        <p class="bold">And we have another one coming through.</p>
 <div class="quote">
 <p>The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.</p>
 
@@ -3413,6 +4227,27 @@ Past the writers library on your right, Drws C is on your left.
  <</append>>
 <</timed>>
 
+
+:: 45_floorplan_story_cym [nobr]
+<<timed 0.1s>>
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_45.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+     <<append "#msgMount">>
+<p class="bold">O! Mae un arall yn dod drwodd!</p>
+<div class="quote">
+<p>“Y tro cyntaf ’dw i’n cofio mynd i Theatr Clwyd roeddwn i mewn cynhyrchiad o Oliver pan oeddwn i tua 15 ’dw i’n meddwl a ’dw i’n cofio bod ar y llwyfan oedd yn hollol magic. Mae’n theatr amazing a fi wedi bod yn lwcus iawn i dyfu fyny yn yr Wyddgrug. Felly yn nes ymlaen, fe wnes i ymuno â ... we ni’n rhan o’r grŵp Cwmni 25 a hefyd fe wnes i lot o weithdai ar gyfer pobl ifanc yn ystod yr haf. </p>
+<p>Gyda Cwmni 25 oedd yn cael ei redeg gan Gwennan Mair Jones ac rown i’n rili lwcus bod hi’n rhedeg y sesiynau yn ddwyieithog, yn naturiol yn ddwyieithog, so dyna oedd fy introduction cyntaf i i’r byd celfyddydau Cymraeg.”</p>
+
+</div>
+ <</append>>
+<</timed>>
+<<timed 55s>>
+     <<append "#msgMount">>
+<p>Isabella Colby Browne oedd hi – actores arall o’r Wyddgrug – fe berfformiodd hi am y tro cyntaf mewn cynhyrchiad o Oliver ar y llwyfan pan oedd hi’n 15 oed. Diolch i grŵp o’r enw Cwmni 25, sy’n cael ei gynnal gan Gwennan Mair Jones, fe aeth hi ymlaen i berfformio yn y Gymraeg a’r Saesneg! Da iawn Isabella. </p>
+ <</append>>
+<</timed>>
+
 :: 46_floorplan_story [nobr]
 <<replace "#audioMount">>
         <audio id="audioPlayer" src="assets/audio/TC_46.mp3" autoplay>Audio is not supported on your device</audio>
@@ -3424,12 +4259,30 @@ Past the writers library on your right, Drws C is on your left.
 <p>There’s Paul! They’ve been coming here since the late 1970s. They’ve been to – how many productions?</p>
 <div class="quote"><p>“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we're going to have a theatre room. And we're going to wallpaper it with our tickets.”</p></div>
 
+:: 46_floorplan_story_cym [nobr]
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_46.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+<p class="bold">O'r rhes flaen, mae'r llwyfan yn union o'ch blaen chi, dim ond modfeddi i fyny. </p>
+<div class="quote"><p>“Ymgolli'n llwyr o'r rhes flaen” </p></div>
+<p>Judie von der Fecht oedd y llais yna! Mae hi a Paul yn ymwelwyr rheolaidd yn y rhes flaen.</p>
+<div class="quote"><p>“Ein dêt cyntaf ni oedd mynd i weld The Hitchhiker's Guide to the Galaxy ar y llwyfan yn Theatr Clwyd...”</p></div>
+<p>Paul oedd hwnna! Maen nhw wedi bod yn dod yma ers diwedd y 1970au. Maen nhw wedi bod mewn – faint o gynyrchiadau?</p>
+<div class="quote"><p>“Cannoedd ar gannoedd... Rydw i bob amser wedi dweud, pe bawn i’n ennill y loteri ryw dro – ... fe fydden ni'n cael ystafell theatr. Ac fe fydden ni'n ei phapuro hi gyda'n tocynnau.”</p></div>
+
 :: 47_floorplan_story [nobr]
 <<replace "#audioMount">>
         <audio id="audioPlayer" src="assets/audio/TC_47.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <div class="quote"><p>“The main theatre is so wonderfully intimate. No matter where you sit. It doesn't feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there's no bad seat there... you feel so intimate. I guess it's a place of escape, almost, it's one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” </p></div>
 <p>That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. </p>
+
+:: 47_floorplan_story_cym [nobr]
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_47.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+<div class="quote"><p>“Mae’r brif theatr mor hyfryd o agos atoch chi. Dim ots ble rydych chi’n eistedd. Dydy hi ddim yn teimlo felly pan rydych chi’n mynd i mewn yno i eistedd, mae’n teimlo’n enfawr, ond cyn gynted ag y mae pethau’n digwydd ar y llwyfan, does dim sedd wael… rydych chi’n teimlo mor agos. Mae’n lle am ddihangfa, bron, fel ei fod yn un o’r ychydig lefydd lle rydw i’n mynd i mewn ac yn eistedd ac yn meddwl, ‘Wel, beth bynnag sy’n digwydd, mae hyn yn mynd i fod yn wych.’” </p></div>
+<p>Megan Price. Roedd ei rhieni’n gweithio yma o’r 70au – hi oedd babi cyntaf Theatr Clwyd! Fe dyfodd i fyny yn ein theatr ieuenctid ac aeth ymlaen i weithio fel arbenigwr marchnata celfyddydau llawrydd.  </p>
 
 :: 48_floorplan_story [nobr]
 <<replace "#audioMount">>
@@ -3440,6 +4293,16 @@ Past the writers library on your right, Drws C is on your left.
 <p>Ah, it’s usher Geoff Wiliams again!</p>
 
 <div class="quote"><p>“You could look at the whole stage and the performance in a different way. You could see things that were going on that you never noticed because you were too busy watching the overall picture. And to watch a thing two or three times, it isn't boring, it's terrific.”</p></div>
+
+:: 48_floorplan_story_cym [nobr]
+<<replace "#audioMount">>
+        <audio id="audioPlayer" src="assets/audio/TCW_48.mp3" autoplay>Audio is not supported on your device</audio>
+        <</replace>>
+<p class="bold">Mae'r tywyswyr yn sleifio i mewn i eistedd yma yn aml – er mwyn gweld y dramau'n esblygu dros amser.</p>
+<p>Dyma’r tywysydd Geoff Williams eto!</p>
+
+
+<div class="quote"><p>“Fe allech chi edrych ar y llwyfan cyfan a'r perfformiad mewn ffordd wahanol. Fe allech chi weld pethau oedd yn digwydd nad oeddech chi erioed wedi sylwi arnyn nhw oherwydd eich bod chi'n rhy brysur yn gwylio'r darlun cyffredinol. A gwylio rhywbeth ddwy neu dair gwaith, dydi o ddim yn ddiflas, mae'n wych.”</p></div>
 
 :: 49_story [nobr]
 <<set $prevpass to "floorplan">>
@@ -3461,13 +4324,47 @@ Past the writers library on your right, Drws C is on your left.
 <<include "pw49">>
 :: 49_story-text-cym [nobr]
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p class="bold">Mae pob sedd yn dal rhywun drwy gydol eu hamser gyda ni. </p>
+<p>Boed yn un ymweliad neu’n oes o straeon bythgofiadwy. </p>
+<p>Ar ambell set fe welwch enwau ffrindiau, teulu ac anwyliaid.</p> 
+<p>Ac i ddod â’n hamser ni yn y theatr i ben, rydw i angen yr enw sydd wedi’i ysgrifennu ar y plac. </p>
+<p>Teipiwch yr enw isod</p>
 
-<<include "pw49">>
+
+
+<<include "pw49W">>
+
+:: pw49W [nobr]
+<div class="codeinput">
+    <<textbox "$codeword" "">>
+    <br/><br/>
+    <<button "Enter">>
+      <<set $codeword to $codeword.toUpperCase().trim()>>
+      
+      /% CODEWORD CORRECT FOR CHATHAM STORIES%/
+      <<if $codeword isnot "" and $codeword is "MAGS">>
+        <<replace "#coderesult">><span>Gywir!</span><</replace>>
+        /* <<audio "correct" play>> */
+
+        <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+
+
+      /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword isnot "MAGS" >>
+           /* <<audio "error" play>> */
+           <<replace "#coderesult">><span>Ceisiwch eto.</span><</replace>>
+         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+         <</if>>
+       
+    <</button>>
+  <br/> <br/>
+
+
+</div>
+    <br/>
+    <div id="coderesult"></div>
+    <<done>><<set $e to setup.addPlaceholderCym()>><</done>>
 
 :: pw49 [nobr]
 <div class="codeinput">
@@ -3538,20 +4435,32 @@ Past the writers library on your right, Drws C is on your left.
 
 
 :: 50_story-text-cym [nobr]
-<div class="quote"><p>I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p></div>
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<<timed 0.1s>>
+   <<append "#msgMount">>
+<div class="quote">
+  <p> “Mae Theatr Clwyd, chi’n gweld, wedi bod yn ail gartref i mi ers dros 20 mlynedd bellach. Bob tro rydw i’n dod yma, rydw i’n teimlo cryfder mewn undod yma.</p>
+ 
+<p>A phan oedd fy ngwraig Mags gyda fi i fyny yma, roedden nhw’n trin Mags fel un o’r cast. Roedd pawb yn adnabod Mags ac roedd hi’n arfer cefnogi’r holl gast hefyd, ac roedd pawb wrth eu bodd yn gweld Mags yno. Felly rydw i eisiau diolch i bawb sydd wedi mynd yr ail filltir er mwyn gwneud i mi deimlo’n gyfforddus, gan wybod bod Mags mewn amgylchedd diogel ac wedyn roeddwn i’n gallu gwneud fy ngwaith..</p>
 
+<p>Un o fy atgofion i hyd heddiw fydd, yn ystod egwyl yn y panto Robin Hood. Roeddwn i wedi gwisgo fel Wonder Woman ac, yn ystod yr egwyl, mae llun ohonof i'n gwthio Mags i'r toiled, fi wedi gwisgo fel Wonder Woman a hi yn ei chadair olwyn. Ac roedden ni'n chwerthin yn braf. A dyna beth chi'n ei gael ‘ma.</p>
 
-<<timed $btnAppearTime>>
+<p> Pa bynnag broblemau sydd gyda chi, ma nhw’n gofalu amdanoch chi yn Theatr Clwyd. Ma’ nhw’n mynd yr ail filltir. Bob amser.”</p>
+
+</div>
+<br/>
+  <</append>>
+<</timed>>
+<<timed 70s>>
+   <<append "#msgMount">>
+<p class="bold">A dyna’r hud.</p>
+  <</append>>
+<</timed>>
+<<timed 72s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
-            <<goto $nextpass>>
+    <<button "Nesaf">>
+            <<goto "completed4">>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3581,19 +4490,18 @@ Past the writers library on your right, Drws C is on your left.
 
 :: 52_story-text-cym [nobr]
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<p class="bold">Wel, mae'n debyg ein bod ni'n nesau at y diwedd, dim ond un lleoliad arall i ymweld ag o – neu'n hytrach golygfa i ddychwelyd ati.</p>
+
+<p>Dewch allan o Ddrws C a cherdded ar hyd y coridor er mwyn i chi allu gweld yr olygfa. </p>
+<p>Fe allwch chi fynd yn ôl i'r balconi ar y llawr cyntaf os hoffech chi, ond efallai y byddai'n haws aros yma ar y lefel uchaf.
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
 
-
-<<timed $btnAppearTime>>
+<<timed 24s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
+    <<button "Rydyn ni yma">>
             <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3613,7 +4521,7 @@ Past the writers library on your right, Drws C is on your left.
 <</timed>>
 <<timed 7s>>
     <<append "#msgMount">>
-<p><b><i>Once upon a time a group of people stood on a hill<br/>
+<p class="motto"><b><i>Once upon a time a group of people stood on a hill<br/>
  and decided to make the world a happier place.</i>
     </b>
 </p>
@@ -3686,20 +4594,88 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 <</timed>>
 
 :: 53_story-text-cym [nobr]
-
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
+<<timed 0.1s>>
+    <<append "#msgMount">>
+<p class="bold">Mae datganiad cenhadaeth Theatr Clwyd yn dechrau fel hyn:</p>
+ <</append>>
+<</timed>>
+<<timed 6s>>
+    <<append "#msgMount">>
+<p class="motto"><b><i>Un tro, fe safodd grŵp o bobl ar ben bryn<br/>
+a phenderfynu gwneud y byd yn lle hapusach.
+</i>
+    </b>
 </p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+ <</append>>
+<</timed>>
+<<timed 13s>>
+    <<append "#msgMount">>
+<p>Heddiw, yn yr adeilad hardd yma, mae pobl yn parhau â'r gwaddol hwnnw - ac yn dal ati i ddychmygu ffyrdd newydd anhygoel o gadw'r weledigaeth honno yn fyw.</p>
+ <</append>>
+<</timed>>
 
+<<timed 24s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Mae wedi bod ag ysbryd antur erioed, rydw i'n meddwl, Theatr Clwyd. Dydi hi erioed wedi gorffwys ar ei rhwyfau a meddwl, o, rydyn ni'n mynd i chwarae’n saff efo popeth nawr. Dydi hi erioed wedi gwneud hynny, ac mae'n well oherwydd hynny, rydw i'n credu.”</p></div>
+<p>Dyna Emyr John, cyswllt creadigol sy’n rhedeg rhaglenni sy'n croesawu pobl ifanc o amrywiaeth eang o gefndiroedd gwahanol. Mae ei waith yn amrywio o grŵp LGBTQ+ i sgyrsiau hanes, i weithdai adrodd straeon i bob oed...</p>
+ <</append>>
+<</timed>>
 
-<<timed $btnAppearTime>>
+<<timed 53s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Roedd staff y theatr yn barod iawn, iawn i helpu. Fe wnaethon nhw'r holl oleuo i ni. [...] ein rheolwr llwyfan ni gafodd ei hyfforddi gan eu rheolwr llwyfan nhw, oedd yn ardderchog. [...] Roedden nhw'n gwbl wych…”</p></div>
+<p>Gina oedd hi. Roedd hi'n fam newydd yng nghanol y 1970au, pan sefydlodd Gymdeithas Gilbert a Sullivan Dee ac Alyn. Estynnodd Haydn Rees gwahoddiad iddi lwyfannu cynhyrchiad yn ystod wythnos agoriadol Theatr Clwyd.</p>
+ <</append>>
+<</timed>>
+
+<<timed 85s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Theatr Clwyd... i mi, yn bersonol, mae bob amser wedi rhoi dewrder tawel i mi ac wedi fy atgoffa i o hynny. Ac rydw i'n credu, ar ei gorau, mai dyna beth mae'n ei wneud i gynulleidfa hefyd. Ym mhob ffurf, mae yna bob amser elfen ohono fo sy'n ymwneud â dewrder... Mae'n grymuso.”</p></div>
+<p>Dyna Rhys eto.</p>
+ <</append>>
+<</timed>>
+
+<<timed 113s>>
+    <<append "#msgMount">>
+<div class="quote"><p>“Roedd y staff mor amyneddgar a charedig, gyda'r holl aelodau ag anableddau, a phawb arall hefyd... roedd yn rhoi hynny i ni, yr hwb hwnnw mewn gwirionedd...”p></div>
+<p>Geiriau Catherine Pugh, a gydsefydlodd y grŵp theatr gerdd, Buzz-Ah. Fe ddatblygodd y grŵp amrywiaeth o sgiliau ar gyfer pobl anabl a phobl heb anabledd a llwyfannu llawer o gynyrchiadau yn ein prif theatr ni...</p>
+ <</append>>
+<</timed>>
+
+<<timed 140s>>
+    <<append "#msgMount">>
+<p>A dyma Tamara Harvey, hi oedd cyfarwyddwr artistig Theatr Clwyd rhwng 2015 a 2022. Fe aeth ymlaen i fod yn Gyd-gyfarwyddwr Artistig gyda’r Royal Shakespeare Company. </p>
+
+<div class="quote">
+<p>“Rydw i’n meddwl mai’r hyn sy’n rhyfeddol amdani yw na ddylai fodoli. Ond mae’n rhyw fath o wallgofrwydd prydferth ei bod hi’n bodoli. Mae’n bodoli oherwydd angerdd a dygnwch ac ymroddiad a gweledigaeth grŵp o bobl yn y 1970au a ddywedodd bod ein cymuned ni’n haeddu llais ac wedyn mae’n parhau i fodoli oherwydd angerdd a gweledigaeth a dygnwch ac ymroddiad grwpiau parhaus o bobl drwy gydol ei hanes ac felly mae rhyw fath o herfeiddiwch yn perthyn iddi.” 
+    </p>
+</div>
+ <</append>>
+<</timed>>
+
+<<timed 185s>>
+    <<append "#msgMount">>
+<p>Nid un peth yw Theatr Clwyd.</p>
+<p>Fe safodd grŵp o bobl ar y bryn, ac wedyn fe safodd grŵp arall o bobl ar fryn, ac wedyn un arall. Fe wnaethon nhw i gyd ddychmygu byd gwell, a gyda Theatr Clwyd fe wnaethon nhw greu’r byd hwnnw. Dydi Theatr Clwyd ddim yn bodoli oherwydd bod grŵp o bobl wedi dychmygu, ond oherwydd bod pobl wedi dal ati i ddychmygu, ac fe fyddan nhw’n parhau i ddychmygu hefyd...</p>
+ <</append>>
+<</timed>>
+
+<<timed 213s>>
+    <<append "#msgMount">>
+<p>Dyna wir hud Theatr Clwyd.</p>
+<p>Lle mae realiti newydd yn cael ei dychmygu, ei saernio a’i chreu.</p>
+<p>Lle rydyn ni’n deall ein gorffennol fel stori o drawsnewid sy’n parhau i’n dyfodol.</p>
+<p>Lle mae ein cymuned yn ein siapio ni, yn ein herio, ac yn ein sbarduno ymlaen – o’r gwenyn ar y to i’r bobl sy’n sefyll ar y bryn, yn edrych allan ac yn dychmygu rhywbeth newydd.</p>
+
+ <</append>>
+<</timed>>
+
+<<timed 239s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
-             <<goto $nextpass>>
+    <<button "Nesaf">>
+            <<goto $nextpass>>
         <</button>>
-       <<include "navbuttons-cym">>
+           /* <<include "navbuttons">> */
     <</append>>
 <</timed>>
 
@@ -3710,7 +4686,24 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 <<audio ":all" "stop">>
 <<include "header">>
 
-<main>
+<main id="mainMount">
+</main>
+
+<<timed 0.1s>>
+ <<if $userchoices.language is "cymraeg">>
+    <<replace "#mainMount">>
+         <<include "speakpipe_cym">>
+        <</replace>>
+   <<elseif $userchoices.language is "english" >>
+     <<replace "#mainMount">>
+    <<include "speakpipe_eng">>
+        <</replace>>
+   <</if>>
+<</timed>>
+
+<<include "navbuttonsb">>
+
+:: speakpipe_eng [nobr]
 <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_54.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 <<timed 0.1s>>
@@ -3736,7 +4729,6 @@ Where our community shapes us, challenges us, and drives us on – from the bees
             </div>
 <</append>>
 <</timed>>
-</main>
 
 
 <<timed 39s>>
@@ -3752,12 +4744,55 @@ Where our community shapes us, challenges us, and drives us on – from the bees
  
     <</append>>
 <</timed>>
-<<include "navbuttonsb">>
+
+:: speakpipe_cym [nobr]
+<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TCW_54.mp3" autoplay>Audio is not supported on your device</audio></div>
+    <div id="msgMount"> </div>
+<<timed 0.1s>>
+    <<append "#msgMount">>
+   <p class="bold">Rydyn ni wedi clywed gan lawer o aelodau cymuned Theatr Clwyd.</p>
+<p>Ond, mae llawer mwy y gallwch chi ddod o hyd iddyn nhw yn y mwy na chwe deg pump o gyfweliadau gyda phobl leol, staff, cyfranogwyr, actorion, cyfarwyddwyr a chynllunwyr yn Archifau Gogledd Ddwyrain Cymru ar-lein.</p>
+<p>Hoffech chi ychwanegu rhywbeth?</p>
+
+<</append>>
+<</timed>>
+<<timed 25s>>
+    <<append "#msgMount">>
+<p>Rydw i'n credu ei bod hi'n deg ychwanegu eich geiriau chi - os ydych chi eisiau wrth gwrs. </p>​​
+<p>Fe allai fod yn rhywbeth y mae'r daith wedi'i sbarduno i chi, atgof o'ch amser chi yma, neu gallai fod yn adlewyrchiad o'ch argraffiadau cyntaf o'r theatr ar y bryn.</p>
+
+<p>Pwyswch recordio ac fe allwch chi ychwanegu recordiad 90 eiliad at yr Archif.</p>
+
+<p>Beth hoffech chi ei ychwanegu?</p>
+
+
+<iframe src="https://www.speakpipe.com/widget/inline/i82lv2te14el16sc6d1qs15esjaa0smo" allow="microphone" width="100%" height="200" frameborder="0"></iframe>
+
+<br/><br/>
+ <div class="btn-container" id="btnContainer">
+            </div>
+<</append>>
+<</timed>>
+
+
+<<timed 39s>>
+    <<append "#btnContainer">>
+    <<button "Rydw i wedi recordio">>
+            <<goto "completed5">>
+        <</button>>
+        <div class="white">
+             <<button "Neidio">>
+         <<goto "completed5">>
+    <</button>>
+        </div>
+ 
+    <</append>>
+<</timed>>
 
 :: 56_story [nobr]
 <<set $prevpass to "54_speakpipe">>
 <<set $pass to "56_story">>
-<<set $nextpass to "credits">>
+<<set $nextpass to "56_story">>
 <<audio ":all" "stop">>
 
 <<include "_templateStory">>
@@ -3781,44 +4816,23 @@ Where our community shapes us, challenges us, and drives us on – from the bees
 <</timed>>
 
 :: 56_story-text-cym [nobr]
+<p class="bold">Wel, rydyn ni wedi cyrraedd y diwedd. </p>
+<p>Mae'n amser dychwelyd eich cerdyn allwedd i'r ddesg flaen. </p>
 
-<p class="bold">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.
-  
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat sollicitudin nulla at hendrerit. Nam augue erat, rutrum at dui id, accumsan varius tortor.</p>
+<p>Fe allwch chi ddod yn ôl a gwneud y llwybr eto unrhyw bryd, gyda llaw – ac fe fydda’ i wrth fy modd yn ymuno â chi. </p>
+
+<p>Welwn ni chi cyn bo hir, gobeithio.</p>
+
+<p>Hwyl fawr am y tro.</p>
 
 
-<<timed $btnAppearTime>>
+
+<<timed 1s>>
     <<append "#btnContainer">>
-    <<button "Lorem">>
-            <<goto $nextpass>>
-        <</button>>
-       <<include "navbuttons-cym">>
+  <div class="ext-link">
+  <a href="https://www.theatrclwyd.com/" target="_blank">Gorffen</a></div>
+
     <</append>>
 <</timed>>
 
-:: credits [nobr]
-<<set $prevpass to "56_story">>
-<<set $pass to "credits">>
-<<set $nextpass to "credits">>
-<<audio ":all" "stop">>
-<<include "header">>
-<main>
-    <p>CREDITS </p> 
-        <div class="btn-container">
-            <<button "Back">>
-                <<goto $prevpass>>
-            <</button>>
-            <<button "Start again">>
-                <<script>>
-                Engine.restart()
-                <</script>>
-                <</button>>
-        </div>
-</main>
-/* <<timed $btnAppearTime>>
-    <<append "#btnContainer">> */
 
-    /* <</append>>
-<</timed>> */
