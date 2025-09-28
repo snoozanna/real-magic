@@ -1001,37 +1001,37 @@ footer.map > div > button{
 
 /* JUST PHONE  */
 /* By default: hide story and show overlay */
-/* main, header {
+main, header {
   display: none 
 }
 
  main::before{
-  content: "Please open this story on a phone or a tablet.";
+  content: "Please open on a phone or a tablet.";
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9); 
+  background: rgba(0, 0, 0, 1); 
   color: #fff;                   
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   padding: 1rem;
   z-index: 9999;
-} */
+}
 
-/* On phones: show story, remove overlay */
- /* @media screen and (max-width: 1025px) {
+/* On phones and tablets: show story, remove overlay */
+ @media screen and (max-width: 1200px) {
   main, header {
     display: block;
   }
   main::before {
     content: none;
   }
-}  */
+} 
 
 
 /* TABLET / DESKTOP */
