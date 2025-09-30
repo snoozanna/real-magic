@@ -195,7 +195,7 @@ setup.addPlaceholderCym = () => {
 
 
 :: StoryInit
-<<cacheaudio "success" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "success" "assets/audio/TC_18Correct.mp3">>
 <<cacheaudio "distort" "assets/sound/Ffalabalam-distorted.mp3">>
 <<cacheaudio "notification" "assets/sound/Notification.wav">>
 <<cacheaudio "ping" "assets/sound/ping1.mp3">>
@@ -401,15 +401,6 @@ setup.addPlaceholderCym = () => {
 <main>
 <audio src="assets/audio/TC_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="instructional-text">
-  <p class="bold">This trail is available in two languages, Cymraeg and English. </p>
- <p> Which would you like to experience? </p>
- <p>Already started? Click <div class="inline-link"><<link "here">>
-    <<set $userchoices.language to "english">>
-    <<goto "chapters">>
-    <</link>>.</div>
-    </p>
- <br/>
- <br/>
  <p class="bold"> Mae’r llwybr ar gael mewn dwy iaith, Cymraeg a Saesneg.  </p>
  <p> Pa un fyddech chi’n hoffi ei brofi? </p>
     <p>Wedi dechrau eisoes - cliciwch <div class="inline-link">
@@ -418,6 +409,17 @@ setup.addPlaceholderCym = () => {
     <<goto "chapters">>
     <</link>>.</div>
     </p>
+
+ <br/>
+  <p class="bold">This trail is available in two languages, Cymraeg and English. </p>
+ <p> Which would you like to experience? </p>
+ <p>Already started? Click <div class="inline-link"><<link "here">>
+    <<set $userchoices.language to "english">>
+    <<goto "chapters">>
+    <</link>>.</div>
+    </p>
+
+
 </div>
 
 
@@ -2017,6 +2019,7 @@ When you are ready to move on, let me know.
     /* Correct */
     <<if $codeword is "QUIET">>
       <<replace "#coderesult">><span>Correct!</span>
+        <<audio "success" play>>
       <</replace>>
      
       <<timed 3s>><<goto $nextpass>><</timed>>
@@ -2047,7 +2050,7 @@ When you are ready to move on, let me know.
     <<if $codeword is "QUIET">>
       <<replace "#coderesult">><span>Gywir!</span>
       <</replace>>
-     
+       <<audio "success" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <<elseif $codeword isnot "">>
       /* Incorrect (non-empty) */
@@ -2373,7 +2376,7 @@ When you are ready to move on, let me know.
 <</timed>>
 
 :: 21_story [nobr]
-<<set $prevpass to "19_story">>
+<<set $prevpass to "18_story">>
 <<set $pass to "21_story">>
 <<set $nextpass to "22_story">>
 <<audio ":all" "stop">>
@@ -4456,7 +4459,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <br/>
   <</append>>
 <</timed>>
-<<timed 69s>>
+<<timed 71s>>
    <<append "#msgMount">>
 <p class="bold">That's magic.</p>
   <</append>>

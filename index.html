@@ -275,7 +275,7 @@ setup.addPlaceholderCym = () => {
         textbox.setAttribute("placeholder", "Teipiwch yma");
     }
 
-}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;success&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
+}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;success&quot; &quot;assets/audio/TC_18Correct.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;distort&quot; &quot;assets/sound/Ffalabalam-distorted.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;notification&quot; &quot;assets/sound/Notification.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ping&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
@@ -426,15 +426,6 @@ setup.addPlaceholderCym = () => {
 &lt;main&gt;
 &lt;audio src=&quot;assets/audio/TC_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;instructional-text&quot;&gt;
-  &lt;p class=&quot;bold&quot;&gt;This trail is available in two languages, Cymraeg and English. &lt;/p&gt;
- &lt;p&gt; Which would you like to experience? &lt;/p&gt;
- &lt;p&gt;Already started? Click &lt;div class=&quot;inline-link&quot;&gt;&lt;&lt;link &quot;here&quot;&gt;&gt;
-    &lt;&lt;set $userchoices.language to &quot;english&quot;&gt;&gt;
-    &lt;&lt;goto &quot;chapters&quot;&gt;&gt;
-    &lt;&lt;/link&gt;&gt;.&lt;/div&gt;
-    &lt;/p&gt;
- &lt;br/&gt;
- &lt;br/&gt;
  &lt;p class=&quot;bold&quot;&gt; Mae’r llwybr ar gael mewn dwy iaith, Cymraeg a Saesneg.  &lt;/p&gt;
  &lt;p&gt; Pa un fyddech chi’n hoffi ei brofi? &lt;/p&gt;
     &lt;p&gt;Wedi dechrau eisoes - cliciwch &lt;div class=&quot;inline-link&quot;&gt;
@@ -443,6 +434,17 @@ setup.addPlaceholderCym = () => {
     &lt;&lt;goto &quot;chapters&quot;&gt;&gt;
     &lt;&lt;/link&gt;&gt;.&lt;/div&gt;
     &lt;/p&gt;
+
+ &lt;br/&gt;
+  &lt;p class=&quot;bold&quot;&gt;This trail is available in two languages, Cymraeg and English. &lt;/p&gt;
+ &lt;p&gt; Which would you like to experience? &lt;/p&gt;
+ &lt;p&gt;Already started? Click &lt;div class=&quot;inline-link&quot;&gt;&lt;&lt;link &quot;here&quot;&gt;&gt;
+    &lt;&lt;set $userchoices.language to &quot;english&quot;&gt;&gt;
+    &lt;&lt;goto &quot;chapters&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;.&lt;/div&gt;
+    &lt;/p&gt;
+
+
 &lt;/div&gt;
 
 
@@ -1830,6 +1832,7 @@ When you are ready to move on, let me know.
     /* Correct */
     &lt;&lt;if $codeword is &quot;QUIET&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Correct!&lt;/span&gt;
+        &lt;&lt;audio &quot;success&quot; play&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
      
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -1857,7 +1860,7 @@ When you are ready to move on, let me know.
     &lt;&lt;if $codeword is &quot;QUIET&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Gywir!&lt;/span&gt;
       &lt;&lt;/replace&gt;&gt;
-     
+       &lt;&lt;audio &quot;success&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;elseif $codeword isnot &quot;&quot;&gt;&gt;
       /* Incorrect (non-empty) */
@@ -2139,7 +2142,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="21_story" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;19_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="21_story" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;18_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;21_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;22_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -3952,7 +3955,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;br/&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 69s&gt;&gt;
+&lt;&lt;timed 71s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;That&#39;s magic.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
