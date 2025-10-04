@@ -710,6 +710,10 @@ opacity: 1;
   height: 70vh;
  }
 
+ main.landing.start{
+ margin-top: 5rem;
+ }
+
 
  main.landing > h1{
   /* font-size: 3rem; */

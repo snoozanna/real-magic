@@ -348,7 +348,7 @@ setup.addPlaceholderCym = () => {
 
 <<include "headerlanding">>
 /* <div class="hide warning"><h1>Please view this on a phone</h1></div> */
-<main class="landing flex-col-cen">
+<main class="landing flex-col-cen start">
    <h1>Real Magic | Hud go iawn</h1>
  <div class="inline-img-wrapper"> 
 
