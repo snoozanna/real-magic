@@ -162,7 +162,7 @@ $(document).on(':passagedisplay', function(ev) {
  });
 
 setup.chooseStoryAudio = () => {
-    console.log("choosing audio")
+  
   const language = State.variables.userchoices?.language || "english";
   const passageName = passage(); // current passage name
   const audio = document.getElementById("audioPlayer");
@@ -191,6 +191,7 @@ setup.chooseStoryAudio = () => {
   function playNext() {
     if (currentTrack < audioFiles.length) {
       freshAudio.src = audioFiles[currentTrack];
+        console.log("playing audio", freshAudio.src )
       freshAudio.play().catch(err => {
         console.error("Audio play failed:", err);
       });
@@ -315,8 +316,8 @@ setup.addPlaceholderCym = () => {
     &lt;&lt;/link&gt;&gt;
     &lt;&lt;link [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-     /* &lt;&lt;link [[$nextpass]]&gt;&gt;
-    &lt;&lt;/link&gt;&gt; */
+     &lt;&lt;link [[$nextpass]]&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
 &lt;div id=&quot;processingMount&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="navbuttonstext" tags="nobr" position="725,100" size="100,100">&lt;div class=&quot;nav-btn-container btn-container&quot;&gt;

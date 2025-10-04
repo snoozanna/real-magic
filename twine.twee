@@ -77,7 +77,7 @@ $(document).on(':passagedisplay', function(ev) {
  });
 
 setup.chooseStoryAudio = () => {
-    console.log("choosing audio")
+  
   const language = State.variables.userchoices?.language || "english";
   const passageName = passage(); // current passage name
   const audio = document.getElementById("audioPlayer");
@@ -106,6 +106,7 @@ setup.chooseStoryAudio = () => {
   function playNext() {
     if (currentTrack < audioFiles.length) {
       freshAudio.src = audioFiles[currentTrack];
+        console.log("playing audio", freshAudio.src )
       freshAudio.play().catch(err => {
         console.error("Audio play failed:", err);
       });
@@ -257,8 +258,8 @@ setup.addPlaceholderCym = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     /* <<link [[$nextpass]]>>
-    <</link>> */
+     <<link [[$nextpass]]>>
+    <</link>>
 <div id="processingMount"></div>
 
 </div>
