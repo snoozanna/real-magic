@@ -258,9 +258,16 @@ setup.addPlaceholderCym = () => {
     <</link>>
     <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
-     <<link [[$nextpass]]>>
+    <<if $pass isnot "56_story">>
+    <div id="processingMount">
+    <<link [img[assets/img/for-sharp-b.png][$nextpass]]>>
     <</link>>
-<div id="processingMount"></div>
+    </div> 
+    <<else>>
+         <div id="processingMount">
+ 
+    </div> 
+    <</if>>
 
 </div>
 
@@ -323,6 +330,7 @@ setup.addPlaceholderCym = () => {
 <<set $nextpass to "landing">>
 
 <main>
+<br/><br/>
     <<button "Studio is open">>
         <<set $studio to "open">>
         <<goto $nextpass>>
@@ -545,7 +553,7 @@ setup.addPlaceholderCym = () => {
     <<append "#msgMount">>
 <p>But I’m best known for Theatr Clwyd’s rock and roll pantos – playing the Dame.</p>
 
-<p>One minute – let me summon her up... “Hiya - Looking lush, loves!” There she is!</p>
+<p>One minute – let me summon her up for you... “Hiya - Looking lush, loves!” There she is!</p>
 
 <p>Now I’m here today as I have been asked to be the voice of this heritage tour – called ‘Real Magic’...</p>
  <</append>>
@@ -578,7 +586,7 @@ setup.addPlaceholderCym = () => {
 
 <p>Phyl ydw i, actor sydd wedi bod yn dod i’r theatr fendigedig yma ers blynyddoedd.</p>
 
-<p>Rydw i wedi bod mewn dramâu fel Little shop of horrors, The Government Inspector.</p>
+<p>Rydw i wedi bod mewn dramâu fel Little Shop of Horrors, The Government Inspector.</p>
 
 <p>Efallai eich bod chi wedi gweld Bottom fi – yn Shakespeare, wrth gwrs!</p> <</append>>
 <</timed>>
@@ -595,7 +603,7 @@ setup.addPlaceholderCym = () => {
  <<timed 37s>>
     <<append "#msgMount">>
 <p>Dydw i ddim yn hollol siŵr beth mae ‘Hud Go Iawn’ yn ei olygu, ond fe fyddwn ni’n dod i wybod gyda’n gilydd rwy’n siŵr.</p>
-<p>Adderchog!  </p>
+<p>Ardderchog!  </p>
 
 <p>Ond i ddechrau, beth am i ni wneud yn siŵr bod pawb – gan gynnwys fi fy hun – yn deall sut bydd y daith yma’n gweithio.
 </p>
@@ -695,8 +703,8 @@ setup.addPlaceholderCym = () => {
     <<append "#msgMount">>
     <p class="bold">
     Ah! And it appears we’ll hear voices from others connected to Theatr Clwyd on the way. </p>
-    <p>  That voice was Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! </p>
-    <p>I’ll give context on whoever pops up – I’ve been coming here for over 30 years, so I do know a few people. </p>
+    <p>That's the voice of Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! </p>
+    <p>I’ll give context on whoever else pops up – I’ve been coming here for over 30 years, so I do know a few people. </p>
   <</append>>
 <</timed>>
  <<timed 28s>>
@@ -733,7 +741,7 @@ setup.addPlaceholderCym = () => {
 <</timed>>
  <<timed 31s>>
     <<append "#msgMount">>
-    <p>Lawn - rydw i'n meddwl ein bod ni'n gwybod digon i fwrw ymlaen.  </p>
+    <p>Iawn - rydw i'n meddwl ein bod ni'n gwybod digon i fwrw ymlaen.  </p>
     <p>Felly, beth am i ni ddechrau.</p>
       <</append>>
 <</timed>>
@@ -774,7 +782,7 @@ setup.addPlaceholderCym = () => {
 <<timed 37s>>
   <<append "#msgMount">>
 <div class="quote">
-<p>“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” </p>
+<p>"As the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” </p>
 </div>
 <</append>>
 <</timed>>
@@ -868,23 +876,18 @@ Heb Haydn Rees ni fyddai stori Theatr Clwyd yn bodoli i'w hadrodd – felly dyma
 <</timed>>
 
 
-<<timed 8s>>
-    <<append "#msgMount">>
-    <p>Ooh... now we’re talking. </p>
- <</append>>
-<</timed>>
-<<timed 11s>>
+<<timed 9s>>
     <<append "#msgMount">>
     <p>It seems I can get you backstage access – you just need to pick up a keycard from one of the lovely front-of-house team. </p>
  <</append>>
 <</timed>>
-<<timed 18s>>
+<<timed 16s>>
     <<append "#msgMount">>
     <p>Go to the Welcome Desk, and tell them <b>‘Phyl sent me’</b>.</p>
     <p>They’ll know what to do. </p>
  <</append>>
 <</timed>>
-<<timed 20s>>
+<<timed 21s>>
     <<append "#btnContainer">>
     <<button "We’ve got the keycard">>
             <<goto $nextpass>>
@@ -905,25 +908,19 @@ Heb Haydn Rees ni fyddai stori Theatr Clwyd yn bodoli i'w hadrodd – felly dyma
  <</append>>
 <</timed>>
 
-
-<<timed 8s>>
-    <<append "#msgMount">>
-    <p>Www... Reit ... dyma ni.  </p>
- <</append>>
-<</timed>>
-<<timed 11s>>
+<<timed 10s>>
     <<append "#msgMount">>
     <p>Mae'n debyg fy mod i’n gallu mynd â chi i gefn y llwyfan – y cyfan sydd raid i chi ei wneud ydi casglu cerdyn allwedd gan un o'r bobl hyfryd yn y tîm.</p>
  <</append>>
 <</timed>>
-<<timed 20s>>
+<<timed 18s>>
     <<append "#msgMount">>
    <p>Ewch i'r Ddesg Groeso, a dweud <b>‘Mae Phyl wedi fy anfon i’</b>.</p>
 <p>Fe fyddan nhw'n gwybod beth i'w wneud.</p>
 
  <</append>>
 <</timed>>
-<<timed 26s>>
+<<timed 24s>>
     <<append "#btnContainer">>
     <<button "Rydyn ni wedi cael y cerdyn allwedd">>
             <<goto $nextpass>>
@@ -1022,10 +1019,8 @@ Pan rydych chi'n barod, pwyswch am y lifft, neu ewch i fyny'r grisiau.
 <p>I like this spot. From here, if you look up, you might be able to see the 70s cream tiles, which mark the outer wall of the original theatre. Where the old meets the new. </p>
   <</append>>
 <</timed>>
-<<timed 14s>>
+<<timed 15s>>
     <<append "#msgMount">>
-<p>You might be a long time visitor here or this might be your first time – Theatr Clwyd has always been known for being welcoming to all. Well, that’s what my wife Mags always thought.  </p>
-
 <p>The extension has more glass and lovely light. Move now towards the view – you can look out through the windows or go out to the balcony if you’d like.</p>
 
 <p>Let me know when you’re facing the hills. </p>
@@ -1033,7 +1028,7 @@ Pan rydych chi'n barod, pwyswch am y lifft, neu ewch i fyny'r grisiau.
 <</timed>>
 
 
-<<timed 38s>>
+<<timed 27s>>
     <<append "#btnContainer">>
     <<button "I’m looking out at the view">>
             <<goto $nextpass>>
@@ -1050,9 +1045,8 @@ Pan rydych chi'n barod, pwyswch am y lifft, neu ewch i fyny'r grisiau.
 <p>Rydw i'n hoffi'r llecyn yma. O fan hyn, os edrychwch chi i fyny, efallai y byddwch chi'n gallu gweld y teils hufen o’r 70au, sy'n nodi wal allanol y theatr wreiddiol, Lle mae'r hen yn cwrdd â'r newydd. </p>
   <</append>>
 <</timed>>
-<<timed 18s>>
+<<timed 17s>>
     <<append "#msgMount">>
-<p>Efallai eich bod chi wedi bod yn ymweld â ni ers tro byd neu efallai mai dyma'ch tro cyntaf chi - mae Theatr Clwyd wedi bod ag enw da erioed am fod yn groesawgar i bawb. Wel, dyna beth oedd fy ngwraig i, Mags, bob amser yn ei feddwl.</p>
 
 <p>Mae gan yr estyniad fwy o wydr a golau hyfryd. Symudwch nawr tuag at yr olygfa – fe allwch chi edrych allan drwy'r ffenestri neu gamu allan ar y balconi os ydych chi eisiau.</p>
 
@@ -1061,7 +1055,7 @@ Pan rydych chi'n barod, pwyswch am y lifft, neu ewch i fyny'r grisiau.
 <</timed>>
 
 
-<<timed 47s>>
+<<timed 31s>>
     <<append "#btnContainer">>
     <<button "Rydw i'n edrych allan ar yr olygfa">>
             <<goto $nextpass>>
@@ -1198,19 +1192,19 @@ Pan rydych chi'n barod, pwyswch am y lifft, neu ewch i fyny'r grisiau.
 
 <<timed 11s>>
     <<append "#msgMount">>
-<p class="bold">They were looking up to the theatre and we are facing out to an incredible view.</p>
-<p>Ahead there are the beautiful Clwydian hills, including their highest point, Moel Famau, to the right. The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. </p>
+<p class="bold">Ahead there are the beautiful Clwydian hills, including their highest point, Moel Famau, to the right. </p>
+<p>The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. </p>
    <</append>>
 <</timed>>
 
-<<timed 29s>>
+<<timed 25s>>
     <<append "#msgMount">>
 <p>This is where the dream of Theatr Clwyd began. <br/>
 In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked at this view.   </p>
    <</append>>
 <</timed>>
 
-<<timed 38s>>
+<<timed 34s>>
     <<append "#msgMount">>
 <p>They dreamt about how civic duty – society working together – could improve everyone’s wellbeing. They believed that the arts could really change local lives, could give people more. They imagined a building that would make that dream possible. </p>
 
@@ -1227,7 +1221,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 <</timed>>
 
 
-<<timed 66s>>
+<<timed 64s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1246,20 +1240,20 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 <<timed 12s>>
     <<append "#msgMount">>
-<p class="bold">Roedden nhw’n edrych i fyny at y theatr, ac rydyn ni’n wynebu golygfa anhygoel.</p>
-<p>O’ch blaen chi mae bryniau hardd Clwyd, gan gynnwys eu copa uchaf, Moel Famau, i’r dde. Mae siopau, stondinau a strydoedd canol tref yr Wyddgrug tua milltir i ffwrdd, yn swatio yn y dirwedd. </p>
+<p class="bold">O’ch blaen chi mae bryniau hardd Clwyd, gan gynnwys eu copa uchaf, Moel Famau, i’r dde.<p>
+<p> Mae siopau, stondinau a strydoedd canol tref yr Wyddgrug tua milltir i ffwrdd, yn swatio yn y dirwedd. </p>
 
    <</append>>
 <</timed>>
 
-<<timed 32s>>
+<<timed 25s>>
     <<append "#msgMount">>
 <p>Dyma ble dechreuodd breuddwyd Theatr Clwyd <br/>
 Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan edrych ar yr olygfa.  </p>
    <</append>>
 <</timed>>
 
-<<timed 42s>>
+<<timed 36s>>
     <<append "#msgMount">>
 <p>Fe wnaethon nhw freuddwydio am sut gallai dyletswydd ddinesig – cymdeithas yn gweithio gyda’i gilydd – wella lles pawb. Roedden nhw wir yn credu y gallai’r celfyddydau newid bywydau’r bobl leol, y gallen nhw roi mwy i bobl. Fe wnaethon nhw ddychmygu adeilad a fyddai’n gwneud y freuddwyd yn bosibl. </p>
 
@@ -1277,7 +1271,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <</timed>>
 
 
-<<timed 76s>>
+<<timed 70s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1484,7 +1478,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
     <div id="msgMount"> </div>
 /* <<addclass "body" "maroon">> */
 <<include "header">>
-<main class="landing flex-col-cen">
+<main class="landing flex-col-cen complete">
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
@@ -1500,6 +1494,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
             </div>
 </main>
  <<timed 10s>>
+    <br/>
  <<append "#btnContainer">>
     <<button $nxtBtnText>>
             <<goto $nextpass>>
@@ -1513,7 +1508,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 
 <<include "header">>
-<main class="landing flex-col-cen">
+<main class="landing flex-col-cen complete">
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
@@ -1546,7 +1541,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 
 <<include "header">>
-<main class="landing flex-col-cen">
+<main class="landing flex-col-cen complete" >
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
@@ -1578,7 +1573,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_51.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <<include "header">>
-<main class="landing flex-col-cen">
+<main class="landing flex-col-cen complete">
 
    <div class="inline-img-wrapper lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
@@ -1610,7 +1605,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_55.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <<include "header">>
-<main class="landing flex-col-cen">
+<main class="landing flex-col-cen complete">
 
    <div class="inline-img-wrapper final lead">
        <img src="../assets/img/Hero_Image_Sequence_1_In_Rectangles.png"/>
@@ -1651,19 +1646,16 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 :: 13_story-text-eng [nobr]
 <<timed 0.1s>>
     <<append "#msgMount">>
-<p class="bold">Diolch</p>
-<p>I can imagine you looking towards the view now – perhaps for the first time, perhaps not.</p>
-<p>But maybe this time, you’ve spotted something new  – something in this view you’ve never noticed before. </p>
-<p>You’ve shared your view with me, but you might choose to share it with the world too...</p>
-<p>On your socials later I mean #aviewfromthehill #dreamalittledreamfromtheatrclwyd</p>
+<p class="bold">You’ve shared your view with me, but you might choose to share it with the world too...</p>
+<p>On your socials later I mean.</p>
   <</append>>
 <</timed>>
-<<timed 26s>>
+<<timed 7s>>
     <<append "#msgMount">>
 <p>From the people in the town to the birds darting across the sky. This view is teeming with life. </p>
   <</append>>
 <</timed>>
-<<timed 33s>>
+<<timed 14s>>
     <<append "#msgMount">>
 <div class="quote">
   <p>"Views absolutely amazing, aren't they? Yeah. Oh, gosh, we're very fortunate for that."</p>
@@ -1672,14 +1664,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <p>It is indeed Loz – that was Loz, the housekeeping lead at Theatr Clwyd for over 30 years.</p>
   <</append>>
 <</timed>>
-<<timed 49s>>
-    <<append "#msgMount">>
-<p>Ey up, something’s happening...</p>
-  <</append>>
-<</timed>>
 
-
-<<timed 50s>>
+<<timed 29s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -1692,19 +1678,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <<timed 0.1s>>
     <<append "#msgMount">>
 <p class="bold">Diolch</p>
-<p>Rydw i’n gallu eich dychmygu chi'n edrych tuag at yr olygfa nawr – am y tro cyntaf efallai, neu efallai ddim.</p>
-<p>Ond efallai eich bod chi wedi gweld rhywbeth newydd y tro yma – rhywbeth yn yr olygfa dydych chi heb sylwi arno erioed o'r blaen.</p>
  <p>Rydych chi wedi rhannu eich golygfa gyda fi, ond efallai y byddwch chi'n dewis ei rhannu hi gyda'r byd hefyd...</p>
-<p>Ar eich cyfryngau cymdeithasol yn nes ymlaen efallai #golygfaofryn neu #breuddwydiobreuddwydotheatrclwyd</p>
+<p>Ar eich cyfryngau cymdeithasol yn nes ymlaen efallai</p>
 
   <</append>>
 <</timed>>
-<<timed 31s>>
+<<timed 10s>>
     <<append "#msgMount">>
 <p>O'r bobl yn y dref i'r adar yn gwibio drwy’r awyr - mae’r olygfa yma’n llawn bywyd. </p>
   <</append>>
 <</timed>>
-<<timed 37s>>
+<<timed 17s>>
     <<append "#msgMount">>
 <div class="quote">
   <p>“Golygfeydd cwbl anhygoel, dydyn? Ydyn. ’Rargol, rydyn ni'n lwcus iawn am hynny.”</p>
@@ -1713,14 +1697,10 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <p>Ydyn wir, Loz – Loz oedd hi, yr arweinydd cadw tŷ yn Theatr Clwyd ers dros 30 mlynedd.</p>
   <</append>>
 <</timed>>
-<<timed 52s>>
-    <<append "#msgMount">>
-<p>Hei, mae rhywbeth yn digwydd...</p>
-  <</append>>
-<</timed>>
 
 
-<<timed 55s>>
+
+<<timed 31s>>
     <<append "#btnContainer">>
     <<button "Nesaf">>
             <<goto $nextpass>>
@@ -1860,23 +1840,13 @@ Ewch yn ôl tuag at y lifft, ac wedyn ar ôl mynd heibio iddi, trowch i'r chwith
 <p class="bold">Theatr Clwyd’s bar is for everyone – staff, locals, people who’ve travelled far...
  </p>
 
-<div class="quote"><p>“On my birthday, I went to see An Inspector Calls, and Tom Baker was the star in it."</p></div>
-
-
-<p>Philip Jones from Mold! It’s you again. You met who here? Doctor Who! </p>
-  <</append>>
-<</timed>>
- <<timed 17s>>
-    <<append "#msgMount">>
-<div class="quote"><p>“I went up to the bar, and I got my programme out, and I said, how much I thoroughly enjoyed it. And I say, it's my birthday today. And then this massive booming voice all over Happy Birthday, Philip. Would you like me to sign your program? Do you spell it with one L or two?”</p></div>
-
 <p>Feel free to have a pitstop and pick up a drink if you fancy one.<br/> 
 When you are ready to move on, let me know. 
  </p>
   <</append>>
 <</timed>>
 
-<<timed 40s>>
+<<timed 12s>>
     <<append "#btnContainer">>
     <<button "Let’s get moving Phyl">>
             <<goto $nextpass>>
@@ -1890,13 +1860,6 @@ When you are ready to move on, let me know.
     <<append "#msgMount">>
 <p class="bold">Mae bar Theatr Clwyd ar gyfer pawb – staff, pobl leol, pobl sydd wedi teithio’n bell... </p>
 
-<div class="quote"><p>“Ar fy mhen-blwydd, fe es i i weld An Inspector Calls, a Tom Baker oedd y seren yn y ddrama.”</p></div>
-<p>Philip Jones o’r Wyddgrug! Chi eto. Pwy wnaethoch chi ei gyfarfod yma? Doctor Who?! </p>
-  <</append>>
-<</timed>>
- <<timed 16s>>
-    <<append "#msgMount">>
-<div class="quote"><p>“Fe es i i fyny i’r bar ac estyn fy rhaglen a dweud cymaint oeddwn i wedi mwynhau. Ac fe wnes i ddweud, mae’n ben-blwydd arna’ i heddiw. Ac wedyn y llais enfawr yna’n bloeddio Pen-blwydd Hapus, Philip dros y lle. Hoffech chi i mi lofnodi eich rhaglen chi? Sut ydych chi’n sillafu Philip, gydag un L neu ddwy?”</p></div>
 <p> Mae croeso i chi stopio am ychydig a chael diod os ydych chi ffansi un.<br/>
     Pan fyddwch chi’n barod i symud ymlaen, rhowch wybod i mi.
 </p>
@@ -1904,7 +1867,7 @@ When you are ready to move on, let me know.
   <</append>>
 <</timed>>
 
-<<timed 40s>>
+<<timed 14s>>
     <<append "#btnContainer">>
     <<button "Ffwrdd â ni eto Phyl">>
             <<goto $nextpass>>
@@ -2082,13 +2045,8 @@ When you are ready to move on, let me know.
         <</replace>>
         <</timed>>
 <p class="bold">Wonderful.</p>
-
-<p>Ok – something is processing on my end – I’m not sure when it will come through.</p>
-
 <p>We can’t get in, but I can load up an image. </p>
 <p>Let me tell you what I know.</p>
-
-
 
 <<timed 5s>>
     <<append "#btnContainer">>
@@ -2108,8 +2066,6 @@ When you are ready to move on, let me know.
         <</replace>>
         <</timed>>
 <p class="bold">Gwych – rydyn ni i mewn.</p>
-
-<p>Iawn – mae rhywbeth yn prosesu ar fy ochr i – dydw i ddim yn siŵr pryd y bydd yn dod drwodd.</p>
 <p> Am y tro – ’allwn ni ddim mynd i mewn, ond fe alla’ i uwchlwytho llun.</p>
 <p>Gadewch i mi ddweud wrthych chi amdano...</p>
 
@@ -2141,8 +2097,6 @@ When you are ready to move on, let me know.
         <</timed>>
 <p class="bold">Wonderful. </p>
 
-<p>Ok – something is processing on my end – I’m not sure when it will come through.</p>
-
 <p>For now – let’s walk up the corridor and go through the door on the left. </p>
 <p>I’ll tell you what I know.</p>
 
@@ -2162,16 +2116,13 @@ When you are ready to move on, let me know.
         <</replace>>
         <</timed>>
 <p class="bold">Gwych – rydyn ni i mewn. </p>
-
-<p>Iawn – mae rhywbeth yn prosesu ar fy ochr i – dydw i ddim yn siŵr pryd y bydd yn dod drwodd.</p>
-
 <p>Am y tro – beth am i ni gerdded i fyny'r coridor a mynd drwy'r drws ar y chwith. </p>
 <p>Fe fydda’ i’n dweud wrthych chi beth rydw i'n ei wybod  </p>
 
 
 <<timed 5s>>
     <<append "#btnContainer">>
-    <<button "Next">>
+    <<button "Nesaf">>
             <<goto $nextpass>>
         <</button>>
     <</append>>
@@ -2188,7 +2139,7 @@ When you are ready to move on, let me know.
 
 :: 20_astory-text-eng [nobr]
 
-<<timed 0.1s>>
+<<timed 0.001s>>
     <<replace "#processingMount">>
         <<include "processing">>
         <</replace>>
@@ -2209,8 +2160,8 @@ When you are ready to move on, let me know.
 <</timed>>
  <<timed 44s>>
     <<append "#msgMount">>
-<p>This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. </p> 
-<p>It’s changed now - but the bars are what would have made everything possible. </p>
+<p>This is part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the technical systems, everything that was used to make the TV shows here. </p> 
+
   <</append>>
 <</timed>>
  <<timed 56s>>
@@ -2233,7 +2184,7 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 20_astory-text-cym [nobr]
+:: 20_astor00y-text-cym [nobr]
 <<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
@@ -2289,7 +2240,7 @@ When you are ready to move on, let me know.
 
 :: 20_bstory-text-eng [nobr]
 
-<<timed 0.1s>>
+<<timed 0.001s>>
     <<replace "#processingMount">>
         <<include "processing">>
         <</replace>>
@@ -2308,8 +2259,8 @@ When you are ready to move on, let me know.
 <</timed>>
  <<timed 44s>>
     <<append "#msgMount">>
-<p>This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. </p> 
-<p>It’s changed now - but the bars are what would have made everything possible. </p>
+<p>This is part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the technical systems, everything that was used to make the TV shows here. </p> 
+
   <</append>>
 <</timed>>
  <<timed 56s>>
@@ -2430,12 +2381,12 @@ When you are ready to move on, let me know.
     <<append "#msgMount">>
    
 <p class="bold">Wedyn fe ddaeth yn Stiwdio 2 – cartref yng Ngogledd Cymru i ddwy sianel deledu sy'n golygu llawer i bobl Cymru – HTV ac S4C. </p>
-<p>Roedden nhw’n creu rhaglenni cerddoriaeth, sioeau sgwrsio a chwisiau, gyda chynulleidfaoedd yn cael eu cludo yma ar fysiau. Roedd y rhaglen blant Gymraeg hynod boblogaidd, Ffalabalam – a'i setiau hardd, yn llawn tai bach a theganau – yn cael ei gwneud yma hefyd.</p> 
+<p>Roedden nhw’n creu rhaglenni cerddoriaeth, sioeau sgwrsio a chwisiau, gyda chynulleidfaoedd yn cael eu cludo yma ar fysiau. Roedd y rhaglen blant Gymraeg hynod boblogaidd, Ffalabalam – a'i setiau hardd, yn llawn tai bach a thegannau – yn cael ei gwneud yma hefyd.</p> 
   <</append>>
 <</timed>>
 
 
-<<timed 29s>>
+<<timed 27s>>
     <<append "#msgMount">>
 <div class="quote"><p class="bold">“Ac roedd Ffalabalam yn rhaglen blant hollol charming. Roedd hi’n, roedd hi’n biwt o raglen a dydw i ddim yn gwybod pam ddaeth hi i ben a dweud y gwir. Pentre bach fel ’se rhywun yn dychmygu’r ‘miniature villages’ ’ma fel, ti’n gwybod, ma’ rhywun yn eu cael nhw yn y Cotswolds ac ati. Roedd y set yn anhygoel, hefo doliau a thedis a dweud y gwir, nhw oedd y cymeriadau, heblaw bod ni fel cyflwynwyr yn rhyw fath o’u deall nhw’n siarad, er bod nhw ddim yn dweud dim byd felly, ac yn cyfleu’r rhaglen drwy hynny.”</p></div>
   <</append>>
@@ -2476,7 +2427,7 @@ When you are ready to move on, let me know.
 <</timed>>
 <<timed 27s>>
     <<append "#msgMount">>
-<p>Thanks Loz. When HTV left in the 1990s, it transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme by schools called TYP – Theatre for Young People. That’s what I know this room as mostly – many hours practicing lines, dance numbers, quick costume changes...</p>
+<p>Thanks Loz. When HTV left in the 1990s, it transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme for schools called TYP – Theatre for Young People. That’s what I know this room as mostly – many hours practicing lines, dance numbers, quick costume changes...</p>
 <</append>>
 <</timed>>
 <<timed 47s>>
@@ -2575,8 +2526,8 @@ When you are ready to move on, let me know.
   <!-- Orientation gate -->
   <div class="orientation-warning" id="orientationWarning">
     <p>Please rotate your device to <strong>landscape</strong> to watch the video.</p>
-    
-    <<link "Ignore and show anyway">>
+   
+    <<button "Ignore and show anyway">>
       <<replace "#orientationWarning">>
         <div class="inline-accented-vid">
 
@@ -2591,8 +2542,8 @@ When you are ready to move on, let me know.
           </div>
         </div>
       <</replace>>
-    <</link>>
-
+    <</button>>
+ <br/> <br/>
   </div>
 
   <!-- Vimeo Embed (default hidden unless landscape) -->
@@ -2633,8 +2584,8 @@ When you are ready to move on, let me know.
   <div class="orientation-warning" id="orientationWarning">
     <p>Trowch eich dyfais i <strong>dirwedd</strong> i wylio'r fideo.
 </p>
-    
-    <<link "Anwybyddu a dangos beth bynnag">>
+  
+    <<button "Anwybyddu a dangos beth bynnag">>
       <<replace "#orientationWarning">>
         <div class="inline-accented-vid">
 
@@ -2649,8 +2600,8 @@ When you are ready to move on, let me know.
           </div>
         </div>
       <</replace>>
-    <</link>>
-
+    <</button>>
+  <br/>
   </div>
 
   <!-- Vimeo Embed (default hidden unless landscape) -->
@@ -2702,7 +2653,7 @@ When you are ready to move on, let me know.
    <<append "#msgMount">>
 <p>Next, we are off to one of the hidden gems of Theatr Clwyd. </p>
 
-<p>I’ll lead you there – first up head back to the bar. </p>
+<p>I’ll lead you there – first head up back to the bar. </p>
   <</append>>
 <</timed>>
 
@@ -2755,27 +2706,15 @@ When you are ready to move on, let me know.
 :: 26_story-text-eng [nobr]
 <<timed 0.1s>>
    <<append "#msgMount">>
-<div class="quote">
-    <p>"Walked out and he was just sitting there on his own. </p>
-    <p>He's reading a book. And I said, Congratulations on becoming James Bond. He said thank you very much. That was it!"</p>
-</div>
- <</append>>
-<</timed>>
-<<timed 8s>>
-   <<append "#msgMount">>
-<p class="bold">Phillip Jones must have met Timothy Dalton too, who performed in two Shakespeare plays here in 1986. Bond, James Bond! </p>
- <</append>>
-<</timed>>
-<<timed 18s>>
-   <<append "#msgMount">>
-<p>Head to the lift and select Level 2. </p>
+
+<p class="bold">Head to the lift and select Level 2. </p>
 
 <p>You can take the stairs if you’d prefer. </p>
 <p>Just let me know when you are there.</p>
  <</append>>
 <</timed>>
 
-<<timed 25s>>
+<<timed 6s>>
     <<append "#btnContainer">>
     <<button "We’re on Level 2">>
             <<goto $nextpass>>
@@ -2787,20 +2726,7 @@ When you are ready to move on, let me know.
 :: 26_story-text-cym [nobr]
 <<timed 0.1s>>
    <<append "#msgMount">>
-<div class="quote">
-    <p>“Fe wnes i gerdded allan ac roedd o’n eistedd yno ar ei ben ei hun. </p>
-<p>Roedd o’n darllen llyfr. Ac fe wnes i ddweud, Llongyfarchiadau ar ddod yn James Bond. Fe ddywedodd o diolch yn fawr iawn. A dyna ni!”</p>
 
-</div>
- <</append>>
-<</timed>>
-<<timed 8s>>
-   <<append "#msgMount">>
-<p class="bold">Mae’n rhaid bod Phillip Jones wedi cyfarfod Timothy Dalton hefyd, a berfformiodd mewn dwy ddrama Shakespeare yma ym 1986. Bond, James Bond! </p>
- <</append>>
-<</timed>>
-<<timed 19s>>
-   <<append "#msgMount">>
 <p>Ewch i’r lifft a dewis Lefel 2.</p>
 <p>Fe allwch chi fynd i fyny’r grisiau os yw’n well gennych chi.</p>
 <p>Rhowch wybod i mi pan fyddwch chi yno</p>
@@ -2808,7 +2734,7 @@ When you are ready to move on, let me know.
  <</append>>
 <</timed>>
 
-<<timed 27s>>
+<<timed 8s>>
     <<append "#btnContainer">>
     <<button "Rydyn ni ar Lefel 2">>
             <<goto $nextpass>>
@@ -2987,7 +2913,7 @@ When you are ready to move on, let me know.
 <</timed>>
 <<timed 33s>>
    <<append "#msgMount">>
-<div class="quote"><p>“So the paint frame really is just sort of hardwood battens that are attached to the back wall of the paint shop. And it's a bit like the way that an artist would stretch canvas onto a wooden frame, but in a really massive way.”</p></div>
+<div class="quote"><p>“The paint frame really is just sort of hardwood battens that are attached to the back wall of the paint shop. And it's a bit like the way that an artist would stretch canvas onto a wooden frame, but in a really massive way.”</p></div>
 <p>These canvases – they form the backdrops to shows. </p>
 <p>They frame the stories told on Theatr Clwyd’s stages – they conjure new realities. </p>
   <</append>>
@@ -3110,23 +3036,23 @@ When you are ready to move on, let me know.
 <</timed>>
 <<timed 15s>>
    <<append "#msgMount">>
-<p>There are indeed paint stains everywhere, Angharad – and if you think, each dash of paint in here will have been made as part of a production or event to connect with someone. My favourite part is the sink – it is absolutely covered in paint – Layer upon layer. It’s a work of art. </p>
+<p>There are indeed paint stains everywhere, Angharad – and if you think, each dash of paint in here will have been made as part of a production or event to connect with someone.  </p>
 <</append>>
 <</timed>>
-<<timed 33s>>
+<<timed 26s>>
    <<append "#msgMount">>
 <p>Talking about works of art, let’s see some that have been made here. </p>
 <</append>>
 <</timed>>
-<<timed 37s>>
+<<timed 30s>>
    <<append "#msgMount">>
 <p>You might notice a long piece of fabric on the balcony – this was made on the paint frame and designed by Adrian Gee. </p>
 
 <p>Head over to it. </p>
-<p>When you’re there, I’ve got a clip of Katy explaining what you have in front of you</p>
+<p>When you’re there, I’ve got a clip of Katy explaining what you have in front of you.</p>
 <</append>>
 <</timed>>
-<<timed 51s>>
+<<timed 43s>>
     <<append "#btnContainer">>
     <<button "We're next to the fabric">>
             <<goto $nextpass>>
@@ -3144,16 +3070,16 @@ When you are ready to move on, let me know.
 <</timed>>
 <<timed 14s>>
    <<append "#msgMount">>
-<p>Oes wir, mae staeniau paent ym mhobman, Angharad – ac os gwnewch chi feddwl, mae pob sblash o baent yma wedi'i wneud fel rhan o gynhyrchiad neu ddigwyddiad i gysylltu â rhywun. Fy hoff ran i yw'r sinc – mae wedi'i gorchuddio'n llwyr â phaent – ​​haen ar haen. Mae'n waith celf. </p>
+<p>Oes wir, mae staeniau paent ym mhobman, Angharad – ac os gwnewch chi feddwl, mae pob sblash o baent yma wedi'i wneud fel rhan o gynhyrchiad neu ddigwyddiad i gysylltu â rhywun.  </p>
 <</append>>
 <</timed>>
-<<timed 32s>>
+<<timed 24s>>
    <<append "#msgMount">>
 <p>A gan ein bod ni’n siarad am weithiau celf, beth am i ni weld rhai sydd wedi cael eu gwneud yma. 
  </p>
 <</append>>
 <</timed>>
-<<timed 37s>>
+<<timed 30s>>
    <<append "#msgMount">>
 <p>Efallai eich bod chi wedi sylwi ar ddarn hir o ffabrig ar y balconi – fe gafodd hwn ei wneud ar y ffrâm baentio a'i ddylunio gan Adrian Gee.  </p>
 
@@ -3162,7 +3088,7 @@ When you are ready to move on, let me know.
 
 <</append>>
 <</timed>>
-<<timed 51s>>
+<<timed 44s>>
     <<append "#btnContainer">>
     <<button "Rydyn ni’n mynd at y ffabrig nesaf">>
             <<goto $nextpass>>
@@ -3181,7 +3107,7 @@ When you are ready to move on, let me know.
       /% CODEWORD CORRECT%/
       <<if $codeword is "4" or $codeword is "FOUR" or $codeword is "5" or $codeword is "FIVE">>
         <<replace "#coderesult">><span>Correct!</span><</replace>>
-        /* <<audio "correct" play>> */
+        <<audio "success" play>>
 
         <<timed 3s>><<goto "completed3">><</timed>>
       <</if>>
@@ -3213,7 +3139,7 @@ When you are ready to move on, let me know.
       /% CODEWORD CORRECT%/
       <<if $codeword is "4" or $codeword is "PEDWAR" or $codeword is "5" or $codeword is "PUMP">>
         <<replace "#coderesult">><span>Gywir!</span><</replace>>
-        /* <<audio "correct" play>> */
+        <<audio "success" play>>
 
         <<timed 3s>><<goto "completed3">><</timed>>
       <</if>>
@@ -3325,13 +3251,11 @@ When you are ready to move on, let me know.
 <<include "_templateStory">>
 
 :: 34_story-text-eng [nobr]
-<p class="bold">I was in that panto – it was directed by Tamara Harvey and I played Nana Nerys from Nercwys! </p>
-
-<p>Beyond the paintframe is the workshop, where the props and sets are made. </p>
+<p class="bold">Beyond the paintframe is the workshop, where the props and sets are made. </p>
 <p>Head to the other side of the balcony to see what’s going on.</p>
 
 
-<<timed 13s>>
+<<timed 7s>>
     <<append "#btnContainer">>
     <<button "We're here">>
             <<goto $nextpass>>
@@ -3342,9 +3266,7 @@ When you are ready to move on, let me know.
 
 :: 34_story-text-cym [nobr]
 
-<p class="bold">Roeddwn i yn y panto hwnnw – fe gafodd ei gyfarwyddo gan Tamara Harvey ac roeddwn i'n chwarae rhan Nana Nerys o Nercwys!</p> 
-
-<p>Heibio'r ffrâm baentio mae'r gweithdy, lle mae'r props a'r setiau'n cael eu gwneud.</p>
+<p class="bold">Heibio'r ffrâm baentio mae'r gweithdy, lle mae'r props a'r setiau'n cael eu gwneud.</p>
 <p>Ewch i ochr arall y balconi i weld beth sy'n digwydd.</p>
 
 
@@ -3377,7 +3299,7 @@ When you are ready to move on, let me know.
 <<timed 21s>>
    <<append "#msgMount">>
 <p class="bold">One minute - that's me! </p>
-<p>One minute – that’s me! That’s my memory – perhaps I’m part of Theatr Clwyd’s history too? </p>
+<p>That’s my memory – perhaps I’m part of Theatr Clwyd’s history too? </p>
 <p>I suppose I am! </p>
     <</append>>
 <</timed>>
@@ -3433,7 +3355,7 @@ When you are ready to move on, let me know.
 <<timed 0.1s>>
    <<append "#msgMount">>
 <p class="bold">There’s something special back here – sometimes overlooked. </p>
-<p>The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else –  Our pantos are like nothing else – </p>
+<p>The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else - </p>
     <</append>>
 <</timed>>
 <<timed 36s>>
@@ -3456,7 +3378,7 @@ When you are ready to move on, let me know.
 <</timed>>
 <<timed 44s>>
    <<append "#msgMount">>
-<div class="quote"><p>"We come every year to the panto - ten of us now with grandchildren and we love it."</p>
+<div class="quote"><p>"We come every year to the panto - ten of us now in the family with grandchildren and we love it."</p>
 </div>
     <</append>>
 <</timed>>
@@ -3626,9 +3548,8 @@ When you are near the stairs let me know. </p>
    <</append>>
 <</timed>>
 
-<<timed 42s>>
+<<timed 43s>>
    <<append "#msgMount">>
-<p>Wow. That’s... just wow. </p>
 <p>Thanks Phillip Jones. </p>
    <</append>>
 <</timed>>
@@ -3656,14 +3577,14 @@ When you are near the stairs let me know. </p>
    <</append>>
 <</timed>>
 
-<<timed 43s>>
+<<timed 44s>>
    <<append "#msgMount">>
-<p>Waw. Am... waw. </p>
+
 <p> Diolch Phillip Jones.</p>
    <</append>>
 <</timed>>
 
-<<timed 49s>>
+<<timed 45s>>
     <<append "#btnContainer">>
     <<button "Nesaf">>
             <<goto $nextpass>>
@@ -3683,27 +3604,22 @@ When you are near the stairs let me know. </p>
 :: 39_story-text-eng [nobr]
 <<timed 0.1s>>
    <<append "#msgMount">>
-<p class="bold">It’s the spark – that’s the thing here – a possibility, right? </p>
-<p>Hours upon hours are spent painting backdrops to create Hours upon hours are spent painting backdrops and constructing sets to create doors to new realities. <br>
-But it’s not just new worlds on stage, it’s new possibilities everywhere. </p>
-
-<p>Come on, let’s go. It’s time to enter Theatr Moondance</p>
+<p class="bold">Come on, let’s go. It’s time to enter Theatr Moondance</p>
     <</append>>
 <</timed>>
 
-<<timed 17s>>
+<<timed 5s>>
    <<append "#msgMount">>
-<p> With the stairs on your left, head to the end of the corridor.<br>
-Past the writers library on your right, Drws C is on your left.
+<p> With the stairs on your left, head to the end of the corridor.
 </p>
 
-<p>There are two sets of doors – we need the ones on the left under the Drws C sign. <br>
+<p>There are two sets of doors – we need the ones on the left under the Drws C sign. <br/>
     You’ll need your keycard to go through the door.
 </p>
     <</append>>
 <</timed>>
 
-<<timed 40s>>
+<<timed 19s>>
     <<append "#btnContainer">>
     <<button "We're through">>
             <<goto $nextpass>>
@@ -3715,20 +3631,16 @@ Past the writers library on your right, Drws C is on your left.
 :: 39_story-text-cym [nobr]
 <<timed 0.1s>>
    <<append "#msgMount">>
-<p class="bold">Y sbarc sy’n bwysig – dyna’r peth yma – posibilrwydd. </p>
-<p>Mae oriau ac oriau’n cael eu treulio’n paentio cefnlenni ac yn adeiladu setiau i greu drysau i realiti newydd. <br/>
-
-Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </p>
+<p class="bold">Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </p>
 
 <p>Dewch, i ffwrdd â ni. Mae’n amser mynd i mewn i Theatr Moondance.
 </p>
     <</append>>
 <</timed>>
 
-<<timed 24s>>
+<<timed 10s>>
    <<append "#msgMount">>
-<p>Gyda’r grisiau ar y dde i chi, ewch i ben draw’r coridor. </p>
-<p>Heibio llyfrgell yr awduron ar y dde i chi a Drws C ar y chwith.</p>
+<p>Gyda’r grisiau ar y chwith, ewch i ben draw’r coridor. </p>
 
 <p>Mae dwy set o ddrysau – y rhai ar y chwith fyddwn ni’n mynd drwyddyn nhw. </p>
 <p>Bydd rhaid i chi gael eich cerdyn allwedd i fynd drwy’r drws.</p>
@@ -3736,7 +3648,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
     <</append>>
 <</timed>>
 
-<<timed 42s>>
+<<timed 23s>>
     <<append "#btnContainer">>
     <<button "Rydyn ni drwodd">>
             <<goto $nextpass>>
@@ -3807,15 +3719,15 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <p>Sorry, I couldn't resist.</p>
 <p>Every seat in the theatre – not just this one – has a brilliant view. That care was built into its design. </p>
 
-<p>You might notice the amazing red tiles which line the walls. They have beautiful curved edges, and look almost like bricks. I love looking out at them when I’m on stage. They’ve been here since day one, and they’re one of the things that give this space its special acoustic, bouncing sound around the room.</p>
+<p>You might notice the amazing red tiles which line the walls. They have beautiful curved edges, and look almost like bricks. They’ve been here since day one, and they’re one of the things that give this space its special acoustic, bouncing sound around the room.</p>
   <</append>>
 <</timed>>
-<<timed 56s>>
+<<timed 53s>>
    <<append "#msgMount">>
 <p>Ooh, look! There's one of them here for you to touch.</p>
   <</append>>
 <</timed>>
-<<timed 59s>>
+<<timed 56s>>
     <<append "#btnContainer">>
     <<button "I've touched the tile">>
             <<goto $nextpass>>
@@ -3838,17 +3750,17 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <p>Sori - fi ffili peidio!</p>
 <p>Mae gan bob sedd yn y theatr olygfa wych. Fe gafodd hynny ei sicrhau fel rhan o’r dyluniad.</p>
 
-<p>Efallai eich bod chi wedi sylwi ar y teils coch ar y waliau. Mae ganddyn nhw ymylon crwm hardd ac maen nhw'n edrych fel brics bron. Rydw i wrth fy modd yn edrych allan arnyn nhw pan rydw i ar y llwyfan. Maen nhw wedi bod yma ers y diwrnod cyntaf, ac maen nhw'n un o'r pethau sy'n rhoi sain acwstig unigryw i'r gofod yma gyda bowns arbennig o amgylch yr ystafell.</p>
+<p>Efallai eich bod chi wedi sylwi ar y teils coch ar y waliau. Mae ganddyn nhw ymylon crwm hardd ac maen nhw'n edrych fel brics bron. Maen nhw wedi bod yma ers y diwrnod cyntaf, ac maen nhw'n un o'r pethau sy'n rhoi sain acwstig unigryw i'r gofod yma gyda bowns arbennig o amgylch yr ystafell.</p>
 
   <</append>>
 <</timed>>
-<<timed 67s>>
+<<timed 61s>>
    <<append "#msgMount">>
 <p>Oo, edrychwch! Mae un ohonyn nhw yma i chi ei chyffwrdd
 </p>
   <</append>>
 <</timed>>
-<<timed 70s>>
+<<timed 65s>>
     <<append "#btnContainer">>
     <<button "Rydw i wedi cyffwrdd â'r deilsen">>
             <<goto $nextpass>>
@@ -3900,19 +3812,19 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <<timed 71s>>
    <<append "#msgMount">>
 <div class="quote">
-<p>"I think as a child, I saw them as, like, like, a big bar of chocolate. I love that theatre because there are no bad seats. It's like a big hug. Everybody's in there together."</p>
+<p>"I think as a child, I saw them as, like, like, a big bar of chocolate. I love that theatre so much because there are no bad seats. It's like a big hug. Everybody's in there together."</p>
 </div>
   <</append>>
 <</timed>>
 
 <<timed 84s>>
    <<append "#msgMount">>
-<p>Catrin Aaron has gazed up at people in 35 productions here.  Her mum, a nurse, used to bring her here when she was little, from nearby Rhyl. She went on to work at the Royal Shakespeare Company.</p>
+<p>Catrin Aaron has gazed up at people in 35 productions here.  Her mum, a nurse, used to bring her here when she was little, from nearby Rhyl.</p>
 <p>Being part of Theatr Clwyd is like being part of a family. Let’s jump around the theatre to find people who can tell you more...</p>
   <</append>>
 <</timed>>
 
-<<timed 104s>>
+<<timed 100s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -3932,7 +3844,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <<timed 39s>>
    <<append "#msgMount">>
 <div class="quote">
-<p>“Mae'n ofod rhyfeddol… mae'n eich galluogi chi i wneud beth rydych chi eisiau ei wneud ag o, yn sonig, o ran sain.”</p>
+<p>“Mae'n ofod rhyfeddol... mae'n eich galluogi chi i wneud beth rydych chi eisiau ei wneud ag o, yn sonig, o ran sain.”</p>
 </div>
 
 <p>Hei, Tayo Akinbode! Cyfarwyddwr cerdd Panto. Athrylith. A phwy ydi hwn?</p>
@@ -3942,19 +3854,19 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <<timed 54s>>
    <<append "#msgMount">>
 <div class="quote">
-<p>"Roedd bob amser yn teimlo'n agos iawn. Roedd bob amser yn teimlo, os oeddech chi eisiau, ac os oeddech chi'n ddigon hyderus am yr hyn roeddech chi'n ei wneud, bod y gynulleidfa yng nghledr eich llaw chi. Yn acwstig hefyd. Yn lleisiol, roedd y theatr bob amser yn eithaf hawdd actio ynddi, o gymharu â chymaint o lefydd roeddwn i'n actio ynddyn nhw."
+<p>"Roedd bob amser y teimlad o agosatrwydd yna. Roedd wastad y teimlad os oedd yr hyder gyda chi yn beth oeddech chi’n wneud, fod y gynulleidfa gyda chi yng nghledr eich llaw. Ac yr acwstig hefyd yn lleisiol, roedd y theatr yn hawdd iawn ei chwarae o gymharu â lot fawr o theatrau rydw i wedi’u chwarae.  "
 </p>
 </div>
   <</append>>
 <</timed>>
 
-<<timed 70s>>
+<<timed 71s>>
    <<append "#msgMount">>
 <p>A! Steffan Rhodri! Efallai eich bod chi'n ei adnabod o fel un o sêr Gavin & Stacey. Mae wedi perfformio ar y llwyfan yma sawl gwaith ac rydw i’n cytuno, mae'r llwyfan a'r sain yn eich cysylltu chi â'r gynulleidfa - mae'n arbennig. </p>
   <</append>>
 <</timed>>
 
-<<timed 87s>>
+<<timed 88s>>
    <<append "#msgMount">>
 <div class="quote">
 <p>“Rydw i'n credu, fel plentyn, fy mod i’n eu gweld nhw fel, fel, bar mawr o siocled. Rydw i'n caru'r theatr yma oherwydd does dim seddi gwael. Mae fel cwtsh mawr. Mae pawb yno gyda'i gilydd.”</p>
@@ -3964,12 +3876,12 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 
 <<timed 100s>>
    <<append "#msgMount">>
-<p>Mae Catrin Aaron o’r Rhyl wedi ymddangos mewn 35 o gynyrchiadau yma. Roedd ei mam, nyrs, yn arfer dod â hi yma pan oedd hi'n fach. Fe aeth Catrin ymlaen i weithio gyda’r Royal Shakespeare Company.</p>
+<p>Mae Catrin Aaron o’r Rhyl wedi ymddangos mewn 35 o gynyrchiadau yma. Roedd ei mam, nyrs, yn arfer dod â hi yma pan oedd hi'n fach. </p>
 <p>Mae bod yn rhan o Theatr Clwyd fel bod yn rhan o deulu. Beth am i ni neidio o gwmpas y theatr i ddod o hyd i bobl fedr ddweud mwy wrthych chi...</p>
   <</append>>
 <</timed>>
 
-<<timed 122s>>
+<<timed 119s>>
     <<append "#btnContainer">>
     <<button "Nesaf">>
             <<goto $nextpass>>
@@ -4009,7 +3921,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
         <div class="story-text" id="msgMount"></div>
           <div class="btn-container" id="btnContainer">
             </div>
-        <<timed 4s>>
+        <<timed 3s>>
             <<include "content1">>
             <</timed>>
            
@@ -4037,7 +3949,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
     <</replace>>
    
 
-    <<timed 96s>>
+    <<timed 30s>>
         <<set $currentDot to 1>>
         <<replace "#btnContainer">>
             <<include "button1a">>
@@ -4067,8 +3979,6 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
         <</timed>>
     <</replace>>
          <</timed>>
-
-
     <<timed 67s>>
         <<set $currentDot to 2>>
          <<replace "#btnContainer">>
@@ -4076,6 +3986,9 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
             <</replace>>
     <</timed>>
  <</button>>
+
+/* footer button has logic in footer passage */
+ 
 
 :: button2[nobr]
 <<button $nxtBtnText>>
@@ -4106,6 +4019,9 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
             <</replace>>
     <</timed>>
  <</button>>
+
+
+
 :: button3 [nobr]
 <<button $nxtBtnText>>
    
@@ -4174,9 +4090,10 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
     <</link>>
    
-    <div><div/>
-<div><div/>
+    <div></div>
+    <div id="processingMount">
 
+</div> 
 </div>
 
 
@@ -4200,18 +4117,14 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
      <<append "#msgMount">>
 <div class="quote">
     <p>"The first time I performed on the main stage in Theatr Clwyd  was a Theatr Clwyd production of Toad, of Toad Hall, and I played a rat and I played a weasel, and it changed my life. </p>
- <p>Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn't really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn't believe that, just the warmth it felt like walking into sunshine. And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can't step in and with doubts, or with, you know, say, Oh, I don't want to do this. I'm tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it."</p>
+ <p>Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn't really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn't believe that, just the warmth it felt like walking into sunshine. </p>
+ <p>And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can't step in and with doubts, or with, you know, say, Oh, I don't want to do this. I'm tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it."</p>
  </div>
  <</append>>
 <</timed>>
 
 
- <<timed 86s>>
-     <<append "#msgMount">>
-    <p>I never knew his first performance was as a rat and a weasel!</p> 
-    <p>He definitely has felt that special relationship with the audience.</p>
- <</append>>
-<</timed>>
+
 
 :: 44_floorplan_story_cym [nobr]
 
@@ -4231,29 +4144,22 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
  <<timed 26s>>
      <<append "#msgMount">>
 <div class="quote">
-    <p>“Y tro cyntaf i mi berfformio ar y prif lwyfan yn Theatr Clwyd oedd cynhyrchiad Theatr Clwyd o Toad, of Toad Hall, ac roeddwn i'n chwarae rhan llygoden fawr a gwenci, ac fe newidiodd fy mywyd i. </p>
- <p>Roedd bod ar y llwyfan yn wych, oherwydd roeddwn i wrth fy modd â'r ffaith eich bod chi'n ymwybodol o aelodau'r gynulleidfa, ond ddim yn gallu eu gweld nhw mewn gwirionedd. Roeddwn i wrth fy modd â'r math o olau oedd arna’ i, nid yn yr ystyr ’mod i'n teimlo ’mod i'n cael fy ngweld. Doeddwn i ddim yn gallu credu’r peth, y cynhesrwydd, roedd yn teimlo fel cerdded i mewn i heulwen. A hefyd yr ymdeimlad pan rydych chi'n camu ar y llwyfan, eich bod chi'n rhoi rhywbeth ar waith, ac mae'n rhaid i chi adael iddo redeg ei gwrs. ​​Dwi’n gobeithio eich bod chi’n deall be sgen i, ’allwch chi ddim camu i mewn gydag amheuon, neu gyda, wel, chi’n gwybod, dweud, 'O, dydw i ddim eisiau gwneud hyn. Rydw i wedi blino.' Mae'n rhaid i chi bron… roedd yn… mynd gyda'r llif. Ac roedd raid i chi, roedd raid i chi ildio i ddifrifoldeb y gynulleidfa a'r berthynas honno rhyngoch chi a hi.”</p>
+    <p>“Y tro cyntaf erioed i mi berfformio ar y prif lwyfan yn Theatr Clwyd oedd mewn cynhyrchiad cwmni Theatr Clwyd o Toad of Toad Hall ac mi wnes i chwarae llygoden fawr a fferet ac mi wnaeth o newid fy mywyd i. Roedd cael bod ar y llwyfan yn deimlad anhygoel. Roeddwn i’n caru’r ffaith fy mod i rywsut yn ymwybodol o’r gynuellidfa ond yn methu gweld nhw. Roeddwn i’n caru y golau oedd arnaf i, dim mewn ffordd lle roeddwn i’n teimlo ’mod i’n cael fy ngweld, o’n i jyst yn caru cynhesrwydd ac intenstity’r goleuni yna. Roedd o fatha cerdded mewn i olau dydd. </p>
+ <p>Mae ’na ryw deimlad visceral iawn pan mae rhywun yn cerdded ar y llwyfan o yr anochel fod hyn sydd yn mynd i ddigwydd yn mynd i ddigwydd ac mae’n rhaid i ti adael iddo fo redeg ei gwrs. Rhoi i mewn i’r ddrama neu’r perfformiad. Fedri di ddim cerdded ’mlaen yn meddwl o na, na, na, ’dwi ddim eisiau gwneud hyn, ’dwi wedi blino. Mae’n rhaid i ti fynd efo’r llif rywsut a rhoi mewn i ddisgyrchiant y gynulleidfa a’r berthynas rhyngddat ti a’r gynulleidfa.”</p>
  </div>
  <</append>>
 <</timed>>
 
 
- <<timed 93s>>
-     <<append "#msgMount">>
-   <p>Doeddwn i ddim yn gwybod mai fel llygoden fawr a gwenci oedd ei berfformiad cyntaf!</p>
-  <p>  Mae e’n bendant wedi teimlo'r berthynas arbennig honno gyda'r gynulleidfa.</p>
- <</append>>
-<</timed>>
 
 :: 45_floorplan_story [nobr]
 <<timed 0.1s>>
 <<replace "#audioMount">>
         <audio id="audioPlayer" src="assets/audio/TC_45.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
-     
-
+    
      <<append "#msgMount">>
-        <p class="bold">And we have another one coming through.</p>
+
 <div class="quote">
 <p>The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.</p>
 
@@ -4266,6 +4172,36 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
      <<append "#msgMount">>
 <p>That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. </p>
  <</append>>
+<</timed>>
+
+ <<timed 0.1s>>
+    <<replace "#processingMount">>
+           <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
+    <<replace "#btnContainer">><</replace>>
+    <<replace "#msgMount">><</replace>>
+
+     <<timed 1s>>
+            <<audio "ping" "play">>
+    <<replace "#btnContainer">><</replace>>
+     <<addclass ".dot2" "story-dot green-dot pulse-dot">>
+    <<replace "#msgMount">>
+     <<timed 0.1s>>
+            <<if $userchoices.language is "cymraeg">>
+                      <<include '46_floorplan_story_cym'>>
+            <<elseif $userchoices.language is "english" >>
+                 <<include '46_floorplan_story'>>
+            <</if>>
+        <</timed>>
+    <</replace>>
+         <</timed>>
+
+    <<timed 35s>>
+        <<set $currentDot to 3>>
+        <<replace "#btnContainer">>
+            <<include "button3">>
+            <</replace>>
+    <</timed>>
+        <</replace>>
 <</timed>>
 
 
@@ -4288,6 +4224,8 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <p>Isabella Colby Browne oedd hi – actores arall o’r Wyddgrug – fe berfformiodd hi am y tro cyntaf mewn cynhyrchiad o Oliver ar y llwyfan pan oedd hi’n 15 oed. Diolch i grŵp o’r enw Cwmni 25, sy’n cael ei gynnal gan Gwennan Mair Jones, fe aeth hi ymlaen i berfformio yn y Gymraeg a’r Saesneg! Da iawn Isabella. </p>
  <</append>>
 <</timed>>
+
+
 
 :: 46_floorplan_story [nobr]
 <<replace "#audioMount">>
@@ -4385,7 +4323,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
       /% CODEWORD CORRECT FOR CHATHAM STORIES%/
       <<if $codeword isnot "" and $codeword is "MAGS">>
         <<replace "#coderesult">><span>Gywir!</span><</replace>>
-        /* <<audio "correct" play>> */
+        <<audio "success" play>>
 
         <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
@@ -4417,7 +4355,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
       /% CODEWORD CORRECT FOR CHATHAM STORIES%/
       <<if $codeword isnot "" and $codeword is "MAGS">>
         <<replace "#coderesult">><span>Correct!</span><</replace>>
-        /* <<audio "correct" play>> */
+        <<audio "success" play>>
 
         <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
@@ -4455,7 +4393,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 
 <p>And when Mags was with me up here, they treated Mags like one of the cast. Everybody knew Mags and she used to support all the cast as well, and everybody just loved seeing Mags there. So I want to thank everybody that’s gone out of their way to make me comfortable, knowing that Mags was in a safe environment and then able to do my job...</p>
 
-<p>One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Mags into the toilet, me dressed as Wonder Woman and her in her wheelchair, you know. And we were both laughing, you know.. And that's what you get. Whatever problems you've got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will."</p>
+<p>One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Mags into the toilet, me dressed as Wonder Woman and her wheelchair, you know. And we were both laughing, you know.. And that's what you get. Whatever problems you've got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will."</p>
 </div>
 <br/>
   <</append>>
@@ -4491,7 +4429,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
 <br/>
   <</append>>
 <</timed>>
-<<timed 70s>>
+<<timed 72s>>
    <<append "#msgMount">>
 <p class="bold">A dyna’r hud.</p>
   <</append>>
@@ -4595,14 +4533,8 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
  <</append>>
 <</timed>>
 
-<<timed 109s>>
-    <<append "#msgMount">>
-<div class="quote"><p>“The staff were so patient and kind to all the members with disabilities, and everyone else too..it gave us that, that lift-off really..."</p></div>
-<p>That’s Catherine Pugh, who co-founded the musical theatre group, Buzz-Ah. The group developed a variety of skills for disabled and non-disabled people and staged lots of productions in our main theatre...</p>
- <</append>>
-<</timed>>
 
-<<timed 134s>>
+<<timed 109s>>
     <<append "#msgMount">>
 <p>And this is Tamara Harvey, she was Theatr Clwyd’s artistic director from 2015 to 2022. She went on to be Co-Artistic director at the Royal Shakespeare Company.  </p>
 
@@ -4613,10 +4545,9 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. </
  <</append>>
 <</timed>>
 
-<<timed 179s>>
+<<timed 154s>>
     <<append "#msgMount">>
-<p>Theatr Clwyd is not one thing. </p>
-<p>A group of people stood on the hill, and then another group of people stood on a hill, and then another. They all imagined a better world, and with Theatr Clwyd they made it. Theatr Clwyd doesn’t exist because a group of people imagined, but because people kept on imagining, and will keep on imagining too...</p>
+<p>Theatr Clwyd doesn’t exist because a group of people imagined, but because people kept on imagining, and will keep on imagining too...</p>
 
 <p>That’s the real magic of Theatr Clwyd. <br>
 Where new realities are imagined, crafted and created. <br>
@@ -4625,7 +4556,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
  <</append>>
 <</timed>>
 
-<<timed 232s>>
+<<timed 190s>>
     <<append "#btnContainer">>
     <<button "Next">>
             <<goto $nextpass>>
@@ -4669,21 +4600,16 @@ a phenderfynu gwneud y byd yn lle hapusach.
  <</append>>
 <</timed>>
 
-<<timed 85s>>
+<<timed 84s>>
     <<append "#msgMount">>
-<div class="quote"><p>“Theatr Clwyd... i mi, yn bersonol, mae bob amser wedi rhoi dewrder tawel i mi ac wedi fy atgoffa i o hynny. Ac rydw i'n credu, ar ei gorau, mai dyna beth mae'n ei wneud i gynulleidfa hefyd. Ym mhob ffurf, mae yna bob amser elfen ohono fo sy'n ymwneud â dewrder... Mae'n grymuso.”</p></div>
+<div class="quote"><p>“I mi’n bersonol mae Theatr Clwyd wastad wedi rhoi i mi a fy atgoffa i o ryw ddewrder distaw. Ac rydw i’n meddwl, ar ei orau, dyna be mae o’n roi i gynulleidfa hefyd yn ei ffurfiau i gyd. Mae yna wastad elfen sy’n ymwneud â rhyw fath o ddewrder distaw ac mae hyn’na yn grymuso’r actor a’r gynulleidfa.”</p></div>
 <p>Dyna Rhys eto.</p>
  <</append>>
 <</timed>>
 
-<<timed 113s>>
-    <<append "#msgMount">>
-<div class="quote"><p>“Roedd y staff mor amyneddgar a charedig, gyda'r holl aelodau ag anableddau, a phawb arall hefyd... roedd yn rhoi hynny i ni, yr hwb hwnnw mewn gwirionedd...”p></div>
-<p>Geiriau Catherine Pugh, a gydsefydlodd y grŵp theatr gerdd, Buzz-Ah. Fe ddatblygodd y grŵp amrywiaeth o sgiliau ar gyfer pobl anabl a phobl heb anabledd a llwyfannu llawer o gynyrchiadau yn ein prif theatr ni...</p>
- <</append>>
-<</timed>>
 
-<<timed 140s>>
+
+<<timed 122s>>
     <<append "#msgMount">>
 <p>A dyma Tamara Harvey, hi oedd cyfarwyddwr artistig Theatr Clwyd rhwng 2015 a 2022. Fe aeth ymlaen i fod yn Gyd-gyfarwyddwr Artistig gyda’r Royal Shakespeare Company. </p>
 
@@ -4694,14 +4620,13 @@ a phenderfynu gwneud y byd yn lle hapusach.
  <</append>>
 <</timed>>
 
-<<timed 185s>>
+<<timed 170s>>
     <<append "#msgMount">>
-<p>Nid un peth yw Theatr Clwyd.</p>
-<p>Fe safodd grŵp o bobl ar y bryn, ac wedyn fe safodd grŵp arall o bobl ar fryn, ac wedyn un arall. Fe wnaethon nhw i gyd ddychmygu byd gwell, a gyda Theatr Clwyd fe wnaethon nhw greu’r byd hwnnw. Dydi Theatr Clwyd ddim yn bodoli oherwydd bod grŵp o bobl wedi dychmygu, ond oherwydd bod pobl wedi dal ati i ddychmygu, ac fe fyddan nhw’n parhau i ddychmygu hefyd...</p>
+<p> Dydi Theatr Clwyd ddim yn bodoli oherwydd bod grŵp o bobl wedi dychmygu, ond oherwydd bod pobl wedi dal ati i ddychmygu, ac fe fyddan nhw’n parhau i ddychmygu hefyd...</p>
  <</append>>
 <</timed>>
 
-<<timed 213s>>
+<<timed 180s>>
     <<append "#msgMount">>
 <p>Dyna wir hud Theatr Clwyd.</p>
 <p>Lle mae realiti newydd yn cael ei dychmygu, ei saernio a’i chreu.</p>
@@ -4711,7 +4636,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
  <</append>>
 <</timed>>
 
-<<timed 239s>>
+<<timed 207s>>
     <<append "#btnContainer">>
     <<button "Nesaf">>
             <<goto $nextpass>>

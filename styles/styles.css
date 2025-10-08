@@ -243,16 +243,29 @@ button:focus,
   justify-content: center
 }
 
-.footer-icons > a:first-child, .footer-icons > a:last-child {
+.footer-icons > a:first-child {
   width: 100%;
   justify-self: center;
   justify-content: flex-start;
   
 }
 
+.footer-icons > a:last-child, .footer-icons > #processingMount{
+  width: 100%;
+  display: flex;
+}
+
+.footer-icons > a:last-child, .footer-icons > #processingMount > a {
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  justify-content: flex-end;
+  
+}
 
 
-.footer-icons > a > img {
+
+.footer-icons > a > img ,  .footer-icons > #processingMount > a > img{
   width: 2rem;
 }
 
@@ -581,8 +594,8 @@ font-size: 35px;
 .info-container {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
 }
 
 .info-container img {
@@ -598,7 +611,11 @@ font-size: 35px;
 opacity: 1;
 }
 
-
+/* Completed  */
+main.landing.complete{
+  text-align: center;
+  height: initial;
+ }
 
 
 /* Processing image: spin for 3s then fade out */
@@ -806,7 +823,7 @@ opacity: 1;
 .orientation-warning {
   display: block;
   text-align: center;
-  padding: 2rem;
+
   font-size: 1.2rem;
   border-radius: 1rem;
 
@@ -1091,7 +1108,7 @@ header.standard> .title-wrapper > h2 {
 .footer-icons {
 padding: 2rem
 }
-.footer-icons > a > img {
+.footer-icons > a > img ,  .footer-icons > #processingMount > a > img{
   width: 2.5rem;
 }
 

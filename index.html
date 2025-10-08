@@ -316,9 +316,16 @@ setup.addPlaceholderCym = () => {
     &lt;&lt;/link&gt;&gt;
     &lt;&lt;link [img[assets/img/replay-sharp-b.png][$pass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-     &lt;&lt;link [[$nextpass]]&gt;&gt;
+    &lt;&lt;if $pass isnot &quot;56_story&quot;&gt;&gt;
+    &lt;div id=&quot;processingMount&quot;&gt;
+    &lt;&lt;link [img[assets/img/for-sharp-b.png][$nextpass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
-&lt;div id=&quot;processingMount&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt; 
+    &lt;&lt;else&gt;&gt;
+         &lt;div id=&quot;processingMount&quot;&gt;
+ 
+    &lt;/div&gt; 
+    &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="navbuttonstext" tags="nobr" position="725,100" size="100,100">&lt;div class=&quot;nav-btn-container btn-container&quot;&gt;
  &lt;&lt;button &quot;Back&quot;&gt;&gt;
@@ -360,6 +367,7 @@ setup.addPlaceholderCym = () => {
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 
 &lt;main&gt;
+&lt;br/&gt;&lt;br/&gt;
     &lt;&lt;button &quot;Studio is open&quot;&gt;&gt;
         &lt;&lt;set $studio to &quot;open&quot;&gt;&gt;
         &lt;&lt;goto $nextpass&gt;&gt;
@@ -554,7 +562,7 @@ setup.addPlaceholderCym = () => {
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;But I’m best known for Theatr Clwyd’s rock and roll pantos – playing the Dame.&lt;/p&gt;
 
-&lt;p&gt;One minute – let me summon her up... “Hiya - Looking lush, loves!” There she is!&lt;/p&gt;
+&lt;p&gt;One minute – let me summon her up for you... “Hiya - Looking lush, loves!” There she is!&lt;/p&gt;
 
 &lt;p&gt;Now I’m here today as I have been asked to be the voice of this heritage tour – called ‘Real Magic’...&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
@@ -584,7 +592,7 @@ setup.addPlaceholderCym = () => {
 
 &lt;p&gt;Phyl ydw i, actor sydd wedi bod yn dod i’r theatr fendigedig yma ers blynyddoedd.&lt;/p&gt;
 
-&lt;p&gt;Rydw i wedi bod mewn dramâu fel Little shop of horrors, The Government Inspector.&lt;/p&gt;
+&lt;p&gt;Rydw i wedi bod mewn dramâu fel Little Shop of Horrors, The Government Inspector.&lt;/p&gt;
 
 &lt;p&gt;Efallai eich bod chi wedi gweld Bottom fi – yn Shakespeare, wrth gwrs!&lt;/p&gt; &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -601,7 +609,7 @@ setup.addPlaceholderCym = () => {
  &lt;&lt;timed 37s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Dydw i ddim yn hollol siŵr beth mae ‘Hud Go Iawn’ yn ei olygu, ond fe fyddwn ni’n dod i wybod gyda’n gilydd rwy’n siŵr.&lt;/p&gt;
-&lt;p&gt;Adderchog!  &lt;/p&gt;
+&lt;p&gt;Ardderchog!  &lt;/p&gt;
 
 &lt;p&gt;Ond i ddechrau, beth am i ni wneud yn siŵr bod pawb – gan gynnwys fi fy hun – yn deall sut bydd y daith yma’n gweithio.
 &lt;/p&gt;
@@ -684,8 +692,8 @@ setup.addPlaceholderCym = () => {
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;p class=&quot;bold&quot;&gt;
     Ah! And it appears we’ll hear voices from others connected to Theatr Clwyd on the way. &lt;/p&gt;
-    &lt;p&gt;  That voice was Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! &lt;/p&gt;
-    &lt;p&gt;I’ll give context on whoever pops up – I’ve been coming here for over 30 years, so I do know a few people. &lt;/p&gt;
+    &lt;p&gt;That&#39;s the voice of Patric Gilchrist, chief executive in the 1990s, when I was first here as a young actor. Lovely man! &lt;/p&gt;
+    &lt;p&gt;I’ll give context on whoever else pops up – I’ve been coming here for over 30 years, so I do know a few people. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 28s&gt;&gt;
@@ -719,7 +727,7 @@ setup.addPlaceholderCym = () => {
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 31s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-    &lt;p&gt;Lawn - rydw i&#39;n meddwl ein bod ni&#39;n gwybod digon i fwrw ymlaen.  &lt;/p&gt;
+    &lt;p&gt;Iawn - rydw i&#39;n meddwl ein bod ni&#39;n gwybod digon i fwrw ymlaen.  &lt;/p&gt;
     &lt;p&gt;Felly, beth am i ni ddechrau.&lt;/p&gt;
       &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -752,7 +760,7 @@ setup.addPlaceholderCym = () => {
 &lt;&lt;timed 37s&gt;&gt;
   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
-&lt;p&gt;“And as the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” &lt;/p&gt;
+&lt;p&gt;&quot;As the architects explained to me... most buildings in urban areas, the site is constrained in some way. But there was this site at the top of the hill... there was nothing to constrain the size or the architectural design of the theatre.” &lt;/p&gt;
 &lt;/div&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -835,23 +843,18 @@ Heb Haydn Rees ni fyddai stori Theatr Clwyd yn bodoli i&#39;w hadrodd – felly 
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 8s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-    &lt;p&gt;Ooh... now we’re talking. &lt;/p&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 11s&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;p&gt;It seems I can get you backstage access – you just need to pick up a keycard from one of the lovely front-of-house team. &lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 18s&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;p&gt;Go to the Welcome Desk, and tell them &lt;b&gt;‘Phyl sent me’&lt;/b&gt;.&lt;/p&gt;
     &lt;p&gt;They’ll know what to do. &lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 20s&gt;&gt;
+&lt;&lt;timed 21s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We’ve got the keycard&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -868,25 +871,19 @@ Heb Haydn Rees ni fyddai stori Theatr Clwyd yn bodoli i&#39;w hadrodd – felly 
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed 8s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-    &lt;p&gt;Www... Reit ... dyma ni.  &lt;/p&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 11s&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
     &lt;p&gt;Mae&#39;n debyg fy mod i’n gallu mynd â chi i gefn y llwyfan – y cyfan sydd raid i chi ei wneud ydi casglu cerdyn allwedd gan un o&#39;r bobl hyfryd yn y tîm.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 20s&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
    &lt;p&gt;Ewch i&#39;r Ddesg Groeso, a dweud &lt;b&gt;‘Mae Phyl wedi fy anfon i’&lt;/b&gt;.&lt;/p&gt;
 &lt;p&gt;Fe fyddan nhw&#39;n gwybod beth i&#39;w wneud.&lt;/p&gt;
 
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 26s&gt;&gt;
+&lt;&lt;timed 24s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Rydyn ni wedi cael y cerdyn allwedd&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -970,10 +967,8 @@ Pan rydych chi&#39;n barod, pwyswch am y lifft, neu ewch i fyny&#39;r grisiau.
 &lt;p&gt;I like this spot. From here, if you look up, you might be able to see the 70s cream tiles, which mark the outer wall of the original theatre. Where the old meets the new. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 14s&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;You might be a long time visitor here or this might be your first time – Theatr Clwyd has always been known for being welcoming to all. Well, that’s what my wife Mags always thought.  &lt;/p&gt;
-
 &lt;p&gt;The extension has more glass and lovely light. Move now towards the view – you can look out through the windows or go out to the balcony if you’d like.&lt;/p&gt;
 
 &lt;p&gt;Let me know when you’re facing the hills. &lt;/p&gt;
@@ -981,7 +976,7 @@ Pan rydych chi&#39;n barod, pwyswch am y lifft, neu ewch i fyny&#39;r grisiau.
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 38s&gt;&gt;
+&lt;&lt;timed 27s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;I’m looking out at the view&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -995,9 +990,8 @@ Pan rydych chi&#39;n barod, pwyswch am y lifft, neu ewch i fyny&#39;r grisiau.
 &lt;p&gt;Rydw i&#39;n hoffi&#39;r llecyn yma. O fan hyn, os edrychwch chi i fyny, efallai y byddwch chi&#39;n gallu gweld y teils hufen o’r 70au, sy&#39;n nodi wal allanol y theatr wreiddiol, Lle mae&#39;r hen yn cwrdd â&#39;r newydd. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 18s&gt;&gt;
+&lt;&lt;timed 17s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Efallai eich bod chi wedi bod yn ymweld â ni ers tro byd neu efallai mai dyma&#39;ch tro cyntaf chi - mae Theatr Clwyd wedi bod ag enw da erioed am fod yn groesawgar i bawb. Wel, dyna beth oedd fy ngwraig i, Mags, bob amser yn ei feddwl.&lt;/p&gt;
 
 &lt;p&gt;Mae gan yr estyniad fwy o wydr a golau hyfryd. Symudwch nawr tuag at yr olygfa – fe allwch chi edrych allan drwy&#39;r ffenestri neu gamu allan ar y balconi os ydych chi eisiau.&lt;/p&gt;
 
@@ -1006,7 +1000,7 @@ Pan rydych chi&#39;n barod, pwyswch am y lifft, neu ewch i fyny&#39;r grisiau.
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 47s&gt;&gt;
+&lt;&lt;timed 31s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Rydw i&#39;n edrych allan ar yr olygfa&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1128,19 +1122,19 @@ Pan rydych chi&#39;n barod, pwyswch am y lifft, neu ewch i fyny&#39;r grisiau.
 
 &lt;&lt;timed 11s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;They were looking up to the theatre and we are facing out to an incredible view.&lt;/p&gt;
-&lt;p&gt;Ahead there are the beautiful Clwydian hills, including their highest point, Moel Famau, to the right. The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. &lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;Ahead there are the beautiful Clwydian hills, including their highest point, Moel Famau, to the right. &lt;/p&gt;
+&lt;p&gt;The shops, stalls and streets of Mold town centre are about a mile away, tucked away into the land. &lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 29s&gt;&gt;
+&lt;&lt;timed 25s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;This is where the dream of Theatr Clwyd began. &lt;br/&gt;
 In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked at this view.   &lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 38s&gt;&gt;
+&lt;&lt;timed 34s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;They dreamt about how civic duty – society working together – could improve everyone’s wellbeing. They believed that the arts could really change local lives, could give people more. They imagined a building that would make that dream possible. &lt;/p&gt;
 
@@ -1157,7 +1151,7 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 66s&gt;&gt;
+&lt;&lt;timed 64s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1173,20 +1167,20 @@ In the late 1960s, Haydn Rees and his colleagues stood on this hill, and looked 
 
 &lt;&lt;timed 12s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Roedden nhw’n edrych i fyny at y theatr, ac rydyn ni’n wynebu golygfa anhygoel.&lt;/p&gt;
-&lt;p&gt;O’ch blaen chi mae bryniau hardd Clwyd, gan gynnwys eu copa uchaf, Moel Famau, i’r dde. Mae siopau, stondinau a strydoedd canol tref yr Wyddgrug tua milltir i ffwrdd, yn swatio yn y dirwedd. &lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;O’ch blaen chi mae bryniau hardd Clwyd, gan gynnwys eu copa uchaf, Moel Famau, i’r dde.&lt;p&gt;
+&lt;p&gt; Mae siopau, stondinau a strydoedd canol tref yr Wyddgrug tua milltir i ffwrdd, yn swatio yn y dirwedd. &lt;/p&gt;
 
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 32s&gt;&gt;
+&lt;&lt;timed 25s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Dyma ble dechreuodd breuddwyd Theatr Clwyd &lt;br/&gt;
 Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan edrych ar yr olygfa.  &lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 42s&gt;&gt;
+&lt;&lt;timed 36s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Fe wnaethon nhw freuddwydio am sut gallai dyletswydd ddinesig – cymdeithas yn gweithio gyda’i gilydd – wella lles pawb. Roedden nhw wir yn credu y gallai’r celfyddydau newid bywydau’r bobl leol, y gallen nhw roi mwy i bobl. Fe wnaethon nhw ddychmygu adeilad a fyddai’n gwneud y freuddwyd yn bosibl. &lt;/p&gt;
 
@@ -1204,7 +1198,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 76s&gt;&gt;
+&lt;&lt;timed 70s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1376,7 +1370,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
     &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
 /* &lt;&lt;addclass &quot;body&quot; &quot;maroon&quot;&gt;&gt; */
 &lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main class=&quot;landing flex-col-cen&quot;&gt;
+&lt;main class=&quot;landing flex-col-cen complete&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
@@ -1392,6 +1386,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
             &lt;/div&gt;
 &lt;/main&gt;
  &lt;&lt;timed 10s&gt;&gt;
+    &lt;br/&gt;
  &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button $nxtBtnText&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1402,7 +1397,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main class=&quot;landing flex-col-cen&quot;&gt;
+&lt;main class=&quot;landing flex-col-cen complete&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
@@ -1431,7 +1426,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main class=&quot;landing flex-col-cen&quot;&gt;
+&lt;main class=&quot;landing flex-col-cen complete&quot; &gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
@@ -1459,7 +1454,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="completed4" tags="nobr" position="725,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_51.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main class=&quot;landing flex-col-cen&quot;&gt;
+&lt;main class=&quot;landing flex-col-cen complete&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
@@ -1486,7 +1481,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="completed5" tags="nobr" position="850,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_55.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main class=&quot;landing flex-col-cen&quot;&gt;
+&lt;main class=&quot;landing flex-col-cen complete&quot;&gt;
 
    &lt;div class=&quot;inline-img-wrapper final lead&quot;&gt;
        &lt;img src=&quot;../assets/img/Hero_Image_Sequence_1_In_Rectangles.png&quot;/&gt;
@@ -1520,19 +1515,16 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="13_story-text-eng" tags="nobr" position="1100,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Diolch&lt;/p&gt;
-&lt;p&gt;I can imagine you looking towards the view now – perhaps for the first time, perhaps not.&lt;/p&gt;
-&lt;p&gt;But maybe this time, you’ve spotted something new  – something in this view you’ve never noticed before. &lt;/p&gt;
-&lt;p&gt;You’ve shared your view with me, but you might choose to share it with the world too...&lt;/p&gt;
-&lt;p&gt;On your socials later I mean #aviewfromthehill #dreamalittledreamfromtheatrclwyd&lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;You’ve shared your view with me, but you might choose to share it with the world too...&lt;/p&gt;
+&lt;p&gt;On your socials later I mean.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 26s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;From the people in the town to the birds darting across the sky. This view is teeming with life. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 33s&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
   &lt;p&gt;&quot;Views absolutely amazing, aren&#39;t they? Yeah. Oh, gosh, we&#39;re very fortunate for that.&quot;&lt;/p&gt;
@@ -1541,14 +1533,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;p&gt;It is indeed Loz – that was Loz, the housekeeping lead at Theatr Clwyd for over 30 years.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 49s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Ey up, something’s happening...&lt;/p&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 
-
-&lt;&lt;timed 50s&gt;&gt;
+&lt;&lt;timed 29s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1558,19 +1544,17 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="13_story-text-cym" tags="nobr" position="1225,725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Diolch&lt;/p&gt;
-&lt;p&gt;Rydw i’n gallu eich dychmygu chi&#39;n edrych tuag at yr olygfa nawr – am y tro cyntaf efallai, neu efallai ddim.&lt;/p&gt;
-&lt;p&gt;Ond efallai eich bod chi wedi gweld rhywbeth newydd y tro yma – rhywbeth yn yr olygfa dydych chi heb sylwi arno erioed o&#39;r blaen.&lt;/p&gt;
  &lt;p&gt;Rydych chi wedi rhannu eich golygfa gyda fi, ond efallai y byddwch chi&#39;n dewis ei rhannu hi gyda&#39;r byd hefyd...&lt;/p&gt;
-&lt;p&gt;Ar eich cyfryngau cymdeithasol yn nes ymlaen efallai #golygfaofryn neu #breuddwydiobreuddwydotheatrclwyd&lt;/p&gt;
+&lt;p&gt;Ar eich cyfryngau cymdeithasol yn nes ymlaen efallai&lt;/p&gt;
 
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 31s&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;O&#39;r bobl yn y dref i&#39;r adar yn gwibio drwy’r awyr - mae’r olygfa yma’n llawn bywyd. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 37s&gt;&gt;
+&lt;&lt;timed 17s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
   &lt;p&gt;“Golygfeydd cwbl anhygoel, dydyn? Ydyn. ’Rargol, rydyn ni&#39;n lwcus iawn am hynny.”&lt;/p&gt;
@@ -1579,14 +1563,10 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 &lt;p&gt;Ydyn wir, Loz – Loz oedd hi, yr arweinydd cadw tŷ yn Theatr Clwyd ers dros 30 mlynedd.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 52s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Hei, mae rhywbeth yn digwydd...&lt;/p&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 55s&gt;&gt;
+
+&lt;&lt;timed 31s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Nesaf&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1701,23 +1681,13 @@ Ewch yn ôl tuag at y lifft, ac wedyn ar ôl mynd heibio iddi, trowch i&#39;r ch
 &lt;p class=&quot;bold&quot;&gt;Theatr Clwyd’s bar is for everyone – staff, locals, people who’ve travelled far...
  &lt;/p&gt;
 
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“On my birthday, I went to see An Inspector Calls, and Tom Baker was the star in it.&quot;&lt;/p&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Philip Jones from Mold! It’s you again. You met who here? Doctor Who! &lt;/p&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
- &lt;&lt;timed 17s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“I went up to the bar, and I got my programme out, and I said, how much I thoroughly enjoyed it. And I say, it&#39;s my birthday today. And then this massive booming voice all over Happy Birthday, Philip. Would you like me to sign your program? Do you spell it with one L or two?”&lt;/p&gt;&lt;/div&gt;
-
 &lt;p&gt;Feel free to have a pitstop and pick up a drink if you fancy one.&lt;br/&gt; 
 When you are ready to move on, let me know. 
  &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 40s&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Let’s get moving Phyl&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1728,13 +1698,6 @@ When you are ready to move on, let me know.
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Mae bar Theatr Clwyd ar gyfer pawb – staff, pobl leol, pobl sydd wedi teithio’n bell... &lt;/p&gt;
 
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Ar fy mhen-blwydd, fe es i i weld An Inspector Calls, a Tom Baker oedd y seren yn y ddrama.”&lt;/p&gt;&lt;/div&gt;
-&lt;p&gt;Philip Jones o’r Wyddgrug! Chi eto. Pwy wnaethoch chi ei gyfarfod yma? Doctor Who?! &lt;/p&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
- &lt;&lt;timed 16s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Fe es i i fyny i’r bar ac estyn fy rhaglen a dweud cymaint oeddwn i wedi mwynhau. Ac fe wnes i ddweud, mae’n ben-blwydd arna’ i heddiw. Ac wedyn y llais enfawr yna’n bloeddio Pen-blwydd Hapus, Philip dros y lle. Hoffech chi i mi lofnodi eich rhaglen chi? Sut ydych chi’n sillafu Philip, gydag un L neu ddwy?”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt; Mae croeso i chi stopio am ychydig a chael diod os ydych chi ffansi un.&lt;br/&gt;
     Pan fyddwch chi’n barod i symud ymlaen, rhowch wybod i mi.
 &lt;/p&gt;
@@ -1742,7 +1705,7 @@ When you are ready to move on, let me know.
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 40s&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Ffwrdd â ni eto Phyl&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -1886,13 +1849,8 @@ When you are ready to move on, let me know.
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Wonderful.&lt;/p&gt;
-
-&lt;p&gt;Ok – something is processing on my end – I’m not sure when it will come through.&lt;/p&gt;
-
 &lt;p&gt;We can’t get in, but I can load up an image. &lt;/p&gt;
 &lt;p&gt;Let me tell you what I know.&lt;/p&gt;
-
-
 
 &lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
@@ -1907,8 +1865,6 @@ When you are ready to move on, let me know.
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Gwych – rydyn ni i mewn.&lt;/p&gt;
-
-&lt;p&gt;Iawn – mae rhywbeth yn prosesu ar fy ochr i – dydw i ddim yn siŵr pryd y bydd yn dod drwodd.&lt;/p&gt;
 &lt;p&gt; Am y tro – ’allwn ni ddim mynd i mewn, ond fe alla’ i uwchlwytho llun.&lt;/p&gt;
 &lt;p&gt;Gadewch i mi ddweud wrthych chi amdano...&lt;/p&gt;
 
@@ -1934,8 +1890,6 @@ When you are ready to move on, let me know.
         &lt;&lt;/timed&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Wonderful. &lt;/p&gt;
 
-&lt;p&gt;Ok – something is processing on my end – I’m not sure when it will come through.&lt;/p&gt;
-
 &lt;p&gt;For now – let’s walk up the corridor and go through the door on the left. &lt;/p&gt;
 &lt;p&gt;I’ll tell you what I know.&lt;/p&gt;
 
@@ -1951,16 +1905,13 @@ When you are ready to move on, let me know.
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Gwych – rydyn ni i mewn. &lt;/p&gt;
-
-&lt;p&gt;Iawn – mae rhywbeth yn prosesu ar fy ochr i – dydw i ddim yn siŵr pryd y bydd yn dod drwodd.&lt;/p&gt;
-
 &lt;p&gt;Am y tro – beth am i ni gerdded i fyny&#39;r coridor a mynd drwy&#39;r drws ar y chwith. &lt;/p&gt;
 &lt;p&gt;Fe fydda’ i’n dweud wrthych chi beth rydw i&#39;n ei wybod  &lt;/p&gt;
 
 
 &lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button &quot;Next&quot;&gt;&gt;
+    &lt;&lt;button &quot;Nesaf&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
         &lt;&lt;/button&gt;&gt;
     &lt;&lt;/append&gt;&gt;
@@ -1970,7 +1921,7 @@ When you are ready to move on, let me know.
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="20_astory-text-eng" tags="nobr" position="600,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="20_astory-text-eng" tags="nobr" position="600,1100" size="100,100">&lt;&lt;timed 0.001s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -1991,8 +1942,8 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 44s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. &lt;/p&gt; 
-&lt;p&gt;It’s changed now - but the bars are what would have made everything possible. &lt;/p&gt;
+&lt;p&gt;This is part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the technical systems, everything that was used to make the TV shows here. &lt;/p&gt; 
+
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 56s&gt;&gt;
@@ -2013,7 +1964,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="20_astory-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="20_astor00y-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -2061,7 +2012,7 @@ When you are ready to move on, let me know.
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="20_bstory-text-eng" tags="nobr" position="975,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="20_bstory-text-eng" tags="nobr" position="975,1100" size="100,100">&lt;&lt;timed 0.001s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -2080,8 +2031,8 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 44s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;This is actually part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the systems, everything that was used to make the TV shows here. &lt;/p&gt; 
-&lt;p&gt;It’s changed now - but the bars are what would have made everything possible. &lt;/p&gt;
+&lt;p&gt;This is part of what was a pantograph system - which would have channeled electricity into the room, powering the lights, and the technical systems, everything that was used to make the TV shows here. &lt;/p&gt; 
+
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 56s&gt;&gt;
@@ -2189,12 +2140,12 @@ When you are ready to move on, let me know.
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
    
 &lt;p class=&quot;bold&quot;&gt;Wedyn fe ddaeth yn Stiwdio 2 – cartref yng Ngogledd Cymru i ddwy sianel deledu sy&#39;n golygu llawer i bobl Cymru – HTV ac S4C. &lt;/p&gt;
-&lt;p&gt;Roedden nhw’n creu rhaglenni cerddoriaeth, sioeau sgwrsio a chwisiau, gyda chynulleidfaoedd yn cael eu cludo yma ar fysiau. Roedd y rhaglen blant Gymraeg hynod boblogaidd, Ffalabalam – a&#39;i setiau hardd, yn llawn tai bach a theganau – yn cael ei gwneud yma hefyd.&lt;/p&gt; 
+&lt;p&gt;Roedden nhw’n creu rhaglenni cerddoriaeth, sioeau sgwrsio a chwisiau, gyda chynulleidfaoedd yn cael eu cludo yma ar fysiau. Roedd y rhaglen blant Gymraeg hynod boblogaidd, Ffalabalam – a&#39;i setiau hardd, yn llawn tai bach a thegannau – yn cael ei gwneud yma hefyd.&lt;/p&gt; 
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-&lt;&lt;timed 29s&gt;&gt;
+&lt;&lt;timed 27s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p class=&quot;bold&quot;&gt;“Ac roedd Ffalabalam yn rhaglen blant hollol charming. Roedd hi’n, roedd hi’n biwt o raglen a dydw i ddim yn gwybod pam ddaeth hi i ben a dweud y gwir. Pentre bach fel ’se rhywun yn dychmygu’r ‘miniature villages’ ’ma fel, ti’n gwybod, ma’ rhywun yn eu cael nhw yn y Cotswolds ac ati. Roedd y set yn anhygoel, hefo doliau a thedis a dweud y gwir, nhw oedd y cymeriadau, heblaw bod ni fel cyflwynwyr yn rhyw fath o’u deall nhw’n siarad, er bod nhw ddim yn dweud dim byd felly, ac yn cyfleu’r rhaglen drwy hynny.”&lt;/p&gt;&lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -2229,7 +2180,7 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 27s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Thanks Loz. When HTV left in the 1990s, it transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme by schools called TYP – Theatre for Young People. That’s what I know this room as mostly – many hours practicing lines, dance numbers, quick costume changes...&lt;/p&gt;
+&lt;p&gt;Thanks Loz. When HTV left in the 1990s, it transformed again. Plays were workshopped, rehearsed, and even staged here – including a brilliant programme for schools called TYP – Theatre for Young People. That’s what I know this room as mostly – many hours practicing lines, dance numbers, quick costume changes...&lt;/p&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 47s&gt;&gt;
@@ -2318,8 +2269,8 @@ When you are ready to move on, let me know.
   &lt;!-- Orientation gate --&gt;
   &lt;div class=&quot;orientation-warning&quot; id=&quot;orientationWarning&quot;&gt;
     &lt;p&gt;Please rotate your device to &lt;strong&gt;landscape&lt;/strong&gt; to watch the video.&lt;/p&gt;
-    
-    &lt;&lt;link &quot;Ignore and show anyway&quot;&gt;&gt;
+   
+    &lt;&lt;button &quot;Ignore and show anyway&quot;&gt;&gt;
       &lt;&lt;replace &quot;#orientationWarning&quot;&gt;&gt;
         &lt;div class=&quot;inline-accented-vid&quot;&gt;
 
@@ -2334,8 +2285,8 @@ When you are ready to move on, let me know.
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-
+    &lt;&lt;/button&gt;&gt;
+ &lt;br/&gt; &lt;br/&gt;
   &lt;/div&gt;
 
   &lt;!-- Vimeo Embed (default hidden unless landscape) --&gt;
@@ -2373,8 +2324,8 @@ When you are ready to move on, let me know.
   &lt;div class=&quot;orientation-warning&quot; id=&quot;orientationWarning&quot;&gt;
     &lt;p&gt;Trowch eich dyfais i &lt;strong&gt;dirwedd&lt;/strong&gt; i wylio&#39;r fideo.
 &lt;/p&gt;
-    
-    &lt;&lt;link &quot;Anwybyddu a dangos beth bynnag&quot;&gt;&gt;
+  
+    &lt;&lt;button &quot;Anwybyddu a dangos beth bynnag&quot;&gt;&gt;
       &lt;&lt;replace &quot;#orientationWarning&quot;&gt;&gt;
         &lt;div class=&quot;inline-accented-vid&quot;&gt;
 
@@ -2389,8 +2340,8 @@ When you are ready to move on, let me know.
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-
+    &lt;&lt;/button&gt;&gt;
+  &lt;br/&gt;
   &lt;/div&gt;
 
   &lt;!-- Vimeo Embed (default hidden unless landscape) --&gt;
@@ -2436,7 +2387,7 @@ When you are ready to move on, let me know.
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Next, we are off to one of the hidden gems of Theatr Clwyd. &lt;/p&gt;
 
-&lt;p&gt;I’ll lead you there – first up head back to the bar. &lt;/p&gt;
+&lt;p&gt;I’ll lead you there – first head up back to the bar. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
@@ -2479,27 +2430,15 @@ When you are ready to move on, let me know.
 
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="103" name="26_story-text-eng" tags="nobr" position="350,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;
-    &lt;p&gt;&quot;Walked out and he was just sitting there on his own. &lt;/p&gt;
-    &lt;p&gt;He&#39;s reading a book. And I said, Congratulations on becoming James Bond. He said thank you very much. That was it!&quot;&lt;/p&gt;
-&lt;/div&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 8s&gt;&gt;
-   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Phillip Jones must have met Timothy Dalton too, who performed in two Shakespeare plays here in 1986. Bond, James Bond! &lt;/p&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 18s&gt;&gt;
-   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Head to the lift and select Level 2. &lt;/p&gt;
+
+&lt;p class=&quot;bold&quot;&gt;Head to the lift and select Level 2. &lt;/p&gt;
 
 &lt;p&gt;You can take the stairs if you’d prefer. &lt;/p&gt;
 &lt;p&gt;Just let me know when you are there.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 25s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We’re on Level 2&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2508,20 +2447,7 @@ When you are ready to move on, let me know.
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="26_story-text-cym" tags="nobr" position="475,1350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;
-    &lt;p&gt;“Fe wnes i gerdded allan ac roedd o’n eistedd yno ar ei ben ei hun. &lt;/p&gt;
-&lt;p&gt;Roedd o’n darllen llyfr. Ac fe wnes i ddweud, Llongyfarchiadau ar ddod yn James Bond. Fe ddywedodd o diolch yn fawr iawn. A dyna ni!”&lt;/p&gt;
 
-&lt;/div&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 8s&gt;&gt;
-   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Mae’n rhaid bod Phillip Jones wedi cyfarfod Timothy Dalton hefyd, a berfformiodd mewn dwy ddrama Shakespeare yma ym 1986. Bond, James Bond! &lt;/p&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 19s&gt;&gt;
-   &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Ewch i’r lifft a dewis Lefel 2.&lt;/p&gt;
 &lt;p&gt;Fe allwch chi fynd i fyny’r grisiau os yw’n well gennych chi.&lt;/p&gt;
 &lt;p&gt;Rhowch wybod i mi pan fyddwch chi yno&lt;/p&gt;
@@ -2529,7 +2455,7 @@ When you are ready to move on, let me know.
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 27s&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Rydyn ni ar Lefel 2&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2684,7 +2610,7 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“So the paint frame really is just sort of hardwood battens that are attached to the back wall of the paint shop. And it&#39;s a bit like the way that an artist would stretch canvas onto a wooden frame, but in a really massive way.”&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The paint frame really is just sort of hardwood battens that are attached to the back wall of the paint shop. And it&#39;s a bit like the way that an artist would stretch canvas onto a wooden frame, but in a really massive way.”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;These canvases – they form the backdrops to shows. &lt;/p&gt;
 &lt;p&gt;They frame the stories told on Theatr Clwyd’s stages – they conjure new realities. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
@@ -2789,23 +2715,23 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 15s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;There are indeed paint stains everywhere, Angharad – and if you think, each dash of paint in here will have been made as part of a production or event to connect with someone. My favourite part is the sink – it is absolutely covered in paint – Layer upon layer. It’s a work of art. &lt;/p&gt;
+&lt;p&gt;There are indeed paint stains everywhere, Angharad – and if you think, each dash of paint in here will have been made as part of a production or event to connect with someone.  &lt;/p&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 33s&gt;&gt;
+&lt;&lt;timed 26s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Talking about works of art, let’s see some that have been made here. &lt;/p&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 37s&gt;&gt;
+&lt;&lt;timed 30s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;You might notice a long piece of fabric on the balcony – this was made on the paint frame and designed by Adrian Gee. &lt;/p&gt;
 
 &lt;p&gt;Head over to it. &lt;/p&gt;
-&lt;p&gt;When you’re there, I’ve got a clip of Katy explaining what you have in front of you&lt;/p&gt;
+&lt;p&gt;When you’re there, I’ve got a clip of Katy explaining what you have in front of you.&lt;/p&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 51s&gt;&gt;
+&lt;&lt;timed 43s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re next to the fabric&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2820,16 +2746,16 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 14s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Oes wir, mae staeniau paent ym mhobman, Angharad – ac os gwnewch chi feddwl, mae pob sblash o baent yma wedi&#39;i wneud fel rhan o gynhyrchiad neu ddigwyddiad i gysylltu â rhywun. Fy hoff ran i yw&#39;r sinc – mae wedi&#39;i gorchuddio&#39;n llwyr â phaent – ​​haen ar haen. Mae&#39;n waith celf. &lt;/p&gt;
+&lt;p&gt;Oes wir, mae staeniau paent ym mhobman, Angharad – ac os gwnewch chi feddwl, mae pob sblash o baent yma wedi&#39;i wneud fel rhan o gynhyrchiad neu ddigwyddiad i gysylltu â rhywun.  &lt;/p&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 32s&gt;&gt;
+&lt;&lt;timed 24s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;A gan ein bod ni’n siarad am weithiau celf, beth am i ni weld rhai sydd wedi cael eu gwneud yma. 
  &lt;/p&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 37s&gt;&gt;
+&lt;&lt;timed 30s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Efallai eich bod chi wedi sylwi ar ddarn hir o ffabrig ar y balconi – fe gafodd hwn ei wneud ar y ffrâm baentio a&#39;i ddylunio gan Adrian Gee.  &lt;/p&gt;
 
@@ -2838,7 +2764,7 @@ When you are ready to move on, let me know.
 
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 51s&gt;&gt;
+&lt;&lt;timed 44s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Rydyn ni’n mynd at y ffabrig nesaf&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -2854,7 +2780,7 @@ When you are ready to move on, let me know.
       /% CODEWORD CORRECT%/
       &lt;&lt;if $codeword is &quot;4&quot; or $codeword is &quot;FOUR&quot; or $codeword is &quot;5&quot; or $codeword is &quot;FIVE&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Correct!&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
-        /* &lt;&lt;audio &quot;correct&quot; play&gt;&gt; */
+        &lt;&lt;audio &quot;success&quot; play&gt;&gt;
 
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto &quot;completed3&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
@@ -2883,7 +2809,7 @@ When you are ready to move on, let me know.
       /% CODEWORD CORRECT%/
       &lt;&lt;if $codeword is &quot;4&quot; or $codeword is &quot;PEDWAR&quot; or $codeword is &quot;5&quot; or $codeword is &quot;PUMP&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Gywir!&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
-        /* &lt;&lt;audio &quot;correct&quot; play&gt;&gt; */
+        &lt;&lt;audio &quot;success&quot; play&gt;&gt;
 
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto &quot;completed3&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
@@ -2980,22 +2906,18 @@ When you are ready to move on, let me know.
 &lt;&lt;set $nextpass to &quot;35_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="126" name="34_story-text-eng" tags="nobr" position="725,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;I was in that panto – it was directed by Tamara Harvey and I played Nana Nerys from Nercwys! &lt;/p&gt;
-
-&lt;p&gt;Beyond the paintframe is the workshop, where the props and sets are made. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="126" name="34_story-text-eng" tags="nobr" position="725,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;Beyond the paintframe is the workshop, where the props and sets are made. &lt;/p&gt;
 &lt;p&gt;Head to the other side of the balcony to see what’s going on.&lt;/p&gt;
 
 
-&lt;&lt;timed 13s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="127" name="34_story-text-cym" tags="nobr" position="850,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;Roeddwn i yn y panto hwnnw – fe gafodd ei gyfarwyddo gan Tamara Harvey ac roeddwn i&#39;n chwarae rhan Nana Nerys o Nercwys!&lt;/p&gt; 
-
-&lt;p&gt;Heibio&#39;r ffrâm baentio mae&#39;r gweithdy, lle mae&#39;r props a&#39;r setiau&#39;n cael eu gwneud.&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="127" name="34_story-text-cym" tags="nobr" position="850,1600" size="100,100">&lt;p class=&quot;bold&quot;&gt;Heibio&#39;r ffrâm baentio mae&#39;r gweithdy, lle mae&#39;r props a&#39;r setiau&#39;n cael eu gwneud.&lt;/p&gt;
 &lt;p&gt;Ewch i ochr arall y balconi i weld beth sy&#39;n digwydd.&lt;/p&gt;
 
 
@@ -3022,7 +2944,7 @@ When you are ready to move on, let me know.
 &lt;&lt;timed 21s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;One minute - that&#39;s me! &lt;/p&gt;
-&lt;p&gt;One minute – that’s me! That’s my memory – perhaps I’m part of Theatr Clwyd’s history too? &lt;/p&gt;
+&lt;p&gt;That’s my memory – perhaps I’m part of Theatr Clwyd’s history too? &lt;/p&gt;
 &lt;p&gt;I suppose I am! &lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -3067,7 +2989,7 @@ When you are ready to move on, let me know.
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="132" name="36_story-text-eng" tags="nobr" position="225,1725" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;There’s something special back here – sometimes overlooked. &lt;/p&gt;
-&lt;p&gt;The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else –  Our pantos are like nothing else – &lt;/p&gt;
+&lt;p&gt;The craft that is baked into every story we tell is rustled up in the workshop, on the paint frame, backstage. The rock and roll pantos we make are very special – they are huge and ambitious. They push our making teams to the max! The pantos mean so much to us at Theatr Clwyd and to all our audiences. I became the Dame in 2003 – with my wigs, fancy frocks, and musical instruments in tow – I’ve played the trombone, saxophone, flute, god knows what else, even a cowbell. Our pantos are like nothing else - &lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 36s&gt;&gt;
@@ -3090,7 +3012,7 @@ When you are ready to move on, let me know.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 44s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;We come every year to the panto - ten of us now with grandchildren and we love it.&quot;&lt;/p&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;We come every year to the panto - ten of us now in the family with grandchildren and we love it.&quot;&lt;/p&gt;
 &lt;/div&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -3242,9 +3164,8 @@ When you are near the stairs let me know. &lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 42s&gt;&gt;
+&lt;&lt;timed 43s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Wow. That’s... just wow. &lt;/p&gt;
 &lt;p&gt;Thanks Phillip Jones. &lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -3269,14 +3190,14 @@ When you are near the stairs let me know. &lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 43s&gt;&gt;
+&lt;&lt;timed 44s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Waw. Am... waw. &lt;/p&gt;
+
 &lt;p&gt; Diolch Phillip Jones.&lt;/p&gt;
    &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 49s&gt;&gt;
+&lt;&lt;timed 45s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Nesaf&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3290,27 +3211,22 @@ When you are near the stairs let me know. &lt;/p&gt;
 
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="141" name="39_story-text-eng" tags="nobr" position="100,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;It’s the spark – that’s the thing here – a possibility, right? &lt;/p&gt;
-&lt;p&gt;Hours upon hours are spent painting backdrops to create Hours upon hours are spent painting backdrops and constructing sets to create doors to new realities. &lt;br&gt;
-But it’s not just new worlds on stage, it’s new possibilities everywhere. &lt;/p&gt;
-
-&lt;p&gt;Come on, let’s go. It’s time to enter Theatr Moondance&lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;Come on, let’s go. It’s time to enter Theatr Moondance&lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 17s&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt; With the stairs on your left, head to the end of the corridor.&lt;br&gt;
-Past the writers library on your right, Drws C is on your left.
+&lt;p&gt; With the stairs on your left, head to the end of the corridor.
 &lt;/p&gt;
 
-&lt;p&gt;There are two sets of doors – we need the ones on the left under the Drws C sign. &lt;br&gt;
+&lt;p&gt;There are two sets of doors – we need the ones on the left under the Drws C sign. &lt;br/&gt;
     You’ll need your keycard to go through the door.
 &lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 40s&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;We&#39;re through&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3319,20 +3235,16 @@ Past the writers library on your right, Drws C is on your left.
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="142" name="39_story-text-cym" tags="nobr" position="225,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p class=&quot;bold&quot;&gt;Y sbarc sy’n bwysig – dyna’r peth yma – posibilrwydd. &lt;/p&gt;
-&lt;p&gt;Mae oriau ac oriau’n cael eu treulio’n paentio cefnlenni ac yn adeiladu setiau i greu drysau i realiti newydd. &lt;br/&gt;
-
-Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &lt;/p&gt;
+&lt;p class=&quot;bold&quot;&gt;Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &lt;/p&gt;
 
 &lt;p&gt;Dewch, i ffwrdd â ni. Mae’n amser mynd i mewn i Theatr Moondance.
 &lt;/p&gt;
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 24s&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Gyda’r grisiau ar y dde i chi, ewch i ben draw’r coridor. &lt;/p&gt;
-&lt;p&gt;Heibio llyfrgell yr awduron ar y dde i chi a Drws C ar y chwith.&lt;/p&gt;
+&lt;p&gt;Gyda’r grisiau ar y chwith, ewch i ben draw’r coridor. &lt;/p&gt;
 
 &lt;p&gt;Mae dwy set o ddrysau – y rhai ar y chwith fyddwn ni’n mynd drwyddyn nhw. &lt;/p&gt;
 &lt;p&gt;Bydd rhaid i chi gael eich cerdyn allwedd i fynd drwy’r drws.&lt;/p&gt;
@@ -3340,7 +3252,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
     &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 42s&gt;&gt;
+&lt;&lt;timed 23s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Rydyn ni drwodd&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3395,15 +3307,15 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;p&gt;Sorry, I couldn&#39;t resist.&lt;/p&gt;
 &lt;p&gt;Every seat in the theatre – not just this one – has a brilliant view. That care was built into its design. &lt;/p&gt;
 
-&lt;p&gt;You might notice the amazing red tiles which line the walls. They have beautiful curved edges, and look almost like bricks. I love looking out at them when I’m on stage. They’ve been here since day one, and they’re one of the things that give this space its special acoustic, bouncing sound around the room.&lt;/p&gt;
+&lt;p&gt;You might notice the amazing red tiles which line the walls. They have beautiful curved edges, and look almost like bricks. They’ve been here since day one, and they’re one of the things that give this space its special acoustic, bouncing sound around the room.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 56s&gt;&gt;
+&lt;&lt;timed 53s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Ooh, look! There&#39;s one of them here for you to touch.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 59s&gt;&gt;
+&lt;&lt;timed 56s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;I&#39;ve touched the tile&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3423,17 +3335,17 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;p&gt;Sori - fi ffili peidio!&lt;/p&gt;
 &lt;p&gt;Mae gan bob sedd yn y theatr olygfa wych. Fe gafodd hynny ei sicrhau fel rhan o’r dyluniad.&lt;/p&gt;
 
-&lt;p&gt;Efallai eich bod chi wedi sylwi ar y teils coch ar y waliau. Mae ganddyn nhw ymylon crwm hardd ac maen nhw&#39;n edrych fel brics bron. Rydw i wrth fy modd yn edrych allan arnyn nhw pan rydw i ar y llwyfan. Maen nhw wedi bod yma ers y diwrnod cyntaf, ac maen nhw&#39;n un o&#39;r pethau sy&#39;n rhoi sain acwstig unigryw i&#39;r gofod yma gyda bowns arbennig o amgylch yr ystafell.&lt;/p&gt;
+&lt;p&gt;Efallai eich bod chi wedi sylwi ar y teils coch ar y waliau. Mae ganddyn nhw ymylon crwm hardd ac maen nhw&#39;n edrych fel brics bron. Maen nhw wedi bod yma ers y diwrnod cyntaf, ac maen nhw&#39;n un o&#39;r pethau sy&#39;n rhoi sain acwstig unigryw i&#39;r gofod yma gyda bowns arbennig o amgylch yr ystafell.&lt;/p&gt;
 
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 67s&gt;&gt;
+&lt;&lt;timed 61s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Oo, edrychwch! Mae un ohonyn nhw yma i chi ei chyffwrdd
 &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 70s&gt;&gt;
+&lt;&lt;timed 65s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Rydw i wedi cyffwrdd â&#39;r deilsen&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3479,19 +3391,19 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;&lt;timed 71s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
-&lt;p&gt;&quot;I think as a child, I saw them as, like, like, a big bar of chocolate. I love that theatre because there are no bad seats. It&#39;s like a big hug. Everybody&#39;s in there together.&quot;&lt;/p&gt;
+&lt;p&gt;&quot;I think as a child, I saw them as, like, like, a big bar of chocolate. I love that theatre so much because there are no bad seats. It&#39;s like a big hug. Everybody&#39;s in there together.&quot;&lt;/p&gt;
 &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 84s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Catrin Aaron has gazed up at people in 35 productions here.  Her mum, a nurse, used to bring her here when she was little, from nearby Rhyl. She went on to work at the Royal Shakespeare Company.&lt;/p&gt;
+&lt;p&gt;Catrin Aaron has gazed up at people in 35 productions here.  Her mum, a nurse, used to bring her here when she was little, from nearby Rhyl.&lt;/p&gt;
 &lt;p&gt;Being part of Theatr Clwyd is like being part of a family. Let’s jump around the theatre to find people who can tell you more...&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 104s&gt;&gt;
+&lt;&lt;timed 100s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3508,7 +3420,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;&lt;timed 39s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
-&lt;p&gt;“Mae&#39;n ofod rhyfeddol… mae&#39;n eich galluogi chi i wneud beth rydych chi eisiau ei wneud ag o, yn sonig, o ran sain.”&lt;/p&gt;
+&lt;p&gt;“Mae&#39;n ofod rhyfeddol... mae&#39;n eich galluogi chi i wneud beth rydych chi eisiau ei wneud ag o, yn sonig, o ran sain.”&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Hei, Tayo Akinbode! Cyfarwyddwr cerdd Panto. Athrylith. A phwy ydi hwn?&lt;/p&gt;
@@ -3518,19 +3430,19 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;&lt;timed 54s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
-&lt;p&gt;&quot;Roedd bob amser yn teimlo&#39;n agos iawn. Roedd bob amser yn teimlo, os oeddech chi eisiau, ac os oeddech chi&#39;n ddigon hyderus am yr hyn roeddech chi&#39;n ei wneud, bod y gynulleidfa yng nghledr eich llaw chi. Yn acwstig hefyd. Yn lleisiol, roedd y theatr bob amser yn eithaf hawdd actio ynddi, o gymharu â chymaint o lefydd roeddwn i&#39;n actio ynddyn nhw.&quot;
+&lt;p&gt;&quot;Roedd bob amser y teimlad o agosatrwydd yna. Roedd wastad y teimlad os oedd yr hyder gyda chi yn beth oeddech chi’n wneud, fod y gynulleidfa gyda chi yng nghledr eich llaw. Ac yr acwstig hefyd yn lleisiol, roedd y theatr yn hawdd iawn ei chwarae o gymharu â lot fawr o theatrau rydw i wedi’u chwarae.  &quot;
 &lt;/p&gt;
 &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 70s&gt;&gt;
+&lt;&lt;timed 71s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;A! Steffan Rhodri! Efallai eich bod chi&#39;n ei adnabod o fel un o sêr Gavin &amp; Stacey. Mae wedi perfformio ar y llwyfan yma sawl gwaith ac rydw i’n cytuno, mae&#39;r llwyfan a&#39;r sain yn eich cysylltu chi â&#39;r gynulleidfa - mae&#39;n arbennig. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 87s&gt;&gt;
+&lt;&lt;timed 88s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;“Rydw i&#39;n credu, fel plentyn, fy mod i’n eu gweld nhw fel, fel, bar mawr o siocled. Rydw i&#39;n caru&#39;r theatr yma oherwydd does dim seddi gwael. Mae fel cwtsh mawr. Mae pawb yno gyda&#39;i gilydd.”&lt;/p&gt;
@@ -3540,12 +3452,12 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 
 &lt;&lt;timed 100s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Mae Catrin Aaron o’r Rhyl wedi ymddangos mewn 35 o gynyrchiadau yma. Roedd ei mam, nyrs, yn arfer dod â hi yma pan oedd hi&#39;n fach. Fe aeth Catrin ymlaen i weithio gyda’r Royal Shakespeare Company.&lt;/p&gt;
+&lt;p&gt;Mae Catrin Aaron o’r Rhyl wedi ymddangos mewn 35 o gynyrchiadau yma. Roedd ei mam, nyrs, yn arfer dod â hi yma pan oedd hi&#39;n fach. &lt;/p&gt;
 &lt;p&gt;Mae bod yn rhan o Theatr Clwyd fel bod yn rhan o deulu. Beth am i ni neidio o gwmpas y theatr i ddod o hyd i bobl fedr ddweud mwy wrthych chi...&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 122s&gt;&gt;
+&lt;&lt;timed 119s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Nesaf&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -3582,7 +3494,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
         &lt;div class=&quot;story-text&quot; id=&quot;msgMount&quot;&gt;&lt;/div&gt;
           &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
             &lt;/div&gt;
-        &lt;&lt;timed 4s&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;
             &lt;&lt;include &quot;content1&quot;&gt;&gt;
             &lt;&lt;/timed&gt;&gt;
            
@@ -3606,7 +3518,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
     &lt;&lt;/replace&gt;&gt;
    
 
-    &lt;&lt;timed 96s&gt;&gt;
+    &lt;&lt;timed 30s&gt;&gt;
         &lt;&lt;set $currentDot to 1&gt;&gt;
         &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
             &lt;&lt;include &quot;button1a&quot;&gt;&gt;
@@ -3631,15 +3543,15 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
         &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
          &lt;&lt;/timed&gt;&gt;
-
-
     &lt;&lt;timed 67s&gt;&gt;
         &lt;&lt;set $currentDot to 2&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
             &lt;&lt;include &quot;button2&quot;&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="button2" tags="nobr" position="600,1975" size="100,100">&lt;&lt;button $nxtBtnText&gt;&gt;
+ &lt;&lt;/button&gt;&gt;
+
+/* footer button has logic in footer passage */</tw-passagedata><tw-passagedata pid="155" name="button2" tags="nobr" position="600,1975" size="100,100">&lt;&lt;button $nxtBtnText&gt;&gt;
    
        &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3725,9 +3637,10 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;&lt;link [img[assets/img/back-sharp-b.png][$prevpass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
    
-    &lt;div&gt;&lt;div/&gt;
-&lt;div&gt;&lt;div/&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div id=&quot;processingMount&quot;&gt;
 
+&lt;/div&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="44_floorplan_story" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
      &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_44.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -3746,16 +3659,9 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
     &lt;p&gt;&quot;The first time I performed on the main stage in Theatr Clwyd  was a Theatr Clwyd production of Toad, of Toad Hall, and I played a rat and I played a weasel, and it changed my life. &lt;/p&gt;
- &lt;p&gt;Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn&#39;t really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn&#39;t believe that, just the warmth it felt like walking into sunshine. And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can&#39;t step in and with doubts, or with, you know, say, Oh, I don&#39;t want to do this. I&#39;m tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it.&quot;&lt;/p&gt;
+ &lt;p&gt;Being on the stage was fantastic, because I loved the fact that you were aware of the audience, but couldn&#39;t really see them. I loved the kind of the amount of light that was on me, not in the sense that I felt seen. I just couldn&#39;t believe that, just the warmth it felt like walking into sunshine. &lt;/p&gt;
+ &lt;p&gt;And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can&#39;t step in and with doubts, or with, you know, say, Oh, I don&#39;t want to do this. I&#39;m tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it.&quot;&lt;/p&gt;
  &lt;/div&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-
- &lt;&lt;timed 86s&gt;&gt;
-     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-    &lt;p&gt;I never knew his first performance was as a rat and a weasel!&lt;/p&gt; 
-    &lt;p&gt;He definitely has felt that special relationship with the audience.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="160" name="44_floorplan_story_cym" tags="nobr" position="1225,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
      &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
@@ -3773,26 +3679,17 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
  &lt;&lt;timed 26s&gt;&gt;
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
-    &lt;p&gt;“Y tro cyntaf i mi berfformio ar y prif lwyfan yn Theatr Clwyd oedd cynhyrchiad Theatr Clwyd o Toad, of Toad Hall, ac roeddwn i&#39;n chwarae rhan llygoden fawr a gwenci, ac fe newidiodd fy mywyd i. &lt;/p&gt;
- &lt;p&gt;Roedd bod ar y llwyfan yn wych, oherwydd roeddwn i wrth fy modd â&#39;r ffaith eich bod chi&#39;n ymwybodol o aelodau&#39;r gynulleidfa, ond ddim yn gallu eu gweld nhw mewn gwirionedd. Roeddwn i wrth fy modd â&#39;r math o olau oedd arna’ i, nid yn yr ystyr ’mod i&#39;n teimlo ’mod i&#39;n cael fy ngweld. Doeddwn i ddim yn gallu credu’r peth, y cynhesrwydd, roedd yn teimlo fel cerdded i mewn i heulwen. A hefyd yr ymdeimlad pan rydych chi&#39;n camu ar y llwyfan, eich bod chi&#39;n rhoi rhywbeth ar waith, ac mae&#39;n rhaid i chi adael iddo redeg ei gwrs. ​​Dwi’n gobeithio eich bod chi’n deall be sgen i, ’allwch chi ddim camu i mewn gydag amheuon, neu gyda, wel, chi’n gwybod, dweud, &#39;O, dydw i ddim eisiau gwneud hyn. Rydw i wedi blino.&#39; Mae&#39;n rhaid i chi bron… roedd yn… mynd gyda&#39;r llif. Ac roedd raid i chi, roedd raid i chi ildio i ddifrifoldeb y gynulleidfa a&#39;r berthynas honno rhyngoch chi a hi.”&lt;/p&gt;
+    &lt;p&gt;“Y tro cyntaf erioed i mi berfformio ar y prif lwyfan yn Theatr Clwyd oedd mewn cynhyrchiad cwmni Theatr Clwyd o Toad of Toad Hall ac mi wnes i chwarae llygoden fawr a fferet ac mi wnaeth o newid fy mywyd i. Roedd cael bod ar y llwyfan yn deimlad anhygoel. Roeddwn i’n caru’r ffaith fy mod i rywsut yn ymwybodol o’r gynuellidfa ond yn methu gweld nhw. Roeddwn i’n caru y golau oedd arnaf i, dim mewn ffordd lle roeddwn i’n teimlo ’mod i’n cael fy ngweld, o’n i jyst yn caru cynhesrwydd ac intenstity’r goleuni yna. Roedd o fatha cerdded mewn i olau dydd. &lt;/p&gt;
+ &lt;p&gt;Mae ’na ryw deimlad visceral iawn pan mae rhywun yn cerdded ar y llwyfan o yr anochel fod hyn sydd yn mynd i ddigwydd yn mynd i ddigwydd ac mae’n rhaid i ti adael iddo fo redeg ei gwrs. Rhoi i mewn i’r ddrama neu’r perfformiad. Fedri di ddim cerdded ’mlaen yn meddwl o na, na, na, ’dwi ddim eisiau gwneud hyn, ’dwi wedi blino. Mae’n rhaid i ti fynd efo’r llif rywsut a rhoi mewn i ddisgyrchiant y gynulleidfa a’r berthynas rhyngddat ti a’r gynulleidfa.”&lt;/p&gt;
  &lt;/div&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-
- &lt;&lt;timed 93s&gt;&gt;
-     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-   &lt;p&gt;Doeddwn i ddim yn gwybod mai fel llygoden fawr a gwenci oedd ei berfformiad cyntaf!&lt;/p&gt;
-  &lt;p&gt;  Mae e’n bendant wedi teimlo&#39;r berthynas arbennig honno gyda&#39;r gynulleidfa.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="45_floorplan_story" tags="nobr" position="100,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_45.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
-     
-
+    
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-        &lt;p class=&quot;bold&quot;&gt;And we have another one coming through.&lt;/p&gt;
+
 &lt;div class=&quot;quote&quot;&gt;
 &lt;p&gt;The first time I remember going to Theatr Clwyd was when I was in a production of Oliver when I was around 15 and I remember being on stage and it was total magic. It’s an amazing theatre and I’ve been very fortunate growing up in Mold. So later on, I was part of a group called Cwmni 25 and I did a lot of workshops for young people during the summer.&lt;/p&gt;
 
@@ -3805,6 +3702,36 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. &lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
+           &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+
+     &lt;&lt;timed 1s&gt;&gt;
+            &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+     &lt;&lt;addclass &quot;.dot2&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
+    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
+     &lt;&lt;timed 0.1s&gt;&gt;
+            &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
+                      &lt;&lt;include &#39;46_floorplan_story_cym&#39;&gt;&gt;
+            &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
+                 &lt;&lt;include &#39;46_floorplan_story&#39;&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;/timed&gt;&gt;
+
+    &lt;&lt;timed 35s&gt;&gt;
+        &lt;&lt;set $currentDot to 3&gt;&gt;
+        &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
+            &lt;&lt;include &quot;button3&quot;&gt;&gt;
+            &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="162" name="45_floorplan_story_cym" tags="nobr" position="225,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_45.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -3890,7 +3817,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
       /% CODEWORD CORRECT FOR CHATHAM STORIES%/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MAGS&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Gywir!&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
-        /* &lt;&lt;audio &quot;correct&quot; play&gt;&gt; */
+        &lt;&lt;audio &quot;success&quot; play&gt;&gt;
 
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
@@ -3919,7 +3846,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
       /% CODEWORD CORRECT FOR CHATHAM STORIES%/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MAGS&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;span&gt;Correct!&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
-        /* &lt;&lt;audio &quot;correct&quot; play&gt;&gt; */
+        &lt;&lt;audio &quot;success&quot; play&gt;&gt;
 
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
@@ -3951,7 +3878,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 
 &lt;p&gt;And when Mags was with me up here, they treated Mags like one of the cast. Everybody knew Mags and she used to support all the cast as well, and everybody just loved seeing Mags there. So I want to thank everybody that’s gone out of their way to make me comfortable, knowing that Mags was in a safe environment and then able to do my job...&lt;/p&gt;
 
-&lt;p&gt;One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Mags into the toilet, me dressed as Wonder Woman and her in her wheelchair, you know. And we were both laughing, you know.. And that&#39;s what you get. Whatever problems you&#39;ve got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will.&quot;&lt;/p&gt;
+&lt;p&gt;One of my lasting memories will always be, during a break of the  Robin Hood panto. I was dressed as Wonder Woman and, during the interval, there’s a picture of me pushing Mags into the toilet, me dressed as Wonder Woman and her wheelchair, you know. And we were both laughing, you know.. And that&#39;s what you get. Whatever problems you&#39;ve got, they will look after you in Theatr Clwyd. They will go the extra mile. They really will.&quot;&lt;/p&gt;
 &lt;/div&gt;
 &lt;br/&gt;
   &lt;&lt;/append&gt;&gt;
@@ -3983,7 +3910,7 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
 &lt;br/&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 70s&gt;&gt;
+&lt;&lt;timed 72s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;A dyna’r hud.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
@@ -4071,14 +3998,8 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 109s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The staff were so patient and kind to all the members with disabilities, and everyone else too..it gave us that, that lift-off really...&quot;&lt;/p&gt;&lt;/div&gt;
-&lt;p&gt;That’s Catherine Pugh, who co-founded the musical theatre group, Buzz-Ah. The group developed a variety of skills for disabled and non-disabled people and staged lots of productions in our main theatre...&lt;/p&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 134s&gt;&gt;
+&lt;&lt;timed 109s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;And this is Tamara Harvey, she was Theatr Clwyd’s artistic director from 2015 to 2022. She went on to be Co-Artistic director at the Royal Shakespeare Company.  &lt;/p&gt;
 
@@ -4089,10 +4010,9 @@ Nid yn unig bydoedd newydd ar y llwyfan - ond posibiliadau newydd ym mhobman. &l
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 179s&gt;&gt;
+&lt;&lt;timed 154s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Theatr Clwyd is not one thing. &lt;/p&gt;
-&lt;p&gt;A group of people stood on the hill, and then another group of people stood on a hill, and then another. They all imagined a better world, and with Theatr Clwyd they made it. Theatr Clwyd doesn’t exist because a group of people imagined, but because people kept on imagining, and will keep on imagining too...&lt;/p&gt;
+&lt;p&gt;Theatr Clwyd doesn’t exist because a group of people imagined, but because people kept on imagining, and will keep on imagining too...&lt;/p&gt;
 
 &lt;p&gt;That’s the real magic of Theatr Clwyd. &lt;br&gt;
 Where new realities are imagined, crafted and created. &lt;br&gt;
@@ -4101,7 +4021,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 232s&gt;&gt;
+&lt;&lt;timed 190s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
@@ -4142,21 +4062,16 @@ a phenderfynu gwneud y byd yn lle hapusach.
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 85s&gt;&gt;
+&lt;&lt;timed 84s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Theatr Clwyd... i mi, yn bersonol, mae bob amser wedi rhoi dewrder tawel i mi ac wedi fy atgoffa i o hynny. Ac rydw i&#39;n credu, ar ei gorau, mai dyna beth mae&#39;n ei wneud i gynulleidfa hefyd. Ym mhob ffurf, mae yna bob amser elfen ohono fo sy&#39;n ymwneud â dewrder... Mae&#39;n grymuso.”&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“I mi’n bersonol mae Theatr Clwyd wastad wedi rhoi i mi a fy atgoffa i o ryw ddewrder distaw. Ac rydw i’n meddwl, ar ei orau, dyna be mae o’n roi i gynulleidfa hefyd yn ei ffurfiau i gyd. Mae yna wastad elfen sy’n ymwneud â rhyw fath o ddewrder distaw ac mae hyn’na yn grymuso’r actor a’r gynulleidfa.”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;Dyna Rhys eto.&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 113s&gt;&gt;
-    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Roedd y staff mor amyneddgar a charedig, gyda&#39;r holl aelodau ag anableddau, a phawb arall hefyd... roedd yn rhoi hynny i ni, yr hwb hwnnw mewn gwirionedd...”p&gt;&lt;/div&gt;
-&lt;p&gt;Geiriau Catherine Pugh, a gydsefydlodd y grŵp theatr gerdd, Buzz-Ah. Fe ddatblygodd y grŵp amrywiaeth o sgiliau ar gyfer pobl anabl a phobl heb anabledd a llwyfannu llawer o gynyrchiadau yn ein prif theatr ni...&lt;/p&gt;
- &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 140s&gt;&gt;
+
+&lt;&lt;timed 122s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;A dyma Tamara Harvey, hi oedd cyfarwyddwr artistig Theatr Clwyd rhwng 2015 a 2022. Fe aeth ymlaen i fod yn Gyd-gyfarwyddwr Artistig gyda’r Royal Shakespeare Company. &lt;/p&gt;
 
@@ -4167,14 +4082,13 @@ a phenderfynu gwneud y byd yn lle hapusach.
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 185s&gt;&gt;
+&lt;&lt;timed 170s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt;Nid un peth yw Theatr Clwyd.&lt;/p&gt;
-&lt;p&gt;Fe safodd grŵp o bobl ar y bryn, ac wedyn fe safodd grŵp arall o bobl ar fryn, ac wedyn un arall. Fe wnaethon nhw i gyd ddychmygu byd gwell, a gyda Theatr Clwyd fe wnaethon nhw greu’r byd hwnnw. Dydi Theatr Clwyd ddim yn bodoli oherwydd bod grŵp o bobl wedi dychmygu, ond oherwydd bod pobl wedi dal ati i ddychmygu, ac fe fyddan nhw’n parhau i ddychmygu hefyd...&lt;/p&gt;
+&lt;p&gt; Dydi Theatr Clwyd ddim yn bodoli oherwydd bod grŵp o bobl wedi dychmygu, ond oherwydd bod pobl wedi dal ati i ddychmygu, ac fe fyddan nhw’n parhau i ddychmygu hefyd...&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 213s&gt;&gt;
+&lt;&lt;timed 180s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Dyna wir hud Theatr Clwyd.&lt;/p&gt;
 &lt;p&gt;Lle mae realiti newydd yn cael ei dychmygu, ei saernio a’i chreu.&lt;/p&gt;
@@ -4184,7 +4098,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 239s&gt;&gt;
+&lt;&lt;timed 207s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
     &lt;&lt;button &quot;Nesaf&quot;&gt;&gt;
             &lt;&lt;goto $nextpass&gt;&gt;
