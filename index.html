@@ -1378,21 +1378,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
            
      &lt;/div&gt;
 
- &lt;div class=&quot;success info-container&quot;&gt;
-&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
-&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
+ &lt;div class=&quot;success info-container&quot; id=&quot;infoContainer&quot;&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-pass&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-pass&quot;/&gt;
 &lt;/div&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
             &lt;/div&gt;
 &lt;/main&gt;
- &lt;&lt;timed 10s&gt;&gt;
-    &lt;br/&gt;
- &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button $nxtBtnText&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-   
-    &lt;&lt;/append&gt;&gt;
+
+&lt;&lt;timed 10s&gt;&gt;
+	&lt;&lt;addclass &quot;#infoContainer&quot; &quot;complete-active&quot;&gt;&gt;
+    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
+	&lt;br/&gt;
+	&lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+		&lt;&lt;button $nxtBtnText&gt;&gt;
+			&lt;&lt;goto $nextpass&gt;&gt;
+		&lt;&lt;/button&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="completed2" tags="nobr" position="475,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_24.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
@@ -1407,21 +1411,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
            
      &lt;/div&gt;
 
- &lt;div class=&quot;success info-container&quot;&gt;
-&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
-&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
+ &lt;div class=&quot;success info-container&quot; id=&quot;infoContainer&quot;&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-pass&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-pass&quot;/&gt;
 &lt;/div&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
             &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 10s&gt;&gt;
- &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button $nxtBtnText&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-   
-    &lt;&lt;/append&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
+	&lt;&lt;addclass &quot;#infoContainer&quot; &quot;complete-active&quot;&gt;&gt;
+    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
+	&lt;br/&gt;
+	&lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+		&lt;&lt;button $nxtBtnText&gt;&gt;
+			&lt;&lt;goto $nextpass&gt;&gt;
+		&lt;&lt;/button&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="completed3" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_33.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 
@@ -1436,21 +1444,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
     
      &lt;/div&gt;
 
- &lt;div class=&quot;success info-container&quot;&gt;
-&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
-&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
+ &lt;div class=&quot;success info-container&quot; id=&quot;infoContainer&quot;&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-pass&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-pass&quot;/&gt;
 &lt;/div&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
             &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 10s&gt;&gt;
- &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button $nxtBtnText&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-   
-    &lt;&lt;/append&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
+	&lt;&lt;addclass &quot;#infoContainer&quot; &quot;complete-active&quot;&gt;&gt;
+    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
+	&lt;br/&gt;
+	&lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+		&lt;&lt;button $nxtBtnText&gt;&gt;
+			&lt;&lt;goto $nextpass&gt;&gt;
+		&lt;&lt;/button&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="completed4" tags="nobr" position="725,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_51.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1464,20 +1476,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
           &lt;img src=&quot;../assets/img/Hero_Image_Sequence_4.png&quot;/&gt; 
      &lt;/div&gt;
 
- &lt;div class=&quot;success info-container&quot;&gt;
-&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing&quot;/&gt;
-&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete&quot;/&gt;
+  &lt;div class=&quot;success info-container&quot; id=&quot;infoContainer&quot;&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-pass&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-pass&quot;/&gt;
 &lt;/div&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
             &lt;/div&gt;
 &lt;/main&gt;
 
-  &lt;&lt;timed 10s&gt;&gt;
- &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button $nxtBtnText&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-    &lt;&lt;/append&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
+	&lt;&lt;addclass &quot;#infoContainer&quot; &quot;complete-active&quot;&gt;&gt;
+    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
+	&lt;br/&gt;
+	&lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+		&lt;&lt;button $nxtBtnText&gt;&gt;
+			&lt;&lt;goto $nextpass&gt;&gt;
+		&lt;&lt;/button&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="completed5" tags="nobr" position="850,725" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_55.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1493,21 +1510,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
        
      &lt;/div&gt;
 
- &lt;div class=&quot;success info-container&quot;&gt;
-&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing-short&quot; class=&quot;processing&quot;/&gt;
-&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-short&quot;/&gt;
+  &lt;div class=&quot;success info-container&quot; id=&quot;infoContainer&quot;&gt;
+&lt;img src=&quot;assets/img/processing.png&quot; alt=&quot;processing&quot; class=&quot;processing-pass&quot;/&gt;
+&lt;img src=&quot;assets/img/complete.png&quot; alt=&quot;complete&quot; class=&quot;complete-pass&quot;/&gt;
 &lt;/div&gt;
  &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot; style=&quot;width: 100%;&quot;&gt;
             &lt;/div&gt;
 &lt;/main&gt;
 
- &lt;&lt;timed 10s&gt;&gt;
- &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-    &lt;&lt;button $nxtBtnText&gt;&gt;
-            &lt;&lt;goto $nextpass&gt;&gt;
-        &lt;&lt;/button&gt;&gt;
-   
-    &lt;&lt;/append&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
+	&lt;&lt;addclass &quot;#infoContainer&quot; &quot;complete-active&quot;&gt;&gt;
+    &lt;&lt;audio &quot;success&quot; &quot;play&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
+	&lt;br/&gt;
+	&lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
+		&lt;&lt;button $nxtBtnText&gt;&gt;
+			&lt;&lt;goto $nextpass&gt;&gt;
+		&lt;&lt;/button&gt;&gt;
+	&lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="13_story" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;11_cameraembed&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;13_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;14_story&quot;&gt;&gt;
@@ -1956,7 +1977,6 @@ When you are ready to move on, let me know.
 &lt;p&gt;This room has had quite a history. It began life as part of an education technology centre for schools, where local young people could make films. &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-
 
 &lt;&lt;timed 98s&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;

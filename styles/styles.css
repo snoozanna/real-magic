@@ -618,6 +618,39 @@ main.landing.complete{
   height: initial;
  }
 
+ /* Processing image: default visible */
+.info-container img.processing-pass {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Complete image: default hidden */
+.info-container img.complete-pass {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* When triggered (via <<addclass>>): */
+.info-container.complete-active img.processing-pass {
+  opacity: 0;
+}
+
+.info-container.complete-active img.complete-pass {
+  opacity: 1;
+}
+
+/* Optional: spin animation for processing */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.info-container img.processing-pass {
+  animation: spin 2s linear infinite;
+}
+
+
+
 
 /* Processing image: spin for 3s then fade out */
 .info-container img.processing {

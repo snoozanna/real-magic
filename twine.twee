@@ -1486,21 +1486,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
            
      </div>
 
- <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+ <div class="success info-container" id="infoContainer">
+<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
 </main>
- <<timed 10s>>
-    <br/>
- <<append "#btnContainer">>
-    <<button $nxtBtnText>>
-            <<goto $nextpass>>
-        <</button>>
-   
-    <</append>>
+
+<<timed 10s>>
+	<<addclass "#infoContainer" "complete-active">>
+    <<audio "success" "play">>
+<</timed>>
+ <<timed 11s>>
+	<br/>
+	<<append "#btnContainer">>
+		<<button $nxtBtnText>>
+			<<goto $nextpass>>
+		<</button>>
+	<</append>>
 <</timed>>
 
 :: completed2 [nobr]
@@ -1518,21 +1522,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
            
      </div>
 
- <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+ <div class="success info-container" id="infoContainer">
+<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
 </main>
 
- <<timed 10s>>
- <<append "#btnContainer">>
-    <<button $nxtBtnText>>
-            <<goto $nextpass>>
-        <</button>>
-   
-    <</append>>
+<<timed 10s>>
+	<<addclass "#infoContainer" "complete-active">>
+    <<audio "success" "play">>
+<</timed>>
+ <<timed 11s>>
+	<br/>
+	<<append "#btnContainer">>
+		<<button $nxtBtnText>>
+			<<goto $nextpass>>
+		<</button>>
+	<</append>>
 <</timed>>
 
 :: completed3 [nobr]
@@ -1551,21 +1559,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
     
      </div>
 
- <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+ <div class="success info-container" id="infoContainer">
+<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
 </main>
 
- <<timed 10s>>
- <<append "#btnContainer">>
-    <<button $nxtBtnText>>
-            <<goto $nextpass>>
-        <</button>>
-   
-    <</append>>
+<<timed 10s>>
+	<<addclass "#infoContainer" "complete-active">>
+    <<audio "success" "play">>
+<</timed>>
+ <<timed 11s>>
+	<br/>
+	<<append "#btnContainer">>
+		<<button $nxtBtnText>>
+			<<goto $nextpass>>
+		<</button>>
+	<</append>>
 <</timed>>
 
 :: completed4 [nobr]
@@ -1583,20 +1595,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
           <img src="../assets/img/Hero_Image_Sequence_4.png"/> 
      </div>
 
- <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+  <div class="success info-container" id="infoContainer">
+<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
 </main>
 
-  <<timed 10s>>
- <<append "#btnContainer">>
-    <<button $nxtBtnText>>
-            <<goto $nextpass>>
-        <</button>>
-    <</append>>
+<<timed 10s>>
+	<<addclass "#infoContainer" "complete-active">>
+    <<audio "success" "play">>
+<</timed>>
+ <<timed 11s>>
+	<br/>
+	<<append "#btnContainer">>
+		<<button $nxtBtnText>>
+			<<goto $nextpass>>
+		<</button>>
+	<</append>>
 <</timed>>
 
 
@@ -1617,21 +1634,25 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
        
      </div>
 
- <div class="success info-container">
-<img src="assets/img/processing.png" alt="processing-short" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete-short"/>
+  <div class="success info-container" id="infoContainer">
+<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
 </main>
 
- <<timed 10s>>
- <<append "#btnContainer">>
-    <<button $nxtBtnText>>
-            <<goto $nextpass>>
-        <</button>>
-   
-    <</append>>
+<<timed 10s>>
+	<<addclass "#infoContainer" "complete-active">>
+    <<audio "success" "play">>
+<</timed>>
+ <<timed 11s>>
+	<br/>
+	<<append "#btnContainer">>
+		<<button $nxtBtnText>>
+			<<goto $nextpass>>
+		<</button>>
+	<</append>>
 <</timed>>
 
 
@@ -2175,7 +2196,6 @@ When you are ready to move on, let me know.
   <</append>>
 <</timed>>
 
-
 <<timed 98s>>
     <<append "#btnContainer">>
     <<button "Next">>
@@ -2337,6 +2357,7 @@ When you are ready to move on, let me know.
 
 <audio src="" autoplay>Audio is not supported on your device</audio>
 <<include "_templateStory">>
+
 
 :: 21_story-text-eng [nobr]
 
