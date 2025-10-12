@@ -4787,14 +4787,9 @@ a phenderfynu gwneud y byd yn lle hapusach.
 
 
 <<timed 1s>>
-       <<if $userchoices.language is "cymraeg">>
-                  <div class="ext-link">
-  <a href="https://www.theatrclwyd.com/cy/heritage-trail?x-craft-preview=sySIDDsU1Y&token=MJhj7FknMVuyWNR4yJkc-TP4hpVc8zBa" target="_blank">Finish</a></div>
-            <<elseif $userchoices.language is "english" >>
+     <<append "#btnContainer">>
                  <div class="ext-link">
   <a href="https://www.theatrclwyd.com/heritage-trail?x-craft-preview=0kDl4DPElI&token=KqUc2oaLY-gvhPegJd83uk5T-oDXARnx" target="_blank">Finish</a></div>
-            <</if>>
-    <<append "#btnContainer">>
 
 
     <</append>>
@@ -4814,9 +4809,8 @@ a phenderfynu gwneud y byd yn lle hapusach.
 
 <<timed 1s>>
     <<append "#btnContainer">>
-  <div class="ext-link">
-  <a href="https://www.theatrclwyd.com/" target="_blank">Gorffen</a></div>
-
+             <div class="ext-link">
+  <a href="https://www.theatrclwyd.com/cy/heritage-trail?x-craft-preview=sySIDDsU1Y&token=MJhj7FknMVuyWNR4yJkc-TP4hpVc8zBa" target="_blank">Finish</a></div>
     <</append>>
 <</timed>>
 
