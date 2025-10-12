@@ -2145,6 +2145,7 @@ When you are ready to move on, let me know.
         <</replace>>
         <</timed>>
  <<timed 0.1s>>
+
     <<append "#msgMount">>
         <iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7Dswj?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
 
@@ -2184,7 +2185,7 @@ When you are ready to move on, let me know.
     <</append>>
 <</timed>>
 
-:: 20_astor00y-text-cym [nobr]
+:: 20_astory-text-cym [nobr]
 <<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
@@ -2246,6 +2247,7 @@ When you are ready to move on, let me know.
         <</replace>>
         <</timed>>
  <<timed 0.1s>>
+
     <<append "#msgMount">>
 <div class="quote"><p>"I do think people wondered why there's this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come."</p></div>
 <p class="bold">That’s Christine Langton – wife of the late Maurice Langton – who in 1975 got the job to design and manage where you are now: Theatr Clwyd’s old TV studio.  </p>
@@ -2420,6 +2422,7 @@ When you are ready to move on, let me know.
         <</replace>>
         <</timed>>
 <<timed 0.1s>>
+    
     <<append "#msgMount">>
 <div class="quote"><p>"I've got good memories of creative engagement and the absolutely amazing work that they do with the children for the community... </p>
 <p>And it was beautiful, beautiful to see... what this theatre does for these children, it's amazing. Money can't buy that. To see the enjoyment on them faces that each and every one of them had and loved it."</p></div>
@@ -3610,8 +3613,10 @@ When you are near the stairs let me know. </p>
 
 <<timed 5s>>
    <<append "#msgMount">>
-<p> With the stairs on your left, head to the end of the corridor.
+<p> With the stairs on your left, head to the end of the corridor.<br/>
+Drws C is on your left.
 </p>
+
 
 <p>There are two sets of doors – we need the ones on the left under the Drws C sign. <br/>
     You’ll need your keycard to go through the door.
@@ -3773,6 +3778,7 @@ When you are near the stairs let me know. </p>
 <<set $prevpass to "41_story">>
 <<set $pass to "42_story">>
 <<set $nextpass to "floorplan">>
+<<set $currentStoryIndex to 1>>
 <<audio ":all" "stop">>
 
 <<include "_templateStory">>
@@ -3894,9 +3900,7 @@ When you are near the stairs let me know. </p>
 <<set $prevpass to "42_story">>
 <<set $pass to "floorplan">>
 <<set $nextpass to "49_story">>
-<<set $currentDot to 1>>
-<<set $totalDots to 4>>
-
+<<include "decideContent">>
 
     <div id="audioMount">
         <audio src="" autoplay>Audio not supported in your browser</audio>
@@ -3921,14 +3925,27 @@ When you are near the stairs let me know. </p>
         <div class="story-text" id="msgMount"></div>
           <div class="btn-container" id="btnContainer">
             </div>
-        <<timed 3s>>
-            <<include "content1">>
-            <</timed>>
+      
            
     </main>
     
     <<include "footer_floorplan">>
 </div>
+
+:: decideContent [nobr]
+<<timed 0.1s>>
+<<if $currentStoryIndex is 1>>
+    <<include "content1">>
+    <<elseif $currentStoryIndex is 2>>
+         <<include "content2">>
+     <<elseif $currentStoryIndex is 3>>
+         <<include "content3">>
+     <<elseif $currentStoryIndex is 4>>
+         <<include "content4">>
+     <<elseif $currentStoryIndex is 5>>
+         <<include "content5">>
+<</if>>
+<</timed>>
 
 :: content1 [nobr]
    
@@ -3947,22 +3964,23 @@ When you are near the stairs let me know. </p>
         <</timed>>
       
     <</replace>>
-   
+
 
     <<timed 30s>>
-        <<set $currentDot to 1>>
+     
         <<replace "#btnContainer">>
-            <<include "button1a">>
+            <<button $nxtBtnText>>
+               <<set $currentStoryIndex += 1>>
+		<<goto "floorplan">>
+                <</button>>
             <</replace>>
     <</timed>>
     <</timed>>
 
 
 
-:: button1a [nobr]
-<<button $nxtBtnText>>
-   
-      <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
+:: content2 [nobr]
+ <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
       <<replace "#msgMount">><</replace>>
        <<replace "#btnContainer">><</replace>>
 
@@ -3980,20 +3998,20 @@ When you are near the stairs let me know. </p>
     <</replace>>
          <</timed>>
     <<timed 67s>>
-        <<set $currentDot to 2>>
          <<replace "#btnContainer">>
-            <<include "button2">>
-            <</replace>>
+            <<button $nxtBtnText>>
+                <<set $currentStoryIndex += 1>>
+                <<goto "floorplan">>
+            <</button>>
+        <</replace>>
     <</timed>>
- <</button>>
 
-/* footer button has logic in footer passage */
- 
 
-:: button2[nobr]
-<<button $nxtBtnText>>
+:: content3 [nobr]
+
+<<timed 0.1s>>
    
-       <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
+           <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
     <<replace "#btnContainer">><</replace>>
     <<replace "#msgMount">><</replace>>
 
@@ -4013,18 +4031,18 @@ When you are near the stairs let me know. </p>
          <</timed>>
 
     <<timed 35s>>
-        <<set $currentDot to 3>>
         <<replace "#btnContainer">>
-            <<include "button3">>
-            <</replace>>
+            <<button $nxtBtnText>>
+                <<set $currentStoryIndex += 1>>
+                <<goto "floorplan">>
+            <</button>>
+        <</replace>>
     <</timed>>
- <</button>>
+<</timed>>
 
 
 
-:: button3 [nobr]
-<<button $nxtBtnText>>
-   
+:: content4 [nobr]   
       <<replace "#btnContainer">><</replace>>
       <<removeclass ".dot2" "green-dot pulse-dot story-dot">>
     <<replace "#msgMount">><</replace>>
@@ -4044,16 +4062,15 @@ When you are near the stairs let me know. </p>
          <</timed>>
 
     <<timed 43s>>
-        <<set $currentDot to 4>>
          <<replace "#btnContainer">>
-            <<include "button4">>
-            <</replace>>
+            <<button $nxtBtnText>>
+                <<set $currentStoryIndex += 1>>
+                <<goto "floorplan">>
+            <</button>>
+        <</replace>>
     <</timed>>
- <</button>>
 
-:: button4 [nobr]
-<<button $nxtBtnText>>
-   
+:: content5 [nobr]
       <<removeclass ".dot3" "green-dot pulse-dot story-dot">>
     <<replace "#msgMount">><</replace>>
     <<replace "#btnContainer">><</replace>>
@@ -4073,7 +4090,6 @@ When you are near the stairs let me know. </p>
          <</timed>>
 
     <<timed 24s>>
-        <<set $currentDot to 4>>
          <<replace "#btnContainer">>
  
             <<button $nxtBtnText>>
@@ -4081,7 +4097,6 @@ When you are near the stairs let me know. </p>
                 <</button>>
             <</replace>>
     <</timed>>
- <</button>>
 
 
 :: footer_floorplan [nobr]
@@ -4091,9 +4106,14 @@ When you are near the stairs let me know. </p>
     <</link>>
    
     <div></div>
-    <div id="processingMount">
-
-</div> 
+ <<link [img[assets/img/for-sharp-b.png]]>>
+    <<if $currentStoryIndex >= 5>>
+        <<goto $nextpass>>
+        <<else>>
+        <<set $currentStoryIndex += 1>>
+		<<goto "floorplan">>
+        <</if>>
+    <</link>>
 </div>
 
 
@@ -4174,36 +4194,8 @@ When you are near the stairs let me know. </p>
  <</append>>
 <</timed>>
 
- <<timed 0.1s>>
-    <<replace "#processingMount">>
-           <<removeclass ".dot1" "green-dot pulse-dot story-dot">>
-    <<replace "#btnContainer">><</replace>>
-    <<replace "#msgMount">><</replace>>
-
-     <<timed 1s>>
-            <<audio "ping" "play">>
-    <<replace "#btnContainer">><</replace>>
-     <<addclass ".dot2" "story-dot green-dot pulse-dot">>
-    <<replace "#msgMount">>
-     <<timed 0.1s>>
-            <<if $userchoices.language is "cymraeg">>
-                      <<include '46_floorplan_story_cym'>>
-            <<elseif $userchoices.language is "english" >>
-                 <<include '46_floorplan_story'>>
-            <</if>>
-        <</timed>>
-    <</replace>>
-         <</timed>>
-
-    <<timed 35s>>
-        <<set $currentDot to 3>>
-        <<replace "#btnContainer">>
-            <<include "button3">>
-            <</replace>>
-    <</timed>>
-        <</replace>>
-<</timed>>
-
+ 
+    
 
 :: 45_floorplan_story_cym [nobr]
 <<timed 0.1s>>
@@ -4237,6 +4229,7 @@ When you are near the stairs let me know. </p>
 <div class="quote"><p>“Our first date was going to see The Hitchhiker's Guide to the Galaxy on stage at Theatr Clwyd...”</p></div>
 <p>There’s Paul! They’ve been coming here since the late 1970s. They’ve been to – how many productions?</p>
 <div class="quote"><p>“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we're going to have a theatre room. And we're going to wallpaper it with our tickets.”</p></div>
+
 
 :: 46_floorplan_story_cym [nobr]
 <<replace "#audioMount">>
@@ -4287,6 +4280,7 @@ When you are near the stairs let me know. </p>
 <<set $prevpass to "floorplan">>
 <<set $pass to "49_story">>
 <<set $nextpass to "50_story">>
+<<set $currentStoryIndex to 1>>
 <<audio ":all" "stop">>
 
 <<include "_templateStory">>
@@ -4453,8 +4447,6 @@ When you are near the stairs let me know. </p>
 
 :: 52_story-text-eng [nobr]
 <p class="bold">We’re coming to the end it seems, just one more location to visit – or rather a view to return to.  </p>
-<p>I think it’s about time we say goodbye - but just for now!</p>
-
 <p>Come out of Drws C and walk along the corridor so you can see out to the view. </p>
 <p>You can go back to the balcony on the first floor if you like, but it might be easier to stay here on the top level.</p>
 
@@ -4774,9 +4766,15 @@ a phenderfynu gwneud y byd yn lle hapusach.
 
 
 <<timed 1s>>
+       <<if $userchoices.language is "cymraeg">>
+                  <div class="ext-link">
+  <a href="https://www.theatrclwyd.com/cy/heritage-trail?x-craft-preview=sySIDDsU1Y&token=MJhj7FknMVuyWNR4yJkc-TP4hpVc8zBa" target="_blank">Finish</a></div>
+            <<elseif $userchoices.language is "english" >>
+                 <div class="ext-link">
+  <a href="https://www.theatrclwyd.com/heritage-trail?x-craft-preview=0kDl4DPElI&token=KqUc2oaLY-gvhPegJd83uk5T-oDXARnx" target="_blank">Finish</a></div>
+            <</if>>
     <<append "#btnContainer">>
-  <div class="ext-link">
-  <a href="https://www.theatrclwyd.com/" target="_blank">Finish</a></div>
+
 
     <</append>>
 <</timed>>

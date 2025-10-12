@@ -1927,6 +1927,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 0.1s&gt;&gt;
+
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
         &lt;iframe width=&quot;100%&quot; height=&quot;640&quot; frameborder=&quot;0&quot; allow=&quot;xr-spatial-tracking; gyroscope; accelerometer&quot; allowfullscreen scrolling=&quot;no&quot; src=&quot;https://kuula.co/share/collection/7Dswj?logo=1&amp;info=1&amp;fs=1&amp;vr=0&amp;sd=1&amp;thumbs=1&quot;&gt;&lt;/iframe&gt;
 
@@ -1964,7 +1965,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="20_astor00y-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="86" name="20_astory-text-cym" tags="nobr" position="725,1100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
         &lt;&lt;include &quot;processing&quot;&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -2018,6 +2019,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 0.1s&gt;&gt;
+
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I do think people wondered why there&#39;s this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come.&quot;&lt;/p&gt;&lt;/div&gt;
 &lt;p class=&quot;bold&quot;&gt;That’s Christine Langton – wife of the late Maurice Langton – who in 1975 got the job to design and manage where you are now: Theatr Clwyd’s old TV studio.  &lt;/p&gt;
@@ -2173,6 +2175,7 @@ When you are ready to move on, let me know.
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
+    
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;&quot;I&#39;ve got good memories of creative engagement and the absolutely amazing work that they do with the children for the community... &lt;/p&gt;
 &lt;p&gt;And it was beautiful, beautiful to see... what this theatre does for these children, it&#39;s amazing. Money can&#39;t buy that. To see the enjoyment on them faces that each and every one of them had and loved it.&quot;&lt;/p&gt;&lt;/div&gt;
@@ -3217,8 +3220,10 @@ When you are near the stairs let me know. &lt;/p&gt;
 
 &lt;&lt;timed 5s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
-&lt;p&gt; With the stairs on your left, head to the end of the corridor.
+&lt;p&gt; With the stairs on your left, head to the end of the corridor.&lt;br/&gt;
+Drws C is on your left.
 &lt;/p&gt;
+
 
 &lt;p&gt;There are two sets of doors – we need the ones on the left under the Drws C sign. &lt;br/&gt;
     You’ll need your keycard to go through the door.
@@ -3355,6 +3360,7 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="149" name="42_story" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;41_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;42_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;floorplan&quot;&gt;&gt;
+&lt;&lt;set $currentStoryIndex to 1&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
 &lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="150" name="42_story-text-eng" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
@@ -3467,9 +3473,7 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="floorplan" tags="nobr" position="225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;42_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;floorplan&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;49_story&quot;&gt;&gt;
-&lt;&lt;set $currentDot to 1&gt;&gt;
-&lt;&lt;set $totalDots to 4&gt;&gt;
-
+&lt;&lt;include &quot;decideContent&quot;&gt;&gt;
 
     &lt;div id=&quot;audioMount&quot;&gt;
         &lt;audio src=&quot;&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
@@ -3494,14 +3498,24 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;div class=&quot;story-text&quot; id=&quot;msgMount&quot;&gt;&lt;/div&gt;
           &lt;div class=&quot;btn-container&quot; id=&quot;btnContainer&quot;&gt;
             &lt;/div&gt;
-        &lt;&lt;timed 3s&gt;&gt;
-            &lt;&lt;include &quot;content1&quot;&gt;&gt;
-            &lt;&lt;/timed&gt;&gt;
+      
            
     &lt;/main&gt;
     
     &lt;&lt;include &quot;footer_floorplan&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="content1" tags="nobr" position="350,1975" size="100,100">&lt;&lt;addclass &quot;.dot1&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="decideContent" tags="nobr" position="350,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;if $currentStoryIndex is 1&gt;&gt;
+    &lt;&lt;include &quot;content1&quot;&gt;&gt;
+    &lt;&lt;elseif $currentStoryIndex is 2&gt;&gt;
+         &lt;&lt;include &quot;content2&quot;&gt;&gt;
+     &lt;&lt;elseif $currentStoryIndex is 3&gt;&gt;
+         &lt;&lt;include &quot;content3&quot;&gt;&gt;
+     &lt;&lt;elseif $currentStoryIndex is 4&gt;&gt;
+         &lt;&lt;include &quot;content4&quot;&gt;&gt;
+     &lt;&lt;elseif $currentStoryIndex is 5&gt;&gt;
+         &lt;&lt;include &quot;content5&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="154" name="content1" tags="nobr" position="475,1975" size="100,100">&lt;&lt;addclass &quot;.dot1&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
@@ -3516,17 +3530,18 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/timed&gt;&gt;
       
     &lt;&lt;/replace&gt;&gt;
-   
+
 
     &lt;&lt;timed 30s&gt;&gt;
-        &lt;&lt;set $currentDot to 1&gt;&gt;
+     
         &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-            &lt;&lt;include &quot;button1a&quot;&gt;&gt;
+            &lt;&lt;button $nxtBtnText&gt;&gt;
+               &lt;&lt;set $currentStoryIndex += 1&gt;&gt;
+		&lt;&lt;goto &quot;floorplan&quot;&gt;&gt;
+                &lt;&lt;/button&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="154" name="button1a" tags="nobr" position="475,1975" size="100,100">&lt;&lt;button $nxtBtnText&gt;&gt;
-   
-      &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="155" name="content2" tags="nobr" position="600,1975" size="100,100">&lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
       &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
@@ -3544,16 +3559,15 @@ When you are near the stairs let me know. &lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
          &lt;&lt;/timed&gt;&gt;
     &lt;&lt;timed 67s&gt;&gt;
-        &lt;&lt;set $currentDot to 2&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-            &lt;&lt;include &quot;button2&quot;&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;
-
-/* footer button has logic in footer passage */</tw-passagedata><tw-passagedata pid="155" name="button2" tags="nobr" position="600,1975" size="100,100">&lt;&lt;button $nxtBtnText&gt;&gt;
+            &lt;&lt;button $nxtBtnText&gt;&gt;
+                &lt;&lt;set $currentStoryIndex += 1&gt;&gt;
+                &lt;&lt;goto &quot;floorplan&quot;&gt;&gt;
+            &lt;&lt;/button&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="156" name="content3" tags="nobr" position="725,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    
-       &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
+           &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
@@ -3573,14 +3587,14 @@ When you are near the stairs let me know. &lt;/p&gt;
          &lt;&lt;/timed&gt;&gt;
 
     &lt;&lt;timed 35s&gt;&gt;
-        &lt;&lt;set $currentDot to 3&gt;&gt;
         &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-            &lt;&lt;include &quot;button3&quot;&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
+            &lt;&lt;button $nxtBtnText&gt;&gt;
+                &lt;&lt;set $currentStoryIndex += 1&gt;&gt;
+                &lt;&lt;goto &quot;floorplan&quot;&gt;&gt;
+            &lt;&lt;/button&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="156" name="button3" tags="nobr" position="725,1975" size="100,100">&lt;&lt;button $nxtBtnText&gt;&gt;
-   
-      &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="157" name="content4" tags="nobr" position="850,1975" size="100,100">&lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;removeclass &quot;.dot2&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
@@ -3599,14 +3613,13 @@ When you are near the stairs let me know. &lt;/p&gt;
          &lt;&lt;/timed&gt;&gt;
 
     &lt;&lt;timed 43s&gt;&gt;
-        &lt;&lt;set $currentDot to 4&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-            &lt;&lt;include &quot;button4&quot;&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="157" name="button4" tags="nobr" position="850,1975" size="100,100">&lt;&lt;button $nxtBtnText&gt;&gt;
-   
-      &lt;&lt;removeclass &quot;.dot3&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
+            &lt;&lt;button $nxtBtnText&gt;&gt;
+                &lt;&lt;set $currentStoryIndex += 1&gt;&gt;
+                &lt;&lt;goto &quot;floorplan&quot;&gt;&gt;
+            &lt;&lt;/button&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="158" name="content5" tags="nobr" position="975,1975" size="100,100">&lt;&lt;removeclass &quot;.dot3&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
     &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 
@@ -3625,23 +3638,26 @@ When you are near the stairs let me know. &lt;/p&gt;
          &lt;&lt;/timed&gt;&gt;
 
     &lt;&lt;timed 24s&gt;&gt;
-        &lt;&lt;set $currentDot to 4&gt;&gt;
          &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
  
             &lt;&lt;button $nxtBtnText&gt;&gt;
                 &lt;&lt;goto $nextpass&gt;&gt;
                 &lt;&lt;/button&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
- &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="158" name="footer_floorplan" tags="nobr" position="975,1975" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="159" name="footer_floorplan" tags="nobr" position="1100,1975" size="100,100">&lt;div class=&quot;footer-icons&quot;&gt;
 &lt;&lt;link [img[assets/img/back-sharp-b.png][$prevpass]]&gt;&gt;
     &lt;&lt;/link&gt;&gt;
    
     &lt;div&gt;&lt;/div&gt;
-    &lt;div id=&quot;processingMount&quot;&gt;
-
-&lt;/div&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="44_floorplan_story" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+ &lt;&lt;link [img[assets/img/for-sharp-b.png]]&gt;&gt;
+    &lt;&lt;if $currentStoryIndex &gt;= 5&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $currentStoryIndex += 1&gt;&gt;
+		&lt;&lt;goto &quot;floorplan&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="44_floorplan_story" tags="nobr" position="1225,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
      &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_44.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -3663,7 +3679,7 @@ When you are near the stairs let me know. &lt;/p&gt;
  &lt;p&gt;And also the sense that when you step on stage, you set something in motion, and you have to let it run its course. You know what I mean, you can&#39;t step in and with doubts, or with, you know, say, Oh, I don&#39;t want to do this. I&#39;m tired. You have to almost... it was... going with the flow. And you had to, like you had to succumb to the gravity of the audience and that relationship with you and it.&quot;&lt;/p&gt;
  &lt;/div&gt;
  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="160" name="44_floorplan_story_cym" tags="nobr" position="1225,1975" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="44_floorplan_story_cym" tags="nobr" position="100,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
      &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_44.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -3683,7 +3699,7 @@ When you are near the stairs let me know. &lt;/p&gt;
  &lt;p&gt;Mae ’na ryw deimlad visceral iawn pan mae rhywun yn cerdded ar y llwyfan o yr anochel fod hyn sydd yn mynd i ddigwydd yn mynd i ddigwydd ac mae’n rhaid i ti adael iddo fo redeg ei gwrs. Rhoi i mewn i’r ddrama neu’r perfformiad. Fedri di ddim cerdded ’mlaen yn meddwl o na, na, na, ’dwi ddim eisiau gwneud hyn, ’dwi wedi blino. Mae’n rhaid i ti fynd efo’r llif rywsut a rhoi mewn i ddisgyrchiant y gynulleidfa a’r berthynas rhyngddat ti a’r gynulleidfa.”&lt;/p&gt;
  &lt;/div&gt;
  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="45_floorplan_story" tags="nobr" position="100,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="162" name="45_floorplan_story" tags="nobr" position="225,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_45.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -3702,37 +3718,7 @@ When you are near the stairs let me know. &lt;/p&gt;
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;That’s Isabella Colby Browne – another actor from Mold – she first performed in a production of Oliver on the stage when she was 15. Thanks to a group called Cwmni 25, run by Gwennan Mair Jones. She went on to perform in Welsh and English! Da iawn Isabella. &lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
- &lt;&lt;timed 0.1s&gt;&gt;
-    &lt;&lt;replace &quot;#processingMount&quot;&gt;&gt;
-           &lt;&lt;removeclass &quot;.dot1&quot; &quot;green-dot pulse-dot story-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-
-     &lt;&lt;timed 1s&gt;&gt;
-            &lt;&lt;audio &quot;ping&quot; &quot;play&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-     &lt;&lt;addclass &quot;.dot2&quot; &quot;story-dot green-dot pulse-dot&quot;&gt;&gt;
-    &lt;&lt;replace &quot;#msgMount&quot;&gt;&gt;
-     &lt;&lt;timed 0.1s&gt;&gt;
-            &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
-                      &lt;&lt;include &#39;46_floorplan_story_cym&#39;&gt;&gt;
-            &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
-                 &lt;&lt;include &#39;46_floorplan_story&#39;&gt;&gt;
-            &lt;&lt;/if&gt;&gt;
-        &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;/replace&gt;&gt;
-         &lt;&lt;/timed&gt;&gt;
-
-    &lt;&lt;timed 35s&gt;&gt;
-        &lt;&lt;set $currentDot to 3&gt;&gt;
-        &lt;&lt;replace &quot;#btnContainer&quot;&gt;&gt;
-            &lt;&lt;include &quot;button3&quot;&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="162" name="45_floorplan_story_cym" tags="nobr" position="225,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="45_floorplan_story_cym" tags="nobr" position="350,2100" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_45.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
@@ -3749,7 +3735,7 @@ When you are near the stairs let me know. &lt;/p&gt;
      &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p&gt;Isabella Colby Browne oedd hi – actores arall o’r Wyddgrug – fe berfformiodd hi am y tro cyntaf mewn cynhyrchiad o Oliver ar y llwyfan pan oedd hi’n 15 oed. Diolch i grŵp o’r enw Cwmni 25, sy’n cael ei gynnal gan Gwennan Mair Jones, fe aeth hi ymlaen i berfformio yn y Gymraeg a’r Saesneg! Da iawn Isabella. &lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="163" name="46_floorplan_story" tags="nobr" position="350,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="46_floorplan_story" tags="nobr" position="475,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_46.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;From the front row, the stage is right in front of you, only  inches up.  &lt;/p&gt;
@@ -3757,7 +3743,7 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;p&gt;That’s Judie von der Fecht! Her and Paul are front row regulars.&lt;/p&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Our first date was going to see The Hitchhiker&#39;s Guide to the Galaxy on stage at Theatr Clwyd...”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;There’s Paul! They’ve been coming here since the late 1970s. They’ve been to – how many productions?&lt;/p&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we&#39;re going to have a theatre room. And we&#39;re going to wallpaper it with our tickets.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="46_floorplan_story_cym" tags="nobr" position="475,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Hundreds and hundreds... I’ve always said that if we ever win the lottery- ... we&#39;re going to have a theatre room. And we&#39;re going to wallpaper it with our tickets.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="46_floorplan_story_cym" tags="nobr" position="600,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_46.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;O&#39;r rhes flaen, mae&#39;r llwyfan yn union o&#39;ch blaen chi, dim ond modfeddi i fyny. &lt;/p&gt;
@@ -3765,34 +3751,35 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;p&gt;Judie von der Fecht oedd y llais yna! Mae hi a Paul yn ymwelwyr rheolaidd yn y rhes flaen.&lt;/p&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Ein dêt cyntaf ni oedd mynd i weld The Hitchhiker&#39;s Guide to the Galaxy ar y llwyfan yn Theatr Clwyd...”&lt;/p&gt;&lt;/div&gt;
 &lt;p&gt;Paul oedd hwnna! Maen nhw wedi bod yn dod yma ers diwedd y 1970au. Maen nhw wedi bod mewn – faint o gynyrchiadau?&lt;/p&gt;
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Cannoedd ar gannoedd... Rydw i bob amser wedi dweud, pe bawn i’n ennill y loteri ryw dro – ... fe fydden ni&#39;n cael ystafell theatr. Ac fe fydden ni&#39;n ei phapuro hi gyda&#39;n tocynnau.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="47_floorplan_story" tags="nobr" position="600,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Cannoedd ar gannoedd... Rydw i bob amser wedi dweud, pe bawn i’n ennill y loteri ryw dro – ... fe fydden ni&#39;n cael ystafell theatr. Ac fe fydden ni&#39;n ei phapuro hi gyda&#39;n tocynnau.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="166" name="47_floorplan_story" tags="nobr" position="725,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_47.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“The main theatre is so wonderfully intimate. No matter where you sit. It doesn&#39;t feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there&#39;s no bad seat there... you feel so intimate. I guess it&#39;s a place of escape, almost, it&#39;s one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” &lt;/p&gt;&lt;/div&gt;
-&lt;p&gt;That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="166" name="47_floorplan_story_cym" tags="nobr" position="725,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;p&gt;That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. &lt;/p&gt;</tw-passagedata><tw-passagedata pid="167" name="47_floorplan_story_cym" tags="nobr" position="850,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_47.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Mae’r brif theatr mor hyfryd o agos atoch chi. Dim ots ble rydych chi’n eistedd. Dydy hi ddim yn teimlo felly pan rydych chi’n mynd i mewn yno i eistedd, mae’n teimlo’n enfawr, ond cyn gynted ag y mae pethau’n digwydd ar y llwyfan, does dim sedd wael… rydych chi’n teimlo mor agos. Mae’n lle am ddihangfa, bron, fel ei fod yn un o’r ychydig lefydd lle rydw i’n mynd i mewn ac yn eistedd ac yn meddwl, ‘Wel, beth bynnag sy’n digwydd, mae hyn yn mynd i fod yn wych.’” &lt;/p&gt;&lt;/div&gt;
-&lt;p&gt;Megan Price. Roedd ei rhieni’n gweithio yma o’r 70au – hi oedd babi cyntaf Theatr Clwyd! Fe dyfodd i fyny yn ein theatr ieuenctid ac aeth ymlaen i weithio fel arbenigwr marchnata celfyddydau llawrydd.  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="167" name="48_floorplan_story" tags="nobr" position="850,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;p&gt;Megan Price. Roedd ei rhieni’n gweithio yma o’r 70au – hi oedd babi cyntaf Theatr Clwyd! Fe dyfodd i fyny yn ein theatr ieuenctid ac aeth ymlaen i weithio fel arbenigwr marchnata celfyddydau llawrydd.  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="168" name="48_floorplan_story" tags="nobr" position="975,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_48.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;The ushers often sneak in to sit here – and see how a show evolves over time. &lt;/p&gt;
 
 &lt;p&gt;Ah, it’s usher Geoff Wiliams again!&lt;/p&gt;
 
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“You could look at the whole stage and the performance in a different way. You could see things that were going on that you never noticed because you were too busy watching the overall picture. And to watch a thing two or three times, it isn&#39;t boring, it&#39;s terrific.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="48_floorplan_story_cym" tags="nobr" position="975,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“You could look at the whole stage and the performance in a different way. You could see things that were going on that you never noticed because you were too busy watching the overall picture. And to watch a thing two or three times, it isn&#39;t boring, it&#39;s terrific.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="48_floorplan_story_cym" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;replace &quot;#audioMount&quot;&gt;&gt;
         &lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_48.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
         &lt;&lt;/replace&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Mae&#39;r tywyswyr yn sleifio i mewn i eistedd yma yn aml – er mwyn gweld y dramau&#39;n esblygu dros amser.&lt;/p&gt;
 &lt;p&gt;Dyma’r tywysydd Geoff Williams eto!&lt;/p&gt;
 
 
-&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Fe allech chi edrych ar y llwyfan cyfan a&#39;r perfformiad mewn ffordd wahanol. Fe allech chi weld pethau oedd yn digwydd nad oeddech chi erioed wedi sylwi arnyn nhw oherwydd eich bod chi&#39;n rhy brysur yn gwylio&#39;r darlun cyffredinol. A gwylio rhywbeth ddwy neu dair gwaith, dydi o ddim yn ddiflas, mae&#39;n wych.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="49_story" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;floorplan&quot;&gt;&gt;
+&lt;div class=&quot;quote&quot;&gt;&lt;p&gt;“Fe allech chi edrych ar y llwyfan cyfan a&#39;r perfformiad mewn ffordd wahanol. Fe allech chi weld pethau oedd yn digwydd nad oeddech chi erioed wedi sylwi arnyn nhw oherwydd eich bod chi&#39;n rhy brysur yn gwylio&#39;r darlun cyffredinol. A gwylio rhywbeth ddwy neu dair gwaith, dydi o ddim yn ddiflas, mae&#39;n wych.”&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="49_story" tags="nobr" position="1225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;floorplan&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;49_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;50_story&quot;&gt;&gt;
+&lt;&lt;set $currentStoryIndex to 1&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="49_story-text-eng" tags="nobr" position="1225,2100" size="100,100">&lt;p class=&quot;bold&quot;&gt;Each seat holds someone through their time with us. &lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="171" name="49_story-text-eng" tags="nobr" position="100,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Each seat holds someone through their time with us. &lt;/p&gt;
 &lt;p&gt;Be that one visit or a lifetime of stories.  &lt;/p&gt;
 &lt;p&gt;Some seats bear the names of friends and loved ones.&lt;/p&gt; 
 &lt;p&gt;And to finish our time in the theatre, I need the name written on the plaque. &lt;/p&gt;
@@ -3800,7 +3787,7 @@ When you are near the stairs let me know. &lt;/p&gt;
 
 
 
-&lt;&lt;include &quot;pw49&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="171" name="49_story-text-cym" tags="nobr" position="100,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Mae pob sedd yn dal rhywun drwy gydol eu hamser gyda ni. &lt;/p&gt;
+&lt;&lt;include &quot;pw49&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="172" name="49_story-text-cym" tags="nobr" position="225,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Mae pob sedd yn dal rhywun drwy gydol eu hamser gyda ni. &lt;/p&gt;
 &lt;p&gt;Boed yn un ymweliad neu’n oes o straeon bythgofiadwy. &lt;/p&gt;
 &lt;p&gt;Ar ambell set fe welwch enwau ffrindiau, teulu ac anwyliaid.&lt;/p&gt; 
 &lt;p&gt;Ac i ddod â’n hamser ni yn y theatr i ben, rydw i angen yr enw sydd wedi’i ysgrifennu ar y plac. &lt;/p&gt;
@@ -3808,7 +3795,7 @@ When you are near the stairs let me know. &lt;/p&gt;
 
 
 
-&lt;&lt;include &quot;pw49W&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="172" name="pw49W" tags="nobr" position="225,2225" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
+&lt;&lt;include &quot;pw49W&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="173" name="pw49W" tags="nobr" position="350,2225" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
     &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
     &lt;br/&gt;&lt;br/&gt;
     &lt;&lt;button &quot;Enter&quot;&gt;&gt;
@@ -3837,7 +3824,7 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;/div&gt;
     &lt;br/&gt;
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-    &lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholderCym()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="173" name="pw49" tags="nobr" position="350,2225" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
+    &lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholderCym()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="174" name="pw49" tags="nobr" position="475,2225" size="100,100">&lt;div class=&quot;codeinput&quot;&gt;
     &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
     &lt;br/&gt;&lt;br/&gt;
     &lt;&lt;button &quot;Enter&quot;&gt;&gt;
@@ -3866,12 +3853,12 @@ When you are near the stairs let me know. &lt;/p&gt;
 &lt;/div&gt;
     &lt;br/&gt;
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-    &lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="174" name="50_story" tags="nobr" position="475,2225" size="100,100">&lt;&lt;set $prevpass to &quot;49_story&quot;&gt;&gt;
+    &lt;&lt;done&gt;&gt;&lt;&lt;set $e to setup.addPlaceholder()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="175" name="50_story" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $prevpass to &quot;49_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;50_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="175" name="50_story-text-eng" tags="nobr" position="600,2225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="176" name="50_story-text-eng" tags="nobr" position="725,2225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
   &lt;p&gt; “Theatr Clwyd, you know, has been my second home for over 20 years now. Every time I come here, I feel a strength in unity here. &lt;/p&gt;
@@ -3895,7 +3882,7 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="176" name="50_story-text-cym" tags="nobr" position="725,2225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="177" name="50_story-text-cym" tags="nobr" position="850,2225" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;div class=&quot;quote&quot;&gt;
   &lt;p&gt; “Mae Theatr Clwyd, chi’n gweld, wedi bod yn ail gartref i mi ers dros 20 mlynedd bellach. Bob tro rydw i’n dod yma, rydw i’n teimlo cryfder mewn undod yma.&lt;/p&gt;
@@ -3922,14 +3909,12 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="177" name="52_story" tags="nobr" position="850,2225" size="100,100">&lt;&lt;set $prevpass to &quot;50_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="178" name="52_story" tags="nobr" position="975,2225" size="100,100">&lt;&lt;set $prevpass to &quot;50_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="178" name="52_story-text-eng" tags="nobr" position="975,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re coming to the end it seems, just one more location to visit – or rather a view to return to.  &lt;/p&gt;
-&lt;p&gt;I think it’s about time we say goodbye - but just for now!&lt;/p&gt;
-
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="179" name="52_story-text-eng" tags="nobr" position="1100,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’re coming to the end it seems, just one more location to visit – or rather a view to return to.  &lt;/p&gt;
 &lt;p&gt;Come out of Drws C and walk along the corridor so you can see out to the view. &lt;/p&gt;
 &lt;p&gt;You can go back to the balcony on the first floor if you like, but it might be easier to stay here on the top level.&lt;/p&gt;
 
@@ -3940,7 +3925,7 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="179" name="52_story-text-cym" tags="nobr" position="1100,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Wel, mae&#39;n debyg ein bod ni&#39;n nesau at y diwedd, dim ond un lleoliad arall i ymweld ag o – neu&#39;n hytrach golygfa i ddychwelyd ati.&lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="180" name="52_story-text-cym" tags="nobr" position="1225,2225" size="100,100">&lt;p class=&quot;bold&quot;&gt;Wel, mae&#39;n debyg ein bod ni&#39;n nesau at y diwedd, dim ond un lleoliad arall i ymweld ag o – neu&#39;n hytrach golygfa i ddychwelyd ati.&lt;/p&gt;
 
 &lt;p&gt;Dewch allan o Ddrws C a cherdded ar hyd y coridor er mwyn i chi allu gweld yr olygfa. &lt;/p&gt;
 &lt;p&gt;Fe allwch chi fynd yn ôl i&#39;r balconi ar y llawr cyntaf os hoffech chi, ond efallai y byddai&#39;n haws aros yma ar y lefel uchaf.
@@ -3953,12 +3938,12 @@ When you are near the stairs let me know. &lt;/p&gt;
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="180" name="53_story" tags="nobr" position="1225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;52_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="181" name="53_story" tags="nobr" position="100,2350" size="100,100">&lt;&lt;set $prevpass to &quot;52_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="181" name="53_story-text-eng" tags="nobr" position="100,2350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="182" name="53_story-text-eng" tags="nobr" position="225,2350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Theatr Clwyd’s mission statement begins like this:&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
@@ -4028,7 +4013,7 @@ Where our community shapes us, challenges us, and drives us on – from the bees
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="182" name="53_story-text-cym" tags="nobr" position="225,2350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="183" name="53_story-text-cym" tags="nobr" position="350,2350" size="100,100">&lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
 &lt;p class=&quot;bold&quot;&gt;Mae datganiad cenhadaeth Theatr Clwyd yn dechrau fel hyn:&lt;/p&gt;
  &lt;&lt;/append&gt;&gt;
@@ -4105,7 +4090,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
         &lt;&lt;/button&gt;&gt;
            /* &lt;&lt;include &quot;navbuttons&quot;&gt;&gt; */
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="183" name="54_speakpipe" tags="nobr" position="350,2350" size="100,100">&lt;&lt;set $prevpass to &quot;53_story&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="184" name="54_speakpipe" tags="nobr" position="475,2350" size="100,100">&lt;&lt;set $prevpass to &quot;53_story&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -4126,7 +4111,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
    &lt;&lt;/if&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="184" name="speakpipe_eng" tags="nobr" position="475,2350" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_54.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;include &quot;navbuttonsb&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="185" name="speakpipe_eng" tags="nobr" position="600,2350" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TC_54.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
     &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
@@ -4165,7 +4150,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
         &lt;/div&gt;
  
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="185" name="speakpipe_cym" tags="nobr" position="600,2350" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_54.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="186" name="speakpipe_cym" tags="nobr" position="725,2350" size="100,100">&lt;div id=&quot;audioMount&quot;&gt;&lt;audio id=&quot;audioPlayer&quot; src=&quot;assets/audio/TCW_54.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
     &lt;div id=&quot;msgMount&quot;&gt; &lt;/div&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;append &quot;#msgMount&quot;&gt;&gt;
@@ -4206,12 +4191,12 @@ a phenderfynu gwneud y byd yn lle hapusach.
         &lt;/div&gt;
  
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="186" name="56_story" tags="nobr" position="725,2350" size="100,100">&lt;&lt;set $prevpass to &quot;54_speakpipe&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="187" name="56_story" tags="nobr" position="850,2350" size="100,100">&lt;&lt;set $prevpass to &quot;54_speakpipe&quot;&gt;&gt;
 &lt;&lt;set $pass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;56_story&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
 
-&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="187" name="56_story-text-eng" tags="nobr" position="850,2350" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’ve reached our end. It’s time to return your keycard to the front desk.&lt;/p&gt;
+&lt;&lt;include &quot;_templateStory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="188" name="56_story-text-eng" tags="nobr" position="975,2350" size="100,100">&lt;p class=&quot;bold&quot;&gt;We’ve reached our end. It’s time to return your keycard to the front desk.&lt;/p&gt;
 
 &lt;p&gt;By the way - You can come back and do the trail again any time – and I’ll be delighted to join you.&lt;/p&gt;
 
@@ -4221,12 +4206,18 @@ a phenderfynu gwneud y byd yn lle hapusach.
 
 
 &lt;&lt;timed 1s&gt;&gt;
+       &lt;&lt;if $userchoices.language is &quot;cymraeg&quot;&gt;&gt;
+                  &lt;div class=&quot;ext-link&quot;&gt;
+  &lt;a href=&quot;https://www.theatrclwyd.com/cy/heritage-trail?x-craft-preview=sySIDDsU1Y&amp;token=MJhj7FknMVuyWNR4yJkc-TP4hpVc8zBa&quot; target=&quot;_blank&quot;&gt;Finish&lt;/a&gt;&lt;/div&gt;
+            &lt;&lt;elseif $userchoices.language is &quot;english&quot; &gt;&gt;
+                 &lt;div class=&quot;ext-link&quot;&gt;
+  &lt;a href=&quot;https://www.theatrclwyd.com/heritage-trail?x-craft-preview=0kDl4DPElI&amp;token=KqUc2oaLY-gvhPegJd83uk5T-oDXARnx&quot; target=&quot;_blank&quot;&gt;Finish&lt;/a&gt;&lt;/div&gt;
+            &lt;&lt;/if&gt;&gt;
     &lt;&lt;append &quot;#btnContainer&quot;&gt;&gt;
-  &lt;div class=&quot;ext-link&quot;&gt;
-  &lt;a href=&quot;https://www.theatrclwyd.com/&quot; target=&quot;_blank&quot;&gt;Finish&lt;/a&gt;&lt;/div&gt;
+
 
     &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="188" name="56_story-text-cym" tags="nobr" position="975,2350" size="100,100">&lt;p class=&quot;bold&quot;&gt;Wel, rydyn ni wedi cyrraedd y diwedd. &lt;/p&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="189" name="56_story-text-cym" tags="nobr" position="1100,2350" size="100,100">&lt;p class=&quot;bold&quot;&gt;Wel, rydyn ni wedi cyrraedd y diwedd. &lt;/p&gt;
 &lt;p&gt;Mae&#39;n amser dychwelyd eich cerdyn allwedd i&#39;r ddesg flaen. &lt;/p&gt;
 
 &lt;p&gt;Fe allwch chi ddod yn ôl a gwneud y llwybr eto unrhyw bryd, gyda llaw – ac fe fydda’ i wrth fy modd yn ymuno â chi. &lt;/p&gt;

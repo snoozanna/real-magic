@@ -298,7 +298,8 @@ a:hover {
 
 .inline-link > a {
   display: inline;
-  color: var(--maroon)
+  color: var(--maroon);
+  text-decoration: underline;
 }
 
 .hide{
@@ -632,12 +633,12 @@ main.landing.complete{
 /* Processing image short: spin for 2s then fade out */
 .info-container img.processing-short {
   opacity: 1;
-  animation: spin 0.5s linear, fadeOut 0.5s ease 0.5s forwards;
+  animation: spin 1s linear, fadeOut 0.5s ease 0.5s forwards;
 }
 
 /* Complete image short: show after 1s */
 .info-container img.complete-short {
-  animation: fadeIn 0.5s ease 0.5s forwards;
+  animation: fadeIn 1s ease 1s forwards;
 }
 
 /* Processing image: spin infitintelys */
