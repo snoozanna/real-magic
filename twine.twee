@@ -2033,7 +2033,7 @@ When you are ready to move on, let me know.
 
     /* Correct */
     <<if $codeword is "QUIET">>
-      <<replace "#coderesult">><span>Gywir!</span>
+      <<replace "#coderesult">><span>Cywir!</span>
       <</replace>>
        <<audio "success" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
@@ -3162,7 +3162,7 @@ When you are ready to move on, let me know.
       
       /% CODEWORD CORRECT%/
       <<if $codeword is "4" or $codeword is "PEDWAR" or $codeword is "5" or $codeword is "PUMP">>
-        <<replace "#coderesult">><span>Gywir!</span><</replace>>
+        <<replace "#coderesult">><span>Cywir!</span><</replace>>
         <<audio "success" play>>
 
         <<timed 3s>><<goto "completed3">><</timed>>
@@ -4337,7 +4337,7 @@ Drws C is on your left.
       
       /% CODEWORD CORRECT FOR CHATHAM STORIES%/
       <<if $codeword isnot "" and $codeword is "MAGS">>
-        <<replace "#coderesult">><span>Gywir!</span><</replace>>
+        <<replace "#coderesult">><span>Cywir!</span><</replace>>
         <<audio "success" play>>
 
         <<timed 3s>><<goto $nextpass>><</timed>>
