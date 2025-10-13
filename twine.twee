@@ -2081,7 +2081,7 @@ When you are ready to move on, let me know.
 
 
 :: 191_story-text-cym [nobr]
-<<<timed 0.1s>>
+<<timed 0.1s>>
     <<replace "#processingMount">>
         <<include "processing">>
         <</replace>>
