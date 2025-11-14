@@ -716,7 +716,7 @@ setup.addPlaceholderCym = () => {
 <</timed>>
 
 
-<<goto "18_story">>
+
 
 <<timed 30s>>
     <<append "#btnContainer">>

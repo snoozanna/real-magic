@@ -118,14 +118,14 @@ $(document.head).find('#style-ui-bar').remove();
 /* Google Tag */
 setup.JSLoaded = false;
  var lockID = LoadScreen.lock();  // Lock loading screen
- importScripts("https://www.googletagmanager.com/gtag/js?id=G-MWBVK97HZP")
+ importScripts("https://www.googletagmanager.com/gtag/js?id=G-TNTH69EN2L")
      .then(function() {
 
          setup.JSLoaded = true;
          window.dataLayer = window.dataLayer || [];
          window.gtag = function (){ dataLayer.push(arguments); };
          gtag('js', new Date());
-         gtag('config', 'G-MWBVK97HZP');
+         gtag('config', 'G-TNTH69EN2L');
           //  console.log("Sending to GA");
          LoadScreen.unlock(lockID);  // Unlock loading screen
      }).catch(function(error) {

@@ -22,7 +22,7 @@
 /* Bold weight */
 @font-face {
   font-family: 'FSMe';
-  src: url('/assets/fonts/FSMe-Bold.otf') format('opentype');
+  src: url('../assets/fonts/FSMe-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
@@ -30,7 +30,7 @@
 /* Light weight */
 @font-face {
   font-family: 'FSMe';
-  src: url('/assets/fonts/FSMe-Light.otf') format('opentype');
+  src: url('../assets/fonts/FSMe-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
 }
@@ -38,7 +38,7 @@
 /* Light weight */
 @font-face {
   font-family: 'FSMe';
-  src: url('/assets/fonts/FSMe-Regular.otf') format('opentype');
+  src: url('../assets/fonts/FSMe-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
