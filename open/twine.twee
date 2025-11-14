@@ -1,13 +1,13 @@
 :: StoryTitle
-Heritage Trail
+Real Magic Heritage Trail | Studio Open
 
 
 :: StoryData
 {
-	"ifid": "3727506D-288C-46BD-A866-3D0FCB0106F7",
+	"ifid": "7E7D2BBA-BF52-4BA3-B63D-03F1FD95144E",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "prechoice",
+	"start": "landing",
 	"zoom": 1
 }
 
@@ -18,8 +18,8 @@ Heritage Trail
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-@import url("styles/generics.css");
-@import url("styles/styles.css");
+@import url("../styles/generics.css");
+@import url("../styles/styles.css");
 
 
 
@@ -98,7 +98,7 @@ setup.chooseStoryAudio = () => {
   if (passageMatch) {
     const num = passageMatch[1]; // extract number before underscore
     const langSuffix = language === "cymraeg" ? "W" : "";
-    audioFiles = [`assets/audio/TC${langSuffix}_${num}.mp3`];
+    audioFiles = [`../assets/audio/TC${langSuffix}_${num}.mp3`];
   }
 
   let currentTrack = 0;
@@ -196,17 +196,17 @@ setup.addPlaceholderCym = () => {
 
 
 :: StoryInit
-<<cacheaudio "success" "assets/audio/TC_18Correct.mp3">>
-<<cacheaudio "distort" "assets/sound/Ffalabalam-distorted.mp3">>
-<<cacheaudio "notification" "assets/sound/Notification.wav">>
-<<cacheaudio "ping" "assets/sound/ping1.mp3">>
-<<cacheaudio "ticker" "assets/sound/ticker.mp3">>
+<<cacheaudio "success" "../assets/audio/TC_18Correct.mp3">>
+<<cacheaudio "distort" "../assets/sound/Ffalabalam-distorted.mp3">>
+<<cacheaudio "notification" "../assets/sound/Notification.wav">>
+<<cacheaudio "ping" "../assets/sound/ping1.mp3">>
+<<cacheaudio "ticker" "../assets/sound/ticker.mp3">>
 
 <script>
     const link = document.createElement("link");
     link.rel = "preload";
     link.as = "image";
-    link.href = "assets/img/leadImage.png";
+    link.href = "../assets/img/leadImage.png";
     document.head.appendChild(link);
 
 </script>
@@ -232,7 +232,7 @@ setup.addPlaceholderCym = () => {
 :: footer[nobr]
 
 <footer>
-    <<link [img[assets/img/back-black.png]]>>
+    <<link [img[../assets/img/back-black.png]]>>
         <<goto $prevpass>>
     <</link>>
 
@@ -242,9 +242,9 @@ setup.addPlaceholderCym = () => {
 :: navbuttons[nobr]
 
 <div class="footer-icons">
-<<link [img[assets/img/back-sharp.png][$prevpass]]>>
+<<link [img[../assets/img/back-sharp.png][$prevpass]]>>
     <</link>>
-    <<link [img[assets/img/replay-sharp.png][$pass]]>>
+    <<link [img[../assets/img/replay-sharp.png][$pass]]>>
     <</link>>
     
 <div><div/>
@@ -254,13 +254,13 @@ setup.addPlaceholderCym = () => {
 :: navbuttonsb [nobr]
 
 <div class="footer-icons">
-<<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
+<<link [img[../assets/img/back-sharp-b.png][$prevpass]]>>
     <</link>>
-    <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
+    <<link [img[../assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
     <<if $pass isnot "56_story">>
     <div id="processingMount">
-    <<link [img[assets/img/for-sharp-b.png][$nextpass]]>>
+    <<link [img[../assets/img/for-sharp-b.png][$nextpass]]>>
     <</link>>
     </div> 
     <<else>>
@@ -286,9 +286,9 @@ setup.addPlaceholderCym = () => {
 :: navbuttons-cym[nobr]
 
 <div class="footer-icons">
-<<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
+<<link [img[../assets/img/back-sharp-b.png][$prevpass]]>>
     <</link>>
-    <<link [img[assets/img/replay-sharp-b.png][$pass]]>>
+    <<link [img[../assets/img/replay-sharp-b.png][$pass]]>>
     <</link>>
      <<link [[$nextpass]]>>
     <</link>>
@@ -301,14 +301,14 @@ setup.addPlaceholderCym = () => {
 :: footeroptionappears[nobr]
 <<set $showWallet to false>>
 <footer class="grid-item footer">
-  <<link [img[assets/img/back-black.png]]>>
+  <<link [img[../assets/img/back-black.png]]>>
         <<goto $prevpass>>
     <</link>>
   /* <<link "W">>
         <<set $showWallet to true>>
         <<goto "wallet">>
         <</link>> */
-           /* <<link [img[assets/img/for-black.png]]>>
+           /* <<link [img[../assets/img/for-black.png]]>>
         <<goto $nextpass>>
     <</link>> */
     <div id="nextButtonContainer">
@@ -346,6 +346,7 @@ setup.addPlaceholderCym = () => {
 <<set $prevpass to "landing">>
 <<set $pass to "landing">>
 <<set $nextpass to "languageChoice">>
+<<set $studio to "open">>
 <<set $userchoices to {
     language: null,
     audioOn: true
@@ -408,7 +409,7 @@ setup.addPlaceholderCym = () => {
 <<include "header">>
 
 <main>
-<audio src="assets/audio/TC_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="../assets/audio/TC_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="instructional-text">
  <p class="bold"> Mae’r llwybr ar gael mewn dwy iaith, Cymraeg a Saesneg.  </p>
  <p> Pa un fyddech chi’n hoffi ei brofi? </p>
@@ -443,7 +444,7 @@ setup.addPlaceholderCym = () => {
   <</button>>
 </div>
 <br/>
-
+<p><i>Studio is Open.</i></p>
 </main>
 
 :: chapters [nobr]
@@ -541,7 +542,7 @@ setup.addPlaceholderCym = () => {
  <<timed 0.1s>>
     <<append "#msgMount">>
 <p class="bold">Well, hello. Shw’mae and welcome.</p>
-<<goto "20_astory">>
+
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for <i>years</i>. </p>
 
 <p>I’ve been in plays like <i>Little Shop of Horrors</i> and <i>The Government Inspector</i>.</p>
@@ -715,7 +716,7 @@ setup.addPlaceholderCym = () => {
 <</timed>>
 
 
-
+<<goto "18_story">>
 
 <<timed 30s>>
     <<append "#btnContainer">>
@@ -1304,7 +1305,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 
 :: camera_eng[nobr]
- <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_11.mp3" autoplay>Audio is not supported on your device</audio></div>
+ <div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_11.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 <div id="uploadInstructions">
   <p class="bold">Ok – we’ve got to a moment where I can’t move forward without a little activation...</p>
@@ -1343,7 +1344,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
             </div>
 <<done>><<set $e to setup.takePicture()>><</done>>
 :: camera_cym[nobr]
- <div id="audioMount"><audio id="audioPlayer" src="assets/audio/TCW_11.mp3" autoplay>Audio is not supported on your device</audio></div>
+ <div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TCW_11.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 <div id="uploadInstructions">
   <p class="bold">Iawn – rydyn ni wedi cyrraedd llecyn sy’n gofyn i chi gwblhau tasg cyn i ni symud ymlaen...</p>
@@ -1452,32 +1453,32 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 :: simpletrans [nobr]
  <div class=" fadeIn3 success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete"/>
 </div>
 
 :: unlocked [nobr]
  <div class=" success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing"/>
-<img src="assets/img/complete.png" alt="complete" class="complete"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete"/>
 </div>
 
 :: unlocked2 [nobr]
  <div class=" success info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing2"/>
-<img src="assets/img/complete.png" alt="complete" class="complete2"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing2"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete2"/>
 </div>
 
 :: processing [nobr]
  <div class="info-container">
-<img src="assets/img/processing.png" alt="processing" class="processing-long"/>
-/* <img src="assets/img/complete.png" alt="complete" class="complete"/> */
+<img src="../assets/img/processing.png" alt="processing" class="processing-long"/>
+/* <img src="../assets/img/complete.png" alt="complete" class="complete"/> */
 </div>
 
 
 :: completed1 [nobr]
 
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_12.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_12.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 /* <<addclass "body" "maroon">> */
 <<include "header">>
@@ -1490,8 +1491,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
      </div>
 
  <div class="success info-container" id="infoContainer">
-<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
-<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
@@ -1511,7 +1512,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 <</timed>>
 
 :: completed2 [nobr]
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_24.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_24.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 
 <<include "header">>
@@ -1526,8 +1527,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
      </div>
 
  <div class="success info-container" id="infoContainer">
-<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
-<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
@@ -1548,7 +1549,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 :: completed3 [nobr]
 
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_33.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_33.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 
 <<include "header">>
@@ -1563,8 +1564,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
      </div>
 
  <div class="success info-container" id="infoContainer">
-<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
-<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
@@ -1585,7 +1586,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 :: completed4 [nobr]
 
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_51.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_51.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <<include "header">>
 <main class="landing flex-col-cen complete">
@@ -1599,8 +1600,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
      </div>
 
   <div class="success info-container" id="infoContainer">
-<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
-<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
@@ -1622,7 +1623,7 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
 
 :: completed5 [nobr]
 
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_55.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_55.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <<include "header">>
 <main class="landing flex-col-cen complete">
@@ -1638,8 +1639,8 @@ Ar ddiwedd y 1960au, fe safodd Haydn Rees a’i gydweithwyr ar y bryn yma gan ed
      </div>
 
   <div class="success info-container" id="infoContainer">
-<img src="assets/img/processing.png" alt="processing" class="processing-pass"/>
-<img src="assets/img/complete.png" alt="complete" class="complete-pass"/>
+<img src="../assets/img/processing.png" alt="processing" class="processing-pass"/>
+<img src="../assets/img/complete.png" alt="complete" class="complete-pass"/>
 </div>
  <div class="btn-container" id="btnContainer" style="width: 100%;">
             </div>
@@ -1964,7 +1965,7 @@ When you are ready to move on, let me know.
 <p>Or if you’d prefer, click <div class="inline-link"><<link "here">> <<removeclass "#clueMount" "hide">>
   <<timed 0.1s>>
     <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_18AudibleClue.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_18AudibleClue.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     <<replace "#clueMount">><<type 60ms>><i>A word beginning with Q meaning "Shhhhhhh".</i>
 <</type>><</replace>><</timed>>
@@ -1984,7 +1985,7 @@ When you are ready to move on, let me know.
  <div class="inline-link"><<link "yma">> <<removeclass "#clueMount" "hide">>
   <<timed 0.1s>>
     <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_18AudibleClue.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_18AudibleClue.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     <<replace "#clueMount">><<type 60ms>><i>Gair Saesneg sy'n dechrau gyda Q sy'n golygu Shhhhhhh.</i>
 <</type>><</replace>><</timed>>
@@ -2460,7 +2461,7 @@ When you are ready to move on, let me know.
 <<timed 47s>>
     <<replace "#processingMount">>
          <div class="info-container">
-        <img src="assets/img/complete.png" alt="processing" class="complete-ready"/>
+        <img src="../assets/img/complete.png" alt="processing" class="complete-ready"/>
         </div>
         <</replace>>
 <</timed>>
@@ -2501,7 +2502,7 @@ When you are ready to move on, let me know.
 <<timed 53s>>
     <<replace "#processingMount">>
          <div class="info-container">
-        <img src="assets/img/complete.png" alt="processing" class="complete-ready"/>
+        <img src="../assets/img/complete.png" alt="processing" class="complete-ready"/>
         </div>
         <</replace>>
 <</timed>>
@@ -3218,7 +3219,7 @@ When you are ready to move on, let me know.
 <p>If not we can ask Katy to repeat it by clicking <div class="inline-link"><<link "here">> 
     <<timed 0.1s>>
     <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_32_repeat.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_32_repeat.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     <</timed>>
 <</link>></div>.</p>
@@ -3255,7 +3256,7 @@ When you are ready to move on, let me know.
 <p>Os na chlywsoch chi, fe allwn ni ofyn i Katy ailadrodd yr ateb - cliciwch<div class="inline-link"><<link "yma">> 
     <<timed 0.1s>>
     <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_32_repeat.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_32_repeat.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     <</timed>>
 <</link>></div>.</p>
@@ -3936,7 +3937,7 @@ Drws C is on your left.
 <div class="wrapper dots">
     <main id="main" class="map">
         <div class="map-container" id="mapContainer">
-            <img src="assets/img/floorplan.png"/>
+            <img src="../assets/img/floorplan.png"/>
             <div class=" one dot1"></div>
              <div class="two dot2"></div>
               <div class="three dot3"></div>
@@ -4126,11 +4127,11 @@ Drws C is on your left.
 :: footer_floorplan [nobr]
 
    <div class="footer-icons">
-<<link [img[assets/img/back-sharp-b.png][$prevpass]]>>
+<<link [img[../assets/img/back-sharp-b.png][$prevpass]]>>
     <</link>>
    
     <div></div>
- <<link [img[assets/img/for-sharp-b.png]]>>
+ <<link [img[../assets/img/for-sharp-b.png]]>>
     <<if $currentStoryIndex >= 5>>
         <<goto $nextpass>>
         <<else>>
@@ -4145,7 +4146,7 @@ Drws C is on your left.
 
  <<timed 0.1s>>
      <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_44.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_44.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     <<append "#msgMount">>
 <p class="bold">Onstage, there are lights above and the audience below, with the world of the play alive all around you.  </p>
@@ -4174,7 +4175,7 @@ Drws C is on your left.
 
  <<timed 0.1s>>
      <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_44.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_44.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     <<append "#msgMount">>
 <p class="bold">Ar y llwyfan, mae’r goleuadau uwchben a'r gynulleidfa islaw, gyda byd y ddrama yn fyw o'ch cwmpas chi. </p>
@@ -4199,7 +4200,7 @@ Drws C is on your left.
 :: 45_floorplan_story [nobr]
 <<timed 0.1s>>
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_45.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_45.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
     
      <<append "#msgMount">>
@@ -4224,7 +4225,7 @@ Drws C is on your left.
 :: 45_floorplan_story_cym [nobr]
 <<timed 0.1s>>
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_45.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_45.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
      <<append "#msgMount">>
 <p class="bold">O! Mae un arall yn dod drwodd!</p>
@@ -4245,7 +4246,7 @@ Drws C is on your left.
 
 :: 46_floorplan_story [nobr]
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_46.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_46.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <p class="bold">From the front row, the stage is right in front of you, only  inches up.  </p>
 <div class="quote"><p>“It's total immersion from the front row”</p></div>
@@ -4257,7 +4258,7 @@ Drws C is on your left.
 
 :: 46_floorplan_story_cym [nobr]
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_46.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_46.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <p class="bold">O'r rhes flaen, mae'r llwyfan yn union o'ch blaen chi, dim ond modfeddi i fyny. </p>
 <div class="quote"><p>“Ymgolli'n llwyr o'r rhes flaen” </p></div>
@@ -4268,21 +4269,21 @@ Drws C is on your left.
 
 :: 47_floorplan_story [nobr]
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_47.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_47.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <div class="quote"><p>“The main theatre is so wonderfully intimate. No matter where you sit. It doesn't feel like when you go in there to sit down, it feels enormous, but as soon as stuff is happening on stage, there's no bad seat there... you feel so intimate. I guess it's a place of escape, almost, it's one of the few places where I would go in and sit down and think, Well, whatever happens, this is going to be brilliant.” </p></div>
 <p>That’s Megan Price. Her parents worked here from the 70s – she was the first Theatr Clwyd baby! She grew up in our youth theatre and went on to work as a freelance arts marketing specialist. </p>
 
 :: 47_floorplan_story_cym [nobr]
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_47.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_47.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <div class="quote"><p>“Mae’r brif theatr mor hyfryd o agos atoch chi. Dim ots ble rydych chi’n eistedd. Dydy hi ddim yn teimlo felly pan rydych chi’n mynd i mewn yno i eistedd, mae’n teimlo’n enfawr, ond cyn gynted ag y mae pethau’n digwydd ar y llwyfan, does dim sedd wael… rydych chi’n teimlo mor agos. Mae’n lle am ddihangfa, bron, fel ei fod yn un o’r ychydig lefydd lle rydw i’n mynd i mewn ac yn eistedd ac yn meddwl, ‘Wel, beth bynnag sy’n digwydd, mae hyn yn mynd i fod yn wych.’” </p></div>
 <p>Megan Price. Roedd ei rhieni’n gweithio yma o’r 70au – hi oedd babi cyntaf Theatr Clwyd! Fe dyfodd i fyny yn ein theatr ieuenctid ac aeth ymlaen i weithio fel arbenigwr marchnata celfyddydau llawrydd.  </p>
 
 :: 48_floorplan_story [nobr]
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TC_48.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TC_48.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <p class="bold">The ushers often sneak in to sit here – and see how a show evolves over time. </p>
 
@@ -4292,7 +4293,7 @@ Drws C is on your left.
 
 :: 48_floorplan_story_cym [nobr]
 <<replace "#audioMount">>
-        <audio id="audioPlayer" src="assets/audio/TCW_48.mp3" autoplay>Audio is not supported on your device</audio>
+        <audio id="audioPlayer" src="../assets/audio/TCW_48.mp3" autoplay>Audio is not supported on your device</audio>
         <</replace>>
 <p class="bold">Mae'r tywyswyr yn sleifio i mewn i eistedd yma yn aml – er mwyn gweld y dramau'n esblygu dros amser.</p>
 <p>Dyma’r tywysydd Geoff Williams eto!</p>
@@ -4686,7 +4687,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
 <<include "navbuttonsb">>
 
 :: speakpipe_eng [nobr]
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TC_54.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TC_54.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 <<timed 0.1s>>
     <<append "#msgMount">>
@@ -4728,7 +4729,7 @@ a phenderfynu gwneud y byd yn lle hapusach.
 <</timed>>
 
 :: speakpipe_cym [nobr]
-<div id="audioMount"><audio id="audioPlayer" src="assets/audio/TCW_54.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audioMount"><audio id="audioPlayer" src="../assets/audio/TCW_54.mp3" autoplay>Audio is not supported on your device</audio></div>
     <div id="msgMount"> </div>
 <<timed 0.1s>>
     <<append "#msgMount">>
