@@ -541,7 +541,7 @@ setup.addPlaceholderCym = () => {
  <<timed 0.1s>>
     <<append "#msgMount">>
 <p class="bold">Well, hello. Shw’mae and welcome.</p>
-
+<<goto "20_astory">>
 <p>I’m Phyl, an actor who’s been coming to this wonderful theatre for <i>years</i>. </p>
 
 <p>I’ve been in plays like <i>Little Shop of Horrors</i> and <i>The Government Inspector</i>.</p>
@@ -2171,7 +2171,7 @@ When you are ready to move on, let me know.
  <<timed 0.1s>>
 
     <<append "#msgMount">>
-        <iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7Dswj?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+        <iframe width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7HGWC?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
 
 <div class="quote"><p>"I do think people wondered why there's this theatre and television studio up the hill, you know, yes, I do think people wondered about that, but whoever had the vision, I think, had a wonderful, wonderful vision of what was to come."</p></div>
 <p class="bold">That’s Christine Langton – wife of the late Maurice Langton – who in 1975 got the job to design and manage where you are now: Theatr Clwyd’s old TV studio.  </p>
